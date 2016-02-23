@@ -45,6 +45,6 @@
  * holders.
  */ 
 
-$debug_mode = 1;//E_ALL ^ E_NOTICE;
+$debug_mode = 0;//E_ALL ^ E_NOTICE;
 $enable_wrong_url_redirection = 1;
 ?>
