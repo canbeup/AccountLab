@@ -47,17 +47,48 @@
 
 ?>
 
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN''http://www.w3.org/TR/html4/loose.dtd'>
 <html dir="<?php echo PAGEDIR; ?>">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
 <?php echo $conf['metatags']; ?>
 <title><?php echo !empty($conf['title'])?$conf['title']:$BL->props->lang['accountlabplus']; ?></title>
-<link rel="stylesheet" href="<?php echo $BL->props->get_page("templates/".THEMEDIR."/css/style.css"); ?>" type="text/css" />
+<link rel="stylesheet" href="<?php echo $BL->props->get_page("templates/".THEMEDIR."/css/user.css"); ?>" type="text/css" />
 <?php isset($xajax)?$xajax->printJavascript("system".PATH_SEP."libraries".PATH_SEP."xajax".PATH_SEP.""):""; ?>
 <script language="JavaScript" type="text/JavaScript">
 <!--
-  function toggleTbody(id) {
+<!--
+var time = 3000;
+var numofitems = 7;
+
+//menu constructor
+function menu(allitems,thisitem,startstate){ 
+  callname= "gl"+thisitem;
+  divname="subglobal"+thisitem;  
+  this.numberofmenuitems = 7;
+  this.caller = document.getElementById(callname);
+  this.thediv = document.getElementById(divname);
+  this.thediv.style.visibility = startstate;
+}
+
+//menu methods
+function ehandler(event,theobj){
+  for (var i=1; i<= theobj.numberofmenuitems; i++){
+    var shutdiv =eval( "menuitem"+i+".thediv");
+    shutdiv.style.visibility="hidden";
+  }
+  theobj.thediv.style.visibility="visible";
+}
+                
+function closesubnav(event){
+  if ((event.clientY <48)||(event.clientY > 107)){
+    for (var i=1; i<= numofitems; i++){
+      var shutdiv =eval('menuitem'+i+'.thediv');
+      shutdiv.style.visibility='hidden';
+    }
+  }
+}
+
+function toggleTbody(id) {
        if (document.getElementById) {
            var tbod = document.getElementById(id);
            if (tbod && typeof tbod.className == 'string') {
@@ -95,17 +126,196 @@
            }
        }
        return false;
-   }
-   function getObj(objname)
-   {
-         form  = document.getElementById('step1');
-         for(i=0; i<form.length; i++)
-         {
-                if(form[i].name==objname)
-                    return form[i];
-         }
-         return null;
-   }
+   }  
+var clicked = 't1';
+function showTab( tab , tabs , t, ts){
+    for(i=0; i < tabs.length; i++){
+        var obj = document.getElementById(tabs[i]);
+        obj.style.display = "none";
+        var obj1 = document.getElementById(ts[i]);
+        obj1.className = "tabs";        
+    }
+    var obj = document.getElementById(tab);
+    obj.style.display = "block";  
+    var obj1 = document.getElementById(t);
+    obj1.className = "tabs2";
+    clicked = t;    
+}
+function overTab( t, ts){
+    for(i=0; i < ts.length; i++){
+        if(clicked!=ts[i]){
+            var obj1 = document.getElementById(ts[i]);
+            obj1.className = "tabs";  
+        }   
+    }
+    var obj1 = document.getElementById(t);
+    obj1.className = "tabs1";
+}
+function outTab(ts){
+    for(i=0; i < ts.length; i++){
+        var obj1 = document.getElementById(ts[i]);
+        obj1.className = "tabs";        
+    }
+    var obj1 = document.getElementById(clicked);
+    obj1.className = "tabs2";
+}
+
+function Trim(TRIM_VALUE){
+    if(TRIM_VALUE.length < 1){
+        return"";
+    }
+    TRIM_VALUE = RTrim(TRIM_VALUE);
+    TRIM_VALUE = LTrim(TRIM_VALUE);
+    if(TRIM_VALUE==""){
+        return "";
+    }
+    else{
+        return TRIM_VALUE;
+    }
+} //End Function
+
+function RTrim(VALUE){
+    var w_space = String.fromCharCode(32);
+    var v_length = VALUE.length;
+    var strTemp = "";
+    if(v_length < 0){
+        return"";
+    }
+    var iTemp = v_length -1;
+    
+    while(iTemp > -1){
+    if(VALUE.charAt(iTemp) == w_space){
+    }
+    else{
+        strTemp = VALUE.substring(0,iTemp +1);
+        break;
+    }
+    iTemp = iTemp-1;
+    
+    } //End While
+    return strTemp;
+
+} //End Function
+
+function LTrim(VALUE){
+    var w_space = String.fromCharCode(32);
+    if(v_length < 1){
+        return"";
+    }
+    var v_length = VALUE.length;
+    var strTemp = "";
+    
+    var iTemp = 0;
+    
+    while(iTemp < v_length){
+    if(VALUE.charAt(iTemp) == w_space){
+    }
+    else{
+        strTemp = VALUE.substring(iTemp,v_length);
+        break;
+    }
+    iTemp = iTemp + 1;
+    } //End While
+    return strTemp;
+} //End Function   
+function ajax(){
+    var http_request = false;
+    var img_id  = null;
+    var cmd = 0;
+    function makeRequest(url,imgid,c) {
+        http_request = false;
+        img_id = imgid;
+        cmd = c;
+        if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            http_request = new XMLHttpRequest();
+            if (http_request.overrideMimeType) {
+                http_request.overrideMimeType('text/xml');
+                // See note below about this line
+            }
+        } else if (window.ActiveXObject) { // IE
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+
+        if (!http_request) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+        http_request.onreadystatechange = listStates;
+        http_request.open('GET', url, true);
+        http_request.send(null);
+    }
+    function listStates() {
+        if (http_request.readyState == 4) {
+            if (http_request.status == 200) {
+                var xmlDoc = http_request.responseXML;          
+                var state_obj = getObj('state','form1');
+                var count = 0;
+                state_obj.options.length = count;  
+                <?php echo "var key = '".(isset($customer['state'])?$customer['state']:'0')."';"; ?> 
+                var key_added = 0;
+                for(i=0; i<xmlDoc.getElementsByTagName('count').item(0).firstChild.data; i++)
+                {
+                    var state = xmlDoc.getElementsByTagName('state').item(i).firstChild.data;
+                    if(escape(Trim(state)).charAt(0)!='%' && Trim(state)!='')
+                    {
+                        if(state == key)
+                        {
+                            state_obj.options[count++] = new Option(Trim(state), Trim(state), true, true);
+                            key_added = 1;
+                        }
+                        else
+                            state_obj.options[count++] = new Option(Trim(state), Trim(state), false);
+                    }
+                }
+                if(key_added == 0 && key!='0')
+                {
+                    state_obj.options[count++] = new Option(Trim(key), Trim(key), true, true);
+                }
+                
+            } else {
+                //alert('There was a problem with the request.');
+            }
+        }
+    }
+    this.makeRequest = makeRequest;
+}
+function updateStates(ccode)
+{
+    var url = 'info.php?cc='+ccode;
+    var stateHandler = new ajax();
+    stateHandler.makeRequest(url,'state',1);
+}
+function getObj(obj_name,form_name)
+{
+    var form  = document.getElementById(form_name);
+    for(i=0; i<form.length; i++)
+    {
+        if(form[i].name==obj_name)
+            return form[i];
+    }
+    return null;
+}
+function showFaqGroup(page,faqgroup_id){
+    <?php $url = "page+'?cmd=".$cmd."&faqgroup_id='+faqgroup_id"; ?>
+    var url  = <?php echo $url; ?>;
+    eval("parent.location='"+url+"'");
+}
+function changeLang(page,language){
+    <?php $url = "page+'?cmd=".$cmd."&force_lang='+language"; ?>
+    var url  = <?php echo $url; ?>;
+    eval("parent.location='"+url+"'");
+}
+function changeTheme(page,theme){
+    <?php $url = "page+'?cmd=".$cmd."&force_theme='+theme"; ?>
+    var url  = <?php echo $url; ?>;
+    eval("parent.location='"+url+"'");
+}
    //End Function
    <?php if(isset($xajax)){ ?>
    xajax.realCall = xajax.call;

@@ -433,7 +433,7 @@ class nusoap_base {
 	}
 	// serialize envelope
 	return
-	'<?xml version="1.0" encoding="'.$this->soap_defencoding .'"?'.">".
+	'<?phpxml version="1.0" encoding="'.$this->soap_defencoding .'"?'.">".
 	'<SOAP-ENV:Envelope'.$ns_string.">".
 	$headers.
 	"<SOAP-ENV:Body>".
@@ -613,7 +613,7 @@ class soap_fault extends nusoap_base {
 			$ns_string .= "\n  xmlns:$k=\"$v\"";
 		}
 		$return_msg =
-			'<?xml version="1.0" encoding="'.$this->soap_defencoding.'"?>'.
+			'<?phpxml version="1.0" encoding="'.$this->soap_defencoding.'"?>'.
 			'<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"'.$ns_string.">\n".
 				'<SOAP-ENV:Body>'.
 				'<SOAP-ENV:Fault>'.
@@ -3034,7 +3034,7 @@ class wsdl extends XMLSchema {
 	*/
 	function serialize()
 	{
-		$xml = '<?xml version="1.0"?><definitions';
+		$xml = '<?phpxml version="1.0"?><definitions';
 		foreach($this->namespaces as $k => $v) {
 			$xml .= " xmlns:$k=\"$v\"";
 		} 
@@ -4109,7 +4109,7 @@ class soapclient_new extends nusoap_base  {
 			
 			// instantiate wsdl object and parse wsdl file
 			$this->debug('instantiating wsdl class with doc: '.$endpoint);
-			$this->wsdl =& new wsdl($this->wsdlFile,$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword);
+			$this->wsdl = new wsdl($this->wsdlFile,$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword);
 			$this->debug("wsdl debug: \n".$this->wsdl->debug_str);
 			$this->wsdl->debug_str = '';
 			// catch errors

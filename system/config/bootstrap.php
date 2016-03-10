@@ -47,4 +47,5 @@
 
 $debug_mode = 0;//E_ALL ^ E_NOTICE;
 $enable_wrong_url_redirection = 1;
+$faqs=1;
 ?>

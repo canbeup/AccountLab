@@ -63,7 +63,7 @@ if(isset($REQUEST['cc']))
     }
     $str .= "</states>";
     header('Content-Type: text/xml');
-    echo '<?xml version="1.0" standalone="yes"?>';
+    echo '<?phpxml version="1.0" standalone="yes"?>';
     echo $str;
     echo '<count>'.$count.'</count></data>';
     $BL->Disconnect();

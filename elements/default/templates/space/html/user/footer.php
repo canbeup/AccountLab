@@ -60,7 +60,7 @@
 							</tr>
 							<tr>
 								<td>
-									<table width="736">
+									<table width="90%">
 										<tr>
 											<td class="tablefooter"><?php echo $conf['cp_note']; ?></td>
 									    </tr>

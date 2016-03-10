@@ -47,9 +47,9 @@
 
 session_start();
 // На период отладки включаем вывод ошибок
-error_reporting(0);
-//error_reporting(E_ALL); 
-//ini_set("display_errors", 1); 
+//error_reporting(0);
+error_reporting(E_ALL); 
+ini_set("display_errors", 1); 
 
 //install pear
 //set_include_path(realpath('system'. DIRECTORY_SEPARATOR . 'libraries' . DIRECTORY_SEPARATOR . 'pear') . PATH_SEPARATOR . get_include_path());

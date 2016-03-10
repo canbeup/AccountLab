@@ -274,7 +274,7 @@ class SOAP_DISCO_Server extends SOAP_Base_Object
     }
 
     function _generate_DISCO_XML($disco_array) {
-        $disco = '<?xml version="1.0"?>';
+        $disco = '<?phpxml version="1.0"?>';
         foreach ($disco_array as $key => $val) {
             $disco .= $this->_arrayToNode($key,$val);
         }
@@ -282,7 +282,7 @@ class SOAP_DISCO_Server extends SOAP_Base_Object
     }
 
     function _generate_WSDL_XML($wsdl_array) {
-        $wsdl = '<?xml version="1.0"?>';
+        $wsdl = '<?phpxml version="1.0"?>';
         foreach ($wsdl_array as $key => $val) {
             $wsdl .= $this->_arrayToNode($key,$val);
         }

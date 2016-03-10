@@ -102,11 +102,12 @@ class Net_URL
     * PHP4 Constructor
     *
     * @see __construct()
-    */
+   
     function Net_URL($url = null, $useBrackets = true)
     {
         $this->__construct($url, $useBrackets);
     }
+*/
 
     /**
     * PHP5 Constructor

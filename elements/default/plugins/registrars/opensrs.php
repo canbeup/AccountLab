@@ -100,7 +100,7 @@ $private_key  = $this->dr_vals['opensrs']['password'];
 $f_lock_domain = isset($this->dr_vals['opensrs']['lock_domain'])?$this->dr_vals['opensrs']['lock_domain']:1;
 $f_whois_privacy = isset($this->dr_vals['opensrs']['whois_privacy'])?$this->dr_vals['opensrs']['whois_privacy']:1;
 //construct xml
-$xml = '<?xml version=\'1.0\' encoding=\'UTF-8\' standalone=\'no\' ?>
+$xml = '<?phpxml version=\'1.0\' encoding=\'UTF-8\' standalone=\'no\' ?>
 <!DOCTYPE OPS_envelope SYSTEM \'ops.dtd\'>
 <OPS_envelope>
 <header>

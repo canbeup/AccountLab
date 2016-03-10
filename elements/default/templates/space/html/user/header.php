@@ -53,7 +53,7 @@
 2. page body with texts etc.
 -->
 <div align="center">
-<table id="Table_01" width="760" height="600" border="0" cellpadding="0" cellspacing="0">
+<table id="Table_01" width="90%" height="600" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td rowspan="7">
 			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_01.gif"); ?>" width="1" height="600" alt=""></td>
@@ -68,14 +68,14 @@
 	</tr>
 	<tr>
 		<td height="166" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/logobg.gif"); ?>" class="headerlogo">
-			LOGO HERE</td>
+			AQUINAS</td>
 	</tr>
 	<tr>
 		<td bgcolor="#A4D8FB">
 			<table cellpadding=0 cellspacing=0 class="headerlinks">
 				<tr>
 					<td class="menu">
-					<p align="center"><a href="index.html">Homepage</a>&nbsp;&nbsp;
+					<p align="center"><a href="index.php">Главная</a>&nbsp;&nbsp;
 					<a href="index.html">Products</a>&nbsp;&nbsp;
 					<a href="index.html">Domainnames</a>&nbsp;&nbsp;
 					<a href="index.html">How we work</a>&nbsp;&nbsp;

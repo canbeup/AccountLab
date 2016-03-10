@@ -100,7 +100,7 @@ $private_key  = $this->dr_vals['resellerone']['password'];
 $f_lock_domain = isset($this->dr_vals['resellerone']['lock_domain'])?$this->dr_vals['resellerone']['lock_domain']:1;
 $f_whois_privacy = isset($this->dr_vals['resellerone']['whois_privacy'])?$this->dr_vals['resellerone']['whois_privacy']:1;
 //construct xml
-$xml = '<?xml version=\'1.0\' encoding=\'UTF-8\' standalone=\'no\' ?>
+$xml = '<?phpxml version=\'1.0\' encoding=\'UTF-8\' standalone=\'no\' ?>
 <!DOCTYPE OPS_envelope SYSTEM \'ops.dtd\'>
 <OPS_envelope>
 <header>
