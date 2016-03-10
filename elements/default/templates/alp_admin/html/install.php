@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,16 +50,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $BL->props->parseLang('charset'); ?>" />
-<title><?php echo $BL->props->parseLang('accountlabplus'); ?></title>
-<link rel="stylesheet" href="<?php echo $BL->props->getElement("/templates/alp_admin/css/default_horizontal_menu.css",1); ?>" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo $BL->props->parseLang('charset'); ?>" />
+<title><?phpphp echo $BL->props->parseLang('accountlabplus'); ?></title>
+<link rel="stylesheet" href="<?phpphp echo $BL->props->getElement("/templates/alp_admin/css/default_horizontal_menu.css",1); ?>" type="text/css" />
 </head>
 <body>
 <br />
 <table width='486' border='0' align='center' cellpadding='0' cellspacing='0' class="list_table">
   <tr>
     <td class='tdheading'>
-            <?php echo $BL->props->parseLang('title_installer'); ?>
+            <?phpphp echo $BL->props->parseLang('title_installer'); ?>
     </td>
   </tr>
   <tr>
@@ -68,7 +68,7 @@
         <tr>
           <td width='20'>&nbsp;</td>
           <td width='466' height='430' valign='top' class='text_grey'>
-<?php
+<?phpphp
 ########################################Step 1#################################################            
 if ($step == 1)
 {
@@ -80,30 +80,30 @@ if ($step == 1)
         </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_1'); ?></b><br /><br />
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_1'); ?></b><br /><br />
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td colspan='2' class='text_grey'>
-                <?php echo empty($err)?"<i>".$BL->props->parseLang('enter_detail')."</i>":"<font color='red'>".$err."</font>"; ?>
+                <?phpphp echo empty($err)?"<i>".$BL->props->parseLang('enter_detail')."</i>":"<font color='red'>".$err."</font>"; ?>
             </td>
         </tr>
-        <?php if(!empty($err1)){ ?>
+        <?phpphp if(!empty($err1)){ ?>
         <tr>
             <td colspan='2' class='text_grey'>
-                <?php echo "<br><font color='red'>".$err1."</font>"; ?>
+                <?phpphp echo "<br><font color='red'>".$err1."</font>"; ?>
             </td>
         </tr>
-        <?php } ?>
+        <?phpphp } ?>
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
-        <?php if(empty($err)){ ?>
+        <?phpphp if(empty($err)){ ?>
         <tr>
             <td colspan='2'>
-                <form name='startform' id='startform' method='post' action='<?php echo $PHP_SELF; ?>'>
+                <form name='startform' id='startform' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
                     <table width='447' border='0' cellspacing='0' cellpadding='0'>
                       <tr>
                         <td width='112'>&nbsp;</td>
@@ -111,32 +111,32 @@ if ($step == 1)
                       </tr>
                       <tr>
                         <td class='text_grey'>
-                            <?php echo $BL->props->parseLang('hostname'); ?>
+                            <?phpphp echo $BL->props->parseLang('hostname'); ?>
                         </td>
                         <td>
-                            <input name='hostname' type='text' class='search' size='20' value="<?php echo $BL->props->db_host; ?>" />
+                            <input name='hostname' type='text' class='search' size='20' value="<?phpphp echo $BL->props->db_host; ?>" />
                         </td>
                       </tr>
                       <tr>
                         <td height='22' class='text_grey'>
-                            <?php echo $BL->props->parseLang('database'); ?>
+                            <?phpphp echo $BL->props->parseLang('database'); ?>
                         </td>
-                        <td><input name='dbname' type='text' class='search' size='20' value="<?php echo $BL->props->db_name; ?>" /></td>
+                        <td><input name='dbname' type='text' class='search' size='20' value="<?phpphp echo $BL->props->db_name; ?>" /></td>
                       </tr>
                       <tr>
                         <td height='22' class='text_grey'>
-                            <?php echo $BL->props->parseLang('username'); ?>
+                            <?phpphp echo $BL->props->parseLang('username'); ?>
                         </td>
                         <td>
-                            <input name='user' type='text' class='search' size='20' value="<?php echo $BL->props->db_user; ?>" />
+                            <input name='user' type='text' class='search' size='20' value="<?phpphp echo $BL->props->db_user; ?>" />
                         </td>
                       </tr>
                       <tr>
                         <td class='text_grey'>
-                            <?php echo $BL->props->parseLang('password'); ?>
+                            <?phpphp echo $BL->props->parseLang('password'); ?>
                         </td>
                         <td>
-                            <input name='pass' type='password' class='search' size='20' value="<?php echo $BL->props->db_pass; ?>" />
+                            <input name='pass' type='password' class='search' size='20' value="<?phpphp echo $BL->props->db_pass; ?>" />
                         </td>
                       </tr>
                       <tr>
@@ -145,39 +145,39 @@ if ($step == 1)
 
                             <input name='step' type='hidden' value='2' />
                             <input name='cmd' type='hidden' value='install' />
-                            <input name='create' type='submit' class='search1' value='<?php echo $BL->props->parseLang('submit'); ?>' />
+                            <input name='create' type='submit' class='search1' value='<?phpphp echo $BL->props->parseLang('submit'); ?>' />
                         </td>
                       </tr>
                     </table>
                   </form>
                   </td>
               </tr>
-              <?php } ?>
+              <?phpphp } ?>
             </table>
         </td>
         </tr>
       </table>
-<?php
+<?phpphp
 }
 ########################################Step 1################################################# 
 ########################################Step 2#################################################            
 if ($step == 2)
 {
 ?>
-<form name='confirmform' id='confirmform' method='post' action='<?php echo $PHP_SELF; ?>'>
+<form name='confirmform' id='confirmform' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
     <table width='457' border='0' cellspacing='0' cellpadding='0'>
        <tr>
           <td width='457'>&nbsp;</td>
        </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_2'); ?></b><br><br>
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_2'); ?></b><br><br>
             </td>
             <td>&nbsp;</td>
         </tr>
        <tr>
           <td class='text_grey'>
-            <?php echo "<i>".$BL->props->parseLang('install_or_upgrade')."</i>"; ?>
+            <?phpphp echo "<i>".$BL->props->parseLang('install_or_upgrade')."</i>"; ?>
           </td>
        </tr>
        <tr>
@@ -186,19 +186,19 @@ if ($step == 2)
        <tr>
           <td>
                 <input name='step' type='hidden' value='3' />
-                <input name='hostname' type='hidden' value='<?php echo $REQUEST['hostname']; ?>' />
-                <input name='user' type='hidden' value='<?php echo $REQUEST['user']; ?>' />
-                <input name='pass' type='hidden' value='<?php echo $REQUEST['pass']; ?>' />
-                <input name='dbname' type='hidden' value='<?php echo $REQUEST['dbname']; ?>' />
+                <input name='hostname' type='hidden' value='<?phpphp echo $REQUEST['hostname']; ?>' />
+                <input name='user' type='hidden' value='<?phpphp echo $REQUEST['user']; ?>' />
+                <input name='pass' type='hidden' value='<?phpphp echo $REQUEST['pass']; ?>' />
+                <input name='dbname' type='hidden' value='<?phpphp echo $REQUEST['dbname']; ?>' />
                 <input name='cmd' type='hidden' value='install' />
                 <input name='Drop_Tables' type='hidden' value='Drop_Tables' />
-                <input name='submit' type='submit' class='search1' value='<?php echo $BL->props->parseLang('install'); ?>' />
-                <input name='upgrade' type='button' class='search1' value='<?php echo $BL->props->parseLang('upgrade'); ?>' onClick="location.href='<?php echo $PHP_SELF; ?>?cmd=upgrade'; return false;" />
+                <input name='submit' type='submit' class='search1' value='<?phpphp echo $BL->props->parseLang('install'); ?>' />
+                <input name='upgrade' type='button' class='search1' value='<?phpphp echo $BL->props->parseLang('upgrade'); ?>' onClick="location.href='<?phpphp echo $PHP_SELF; ?>?cmd=upgrade'; return false;" />
           </td>
        </tr>
      </table>
 </form>
-<?php
+<?phpphp
 }
 ########################################Step 2################################################# 
 ########################################Step 3#################################################            
@@ -212,13 +212,13 @@ if ($step == 3)
        </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_3'); ?></b><br><br>
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_3'); ?></b><br><br>
             </td>
             <td>&nbsp;</td>
         </tr>
        <tr>
            <td colspan='2' class='text_grey'>
-                <?php echo $BL->props->parseLang('enter_admin_detail'); ?>
+                <?phpphp echo $BL->props->parseLang('enter_admin_detail'); ?>
            </td>
        </tr>
        <tr>
@@ -227,37 +227,37 @@ if ($step == 3)
        </tr>
        <tr>
            <td colspan='2'>
-             <form name='secondform' id='secondform' method='post' action='<?php echo $PHP_SELF; ?>'>
+             <form name='secondform' id='secondform' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
              <table width='447' border='0' cellspacing='0' cellpadding='0'>
                  <tr>
                      <td width='112'>&nbsp;</td>
                      <td width='335'>&nbsp;</td>
                  </tr>
                  <tr>
-                     <td class='text_grey'><?php echo $BL->props->parseLang('admin_pass'); ?></td>
+                     <td class='text_grey'><?phpphp echo $BL->props->parseLang('admin_pass'); ?></td>
                      <td>
                         <input name='admin_pass' type='text' class='search' id='admin_pass' size='35' />
                      </td>
                  </tr>
                  <tr>
                      <td height='22' class='text_grey'>
-                        <?php echo $BL->props->parseLang('install_path'); ?>
+                        <?phpphp echo $BL->props->parseLang('install_path'); ?>
                      </td>
                      <td>
-                        <input name='ins_path' type='text' class='search' id='ins_path' size='35' value='<?php echo $BL->utils->removetrailingslash(INSTALL_PATH); ?>' />
+                        <input name='ins_path' type='text' class='search' id='ins_path' size='35' value='<?phpphp echo $BL->utils->removetrailingslash(INSTALL_PATH); ?>' />
                      </td>
                  </tr>
                  <tr>
                     <td height='22' class='text_grey'>
-                        <?php echo $BL->props->parseLang('install_url'); ?>
+                        <?phpphp echo $BL->props->parseLang('install_url'); ?>
                     </td>
                     <td>
-                        <input name='ins_url' type='text' class='search' id='ins_url' size='35' value='<?php echo $BL->utils->removetrailingslash(INSTALL_URL); ?>' />
+                        <input name='ins_url' type='text' class='search' id='ins_url' size='35' value='<?phpphp echo $BL->utils->removetrailingslash(INSTALL_URL); ?>' />
                     </td>
                  </tr>
                  <tr>
                     <td class='text_grey'>
-                        <?php echo $BL->props->parseLang('admin_email'); ?>
+                        <?phpphp echo $BL->props->parseLang('admin_email'); ?>
                     </td>
                     <td>
                         <input name='admin_email' type='text' class='search' id='admin_email' size='35' />
@@ -268,12 +268,12 @@ if ($step == 3)
                     <td>
                         <input name='step' type='hidden' value='4' />
                         <input name='cmd' type='hidden' value='install' />
-                        <input name='hostname' type='hidden' value='<?php echo $REQUEST['hostname']; ?>' />
-                        <input name='user' type='hidden' value='<?php echo $REQUEST['user']; ?>' />
-                        <input name='pass' type='hidden' value='<?php $REQUEST['pass']; ?>' />
-                        <input name='dbname' type='hidden' value='<?php echo $REQUEST['dbname']; ?>' /><br />
+                        <input name='hostname' type='hidden' value='<?phpphp echo $REQUEST['hostname']; ?>' />
+                        <input name='user' type='hidden' value='<?phpphp echo $REQUEST['user']; ?>' />
+                        <input name='pass' type='hidden' value='<?phpphp $REQUEST['pass']; ?>' />
+                        <input name='dbname' type='hidden' value='<?phpphp echo $REQUEST['dbname']; ?>' /><br />
 
-                        <input name='submit' type='submit' class='search1' value='<?php echo $BL->props->parseLang('complete'); ?>' />
+                        <input name='submit' type='submit' class='search1' value='<?phpphp echo $BL->props->parseLang('complete'); ?>' />
                     </td>
                  </tr>
                 </table>
@@ -281,7 +281,7 @@ if ($step == 3)
             </td>
         </tr>
      </table>
-<?php
+<?phpphp
 
 }
 ########################################Step 3################################################# 
@@ -296,30 +296,30 @@ if ($step == 4)
         </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_4'); ?></b><br><br>
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('step_4'); ?></b><br><br>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class='text_grey' colspan='2'><?php echo $BL->props->parseLang('install_complete'); ?></td>
+            <td class='text_grey' colspan='2'><?phpphp echo $BL->props->parseLang('install_complete'); ?></td>
         </tr>
         <tr>
             <td colspan='2' class='text_grey'>
                   <ul>
-                  <?php if(isset($warning)){ ?>
-                  <li><?php echo $warning; ?><?php echo $BL->props->parseLang('install_path')."=<b>".INSTALL_PATH."</b><br>"; ?><?php echo $BL->props->parseLang('install_url')."=<b>".INSTALL_URL."</b><br><br>"; ?></li>
-                  <?php } ?>
-                    <li><?php echo $BL->props->parseLang('remove_install'); ?></li>
-                    <li><?php echo $BL->props->parseLang('chmod_db.php'); ?></li>
+                  <?phpphp if(isset($warning)){ ?>
+                  <li><?phpphp echo $warning; ?><?phpphp echo $BL->props->parseLang('install_path')."=<b>".INSTALL_PATH."</b><br>"; ?><?phpphp echo $BL->props->parseLang('install_url')."=<b>".INSTALL_URL."</b><br><br>"; ?></li>
+                  <?phpphp } ?>
+                    <li><?phpphp echo $BL->props->parseLang('remove_install'); ?></li>
+                    <li><?phpphp echo $BL->props->parseLang('chmod_db.php'); ?></li>
                   </ul>
-                  <p><?php echo $BL->props->parseLang('login_to'); ?></p>
+                  <p><?phpphp echo $BL->props->parseLang('login_to'); ?></p>
             </td>
         </tr>
         <tr>
             <td>
                 <form name='form1' id='form1' action="admin.php" method="post" enctype="text/plain"><br />
 
-                <input type="submit" name="name" value="<?php echo $BL->props->parseLang('login'); ?>" class='search1' />
+                <input type="submit" name="name" value="<?phpphp echo $BL->props->parseLang('login'); ?>" class='search1' />
                 </form>
             </td>
         </tr>
@@ -328,7 +328,7 @@ if ($step == 4)
             </td>
         </tr>
     </table>
-<?php
+<?phpphp
 }
 ########################################Step 4#################################################            
 ########################################Upgrade#################################################            
@@ -342,29 +342,29 @@ if ($step == "upgrade")
         </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('upgrade'); ?></b><br><br>
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('upgrade'); ?></b><br><br>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class='text_grey' colspan='2'><?php echo $BL->props->parseLang('upgrade_complete'); ?></td>
+            <td class='text_grey' colspan='2'><?phpphp echo $BL->props->parseLang('upgrade_complete'); ?></td>
         </tr>
         <tr>
             <td colspan='2' class='text_grey'>
                   <ul>
-                  <?php if($warning!=""){ ?>
-                  <li><?php echo $warning; ?><?php echo $BL->props->parseLang('install_path')."=<b>".INSTALL_PATH."</b><br>"; ?><?php echo $BL->props->parseLang('install_url')."=<b>".INSTALL_URL."</b><br><br>"; ?></li>
-                  <?php } ?>
-                    <li><?php echo $BL->props->parseLang('remove_install'); ?></li>
-                    <li><?php echo $BL->props->parseLang('chmod_db.php'); ?></li>
+                  <?phpphp if($warning!=""){ ?>
+                  <li><?phpphp echo $warning; ?><?phpphp echo $BL->props->parseLang('install_path')."=<b>".INSTALL_PATH."</b><br>"; ?><?phpphp echo $BL->props->parseLang('install_url')."=<b>".INSTALL_URL."</b><br><br>"; ?></li>
+                  <?phpphp } ?>
+                    <li><?phpphp echo $BL->props->parseLang('remove_install'); ?></li>
+                    <li><?phpphp echo $BL->props->parseLang('chmod_db.php'); ?></li>
                   </ul>
-                  <p><?php echo $BL->props->parseLang('login_to'); ?></p>
+                  <p><?phpphp echo $BL->props->parseLang('login_to'); ?></p>
             </td>
         </tr>
         <tr>
             <td>
                 <form name='form1' id='form1' action="admin.php" method="post" enctype="text/plain"><br />
-                <input type="submit" name="name" value="<?php echo $BL->props->parseLang('login'); ?>" class='search1' />
+                <input type="submit" name="name" value="<?phpphp echo $BL->props->parseLang('login'); ?>" class='search1' />
                 </form>
             </td>
         </tr>
@@ -373,7 +373,7 @@ if ($step == "upgrade")
             </td>
         </tr>
     </table>
-<?php
+<?phpphp
 
 }
 ########################################Upgrade#################################################
@@ -386,13 +386,13 @@ if($step == "error"){
         </tr>
         <tr>
             <td class='text_grey'>
-                <b><?php echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('error'); ?></b><br><br>
+                <b><?phpphp echo $BL->props->parseLang('install')." >> ".$BL->props->parseLang('error'); ?></b><br><br>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td colspan='2' class='text_grey'>
-            <p><?php echo $err; ?></p>
+            <p><?phpphp echo $err; ?></p>
             </td>
         </tr>
         <tr>
@@ -400,7 +400,7 @@ if($step == "error"){
             </td>
         </tr>
     </table>
-<?php
+<?phpphp
 }
 ?>
 </td>

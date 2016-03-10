@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 // tests the select form
@@ -83,7 +83,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Create Form Input Test| xajax Tests</title>
-		<?php $xajax->printJavascript("../", "xajax_js/xajax_uncompressed.js") ?>
+		<?phpphp $xajax->printJavascript("../", "xajax_js/xajax_uncompressed.js") ?>
 	</head>
 	<body>
 		<h2><a href="index.php">xajax Tests</a></h2>

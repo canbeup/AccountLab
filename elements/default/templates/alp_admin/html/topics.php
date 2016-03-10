@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=topics" class="add_link"><?php echo $BL->props->lang['~topics']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=topics" class="add_link"><?phpphp echo $BL->props->lang['~topics']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['Add_Topic']; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['Add_Topic']; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,30 +63,30 @@
 					  </td>
                     </tr>
 					<tr>
-                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
 					<table width='100%' border='0' cellspacing='0' cellpadding='0'>
 		    			<tr>
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['department']; ?>
+						<?phpphp echo $BL->props->lang['department']; ?>
 						</div>
 						<div id="form1_field">
-                            <input name='topic_name' type='text' class='search' id='topic_name' size='20' value="<?php if($cmd=="edit_topic") echo $topic['topic_name']; ?>" />
+                            <input name='topic_name' type='text' class='search' id='topic_name' size='20' value="<?phpphp if($cmd=="edit_topic") echo $topic['topic_name']; ?>" />
 						</div>
 						</td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 						</td>
                       </tr>
 
@@ -97,21 +97,21 @@
 		    			<tr>
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['topic_regexp']; ?>
+						<?phpphp echo $BL->props->lang['topic_regexp']; ?>
 						</div>
 						<div id="form1_field">
-                            <input name='topic_regexp' type='text' class='search' id='topic_regexp' size='20' value="<?php if($cmd=="edit_topic") echo $topic['topic_regexp']; ?>" />
+                            <input name='topic_regexp' type='text' class='search' id='topic_regexp' size='20' value="<?phpphp if($cmd=="edit_topic") echo $topic['topic_regexp']; ?>" />
 						</div>
 						</td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 						</td>
                       </tr>
 
@@ -126,11 +126,11 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                            <?php if($cmd=="edit_topic"){ ?>
-                        	<input type='hidden' name='topic_id' value='<?php echo $topic['topic_id']; ?>' />
-                            <?php } ?>
-                            <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
-                            <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edit_topic")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+                            <?phpphp if($cmd=="edit_topic"){ ?>
+                        	<input type='hidden' name='topic_id' value='<?phpphp echo $topic['topic_id']; ?>' />
+                            <?phpphp } ?>
+                            <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
+                            <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edit_topic")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -142,7 +142,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,39 +47,39 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
-var tabs = ["tab1","tab2","tab3"<?php if($conf['u_invoice_date']){ ?>,"tab4"<?php } ?>];
-var t    = ["t1","t2","t3"<?php if($conf['u_invoice_date']){ ?>,"t4"<?php } ?>];
+var tabs = ["tab1","tab2","tab3"<?phpphp if($conf['u_invoice_date']){ ?>,"tab4"<?phpphp } ?>];
+var t    = ["t1","t2","t3"<?phpphp if($conf['u_invoice_date']){ ?>,"t4"<?phpphp } ?>];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->invoice_status[0]]." ".$BL->props->lang['^invoices']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->invoice_status[0]]." ".$BL->props->lang['^invoices']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->invoice_status[1]]." ".$BL->props->lang['^invoices']; ?></div>
+<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->invoice_status[1]]." ".$BL->props->lang['^invoices']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->invoice_status[2]]." ".$BL->props->lang['^invoices']; ?></div>
+<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->invoice_status[2]]." ".$BL->props->lang['^invoices']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<?php if($conf['u_invoice_date']){ ?>
-<div class="tabs" name='t4' id='t4' onclick="javascript:showTab('tab4', tabs, 't4', t);" onmouseover="javascript:overTab('t4', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->invoice_status[5]]." ".$BL->props->lang['^invoices']; ?></div>
+<?phpphp if($conf['u_invoice_date']){ ?>
+<div class="tabs" name='t4' id='t4' onclick="javascript:showTab('tab4', tabs, 't4', t);" onmouseover="javascript:overTab('t4', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->invoice_status[5]]." ".$BL->props->lang['^invoices']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<?php } ?>
+<?phpphp } ?>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
-<?php $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[0]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
+<?phpphp $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[0]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
 </div>
 <div id="tab2" name="tab2" class="tabContent" style="display:none">
-<?php $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[1]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
+<?phpphp $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[1]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
 </div>
 <div id="tab3" name="tab3" class="tabContent" style="display:none">
-<?php $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[2]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
+<?phpphp $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[2]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
 </div>
-<?php if($conf['u_invoice_date']){ ?>
+<?phpphp if($conf['u_invoice_date']){ ?>
 <div id="tab4" name="tab4" class="tabContent" style="display:none">
-<?php $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[5]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
+<?phpphp $invoices = $BL->invoices->get("WHERE `customers_orders`.customer_id='".$_SESSION['user_id']."' AND `invoices`.status='".$BL->props->invoice_status[5]."'"); include $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
 </div>
-<?php } ?>
+<?phpphp } ?>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

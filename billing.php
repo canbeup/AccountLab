@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,11 +52,11 @@ require_once "init.php";
 <!-- DW6 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title><?php echo $BL->props->lang['accountlabplus']; ?></title>
+<title><?phpphp echo $BL->props->lang['accountlabplus']; ?></title>
 </head>
 <body>
 <font face='sans-serif' color='black' size='2'>
-<?php
+<?phpphp
 $conf   = $BL->conf;
 $orders = $BL->orders->get("WHERE `order_deleted`='0' AND (`cust_status`='".$BL->props->order_status[0]."' OR `cust_status`='".$BL->props->order_status[1]."' OR `cust_status`='".$BL->props->order_status[2]."')");
 $date   = '';

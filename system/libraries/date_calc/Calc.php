@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 // The constant telling us what day starts the week. Monday (1) is the
 // international standard. Redefine this to 0 if you want weeks to

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,44 +47,44 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
-var tabs = ["tab1","tab2","tab3"<?php if($conf['en_support']){ ?>,"tab4"<?php } ?>];
-var t    = ["t1","t2","t3"<?php if($conf['en_support']){ ?>,"t4"<?php } ?>];
+var tabs = ["tab1","tab2","tab3"<?phpphp if($conf['en_support']){ ?>,"tab4"<?phpphp } ?>];
+var t    = ["t1","t2","t3"<?phpphp if($conf['en_support']){ ?>,"t4"<?phpphp } ?>];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['general_info']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['general_info']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->order_status[0]]." ".$BL->props->lang['Orders']; ?></div>
+<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->order_status[0]]." ".$BL->props->lang['Orders']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang[$BL->props->invoice_status[0]]." ".$BL->props->lang['^invoices']; ?></div>
+<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang[$BL->props->invoice_status[0]]." ".$BL->props->lang['^invoices']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<?php if($conf['en_support']){ ?>
-<div class="tabs" name='t4' id='t4' onclick="javascript:showTab('tab4', tabs, 't4', t);" onmouseover="javascript:overTab('t4', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Open_tickets']; ?></div>
-<?php } ?>
+<?phpphp if($conf['en_support']){ ?>
+<div class="tabs" name='t4' id='t4' onclick="javascript:showTab('tab4', tabs, 't4', t);" onmouseover="javascript:overTab('t4', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Open_tickets']; ?></div>
+<?phpphp } ?>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
 <!-- announcements//-->
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/announce.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/announce.php"); ?>
 <!--personal details//-->
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/personal_details.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/personal_details.php"); ?>
 </div>
 <div id="tab2" name="tab2" class="tabContent" style="display:none">
 <!--pending orders//-->
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/orders.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/orders.php"); ?>
 </div>
 <div id="tab3" name="tab3" class="tabContent" style="display:none">
 <!--pending invoices//-->
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/invoices.php"); ?>
 </div>
-<?php if($conf['en_support']){ ?>
+<?phpphp if($conf['en_support']){ ?>
 <div id="tab4" name="tab4" class="tabContent" style="display:none">
 <!--OPEN TICKETS//-->
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
 </div>
-<?php } ?>
+<?phpphp } ?>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

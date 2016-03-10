@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * This is one of two base Type files that are not automatically
  * generated from the WSDL.

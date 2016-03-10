@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * APIProfile encapsulates Profile data
  * 

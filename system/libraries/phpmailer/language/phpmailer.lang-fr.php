@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * PHPMailer language file.  
  * French Version

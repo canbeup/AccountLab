@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,40 +48,40 @@
 ?>
 
 <div id="masthead"> 
-  <h1 id="siteName"><?php echo !empty($BL->conf['company_name'])?$BL->conf['company_name']:$BL->props->lang['accountlabplus']; ?></h1>
+  <h1 id="siteName"><?phpphp echo !empty($BL->conf['company_name'])?$BL->conf['company_name']:$BL->props->lang['accountlabplus']; ?></h1>
 </div> 
 <div id="pagecell1">
   <div id="pageName" align="right"> 
-    <?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/theme_lang_selector.php"); ?>
+    <?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/theme_lang_selector.php"); ?>
   </div> 
-  <?php if($BL->auth->IsAuth("user")) { ?>
+  <?phpphp if($BL->auth->IsAuth("user")) { ?>
   <div id="pageNav"> 
     <div id="sectionLinks"> 
-      <a href="<?php echo $PHP_SELF; ?>"><?php echo $BL->props->lang['Dashboard']; ?></a> 
-      <a href="<?php echo $PHP_SELF; ?>?cmd=edit"><?php echo $BL->props->lang['Edit_Profile']; ?></a> 
-      <a href="<?php echo $PHP_SELF; ?>?cmd=orders"><?php echo $BL->props->lang['Orders']; ?></a> 
-      <a href="<?php echo $PHP_SELF; ?>?cmd=invoices"><?php echo $BL->props->lang['^invoices']; ?></a>
-      <?php if($conf['en_support']){ ?>
-      <a href="<?php echo $PHP_SELF; ?>?cmd=tickets"><?php echo $BL->props->lang['^tickets']; ?></a>
-      <?php } ?>
-      <?php if(count($faqs)){ ?>
-      <a href="<?php echo $PHP_SELF; ?>?cmd=faq"><?php echo $BL->props->lang['FAQs']; ?></a>
-      <?php } ?>
-      <a href="logout.php?&user=customer"><?php echo $BL->props->lang['Logout']; ?></a>
+      <a href="<?phpphp echo $PHP_SELF; ?>"><?phpphp echo $BL->props->lang['Dashboard']; ?></a> 
+      <a href="<?phpphp echo $PHP_SELF; ?>?cmd=edit"><?phpphp echo $BL->props->lang['Edit_Profile']; ?></a> 
+      <a href="<?phpphp echo $PHP_SELF; ?>?cmd=orders"><?phpphp echo $BL->props->lang['Orders']; ?></a> 
+      <a href="<?phpphp echo $PHP_SELF; ?>?cmd=invoices"><?phpphp echo $BL->props->lang['^invoices']; ?></a>
+      <?phpphp if($conf['en_support']){ ?>
+      <a href="<?phpphp echo $PHP_SELF; ?>?cmd=tickets"><?phpphp echo $BL->props->lang['^tickets']; ?></a>
+      <?phpphp } ?>
+      <?phpphp if(count($faqs)){ ?>
+      <a href="<?phpphp echo $PHP_SELF; ?>?cmd=faq"><?phpphp echo $BL->props->lang['FAQs']; ?></a>
+      <?phpphp } ?>
+      <a href="logout.php?&user=customer"><?phpphp echo $BL->props->lang['Logout']; ?></a>
     </div> 
   </div> 
-  <?php }elseif($general_section) { ?>
+  <?phpphp }elseif($general_section) { ?>
   <div id="pageNav"> 
     <div id="sectionLinks"> 
-      <a href="customer.php"><?php echo $BL->props->lang['login']; ?></a> 
-      <?php if($conf['en_support']){ ?>
-      <a href="support.php"><?php echo $BL->props->lang['add_ticket']; ?></a>
-      <?php } ?>
-      <?php if(count($faqs)){ ?>
-      <a href="faq.php"><?php echo $BL->props->lang['FAQs']; ?></a>
-      <?php } ?>
+      <a href="customer.php"><?phpphp echo $BL->props->lang['login']; ?></a> 
+      <?phpphp if($conf['en_support']){ ?>
+      <a href="support.php"><?phpphp echo $BL->props->lang['add_ticket']; ?></a>
+      <?phpphp } ?>
+      <?phpphp if(count($faqs)){ ?>
+      <a href="faq.php"><?phpphp echo $BL->props->lang['FAQs']; ?></a>
+      <?phpphp } ?>
     </div> 
   </div> 
-  <?php } ?>
+  <?phpphp } ?>
   <div id="content"> 
     <div class="story">

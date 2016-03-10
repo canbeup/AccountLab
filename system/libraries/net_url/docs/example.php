@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 // +-----------------------------------------------------------------------+
 // | Copyright (c) 2002-2003, Richard Heyes                                     |
 // | All rights reserved.                                                  |
@@ -47,24 +47,24 @@
 <body>
 
 <pre>
-Protocol...: <?=$url->protocol?>
+Protocol...: <?php=$url->protocol?>
 
-Username...: <?=$url->user?>
+Username...: <?php=$url->user?>
 
-Password...: <?=$url->pass?>
+Password...: <?php=$url->pass?>
 
-Server.....: <?=$url->host?>
+Server.....: <?php=$url->host?>
 
-Port.......: <?=$url->port?>
+Port.......: <?php=$url->port?>
 
-File/path..: <?=$url->path?>
+File/path..: <?php=$url->path?>
 
-Querystring: <?print_r($url->querystring)?>
+Querystring: <?phpprint_r($url->querystring)?>
 
-Anchor.....: <?=$url->anchor?>
+Anchor.....: <?php=$url->anchor?>
 
 
-Full URL...: <?=$url->getUrl()?>
+Full URL...: <?php=$url->getUrl()?>
 </pre>
 
 </body>

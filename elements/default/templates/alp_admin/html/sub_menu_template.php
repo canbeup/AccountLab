@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -51,12 +51,12 @@
 			  <td width="5%">&nbsp;</td>			  
                 <td>
                 <div align="right">
-                <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif" width="32" height="18">
+                <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif" width="32" height="18">
                 </div>
                 </td>
                 <td>
-                <a href="admin.php??cmd_prev=<?php echo $cmd_prev; ?>&cmd=<?php echo $cmd; ?>" class="text_link">
-                <?php
+                <a href="admin.php??cmd_prev=<?phpphp echo $cmd_prev; ?>&cmd=<?phpphp echo $cmd; ?>" class="text_link">
+                <?phpphp
                 if(substr($cmd,0,3)=="add" && substr($this->props->lang["~".$cmd], -1, 1)=="s" && $cmd!="addons")
                 	echo substr($this->props->lang["~".$cmd], 0, strlen($this->props->lang["~".$cmd])-1);
                 else

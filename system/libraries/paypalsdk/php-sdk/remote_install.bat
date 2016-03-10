@@ -18,7 +18,7 @@ SET /P INSTALLDIR="Please enter the path (relative to your FTP root) for the pay
 SET /P SAMPLEDIR="Please enter the path (relative to your FTP root) for the paypal-sdk-samples directory: "
 
 :: Create the include_path file.
-ECHO.^<?php > ppsdk_include_path.inc
+ECHO.^<?phpphp > ppsdk_include_path.inc
 ECHO./******************************************* >> ppsdk_include_path.inc
 ECHO. AUTO-GENERATED include for PayPal PHP SDK >> ppsdk_include_path.inc
 ECHO. Created by install.php on: >> ppsdk_include_path.inc

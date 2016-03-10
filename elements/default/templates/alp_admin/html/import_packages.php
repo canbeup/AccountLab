@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,45 +47,45 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
-    <form name='form1' id='form1' method='post' action="<?php echo $PHP_SELF; ?>">
+    <form name='form1' id='form1' method='post' action="<?phpphp echo $PHP_SELF; ?>">
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 		<tr> 
             <td colspan="4" class="tdheading">
-		    <b><?php echo $BL->props->lang['~import_packages']; ?></b>
+		    <b><?phpphp echo $BL->props->lang['~import_packages']; ?></b>
 		    </td>
         </tr>
 		<tr> 
             <td colspan="4" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
         <tr>
             <td class='text_grey' width='1%'>
             <div align='center'>
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
             </div>
             </td>
             <td class='text_grey' colspan="3">
               <div id="form1_label">
-              <b><?php echo $BL->props->lang['import_from']; ?>:</b>
+              <b><?phpphp echo $BL->props->lang['import_from']; ?>:</b>
               </div>
               <div id="form1_field">
               <select name='server_id' id='server_id' class='search'>
-              <?php foreach ($Servers as $Server){ ?>
-                <?php if($Server['server_type']!="plesk"){ ?>
-                <option value="<?php echo $Server['server_id']; ?>" <?php if(isset($REQUEST['server_id']) && $REQUEST['server_id']==$Server['server_id'])echo "selected"; ?>><?php echo $Server['server_name']; ?></option>
-                <?php } ?>
-              <?php } ?>
+              <?phpphp foreach ($Servers as $Server){ ?>
+                <?phpphp if($Server['server_type']!="plesk"){ ?>
+                <option value="<?phpphp echo $Server['server_id']; ?>" <?phpphp if(isset($REQUEST['server_id']) && $REQUEST['server_id']==$Server['server_id'])echo "selected"; ?>><?phpphp echo $Server['server_name']; ?></option>
+                <?phpphp } ?>
+              <?phpphp } ?>
               </select>
             </div>
             </td>
         </tr>
         <tr> 
           <td colspan='4' class='text_grey'>
-          <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+          <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
           </td>
         </tr> 
         <tr>
@@ -94,72 +94,72 @@
           <div id="form1_label">
           </div>
           <div id="form1_field">
-          <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
-          <input name='submit' type='submit' value='<?php echo $BL->props->lang['import']; ?>' class='search1' />
+          <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
+          <input name='submit' type='submit' value='<?phpphp echo $BL->props->lang['import']; ?>' class='search1' />
           </div>
           </td>
          </tr>
         <tr> 
             <td colspan="4" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
         </table>
         <br />
-        <?php if(count($Packages)){ ?>
+        <?phpphp if(count($Packages)){ ?>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
         
  		<tr> 
             <td colspan="4" class="tdheading">
-		    <b>&nbsp;<?php echo $BL->props->lang['Imported_packages']; ?></b>
+		    <b>&nbsp;<?phpphp echo $BL->props->lang['Imported_packages']; ?></b>
 		    </td>
         </tr>
 		<tr> 
             <td colspan="4" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
     	<tr>
-    		<td class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
-    		<td class="text_grey"><b><?php echo $BL->props->lang['package']; ?></b></td>
-    		<td class="text_grey"><b><?php echo $BL->props->lang['asso_plan']; ?></b></td>
+    		<td class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+    		<td class="text_grey"><b><?phpphp echo $BL->props->lang['package']; ?></b></td>
+    		<td class="text_grey"><b><?phpphp echo $BL->props->lang['asso_plan']; ?></b></td>
     		<td class="text_grey"></td>
     	</tr>	
 		<tr>
             <td colspan='4' class='text_grey'>
-		    <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+		    <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
             </td>
         </tr>	
-	<?php foreach($Packages as $Package) { ?>	
+	<?phpphp foreach($Packages as $Package) { ?>	
 	<tr>
 		<td class="text_grey">
-        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
-		<td class="text_grey"><?php echo $Package; ?></td>
-		<td class="text_grey"><?php echo $Package; ?></td>
-		<td class="text_grey"><?php echo $Linked_Package[$Package]; ?></td>
+		<td class="text_grey"><?phpphp echo $Package; ?></td>
+		<td class="text_grey"><?phpphp echo $Package; ?></td>
+		<td class="text_grey"><?phpphp echo $Linked_Package[$Package]; ?></td>
 	</tr>
     <tr>
         <td colspan='4' class='text_grey'>
-        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
         </td>
     </tr>
-	<?php } ?>
+	<?phpphp } ?>
 	<tr>
 		<td class="text_grey" colspan="4">
-        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
 	</tr>   
 	
     </table>
-    <?php } ?>
+    <?phpphp } ?>
     </form>
 	</div>
 </div>
 
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

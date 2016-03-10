@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,57 +47,57 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['server_settings']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['server_settings']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addservers" class="add_link"><?php echo $BL->props->lang['add_server']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addservers" class="add_link"><?phpphp echo $BL->props->lang['add_server']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
-                <form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
+                <form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
 				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td class="tdheading" colspan="2">
-					  <b><?php echo $BL->props->lang['def_server']; ?></b> <?php  echo $default_server; ?>
+					  <b><?phpphp echo $BL->props->lang['def_server']; ?></b> <?phpphp  echo $default_server; ?>
 					  </td>
                     </tr>                   
 					<tr> 
                       <td class="text_grey" colspan="2">
-                      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+                      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
                       </td>
                     </tr>
 					  <tr>
                       <td class="text_grey" width="2%">
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                       </td>
 					  <td class='text_grey'>
         				<div id="form1_label">
-                            <b><?php echo $BL->props->lang['change_server']; ?>:</b>
+                            <b><?phpphp echo $BL->props->lang['change_server']; ?>:</b>
                         </div>
                       <div id="form1_field">						
 						<select name='server_id' id='server_id' class='search'>
-						<?php foreach ($servers as $temp) { ?>
-						<option value="<?php echo $temp['server_id']; ?>"><?php echo $temp['server_name']; ?></option>
-						<?php } ?>
+						<?phpphp foreach ($servers as $temp) { ?>
+						<option value="<?phpphp echo $temp['server_id']; ?>"><?phpphp echo $temp['server_name']; ?></option>
+						<?phpphp } ?>
 						</select>
                         </div>
                     </td>
                     </tr>
                     <tr>
                       <td colspan='2' class='text_grey'>
-                      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+                      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>
                     <tr>  
                     <td class="text_grey" width="2%">
-                    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif' width='32' height='18'>
+                    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif' width='32' height='18'>
                     </td> 
                     <td class="text_grey">
                     <div id="form1_field">
                         <input type='hidden' name='action' value='default' />
-                        <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
-                        <input name='submit' type='submit' value='<?php echo $BL->props->lang['submit']; ?>' class='search1' />
+                        <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
+                        <input name='submit' type='submit' value='<?phpphp echo $BL->props->lang['submit']; ?>' class='search1' />
                     </div>
                      </td>
                      </tr>
@@ -106,81 +106,81 @@
 				  <br />	
 				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
-                      <td colspan="6" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="6" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-		<?php if (!count($servers)) { ?>
+		<?phpphp if (!count($servers)) { ?>
 				<tr>
 					<td class="text_grey" colspan="6">
                     	<div align='center'>
-                    	<?php echo $BL->props->lang['no_servers_added']; ?>
+                    	<?phpphp echo $BL->props->lang['no_servers_added']; ?>
                     	</div>
 					</td>
 				</tr>
-		<?php } else { ?>														
+		<?phpphp } else { ?>														
                     <tr> 
 					  <td class='text_grey' width='5%'></td>
-                      <td class='text_grey'><div align='left'><b><a href='<?php echo $PHP_SELF."?cmd=".$cmd."&sort=server_name" ?>'><?php echo $BL->props->lang['server']." ";  echo $BL->props->lang['Name']; ?></a></b></div></td>
-                      <td class='text_grey'><div align='left'><b><a href='<?php echo $PHP_SELF."?cmd=".$cmd."&sort=server_ip" ?>'><?php echo $BL->props->lang['server_ip']; ?></a></b> </div></td>
-                      <td class='text_grey'><div align='left'><b><a href='<?php echo $PHP_SELF."?cmd=".$cmd."&sort=maximum_accounts" ?>'><?php echo $BL->props->lang['maximum_accounts']; ?></a></b> </div></td>
-                      <td class='text_grey'><div align='left'><b><a href='<?php echo $PHP_SELF."?cmd=".$cmd."&sort=current_accounts" ?>'><?php echo $BL->props->lang['current_accounts']; ?></a></b> </div></td>
+                      <td class='text_grey'><div align='left'><b><a href='<?phpphp echo $PHP_SELF."?cmd=".$cmd."&sort=server_name" ?>'><?phpphp echo $BL->props->lang['server']." ";  echo $BL->props->lang['Name']; ?></a></b></div></td>
+                      <td class='text_grey'><div align='left'><b><a href='<?phpphp echo $PHP_SELF."?cmd=".$cmd."&sort=server_ip" ?>'><?phpphp echo $BL->props->lang['server_ip']; ?></a></b> </div></td>
+                      <td class='text_grey'><div align='left'><b><a href='<?phpphp echo $PHP_SELF."?cmd=".$cmd."&sort=maximum_accounts" ?>'><?phpphp echo $BL->props->lang['maximum_accounts']; ?></a></b> </div></td>
+                      <td class='text_grey'><div align='left'><b><a href='<?phpphp echo $PHP_SELF."?cmd=".$cmd."&sort=current_accounts" ?>'><?phpphp echo $BL->props->lang['current_accounts']; ?></a></b> </div></td>
                       <td width='15%' class='text_grey'><div align='center'><b></b></div></td>
                     </tr>
-                    <?php foreach ($servers as $temp) { ?>
+                    <?phpphp foreach ($servers as $temp) { ?>
 					<tr>
                       <td colspan='6' class='text_grey'>
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
                     </tr>					
                     <tr> 
 					  <td class='text_grey'>
 						<div align='center'>
-						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?><?php echo $temp['server_type']."-icon-small"; ?>.gif' alt='' border='0' /></div>
+						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?><?phpphp echo $temp['server_type']."-icon-small"; ?>.gif' alt='' border='0' /></div>
 					  </td>
                       <td class='text_grey'>
-						<div align='left'><?php echo $temp['server_name']; ?></div>
+						<div align='left'><?phpphp echo $temp['server_name']; ?></div>
 					  </td>
                       <td class='text_grey'>
-                      <div align='left'><?php echo $temp['server_ip']; ?></div>
+                      <div align='left'><?phpphp echo $temp['server_ip']; ?></div>
                       </td>
                       <td class='text_grey'>
-                      <div align='left'><?php echo $temp['maximum_accounts']; ?></div>
+                      <div align='left'><?phpphp echo $temp['maximum_accounts']; ?></div>
                       </td>
                       <td class='text_grey'>
-                      <div align='left'><b><?php echo $temp['current_accounts']; ?></b></div>
+                      <div align='left'><b><?phpphp echo $temp['current_accounts']; ?></b></div>
                       </td>
                       <td class='text_grey'>
                       <div align='right'>
-                      <a href='<?php echo $PHP_SELF; ?>?cmd=servers&action=sync&server_id=<?php echo $temp['server_id']; ?>'>
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>sync.png' alt='<?php echo $BL->props->lang['sync']; ?>' border='0' /></a>
+                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=servers&action=sync&server_id=<?phpphp echo $temp['server_id']; ?>'>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>sync.png' alt='<?phpphp echo $BL->props->lang['sync']; ?>' border='0' /></a>
                       &nbsp;
-                      <?php if($BL->getCmd("editserver")){ ?>
-                      <a href='<?php echo $PHP_SELF; ?>?cmd=editserver&server_id=<?php echo $temp['server_id']; ?>'>
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0' /></a>
+                      <?phpphp if($BL->getCmd("editserver")){ ?>
+                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editserver&server_id=<?phpphp echo $temp['server_id']; ?>'>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0' /></a>
                       &nbsp;
-                      <?php } ?>
+                      <?phpphp } ?>
                       
-                      <?php if($BL->getCmd("delserver")){ ?>
-                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_server']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delserver&server_id=<?php echo $temp['server_id']; ?>'">
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
+                      <?phpphp if($BL->getCmd("delserver")){ ?>
+                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_server']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delserver&server_id=<?phpphp echo $temp['server_id']; ?>'">
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
                       &nbsp;
-                      <?php } ?>
+                      <?phpphp } ?>
 					  
                       </div>
 					  </td>
                     </tr>
-                    <?php } } ?>
+                    <?phpphp } } ?>
 					<tr> 
-                      <td colspan="6" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="6" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>			
                   </table>
 				  <br />
 					<table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">				
 					<tr> 
                       <td class="text_grey" align="center">
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>sync.png'  border='0' /> <?php echo $BL->props->lang['sync']; ?>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>sync.png'  border='0' /> <?phpphp echo $BL->props->lang['sync']; ?>
                       &nbsp;
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' /> <?php echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' /> <?phpphp echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' /> <?php echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' /> <?phpphp echo $BL->props->lang['Delete']; ?>
 					  </td>
                     </tr>
 					</table>					  
@@ -188,7 +188,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?phpxml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="urn:ebay:apis:eBLBaseComponents" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cc="urn:ebay:apis:CoreComponentTypes" xmlns:ns="urn:ebay:apis:eBLBaseComponents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<import namespace="urn:ebay:apis:CoreComponentTypes" schemaLocation="CoreComponentTypes.xsd"/>
 	<simpleType name="AccountStateCodeType">

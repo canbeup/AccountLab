@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 require_once 'Log.php';
 

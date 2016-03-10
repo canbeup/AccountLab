@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
    $authorization_id = $_REQUEST['authorization_id'];
    if(!isset($authorization_id))
@@ -27,7 +27,7 @@
 <table width=500>
 	<tr>
 		<td align=right><br>Authorization ID:</td>
-		<td align=left><br><input type="text" name="authorization_id" value=<?=$authorization_id?>></td>
+		<td align=left><br><input type="text" name="authorization_id" value=<?php=$authorization_id?>></td>
 		<td><b>(Required)</b></td>
 	</tr>
 	<tr>
@@ -42,16 +42,16 @@
 	<tr>
 		<td align=right>Amount:</td>
 		<td align=left>
-			<input type="text" name="amount" value=<?=$amount?>>
+			<input type="text" name="amount" value=<?php=$amount?>>
 			<select name=currency>
-<?php
+<?phpphp
    $cur_list = array('USD', 'GBP', 'EUR', 'JPY', 'CAD', 'AUD');
    for($s=0; $s < sizeof($cur_list); $s++) {
       $selected = (!strcmp($currency_cd, $cur_list[$s])) ? 'selected' : '';
 ?>
-			<option  <?=$selected?>><?=$cur_list[$s]?></option>
+			<option  <?php=$selected?>><?php=$cur_list[$s]?></option>
 
-<?php } ?>
+<?phpphp } ?>
 			</select>
 		</td>
 		<td><b>(Required)</b></td>

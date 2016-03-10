@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 function testForm($formData)
@@ -19,7 +19,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Disabled Form Elements Test | xajax Tests</title>
-<?php $xajax->printJavascript("../") ?>
+<?phpphp $xajax->printJavascript("../") ?>
 </head>
 <body>
 

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,16 +47,16 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=customfields" class="add_link"><?php echo $BL->props->lang['~customfields']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=customfields" class="add_link"><?phpphp echo $BL->props->lang['~customfields']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
-    <form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
+    <form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
     <tr> 
         <td colspan="2" class="tdheading">
@@ -67,21 +67,21 @@
 
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?php echo $BL->props->lang['field_name']; ?>
+      <?phpphp echo $BL->props->lang['field_name']; ?>
       </div>
       <div id="form1_field">
-      <input name='field_name' type='text' class='search' id='field_name' size='20' value="<?php if($cmd=="edit_customfield") echo $customfield['field_name']; ?>" />
+      <input name='field_name' type='text' class='search' id='field_name' size='20' value="<?phpphp if($cmd=="edit_customfield") echo $customfield['field_name']; ?>" />
       </div>
       </td>
     </tr>
@@ -89,23 +89,23 @@
     
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?php echo $BL->props->lang['field_type']; ?>
+      <?phpphp echo $BL->props->lang['field_type']; ?>
       </div>
       <div id="form1_field">      
       <select name="field_type" id="field_type" size="1" class="search">
-        <option value="text" <?php if($cmd=="edit_customfield" && $customfield['field_type']=="text")echo "selected"; ?>>TEXT</option>
-        <option value="select" <?php if($cmd=="edit_customfield" && $customfield['field_type']=="select")echo "selected"; ?>>SELECT</option>
+        <option value="text" <?phpphp if($cmd=="edit_customfield" && $customfield['field_type']=="text")echo "selected"; ?>>TEXT</option>
+        <option value="select" <?phpphp if($cmd=="edit_customfield" && $customfield['field_type']=="select")echo "selected"; ?>>SELECT</option>
       </select>
       
       </div>
@@ -115,21 +115,21 @@
     
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?php echo $BL->props->lang['field_value']; ?>
+      <?phpphp echo $BL->props->lang['field_value']; ?>
       </div>
       <div id="form1_field">
-      <input name='field_value' type='text' class='search' id='field_value' size='20' value="<?php if($cmd=="edit_customfield") echo $customfield['field_value']; ?>" />
+      <input name='field_value' type='text' class='search' id='field_value' size='20' value="<?phpphp if($cmd=="edit_customfield") echo $customfield['field_value']; ?>" />
       </div>
       </td>
     </tr>
@@ -137,23 +137,23 @@
     
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?php echo $BL->props->lang['field_obligatory']; ?>
+      <?phpphp echo $BL->props->lang['field_obligatory']; ?>
       </div>
       <div id="form1_field">      
       <select name="field_optional" id="field_optional" size="1" class="search">
-        <option value='1' <?php if($cmd=="edit_customfield" && $customfield['field_optional']==1)echo "selected"; ?>><?php echo $BL->props->lang['No']; ?></option>
-        <option value='0' <?php if($cmd=="edit_customfield" && $customfield['field_optional']==0)echo "selected"; ?>><?php echo $BL->props->lang['Yes']; ?></option>
+        <option value='1' <?phpphp if($cmd=="edit_customfield" && $customfield['field_optional']==1)echo "selected"; ?>><?phpphp echo $BL->props->lang['No']; ?></option>
+        <option value='0' <?phpphp if($cmd=="edit_customfield" && $customfield['field_optional']==0)echo "selected"; ?>><?phpphp echo $BL->props->lang['Yes']; ?></option>
       </select>
       
       </div>
@@ -163,23 +163,23 @@
     
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?php echo $BL->props->lang['field_active']; ?>
+      <?phpphp echo $BL->props->lang['field_active']; ?>
       </div>
       <div id="form1_field">      
       <select name="field_active" id="field_active" size="1" class="search">
-        <option value='1' <?php if($cmd=="edit_customfield" && $customfield['field_active']==1)echo "selected"; ?>><?php echo $BL->props->lang['Yes']; ?></option>
-        <option value='0' <?php if($cmd=="edit_customfield" && $customfield['field_active']==0)echo "selected"; ?>><?php echo $BL->props->lang['No']; ?></option>
+        <option value='1' <?phpphp if($cmd=="edit_customfield" && $customfield['field_active']==1)echo "selected"; ?>><?phpphp echo $BL->props->lang['Yes']; ?></option>
+        <option value='0' <?phpphp if($cmd=="edit_customfield" && $customfield['field_active']==0)echo "selected"; ?>><?phpphp echo $BL->props->lang['No']; ?></option>
       </select>
       </div>
       </td>
@@ -188,7 +188,7 @@
     
     <tr> 
       <td colspan='2' class='text_grey'>
-      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
       </td>
     </tr>
     <tr> 
@@ -198,11 +198,11 @@
         &nbsp;
         </div>
         <div id="form1_field">
-        <?php if($cmd=="edit_customfield"){ ?>
-      	<input type='hidden' name='field_id' id='field_id' value='<?php echo $customfield['field_id']; ?>' />
-        <?php } ?>
-        <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
-        <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edit_customfield")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+        <?phpphp if($cmd=="edit_customfield"){ ?>
+      	<input type='hidden' name='field_id' id='field_id' value='<?phpphp echo $customfield['field_id']; ?>' />
+        <?phpphp } ?>
+        <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
+        <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edit_customfield")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
         </div>
       </td>
     </tr>
@@ -212,7 +212,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

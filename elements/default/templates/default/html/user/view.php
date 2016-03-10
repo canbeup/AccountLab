@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,71 +47,71 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1"];
 var t    = ["t1"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Orders']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Orders']; ?></div>
 <div class="tab_separator">&nbsp;</div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
 	   <table width='100%' border='0' cellspacing='0' cellpadding='0'>
               <tr> 
-                <td height='22' colspan='2' class='accountlabPlanDataHTD'>&nbsp;&nbsp;<?php echo $BL->props->lang['Order_Details']; ?></td>
+                <td height='22' colspan='2' class='accountlabPlanDataHTD'>&nbsp;&nbsp;<?phpphp echo $BL->props->lang['Order_Details']; ?></td>
               </tr>
               <tr> 
-                <td width='25%'  height='22' class='accountlabDataTD'><?php echo $BL->props->lang['Order_Date']; ?></td>
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->fDate($order[0]['sign_date']); ?></td>
+                <td width='25%'  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang['Order_Date']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->fDate($order[0]['sign_date']); ?></td>
               </tr>
               <tr> 
-                <td  height='22' class='accountlabAltDataTD'><?php echo $BL->props->lang['Domain']; ?></td>
-                <td  height='22' class='accountlabAltDataTD'><?php echo $order[0]['domain_name']; ?></td>
+                <td  height='22' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['Domain']; ?></td>
+                <td  height='22' class='accountlabAltDataTD'><?phpphp echo $order[0]['domain_name']; ?></td>
               </tr>
               <tr> 
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->props->lang['dom_reg']; ?></td>
-                <td  height='22' class='accountlabDataTD'><?php if($order[0]['dom_reg_type']==1)echo $BL->props->lang['Yes']; else echo $BL->props->lang['No']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang['dom_reg']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp if($order[0]['dom_reg_type']==1)echo $BL->props->lang['Yes']; else echo $BL->props->lang['No']; ?></td>
               </tr>
               <tr> 
-                <td height='22' class='accountlabAltDataTD'><?php echo $BL->props->lang['Plan']; ?></td>
-                <td class='accountlabAltDataTD'><?php echo $BL->getFriendlyName($order[0]['product_id']); ?></td>
+                <td height='22' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['Plan']; ?></td>
+                <td class='accountlabAltDataTD'><?phpphp echo $BL->getFriendlyName($order[0]['product_id']); ?></td>
               </tr>
              
               <tr> 
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->props->lang['Status']; ?></td>
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->props->lang[$order[0]['cust_status']]; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang['Status']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang[$order[0]['cust_status']]; ?></td>
               </tr>
               <tr> 
-                <td height='22' class='accountlabAltDataTD'><?php echo $BL->props->lang['server']; ?></td>
-                <td class='accountlabAltDataTD'><?php echo $server['server_name']; ?></td>
+                <td height='22' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['server']; ?></td>
+                <td class='accountlabAltDataTD'><?phpphp echo $server['server_name']; ?></td>
               </tr>
               <tr> 
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->props->lang['IP']; ?></td>
-                <td  height='22' class='accountlabDataTD'><?php echo $ip['ip']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang['IP']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $ip['ip']; ?></td>
               </tr>
               <tr> 
-                <td height='22' class='accountlabAltDataTD'><?php echo $BL->props->lang['ns']; ?></td>
-                <td class='accountlabAltDataTD'><?php echo $server['name_server_1']; ?><br><?php echo $server['name_server_2']; ?></td>
+                <td height='22' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['ns']; ?></td>
+                <td class='accountlabAltDataTD'><?phpphp echo $server['name_server_1']; ?><br><?phpphp echo $server['name_server_2']; ?></td>
               </tr>
               <tr> 
-                <td  height='22' class='accountlabDataTD'><?php echo $BL->props->lang['username']; ?></td>
-                <td  height='22' class='accountlabDataTD'><?php echo $order[0]['dom_user']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $BL->props->lang['username']; ?></td>
+                <td  height='22' class='accountlabDataTD'><?phpphp echo $order[0]['dom_user']; ?></td>
               </tr>
               <tr> 
-                <td height='22' class='accountlabAltDataTD'><?php echo $BL->props->lang['password']; ?></td>
-                <td class='accountlabAltDataTD'><?php echo $BL->utils->alpencrypt->decrypt($order[0]['dom_pass'], $BL->props->encryptionKey); ?></td>
+                <td height='22' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['password']; ?></td>
+                <td class='accountlabAltDataTD'><?phpphp echo $BL->utils->alpencrypt->decrypt($order[0]['dom_pass'], $BL->props->encryptionKey); ?></td>
               </tr>
-            <?php if (count($addon_ids)){ ?>     
+            <?phpphp if (count($addon_ids)){ ?>     
               <tr> 
                 <td height='22' class='accountlabDataTD'></td>
                 <td class='accountlabDataTD'></td>
               </tr>
               <tr> 
-                <td height='22' class='accountlabAltDataTD'><b><?php echo $BL->props->lang['addons']; ?></b></td>
+                <td height='22' class='accountlabAltDataTD'><b><?phpphp echo $BL->props->lang['addons']; ?></b></td>
                 <td class='accountlabAltDataTD'></td>
               </tr>
-            <?php
+            <?phpphp
             $count = 0;
             $td    = "";
             foreach ($addon_ids as $addon_data)
@@ -124,14 +124,14 @@ var t    = ["t1"];
                 $addon = $BL->addons->getByKey($addon_data['addon_id']);
             ?>
               <tr> 
-                <td height='22' class='accountlabDataTD'><?php echo $addon['addon_name']; ?></td>
-                <td class='accountlabDataTD'><?php echo $BL->props->lang['active_from']." ".$BL->fDate($addon_data['activation_date']); ?></td>
+                <td height='22' class='accountlabDataTD'><?phpphp echo $addon['addon_name']; ?></td>
+                <td class='accountlabDataTD'><?phpphp echo $BL->props->lang['active_from']." ".$BL->fDate($addon_data['activation_date']); ?></td>
               </tr>
-            <?php } } ?>
+            <?phpphp } } ?>
             </table>
 </div>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

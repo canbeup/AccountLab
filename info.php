@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -63,7 +63,7 @@ if(isset($REQUEST['cc']))
     }
     $str .= "</states>";
     header('Content-Type: text/xml');
-    echo '<?xml version="1.0" standalone="yes"?>';
+    echo '<?phpxml version="1.0" standalone="yes"?>';
     echo $str;
     echo '<count>'.$count.'</count></data>';
     $BL->Disconnect();
@@ -209,12 +209,12 @@ if(isset($REQUEST['cmd']) && $REQUEST['cmd']=='PRINT')
         ?>
         <html>
         <body onload="javascript:window.print();window.close();">
-        <?php
+        <?phpphp
         echo $html_buffer;
         ?>
         </body>
         </html>
-        <?php
+        <?phpphp
     }
     else
     {

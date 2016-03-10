@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 	//include_once($LIB_DIR."nusoap.php");
 

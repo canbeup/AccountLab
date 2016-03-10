@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -55,8 +55,8 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
                         <td>
-                            <p <?php echo  empty($conf['show_loader'])?"style='display:none;'":""; ?>>                            
-                            <strong><?php echo $BL->props->lang['loading']; ?></strong>
+                            <p <?phpphp echo  empty($conf['show_loader'])?"style='display:none;'":""; ?>>                            
+                            <strong><?phpphp echo $BL->props->lang['loading']; ?></strong>
                             </p>
                         </td>
                     </tr>

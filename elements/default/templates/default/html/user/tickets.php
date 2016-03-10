@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,13 +52,13 @@
     <td>
     <table width='100%' border='0' cellspacing='0' cellpadding='0'>
         <tr> 
-          <td width='1%' class='accountlabPlanDataHTD'>&nbsp;&nbsp;<?php echo $BL->props->lang['Nu']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['ticket_subject']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Status']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Date']; ?></td>
+          <td width='1%' class='accountlabPlanDataHTD'>&nbsp;&nbsp;<?phpphp echo $BL->props->lang['Nu']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['ticket_subject']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Status']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Date']; ?></td>
           <td class='accountlabPlanDataHTD'></td>
         </tr>
-        <?php
+        <?phpphp
         $bgcolor= "accountlabDataTD";
         foreach ($tickets as $value){
             if ($bgcolor == "accountlabAltDataTD")
@@ -67,15 +67,15 @@
                 $bgcolor= "accountlabAltDataTD";
         ?>
          <tr> 
-          <td class='<?php echo $bgcolor; ?>'>&nbsp;&nbsp;<?php echo $value['ticket_id']; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo empty($value['ticket_subject'])?substr(strip_tags($value['ticket_text']), 0, 25):substr(strip_tags($value['ticket_subject']), 0, 25); ?>...</td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->props->ticket_status[$value['ticket_status']]; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->fDate($value['ticket_date'],' H:i:s'); ?></td>
-          <td class='<?php echo $bgcolor; ?>'><div align='right'>
-          <a class='accountlabPlanLink' href='<?php echo $PHP_SELF; ?>?cmd=viewTicket&ticket_id=<?php echo $value['ticket_id']; ?>'><?php echo $BL->props->lang['View']; ?></a>
+          <td class='<?phpphp echo $bgcolor; ?>'>&nbsp;&nbsp;<?phpphp echo $value['ticket_id']; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo empty($value['ticket_subject'])?substr(strip_tags($value['ticket_text']), 0, 25):substr(strip_tags($value['ticket_subject']), 0, 25); ?>...</td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->props->ticket_status[$value['ticket_status']]; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->fDate($value['ticket_date'],' H:i:s'); ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><div align='right'>
+          <a class='accountlabPlanLink' href='<?phpphp echo $PHP_SELF; ?>?cmd=viewTicket&ticket_id=<?phpphp echo $value['ticket_id']; ?>'><?phpphp echo $BL->props->lang['View']; ?></a>
           </div></td>
         </tr>
-        <?php } ?>
+        <?phpphp } ?>
         </table>
        </td>
   </tr>

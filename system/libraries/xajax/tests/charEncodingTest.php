@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 function setOptions($formData)
@@ -64,7 +64,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Character Encoding Test | xajax Tests</title>
-<?php $xajax->printJavascript("../") ?>
+<?phpphp $xajax->printJavascript("../") ?>
 <script type="text/javascript">
 function getTestArray()
 {
@@ -104,11 +104,11 @@ function callXajax()
 <p><strong>NOTE:</strong> if you change these options, make sure you click the Save Options button or the options won't be used.</p>
 
 <form id="optionsForm" onsubmit="return false;">
-<p>Encoding: <input type="text" value="<?php echo $useEncoding ?>" name="useEncoding" /><br />
-Output HTML Entities? <input type="radio" name="htmlEntities" value="1" <?php if ($htmlEntities) echo ' checked="checked"' ?>/> Yes
- <input type="radio" name="htmlEntities" value="0" <?php if (!$htmlEntities) echo ' checked="checked"' ?>/> No<br />
-Decode UTF-8 Input? <input type="radio" name="decodeUTF8" value="1" <?php if ($decodeUTF8) echo ' checked="checked"' ?>/> Yes
- <input type="radio" name="decodeUTF8" value="0" <?php if (!$decodeUTF8) echo ' checked="checked"' ?>/> No<br />
+<p>Encoding: <input type="text" value="<?phpphp echo $useEncoding ?>" name="useEncoding" /><br />
+Output HTML Entities? <input type="radio" name="htmlEntities" value="1" <?phpphp if ($htmlEntities) echo ' checked="checked"' ?>/> Yes
+ <input type="radio" name="htmlEntities" value="0" <?phpphp if (!$htmlEntities) echo ' checked="checked"' ?>/> No<br />
+Decode UTF-8 Input? <input type="radio" name="decodeUTF8" value="1" <?phpphp if ($decodeUTF8) echo ' checked="checked"' ?>/> Yes
+ <input type="radio" name="decodeUTF8" value="0" <?phpphp if (!$decodeUTF8) echo ' checked="checked"' ?>/> No<br />
 <p><input type="submit" value="Save Options" onclick="xajax_setOptions(xajax.getFormValues('optionsForm')); return false;" /></p>
 </form>
 

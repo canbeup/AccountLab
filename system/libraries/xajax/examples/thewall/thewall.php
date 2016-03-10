@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 // thewall.php, thewall.common.php, thewall.server.php
 // demonstrate a demonstrates a xajax implementation of a graffiti wall
 // using xajax version 0.2
@@ -11,7 +11,7 @@ require_once("thewall.common.php");
 <html>
 	<head>
 		<title>The Graffiti Wall</title>
-		<?php $xajax->printJavascript('../../'); ?>
+		<?phpphp $xajax->printJavascript('../../'); ?>
 		<script>
 		function update()
 		{

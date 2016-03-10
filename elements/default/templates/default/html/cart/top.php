@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,13 +48,13 @@
 ?>
 
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN''http://www.w3.org/TR/html4/loose.dtd'>
-<html dir="<?php echo PAGEDIR; ?>">
+<html dir="<?phpphp echo PAGEDIR; ?>">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
-<?php echo $conf['metatags']; ?>
-<title><?php echo !empty($conf['title'])?$conf['title']:$BL->props->lang['accountlabplus']; ?></title>
-<link rel="stylesheet" href="<?php echo $BL->props->get_page("templates/".THEMEDIR."/css/style.css"); ?>" type="text/css" />
-<?php isset($xajax)?$xajax->printJavascript("system".PATH_SEP."libraries".PATH_SEP."xajax".PATH_SEP.""):""; ?>
+<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo CHARSET; ?>">
+<?phpphp echo $conf['metatags']; ?>
+<title><?phpphp echo !empty($conf['title'])?$conf['title']:$BL->props->lang['accountlabplus']; ?></title>
+<link rel="stylesheet" href="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/css/style.css"); ?>" type="text/css" />
+<?phpphp isset($xajax)?$xajax->printJavascript("system".PATH_SEP."libraries".PATH_SEP."xajax".PATH_SEP.""):""; ?>
 <script language="JavaScript" type="text/JavaScript">
 <!--
   function toggleTbody(id) {
@@ -107,7 +107,7 @@
          return null;
    }
    //End Function
-   <?php if(isset($xajax)){ ?>
+   <?phpphp if(isset($xajax)){ ?>
    xajax.realCall = xajax.call;
    xajax.call     = function(sFunction, aArgs, sRequestType)
    {
@@ -120,10 +120,10 @@
        this.$('spinner').style.display = 'none';
        return this.realProcessResponse(xml);
    }
-   <?php } ?>
+   <?phpphp } ?>
 //-->
 </script>
-<?php if(isset($xajax)){ ?>
+<?phpphp if(isset($xajax)){ ?>
 <style type="text/css">
 tbody.on  { display:table-row-group; }
 tbody.off { display:none; }
@@ -169,10 +169,10 @@ tbody.off { display:none; }
 }
 
 #waitsymbolContainer td {
-    padding-top: <?php echo (THEMEDIR=="default")?'150':'250'; ?>px;
+    padding-top: <?phpphp echo (THEMEDIR=="default")?'150':'250'; ?>px;
     vertical-align: top;
     text-align: center;
-    background-image: url(<?php echo empty($conf['show_loader'])?$BL->props->get_page("templates/".THEMEDIR."/images/opaque.gif"):$BL->props->get_page("templates/".THEMEDIR."/images/transparent.gif"); ?>);
+    background-image: url(<?phpphp echo empty($conf['show_loader'])?$BL->props->get_page("templates/".THEMEDIR."/images/opaque.gif"):$BL->props->get_page("templates/".THEMEDIR."/images/transparent.gif"); ?>);
 }
 
 #waitsymbolContainer td td {
@@ -180,7 +180,7 @@ tbody.off { display:none; }
     text-align: left;
 }
 </style>
-<?php } ?>
+<?phpphp } ?>
 </head>
 <body>
-<?php if(isset($xajax))include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/loader.php"); ?>
+<?phpphp if(isset($xajax))include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/loader.php"); ?>

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -49,15 +49,15 @@
 
         <tr> 
           <td width="1%">
-          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_plus.gif" width="32" height="18" style="cursor:hand; cursor:pointer" onClick="expandcontent('<?php echo $menu_name; ?>')">
+          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_plus.gif" width="32" height="18" style="cursor:hand; cursor:pointer" onClick="expandcontent('<?phpphp echo $menu_name; ?>')">
           </td>
           <td>
-          <a href="#" style="cursor:hand; cursor:pointer" onClick="expandcontent('<?php echo $menu_name; ?>')"><?php echo $this->props->lang["^".$menu_name]; ?></a> 
+          <a href="#" style="cursor:hand; cursor:pointer" onClick="expandcontent('<?phpphp echo $menu_name; ?>')"><?phpphp echo $this->props->lang["^".$menu_name]; ?></a> 
           </td>
           <td>
-          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" width="1" height="1">
+          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" width="1" height="1">
           </td>
         </tr>
         <tr> 
           <td colspan="3">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" id="<?php echo $menu_name; ?>" class="switchcontent">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" id="<?phpphp echo $menu_name; ?>" class="switchcontent">

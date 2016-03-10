@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 include 'ppsdk_include_path.inc';
 
@@ -72,8 +72,8 @@ $paymentType = $_GET['paymentType'];
 <font size=2 color=black face=Verdana><b>DoDirectPayment</b></font>
 <br><br>
 <form method="POST" action="DoDirectPaymentReceipt.php" name="DoDirectPaymentForm">
-<!--Payment type is <?=$paymentType?><br> -->
-<input type=hidden name=paymentType value="<?=$paymentType?>" />
+<!--Payment type is <?php=$paymentType?><br> -->
+<input type=hidden name=paymentType value="<?php=$paymentType?>" />
 <table width=600>
 	<tr>
 		<td align=right>First Name:</td>

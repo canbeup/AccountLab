@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require("../xajax.inc.php");
 
 function callScript()
@@ -19,7 +19,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>addScriptCall Test | xajax Tests</title>
-	<?php $xajax->printJavascript("../") ?>
+	<?phpphp $xajax->printJavascript("../") ?>
 	<script type="text/javascript">
 function myJSFunction(firstArg, numberArg, myArrayArg)
 {

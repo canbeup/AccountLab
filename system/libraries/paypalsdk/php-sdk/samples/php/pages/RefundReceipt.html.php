@@ -1,4 +1,4 @@
-<?php
+<?phpphp
    $refund_tran_ID = $response->getRefundTransactionID();
    $gross_amt_obj = $response->getGrossRefundAmount();
    $gross_amt = $gross_amt_obj->_value;
@@ -13,7 +13,7 @@
 <body alink=#0000FF vlink=#0000FF>
 
    <!-- Debugging block -->
-   <?php
+   <?phpphp
    /*
    echo "<PRE>\n";
    echo "Response:<br>";
@@ -32,14 +32,14 @@
 <table width=400>
 	<tr>
 		<td>Transaction ID:</td>
-		<td><?=$refund_tran_ID?></td>
+		<td><?php=$refund_tran_ID?></td>
 	</tr>
 	<tr>
 		<td>Gross Refund Amount:</td>
-		<?php
+		<?phpphp
       $display_amt = $currency_cd .' '.$gross_amt;
       ?>
-      <td><?=$display_amt?></td>
+      <td><?php=$display_amt?></td>
 
 	</tr>
 </table>

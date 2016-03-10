@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -51,16 +51,16 @@
 			    </tr>
 				
 				<tr>
-				  <td rowspan="2" class="shadowleft"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_12.jpg"); ?>" width="25" height="60" alt=""></td>
+				  <td rowspan="2" class="shadowleft"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_12.jpg"); ?>" width="25" height="60" alt=""></td>
 				  <td colspan="2" valign="top">&nbsp;</td>
-				  <td rowspan="2"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_14.jpg"); ?>" width="24" height="60" alt=""></td>
+				  <td rowspan="2"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_14.jpg"); ?>" width="24" height="60" alt=""></td>
 			  </tr>
 				<tr>
-				  <td colspan="2" valign="top" class="tablefooter"><?php echo $conf['cp_note']; ?></td>
+				  <td colspan="2" valign="top" class="tablefooter"><?phpphp echo $conf['cp_note']; ?></td>
 			  </tr>
 			  
 			</table></td>
 	</tr>
 </table>
 </div>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>

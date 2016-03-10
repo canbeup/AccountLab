@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -534,7 +534,7 @@ EOF;
 	function plesk_request($request)
 	{
         //echo $request."<br />\n\r";
-        $Temporary  = '<?'.'xml version="1.0" encoding="UTF-8" standalone="no" '.'?>';
+        $Temporary  = '<?php'.'xml version="1.0" encoding="UTF-8" standalone="no" '.'?>';
         $data       = $Temporary.$request;
         $HOST       = $this->plesk_server;
         $PORT       = $this->plesk_port;

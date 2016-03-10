@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /*
 $Id: nusoap.php,v 1.1 2007-03-10 04:13:45 siddhartha Exp $
 
@@ -433,7 +433,7 @@ class nusoap_base {
 	}
 	// serialize envelope
 	return
-	'<?xml version="1.0" encoding="'.$this->soap_defencoding .'"?'.">".
+	'<?phpxml version="1.0" encoding="'.$this->soap_defencoding .'"?'.">".
 	'<SOAP-ENV:Envelope'.$ns_string.">".
 	$headers.
 	"<SOAP-ENV:Body>".
@@ -571,7 +571,7 @@ function usleepWindows($usec)
 }
 
 ?>
-<?php
+<?phpphp
 /**
 * soap_fault class, allows for creation of faults
 * mainly used for returning faults from deployed functions
@@ -613,7 +613,7 @@ class soap_fault extends nusoap_base {
 			$ns_string .= "\n  xmlns:$k=\"$v\"";
 		}
 		$return_msg =
-			'<?xml version="1.0" encoding="'.$this->soap_defencoding.'"?>'.
+			'<?phpxml version="1.0" encoding="'.$this->soap_defencoding.'"?>'.
 			'<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"'.$ns_string.">\n".
 				'<SOAP-ENV:Body>'.
 				'<SOAP-ENV:Fault>'.
@@ -628,7 +628,7 @@ class soap_fault extends nusoap_base {
 	}
 }
 ?>
-<?php
+<?phpphp
 /**
 * parses an XML Schema, allows access to it's data, other utility methods
 * no validation... yet.
@@ -1298,7 +1298,7 @@ class XMLSchema extends nusoap_base  {
 	}
 }
 ?>
-<?php
+<?phpphp
 /**
 * for creating serializable abstractions of native PHP types
 * NOTE: this is only really used when WSDL is not available.
@@ -1350,7 +1350,7 @@ class soapval extends nusoap_base {
 	}
 }
 ?>
-<?php
+<?phpphp
 /**
 * transport class for sending/receiving data via HTTP and HTTPS
 * NOTE: PHP must be compiled with the CURL extension for HTTPS support
@@ -1877,7 +1877,7 @@ class soap_transport_http extends nusoap_base {
 	}
 }
 ?>
-<?php
+<?phpphp
 /**
 *
 * soap_server allows the user to create a SOAP server
@@ -2524,7 +2524,7 @@ class soap_server extends nusoap_base {
     }
 }
 ?>
-<?php
+<?phpphp
 //Manish Change starts here.
 //include_once($LIB_DIR."config.php");
 //$serviceurl = $SERVICE_URL;
@@ -3034,7 +3034,7 @@ class wsdl extends XMLSchema {
 	*/
 	function serialize()
 	{
-		$xml = '<?xml version="1.0"?><definitions';
+		$xml = '<?phpxml version="1.0"?><definitions';
 		foreach($this->namespaces as $k => $v) {
 			$xml .= " xmlns:$k=\"$v\"";
 		} 
@@ -3529,7 +3529,7 @@ class wsdl extends XMLSchema {
 	} 
 }
 ?>
-<?php
+<?phpphp
 /**
 *
 * soap_parser class parses SOAP XML messages into native PHP values
@@ -4030,7 +4030,7 @@ class soap_parser extends nusoap_base {
 	}
 }
 ?>
-<?php
+<?phpphp
 /**
 *
 * soapclient_new higher level class for easy usage.
@@ -4109,7 +4109,7 @@ class soapclient_new extends nusoap_base  {
 			
 			// instantiate wsdl object and parse wsdl file
 			$this->debug('instantiating wsdl class with doc: '.$endpoint);
-			$this->wsdl =& new wsdl($this->wsdlFile,$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword);
+			$this->wsdl = new wsdl($this->wsdlFile,$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword);
 			$this->debug("wsdl debug: \n".$this->wsdl->debug_str);
 			$this->wsdl->debug_str = '';
 			// catch errors

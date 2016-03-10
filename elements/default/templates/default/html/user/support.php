@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,60 +47,60 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1","tab2","tab3"];
 var t    = ["t1","t2","t3"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['add_ticket']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['add_ticket']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Open_tickets']; ?></div>
+<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Open_tickets']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Closed_tickets']; ?></div>
+<div class="tabs" name='t3' id='t3' onclick="javascript:showTab('tab3', tabs, 't3', t);" onmouseover="javascript:overTab('t3', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Closed_tickets']; ?></div>
 <div class="tab_separator">&nbsp;</div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
-<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
 <tr> 
-    <td width='25%' height='18' class='accountlabDataTD'><?php echo $BL->props->lang['department']; ?></td>
+    <td width='25%' height='18' class='accountlabDataTD'><?phpphp echo $BL->props->lang['department']; ?></td>
     <td class='accountlabDataTD'>
     <select name='topic_id' class='accountlabInput'>
-    <?php foreach ($topics as $topic) { ?>
-    <option value='<?php echo $topic['topic_id']; ?>'><?php echo $topic['topic_name']; ?></option>
-    <?php } ?>
+    <?phpphp foreach ($topics as $topic) { ?>
+    <option value='<?phpphp echo $topic['topic_id']; ?>'><?phpphp echo $topic['topic_name']; ?></option>
+    <?phpphp } ?>
     </select>
     </td>
 </tr>
 <tr> 
-    <td height='18' class='accountlabDataTD' valign='top'><?php echo $BL->props->lang['ticket_subject']; ?></td>
+    <td height='18' class='accountlabDataTD' valign='top'><?phpphp echo $BL->props->lang['ticket_subject']; ?></td>
     <td class='accountlabDataTD'><input type="text" name="ticket_subject" id="ticket_subject" class='accountlabInput' size="50" />  
   </td>
 </tr>
 <tr> 
-    <td height='18' class='accountlabDataTD' valign='top'><?php echo $BL->props->lang['Description']; ?></td>
+    <td height='18' class='accountlabDataTD' valign='top'><?phpphp echo $BL->props->lang['Description']; ?></td>
     <td class='accountlabDataTD'><textarea name='ticket_text' cols='75' rows='10'></textarea></td>
 </tr>
 <tr> 
     <td height='18' class='accountlabDataTD'></td>
     <td class='accountlabDataTD'>
-    <input name='cust_id' type='hidden' value='<?php echo $_SESSION['user_id']; ?>' />
-    <input name='cmd' type='hidden' value='<?php echo $cmd; ?>' />
-    <input name='submit' type='submit' class='accountlabButton' value='<?php echo $BL->props->lang['submit']; ?>' />
+    <input name='cust_id' type='hidden' value='<?phpphp echo $_SESSION['user_id']; ?>' />
+    <input name='cmd' type='hidden' value='<?phpphp echo $cmd; ?>' />
+    <input name='submit' type='submit' class='accountlabButton' value='<?phpphp echo $BL->props->lang['submit']; ?>' />
     </td>
 </tr>
 </table>
 </form>
 </div>
 <div id="tab2" name="tab2" class="tabContent" style="display:none">
-<?php $tickets  = $BL->support_tickets->find(array("WHERE `cust_id`='".$_SESSION['user_id']."' AND `ticket_status`!=3")); include $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
+<?phpphp $tickets  = $BL->support_tickets->find(array("WHERE `cust_id`='".$_SESSION['user_id']."' AND `ticket_status`!=3")); include $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
 </div>
 <div id="tab3" name="tab3" class="tabContent" style="display:none">
-<?php $tickets  = $BL->support_tickets->find(array("WHERE `cust_id`='".$_SESSION['user_id']."' AND `ticket_status`!=0")); include $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
+<?phpphp $tickets  = $BL->support_tickets->find(array("WHERE `cust_id`='".$_SESSION['user_id']."' AND `ticket_status`!=0")); include $BL->props->get_page("templates/".THEMEDIR."/html/user/tickets.php"); ?>
 </div>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

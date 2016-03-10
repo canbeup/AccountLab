@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,19 +47,19 @@
 
 ?>
 
-              <td rowspan="2" width="4" style="background-repeat: repeat-y" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/right_shadow2.gif"); ?>">
-              <img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="4">
+              <td rowspan="2" width="4" style="background-repeat: repeat-y" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/right_shadow2.gif"); ?>">
+              <img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="4">
               </td>
           </tr>
           <tr>
 <!--footer start here-->
             <td colspan="2">
-              <img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/separator.gif"); ?>" alt="" width="680" height="2">
+              <img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/separator.gif"); ?>" alt="" width="680" height="2">
               <table width="680" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="left" class="copyright">
 <!--Your copyright here-->                  
-                     <?php echo $conf['cp_note']; ?>
+                     <?phpphp echo $conf['cp_note']; ?>
 				 </td>
                   <td align="right" class="misc">
                     <a href="#">Privacy Policy</a>  |  <a href="#">User Agreement</a>  |  <a href="#">Copyright Info</a>                  </td>
@@ -69,4 +69,4 @@
  </tr>
         </table>   
   </table>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>

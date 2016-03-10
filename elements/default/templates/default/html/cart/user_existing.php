@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -51,12 +51,12 @@
 <tr> 
 	<td>
     <fieldset class='accountlabFormTABLE'>
-    <legend><b><?php echo $BL->props->lang['customers_sign_in']; ?></b></legend>
+    <legend><b><?phpphp echo $BL->props->lang['customers_sign_in']; ?></b></legend>
 		<table width="100%" border='0' cellspacing='0' cellpadding='0' align='center'>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD' width='40%'>
-		    <?php echo $BL->props->lang['Email']; ?><font color='red'>*</font><br />
-		    <span class="smaller"><?php echo $BL->props->lang['billing_login']; ?></span>
+		    <?phpphp echo $BL->props->lang['Email']; ?><font color='red'>*</font><br />
+		    <span class="smaller"><?phpphp echo $BL->props->lang['billing_login']; ?></span>
 		  </td>
           <td valign='top' class='accountlabPlanDataTD'>
             <input name='existing_email' id='existing_email' type='text' class='accountlabInput' size='45' />
@@ -64,8 +64,8 @@
         </tr>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-			<?php echo $BL->props->lang['Password']; ?><font color='red'>*</font><br />
-		    <span class="smaller"><?php echo $BL->props->lang['billing_pass']; ?></span>
+			<?phpphp echo $BL->props->lang['Password']; ?><font color='red'>*</font><br />
+		    <span class="smaller"><?phpphp echo $BL->props->lang['billing_pass']; ?></span>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
               <input name='existing_password' type='password' class='accountlabInput' id='existing_password' size='10' />

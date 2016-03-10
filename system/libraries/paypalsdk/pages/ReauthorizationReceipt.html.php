@@ -1,4 +1,4 @@
-<?php
+<?phpphp
    
    $authorization_id = $response->getAuthorizationID();
    
@@ -19,7 +19,7 @@
 <table width=400>
 	<tr>
 		<td>Authorization ID:</td>
-		<td><?=$authorization_id?></td>
+		<td><?php=$authorization_id?></td>
 	</tr>
 	
 </table>

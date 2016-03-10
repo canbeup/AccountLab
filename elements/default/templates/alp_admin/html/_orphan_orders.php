@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -55,19 +55,19 @@
     </tr>
     <tr> 
         <td colspan="7" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>           
     <tr> 
-        <td class="text_grey" width="1%"><div align="left"><b>&nbsp;<?php echo $BL->props->lang['Nu']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Name']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Email']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Description']; ?></b></div></td>
-        <td class="text_grey"><div align="right"><b><?php echo $BL->props->lang['Amount']; ?>&nbsp;&nbsp;</b></div></td>
-        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['remote_country']; ?></b></div></td>
+        <td class="text_grey" width="1%"><div align="left"><b>&nbsp;<?phpphp echo $BL->props->lang['Nu']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Name']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Email']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Description']; ?></b></div></td>
+        <td class="text_grey"><div align="right"><b><?phpphp echo $BL->props->lang['Amount']; ?>&nbsp;&nbsp;</b></div></td>
+        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['remote_country']; ?></b></div></td>
         <td class="text_grey"><div align="left"><b></b></div></td>
     </tr>
-    <?php
+    <?phpphp
     $i=0;
     foreach($oOrders as $orphanorder_id=>$temp){
         $temp['remote_country'] = isset($temp['remote_country'])?$temp['remote_country']:"none";
@@ -76,41 +76,41 @@
     ?>
     <tr>
         <td  colspan='7' class='text_grey'>
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
         </td>
     </tr>       
     <tr>
-        <td class='text_grey'><div align='left'>&nbsp;<?php echo ++$i; ?></div></td>
-        <td class='text_grey'><div align='left'><?php echo $temp['name']; ?></div></td>
-        <td class='text_grey'><div align='left'><?php echo $temp['email']; ?></div></td>
-        <td class='text_grey'><div align='left'><?php echo $BL->getFriendlyDesc($temp['desc'],0,$temp['sld'].".".$temp['tld']); ?></div></td>
-        <td class='text_grey'><div align='right'><b><?php echo $BL->toCurrency($temp['gross_amount'],null,1); ?>&nbsp;&nbsp;</b></div></td>
-        <td class='text_grey'><div align='left'><?php echo $co; ?></div></td>
+        <td class='text_grey'><div align='left'>&nbsp;<?phpphp echo ++$i; ?></div></td>
+        <td class='text_grey'><div align='left'><?phpphp echo $temp['name']; ?></div></td>
+        <td class='text_grey'><div align='left'><?phpphp echo $temp['email']; ?></div></td>
+        <td class='text_grey'><div align='left'><?phpphp echo $BL->getFriendlyDesc($temp['desc'],0,$temp['sld'].".".$temp['tld']); ?></div></td>
+        <td class='text_grey'><div align='right'><b><?phpphp echo $BL->toCurrency($temp['gross_amount'],null,1); ?>&nbsp;&nbsp;</b></div></td>
+        <td class='text_grey'><div align='left'><?phpphp echo $co; ?></div></td>
         <td class='text_grey'>
         <div align='right'>
-            <?php if($BL->getCmd("addorder")){ ?>
-            <a href="<?php echo $PHP_SELF; ?>?cmd=orphan_orders&action=view&orphanorder_id=<?php echo $orphanorder_id; ?>">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border='0'>
+            <?phpphp if($BL->getCmd("addorder")){ ?>
+            <a href="<?phpphp echo $PHP_SELF; ?>?cmd=orphan_orders&action=view&orphanorder_id=<?phpphp echo $orphanorder_id; ?>">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border='0'>
             &nbsp;  
             </a>
-            <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_confirm_this_orphan_order']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=orphan_orders&action=add&item_number=<?php echo $temp1['item_number']; ?>'">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>add_order.gif' border='0'>
+            <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_confirm_this_orphan_order']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=orphan_orders&action=add&item_number=<?phpphp echo $temp1['item_number']; ?>'">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>add_order.gif' border='0'>
             </a>
             &nbsp;
-            <?php } ?>
-            <?php if($BL->getCmd("delorder")){ ?>
-            <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_orphan_order']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=orphan_orders&action=del&orphanorder_id=<?php echo $orphanorder_id; ?>'">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Do_you_want_to_delete_this_order']; ?>' border='0'>
+            <?phpphp } ?>
+            <?phpphp if($BL->getCmd("delorder")){ ?>
+            <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_orphan_order']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=orphan_orders&action=del&orphanorder_id=<?phpphp echo $orphanorder_id; ?>'">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_order']; ?>' border='0'>
             </a>
             &nbsp;
-            <?php } ?>
+            <?phpphp } ?>
         </div>
         </td>
     </tr>
-    <?php } ?>
+    <?phpphp } ?>
     <tr> 
         <td colspan="7" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>       
 </table>

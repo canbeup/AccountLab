@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,17 +47,17 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~coupons']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~coupons']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=add_coupon" class="add_link"><?php echo $BL->props->lang['Add_coupon']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=add_coupon" class="add_link"><?phpphp echo $BL->props->lang['Add_coupon']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
-    <?php if($BL->getCmd("act_coupon")){ ?>   
-        <form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
+    <?phpphp if($BL->getCmd("act_coupon")){ ?>   
+        <form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
 				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td class="tdheading" colspan="2">
@@ -66,23 +66,23 @@
                     </tr>
 					<tr> 
                       <td class="text_grey" colspan="2">
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
 					  </td>
                     </tr>
 					  <tr>
 					  <td class="text_grey" width="1%" valign='top'>
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                       </td>
 					  <td class='text_grey'>
  					
 					
                          <div id='form1_label'>
-                         <?php echo $BL->props->lang['enable_cc']; ?>
+                         <?phpphp echo $BL->props->lang['enable_cc']; ?>
                          </div>
                          <div id='form1_field'>
                          <select name='en_cc' class='search' id='en_cc'>
-                            <option value='1' <?php if($conf['en_cc']==1) echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['Yes']; ?></option>
-                            <option value='0' <?php if($conf['en_cc']==0) echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['No']; ?></option>
+                            <option value='1' <?phpphp if($conf['en_cc']==1) echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['Yes']; ?></option>
+                            <option value='0' <?phpphp if($conf['en_cc']==0) echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['No']; ?></option>
                           </select>
                          </div>
 
@@ -90,7 +90,7 @@
 					  </tr>
                     <tr>
                       <td colspan='5' class='text_grey'>
-                      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+                      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>   
                       
                       <tr>
@@ -104,64 +104,64 @@
                          </div>
                          <div id='form1_field'>
                           <input type='hidden' name='cmd' value='act_coupon'>
-                          <input type='submit' name='submit' class='search1' value='<?php echo $BL->props->lang['submit']; ?>'>
+                          <input type='submit' name='submit' class='search1' value='<?phpphp echo $BL->props->lang['submit']; ?>'>
                           </div>
                         
                     
                       </td>
                       </tr>
 					<tr> 
-                      <td class="text_grey" colspan="2"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey" colspan="2"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>									
                   </table>
 				  <br />	
                   </form>
-				  	<?php } ?>
+				  	<?phpphp } ?>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
-                      <td colspan="5" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="5" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-		        <?php if (!count($coupons)) { ?>
+		        <?phpphp if (!count($coupons)) { ?>
 				<tr>
 					<td class="text_grey" colspan="5">
                     	<div align='center'>
-                    	<?php echo $BL->props->lang['No_coupons']; ?>
+                    	<?phpphp echo $BL->props->lang['No_coupons']; ?>
                     	</div>
 					</td>
 				</tr>
-		        <?php } else { ?>			
+		        <?phpphp } else { ?>			
                 <tr>											
-                    <td class='text_grey'>&nbsp;&nbsp;<b><?php echo $BL->props->lang['Nu']; ?></b></td>
-                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['Name']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['discount']; ?></b></div></td>
+                    <td class='text_grey'>&nbsp;&nbsp;<b><?phpphp echo $BL->props->lang['Nu']; ?></b></td>
+                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['Name']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['discount']; ?></b></div></td>
                       <td class='text_grey'>&nbsp;</td>
                       <td class='text_grey' width='10%'></td>
                     </tr>
-                    <?php foreach($coupons as $temp) { ?>
+                    <?phpphp foreach($coupons as $temp) { ?>
 					<tr>
                       <td colspan='5' class='text_grey'>
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>					
                     <tr>
-                      <td class='text_grey'>&nbsp;&nbsp;<?php echo $temp['coupon_id']; ?></td>
-                      <td class='text_grey'><?php echo $temp['coupon_name']; ?></td>
-                      <td class='text_grey'><div align='right'><?php echo $temp['coupon_discount']; ?>%</div></td>
+                      <td class='text_grey'>&nbsp;&nbsp;<?phpphp echo $temp['coupon_id']; ?></td>
+                      <td class='text_grey'><?phpphp echo $temp['coupon_name']; ?></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $temp['coupon_discount']; ?>%</div></td>
                       <td class='text_grey'></td>
                       <td class='text_grey'>
                       <div align='right'>
-                      <?php if($BL->getCmd("edit_coupon")){ ?>   
-                      <a href='<?php echo $PHP_SELF; ?>?cmd=edit_coupon&coupon_id=<?php echo $temp['coupon_id']; ?>' class='text_link'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0'></a>
+                      <?phpphp if($BL->getCmd("edit_coupon")){ ?>   
+                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=edit_coupon&coupon_id=<?phpphp echo $temp['coupon_id']; ?>' class='text_link'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0'></a>
                       &nbsp;
-                      <?php } ?>
-                      <?php if($BL->getCmd("del_coupon")){ ?>   
-                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_coupon']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=del_coupon&coupon_id=<?php echo $temp['coupon_id']; ?>'" class='text_link'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
+                      <?phpphp } ?>
+                      <?phpphp if($BL->getCmd("del_coupon")){ ?>   
+                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_coupon']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=del_coupon&coupon_id=<?phpphp echo $temp['coupon_id']; ?>'" class='text_link'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
                       &nbsp;
-                      <?php } ?>
+                      <?phpphp } ?>
                       </div>
                       </td>
                     </tr>
-                    <?php } ?>
-                    <?php } ?>
+                    <?phpphp } ?>
+                    <?phpphp } ?>
 					<tr> 
                       <td colspan="5" class="text_grey">&nbsp;</td>
                     </tr>			
@@ -171,9 +171,9 @@
 					<tr> 
                       <td class="text_grey" align="center">
 					  <div style="vertical-align:middle">
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif'> <?php echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif'> <?phpphp echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif'> <?php echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif'> <?phpphp echo $BL->props->lang['Delete']; ?>
 					  </div>
 					  </td>
                     </tr>
@@ -182,7 +182,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

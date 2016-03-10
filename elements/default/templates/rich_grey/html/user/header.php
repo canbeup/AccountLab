@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
 <!--Main table. Contains two rows:
 1. top picture, logo and menu
 2. page body with texts etc.
@@ -71,7 +71,7 @@
 								
 									<table style="margin-left: 10px;">
 										<tr>
-											<td width="55"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/company-logo.png"); ?>" width="47" height="47" /></td>
+											<td width="55"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/company-logo.png"); ?>" width="47" height="47" /></td>
 											<td><h1 class="company-name">Hosting Company</h1></td>
 										</tr>
 									</table>
@@ -113,7 +113,7 @@
 											<td id="content" valign="top">
 <div id="masthead"> 
   <h1 id="siteName">
-    <?php 
+    <?phpphp 
     if(!empty($conf['company_name']))echo $conf['company_name'];
     else echo $BL->props->lang['accountlabplus']; 
     ?>
@@ -121,4 +121,4 @@
   <!-- end globalNav --> 
 </div> 
 <!-- end masthead --> 
-<?php include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
+<?phpphp include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>

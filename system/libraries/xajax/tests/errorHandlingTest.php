@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 $xajax = new xajax();
@@ -23,7 +23,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Error Handling Test | xajax Tests</title>
-<?php $xajax->printJavascript("../") ?>
+<?phpphp $xajax->printJavascript("../") ?>
 </head>
 <body>
 

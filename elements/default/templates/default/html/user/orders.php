@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,16 +52,16 @@
     <td>
     <table width='100%' border='0' cellspacing='0' cellpadding='0'>
         <tr> 
-          <td width='1%' class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Nu']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Domain']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Plan']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Status']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['Order_Date']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['next_bill_date']; ?></td>
-          <td class='accountlabPlanDataHTD'><?php echo $BL->props->lang['IP']; ?></td>
+          <td width='1%' class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Nu']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Domain']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Plan']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Status']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['Order_Date']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['next_bill_date']; ?></td>
+          <td class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['IP']; ?></td>
           <td class='accountlabPlanDataHTD'></td>
         </tr>
-        <?php
+        <?phpphp
         $bgcolor= "accountlabDataTD";
         $temp_sub_id= 0;
         foreach ($orders as $key => $value)
@@ -74,18 +74,18 @@
                     $bgcolor= "accountlabAltDataTD";
         ?>
          <tr> 
-          <td class='<?php echo $bgcolor; ?>'><?php echo $conf['order_prefix'].$value['sub_id'].$conf['order_suffix']; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $value['domain_name']; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->getFriendlyName($value['product_id']); ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->props->lang[$value['cust_status']]; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->fDate($value['sign_date']); ?></td>
-          <td class='<?php echo $bgcolor; ?>'><?php echo $BL->fDate($value['rec_next_date']); ?></td>          
-          <td class='<?php echo $bgcolor; ?>'><?php echo $value['remote_ip']; ?></td>
-          <td class='<?php echo $bgcolor; ?>'><div align='right'>
-          <a class='accountlabPlanLink' href='<?php echo $PHP_SELF; ?>?cmd=viewOrder&sub_id=<?php echo $value['sub_id']; ?>'><?php echo $BL->props->lang['View']; ?></a>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $conf['order_prefix'].$value['sub_id'].$conf['order_suffix']; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $value['domain_name']; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->getFriendlyName($value['product_id']); ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->props->lang[$value['cust_status']]; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->fDate($value['sign_date']); ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $BL->fDate($value['rec_next_date']); ?></td>          
+          <td class='<?phpphp echo $bgcolor; ?>'><?phpphp echo $value['remote_ip']; ?></td>
+          <td class='<?phpphp echo $bgcolor; ?>'><div align='right'>
+          <a class='accountlabPlanLink' href='<?phpphp echo $PHP_SELF; ?>?cmd=viewOrder&sub_id=<?phpphp echo $value['sub_id']; ?>'><?phpphp echo $BL->props->lang['View']; ?></a>
           </div></td>
         </tr>
-        <?php
+        <?phpphp
                 $temp_sub_id= $value['sub_id'];
             }
         }

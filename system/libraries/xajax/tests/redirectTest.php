@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 function redirect()
@@ -17,7 +17,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Redirect Test | xajax Tests</title>
-<?php $xajax->printJavascript("../") ?>
+<?phpphp $xajax->printJavascript("../") ?>
 </head>
 <body>
 

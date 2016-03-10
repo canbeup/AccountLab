@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,41 +48,41 @@
 ?>
 
 <tbody name='extra_user_info_sec' id='extra_user_info_sec' class='off'>
-<?php if($conf['ask_login_info']==1){ ?>
+<?phpphp if($conf['ask_login_info']==1){ ?>
 <tr> 
     <td>
     <fieldset class='accountlabFormTABLE'>
-    <legend><b><?php echo $BL->props->lang['desired_hosting_account']; ?></b></legend>
+    <legend><b><?phpphp echo $BL->props->lang['desired_hosting_account']; ?></b></legend>
 	<table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
         <tr> 
           <td  width='40%' valign='top' class='accountlabPlanDataTD'>
-            <?php echo $BL->props->lang['Username']; ?><br>
-		    <span class="smaller"><?php echo $BL->props->lang['domain_login']; ?></span>
+            <?phpphp echo $BL->props->lang['Username']; ?><br>
+		    <span class="smaller"><?phpphp echo $BL->props->lang['domain_login']; ?></span>
 		  </td>
           <td valign='top' class='accountlabPlanDataTD'>
-              <input name='dom_user' id='dom_user' type='text' class='accountlabInput' value='<?php echo strtolower($BL->utils->random_password()); ?>' size='10' />
+              <input name='dom_user' id='dom_user' type='text' class='accountlabInput' value='<?phpphp echo strtolower($BL->utils->random_password()); ?>' size='10' />
           </td>
         </tr>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-            <?php echo $BL->props->lang['Password']; ?><br>
-		    <span class="smaller"><?php echo $BL->props->lang['domain_pass']; ?></span>
+            <?phpphp echo $BL->props->lang['Password']; ?><br>
+		    <span class="smaller"><?phpphp echo $BL->props->lang['domain_pass']; ?></span>
            </td>
           <td valign='top' class='accountlabPlanDataTD'>
-              <input name='dom_pass' id='dom_pass' type='text' class='accountlabInput' size='10' value='<?php echo $BL->utils->random_password(); ?>' />
+              <input name='dom_pass' id='dom_pass' type='text' class='accountlabInput' size='10' value='<?phpphp echo $BL->utils->random_password(); ?>' />
           </td>
         </tr>      		
 		</table>
     </fieldset>
 	</td>
 </tr>
-<?php } ?>
-<?php if($conf['en_dt']==1 || $conf['en_cc']==1) { ?>
+<?phpphp } ?>
+<?phpphp if($conf['en_dt']==1 || $conf['en_cc']==1) { ?>
 </tr>
 	<tr> 
 	<td>
     <fieldset class='accountlabFormTABLE'>
-    <legend><b><?php echo $BL->props->lang['if_have_disc_token']; ?></b></legend>
+    <legend><b><?phpphp echo $BL->props->lang['if_have_disc_token']; ?></b></legend>
     <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
         <tr> 
           <td  width='40%' valign='top' class='accountlabPlanDataTD'>
@@ -96,5 +96,5 @@
     </fieldset>
 </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 </tbody>

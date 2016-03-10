@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -83,7 +83,7 @@ class googlecheckout
         {
             $this->_POST1['item_number'] = $_POST['force_inv_no'];
         }
-        $str = '<?xml version="1.0" encoding="UTF-8" ?> 
+        $str = '<?phpxml version="1.0" encoding="UTF-8" ?> 
         <checkout-shopping-cart xmlns="http://checkout.google.com/schema/2">
         <shopping-cart>
         <items>

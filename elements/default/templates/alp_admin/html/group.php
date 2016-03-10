@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=groups" class="add_link"><?php echo $BL->props->lang['~groups']; ?></a></div>
+      <div class="tabs" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=groups" class="add_link"><?phpphp echo $BL->props->lang['~groups']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
+      <div class="tabs2" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,125 +63,125 @@
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
 					<table width='100%' border='0' cellspacing='0' cellpadding='0'>
 		    			<tr> 
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['group_name']; ?>
+						<?phpphp echo $BL->props->lang['group_name']; ?>
 						</div>
 						<div id="form1_field">
-                            <input type='text' name='group_name' class='search' size='40' value='<?php if($cmd=="edit_group")echo $group['group_name']; ?>' />
+                            <input type='text' name='group_name' class='search' size='40' value='<?phpphp if($cmd=="edit_group")echo $group['group_name']; ?>' />
 						</div>
 						</td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr> 
                         <td class='text_grey' valign='top'>
                         <div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey' valign='top'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['group_desc']; ?>
+						<?phpphp echo $BL->props->lang['group_desc']; ?>
 							</div>
 							<div id="form1_field">
-                            <textarea name='group_desc' cols='55' rows='10'><?php if($cmd=="edit_group")echo $group['group_desc']; ?></textarea>
+                            <textarea name='group_desc' cols='55' rows='10'><?phpphp if($cmd=="edit_group")echo $group['group_desc']; ?></textarea>
                           </div>
                          </td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['group_require_domain']; ?>
+						<?phpphp echo $BL->props->lang['group_require_domain']; ?>
 						</div>
 						<div id="form1_field">
                          <select name='group_require_domain' class='search'>
-						<option value='1' <?php if($cmd=="edit_group" && $group['group_require_domain']==1)echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['Yes']; ?></option>
-						<option value='0' <?php if($cmd=="edit_group" && $group['group_require_domain']==0)echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['No']; ?></option>
+						<option value='1' <?phpphp if($cmd=="edit_group" && $group['group_require_domain']==1)echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['Yes']; ?></option>
+						<option value='0' <?phpphp if($cmd=="edit_group" && $group['group_require_domain']==0)echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['No']; ?></option>
 						</select>
                           </div>
                           </td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?php echo $BL->props->lang['show_in_order_page']; ?>
+						<?phpphp echo $BL->props->lang['show_in_order_page']; ?>
 						</div>
 						<div id="form1_field">
                         <select name='group_active' class='search'>                           
-						<option value='0' <?php if($cmd=="edit_group" && $group['group_active']==0)echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['No']; ?></option>						
-						<option value='1' <?php if($cmd=="edit_group" && $group['group_active']==1 || $cmd == "add_group")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['Yes']; ?></option>
+						<option value='0' <?phpphp if($cmd=="edit_group" && $group['group_active']==0)echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['No']; ?></option>						
+						<option value='1' <?phpphp if($cmd=="edit_group" && $group['group_active']==1 || $cmd == "add_group")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['Yes']; ?></option>
                         </select>
                           </div></td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
 
 
                       <tr> 
                         <td class='text_grey' valign="top"><div align='center'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
                         <td class='text_grey' valign="top">
 						<div id="form1_label">
-						<?php echo $BL->props->lang['~plans']; ?>
+						<?phpphp echo $BL->props->lang['~plans']; ?>
 						</div>
 						<div id="form1_field">
                         <table width='100%' border='0' cellspacing='1' cellpadding='1'>
-						<?php foreach($products as $p) {?>
+						<?phpphp foreach($products as $p) {?>
 							<tr>
                             <td width='10%'>
-							<input type='checkbox' name='products[]' class='search' value='<?php echo $p['plan_price_id']; ?>' <?php echo ($cmd=="edit_group" && array_search($p['plan_price_id'],$available_products)!==false)?"checked":""; ?>/>
+							<input type='checkbox' name='products[]' class='search' value='<?phpphp echo $p['plan_price_id']; ?>' <?phpphp echo ($cmd=="edit_group" && array_search($p['plan_price_id'],$available_products)!==false)?"checked":""; ?>/>
 							</td>
                             <td>
-						    <?php echo $BL->getFriendlyName($p['plan_name']); ?>
+						    <?phpphp echo $BL->getFriendlyName($p['plan_name']); ?>
 							</td>
                             </tr>
-						<?php } ?>
+						<?phpphp } ?>
 						</table>
                           </div></td>
                       </tr>
                                        
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                                            
@@ -192,11 +192,11 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                         	<input name='cmd' type='hidden' value='<?php echo $cmd; ?>' />
-							<?php if($cmd=="edit_group"){ ?>
-                            <input name='group_id' type='hidden' value='<?php echo $group['group_id']; ?>' />
-                            <?php } ?>
-                            <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edit_group") echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+                         	<input name='cmd' type='hidden' value='<?phpphp echo $cmd; ?>' />
+							<?phpphp if($cmd=="edit_group"){ ?>
+                            <input name='group_id' type='hidden' value='<?phpphp echo $group['group_id']; ?>' />
+                            <?phpphp } ?>
+                            <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edit_group") echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -208,7 +208,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

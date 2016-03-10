@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,25 +47,25 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $status." ".$BL->props->lang['^invoices']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $status." ".$BL->props->lang['^invoices']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=manual_payments" class="add_link"><?php echo $BL->props->lang['~manual_payments']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=manual_payments" class="add_link"><?phpphp echo $BL->props->lang['~manual_payments']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
     <div id="display_list">
-    <?php include_once $BL->props->get_page("templates/alp_admin/html/_invoices.php"); ?>
+    <?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_invoices.php"); ?>
 	<table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">
 	<tr> 
     <td class="text_grey" align="center">
     <div style="vertical-align:middle">
-    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>pdf.gif' alt='<?php echo $BL->props->lang['PDF']; ?>' border='0' /> <?php echo $BL->props->lang['PDF']; ?>
+    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>pdf.gif' alt='<?phpphp echo $BL->props->lang['PDF']; ?>' border='0' /> <?phpphp echo $BL->props->lang['PDF']; ?>
     &nbsp;
-    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border="0" /> <?php echo $BL->props->lang['Edit']; ?>
+    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border="0" /> <?phpphp echo $BL->props->lang['Edit']; ?>
     &nbsp;
-    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' border="0" /> <?php echo $BL->props->lang['Delete']; ?>
+    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' border="0" /> <?phpphp echo $BL->props->lang['Delete']; ?>
     </div>
     </td>
     </tr>
@@ -74,35 +74,35 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr> 
     <td class='text_grey'>
-      <input type='text' name='search_term' id='search_term' value='<?php echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' size='20' class='search'>
-      <input type='hidden' name='cmd' id='cmd' value='<?php echo $cmd; ?>' />
-      <input type='hidden' name='status' id='status' value='<?php echo $status; ?>' />
-      <input type='hidden' name='id' id='id' value='<?php echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
-      <input type='submit' name='submit1' class='search1' value='<?php echo $BL->props->lang['search']; ?>'>
+      <input type='text' name='search_term' id='search_term' value='<?phpphp echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' size='20' class='search'>
+      <input type='hidden' name='cmd' id='cmd' value='<?phpphp echo $cmd; ?>' />
+      <input type='hidden' name='status' id='status' value='<?phpphp echo $status; ?>' />
+      <input type='hidden' name='id' id='id' value='<?phpphp echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
+      <input type='submit' name='submit1' class='search1' value='<?phpphp echo $BL->props->lang['search']; ?>'>
     </td>
 </tr>      
 </table>
 </form> 
 <br />
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
-<?php foreach ($BL->props->invoice_status as $key => $val) { ?>
+<?phpphp foreach ($BL->props->invoice_status as $key => $val) { ?>
 <tr>
     <td class='text_grey'>
-    <a href="<?php echo $PHP_SELF; ?>?cmd=viewinvoice<?php echo isset($BL->REQUEST['id'])?("&id=".$BL->REQUEST['id']):""; ?>&status=<?php echo $val; ?>"><b><?php echo $val. " ";  echo $BL->props->lang['^invoices']." (".count($BL->dbL->executeSELECT("SELECT * FROM `invoices` WHERE `status`='".$val."'")).")"; ?></b></a>
+    <a href="<?phpphp echo $PHP_SELF; ?>?cmd=viewinvoice<?phpphp echo isset($BL->REQUEST['id'])?("&id=".$BL->REQUEST['id']):""; ?>&status=<?phpphp echo $val; ?>"><b><?phpphp echo $val. " ";  echo $BL->props->lang['^invoices']." (".count($BL->dbL->executeSELECT("SELECT * FROM `invoices` WHERE `status`='".$val."'")).")"; ?></b></a>
     </td>
 </tr>
 <tr> 
     <td class='text_grey'>
-    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
     </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 </table>
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

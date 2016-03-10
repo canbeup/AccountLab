@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,17 +47,17 @@
 
 ?>
 
-<?php foreach ($pay->_POST1 as $k => $v){ ?>    
-  <input type="hidden" name="<?php echo $k; ?>" id="<?php echo $k; ?>" value="<?php echo $v; ?>" />
-<?php } ?>
+<?phpphp foreach ($pay->_POST1 as $k => $v){ ?>    
+  <input type="hidden" name="<?phpphp echo $k; ?>" id="<?phpphp echo $k; ?>" value="<?phpphp echo $v; ?>" />
+<?phpphp } ?>
 <div align="center">
 <br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
 <table border="0" width="100%" cellpadding="4" cellspacing="0" align="center" class='accountlabFormTABLE'>
 	<tr>
-		<td height="20" align="center" class='accountlabColumnTD'><?php echo $BL->props->lang['Please_wait']; ?></td>
+		<td height="20" align="center" class='accountlabColumnTD'><?phpphp echo $BL->props->lang['Please_wait']; ?></td>
 	</tr>
 	<tr>
-		<td height="17" align="center" class='accountlabSeparatorTD'><?php echo $BL->props->lang['redirecting'] . "<br />" . $BL->props->lang['click_here']; ?></td>
+		<td height="17" align="center" class='accountlabSeparatorTD'><?phpphp echo $BL->props->lang['redirecting'] . "<br />" . $BL->props->lang['click_here']; ?></td>
 	</tr>
 	<tr>
 		<td height="17" align="center" class='accountlabSeparatorTD'><div name='click_btn' id='click_btn'>&#160;</div></td>

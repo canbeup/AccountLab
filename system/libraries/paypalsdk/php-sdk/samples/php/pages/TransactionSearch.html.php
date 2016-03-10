@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * Default startDateStr to yesterday date and endtDateStr to today date in mm/dd/yyyy format
  */
@@ -32,7 +32,7 @@ if (isset($_POST['endDateStr'])) {
                     <td class="header">
                         StartDate:</td>
                     <td>
-                        <input type="text" name="startDateStr" maxlength="10" size="10" value="<?php echo $start_date_str ?>" />
+                        <input type="text" name="startDateStr" maxlength="10" size="10" value="<?phpphp echo $start_date_str ?>" />
                     </td>
                     <td>
                         (Required)</td>
@@ -47,7 +47,7 @@ if (isset($_POST['endDateStr'])) {
                     <td class="header">
                         EndDate:</td>
                     <td>
-                        <input type="text" name="endDateStr" maxlength="10" size="10"  value="<?php echo $end_date_str ?>" />
+                        <input type="text" name="endDateStr" maxlength="10" size="10"  value="<?phpphp echo $end_date_str ?>" />
                     </td>
                     <td>
                     </td>

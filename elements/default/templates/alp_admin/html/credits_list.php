@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,87 +47,87 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td colspan="4" class="tdheading">
-					  <b>&nbsp;<?php echo $BL->props->lang['~credits']; ?></b>
+					  <b>&nbsp;<?phpphp echo $BL->props->lang['~credits']; ?></b>
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-            		<form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
-            		<?php if (!count($allCustomers)) { ?>
+            		<form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
+            		<?phpphp if (!count($allCustomers)) { ?>
             				<tr>
             					<td class="text_grey" colspan="4">
                                 	<div align='center'>
-                                	<?php echo $BL->props->lang['No_customers']; ?>
+                                	<?phpphp echo $BL->props->lang['No_customers']; ?>
                                 	</div>
             					</td>
             				</tr>
-            		<?php } else { ?>														
+            		<?phpphp } else { ?>														
                     <tr>
 					<td class='text_grey' width='1%'></td>
-					<td class='text_grey'><b><?php echo $BL->props->lang['Name']; ?></b></td>
-					<td class='text_grey'><b><?php echo $BL->props->lang['credit']." (".$conf['symbol'].")"; ?></b></td>
+					<td class='text_grey'><b><?phpphp echo $BL->props->lang['Name']; ?></b></td>
+					<td class='text_grey'><b><?phpphp echo $BL->props->lang['credit']." (".$conf['symbol'].")"; ?></b></td>
 					<td class='text_grey'></td>
 	  				</tr>
-                    <?php foreach($allCustomers as $temp) { ?>
+                    <?phpphp foreach($allCustomers as $temp) { ?>
 					<tr>
                       <td colspan='4' class='text_grey'>
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>					
 					<tr>
 					<td class='text_grey'></td>
-					<td class='text_grey'><a href='<?php echo $PHP_SELF."?cmd=editcustomers&id=".$temp['id']; ?>'><?php echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></td>
-					<td class='text_grey'><input type="text" name="credit[<?php echo $temp['id']; ?>]" class='search' value="<?php echo $temp['credit']; ?>" size="10"></td>
+					<td class='text_grey'><a href='<?phpphp echo $PHP_SELF."?cmd=editcustomers&id=".$temp['id']; ?>'><?phpphp echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></td>
+					<td class='text_grey'><input type="text" name="credit[<?phpphp echo $temp['id']; ?>]" class='search' value="<?phpphp echo $temp['credit']; ?>" size="10"></td>
 					<td class='text_grey'>
-							  <select name="credit_type[<?php echo $temp['id']; ?>]" size="1" class='search'>
-							    <option value="1" <?php if($temp['credit_type'] == 1)echo "selected"; ?>><?php echo $BL->props->lang['credit']; ?></option>
-							    <option value="0" <?php if($temp['credit_type'] == 0)echo "selected"; ?>><?php echo $BL->props->lang['debit']; ?></option>
+							  <select name="credit_type[<?phpphp echo $temp['id']; ?>]" size="1" class='search'>
+							    <option value="1" <?phpphp if($temp['credit_type'] == 1)echo "selected"; ?>><?phpphp echo $BL->props->lang['credit']; ?></option>
+							    <option value="0" <?phpphp if($temp['credit_type'] == 0)echo "selected"; ?>><?phpphp echo $BL->props->lang['debit']; ?></option>
 							  </select>
  					</td>
                     </tr>
 					<tr>
                       <td colspan='4' class='text_grey' height="2">
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
 					  </td>
                     </tr>
 					
 					<tr>
 					<td class='text_grey'></td>
 					<td class='text_grey'></td>
-					<td class='text_grey'><b><?php echo $BL->props->lang['reason']; ?></b></td>
+					<td class='text_grey'><b><?phpphp echo $BL->props->lang['reason']; ?></b></td>
 					<td class='text_grey'>
-						<input name='credit_desc[<?php echo $temp['id']; ?>]' type='text' class='search' size='30' value='<?php if(!empty($temp['credit_desc']))echo $temp['credit_desc']; ?>' />
+						<input name='credit_desc[<?phpphp echo $temp['id']; ?>]' type='text' class='search' size='30' value='<?phpphp if(!empty($temp['credit_desc']))echo $temp['credit_desc']; ?>' />
  					</td>
                     </tr>					
 					
-                     <?php } } ?>
+                     <?phpphp } } ?>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>			
 					<tr> 
                       <td colspan="4" class="text_grey">
 					  <div align="center">
-							<input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
-					        <input type='submit' class='search1' name='update' value='<?php echo $BL->props->lang['Update']; ?>' />
+							<input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
+					        <input type='submit' class='search1' name='update' value='<?phpphp echo $BL->props->lang['Update']; ?>' />
 							</div>
 					  </td>
                     </tr>
 			</form>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>			
                   </table>
 	</div>
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

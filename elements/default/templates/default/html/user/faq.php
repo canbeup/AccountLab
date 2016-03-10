@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,25 +47,25 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1"];
 var t    = ["t1"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['FAQs']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['FAQs']; ?></div>
 <div class="tab_separator">&nbsp;</div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-<?php if(count($Faqgroups)){ ?>
+<?phpphp if(count($Faqgroups)){ ?>
 <tr>
     <td>
-    <b><?php echo $BL->props->lang['faqgroup_name']; ?>: </b>
-    <select name='faqgroup_id' id='faqgroup_id' class='search' onchange="javascript:showFaqGroup('<?php echo $page; ?>',this.options[this.selectedIndex].value);">
-    <?php foreach($Faqgroups as $faqgroup){ ?>
-    <option value='<?php echo $faqgroup['faqgroup_id']; ?>' <?php if(isset($BL->REQUEST['faqgroup_id']) && $BL->REQUEST['faqgroup_id']==$faqgroup['faqgroup_id'])echo "selected"; ?> ><?php echo $faqgroup['faqgroup_name']; ?></option>
-    <?php } ?>
+    <b><?phpphp echo $BL->props->lang['faqgroup_name']; ?>: </b>
+    <select name='faqgroup_id' id='faqgroup_id' class='search' onchange="javascript:showFaqGroup('<?phpphp echo $page; ?>',this.options[this.selectedIndex].value);">
+    <?phpphp foreach($Faqgroups as $faqgroup){ ?>
+    <option value='<?phpphp echo $faqgroup['faqgroup_id']; ?>' <?phpphp if(isset($BL->REQUEST['faqgroup_id']) && $BL->REQUEST['faqgroup_id']==$faqgroup['faqgroup_id'])echo "selected"; ?> ><?phpphp echo $faqgroup['faqgroup_name']; ?></option>
+    <?phpphp } ?>
     </select>
     </td>
 </tr>
@@ -73,19 +73,19 @@ var t    = ["t1"];
     <td height="5" class="accountlabFieldCaptionTD"></td>
 </tr>
 <tr>
-    <td><?php echo $BL->REQUEST['faqgroup_desc']; ?></td>
+    <td><?phpphp echo $BL->REQUEST['faqgroup_desc']; ?></td>
 </tr>
 <tr>
     <td height="5" class="accountlabFieldCaptionTD"><hr></td>
 </tr>
-<?php } ?>
-<?php foreach($Faqs as $faq){ ?>
+<?phpphp } ?>
+<?phpphp foreach($Faqs as $faq){ ?>
 <tr>
     <td>
-    <a href='#<?php echo $faq['faq_id']; ?>' class='accountlabPlanLink'><?php echo $faq['questions']; ?></a>
+    <a href='#<?phpphp echo $faq['faq_id']; ?>' class='accountlabPlanLink'><?phpphp echo $faq['questions']; ?></a>
     </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 <tr>
     <td height="5" class="accountlabFieldCaptionTD"><hr></td>
 </tr>
@@ -94,17 +94,17 @@ var t    = ["t1"];
 <tr>
     <td height="5" class="accountlabFieldCaptionTD"></td>
 </tr>
-<?php foreach($Faqs as $faq){ ?>
+<?phpphp foreach($Faqs as $faq){ ?>
 <tr>
     <td class='accountlabDataTD'>
-    <a name='<?php echo $faq['faq_id']; ?>'></a><b><?php echo $faq['questions']; ?></b><BR /><BR /><?php echo $faq['answers']; ?><BR /><BR />[<a href='#top' class='accountlabPlanLink'><?php echo $BL->props->lang['top']; ?></a>]
+    <a name='<?phpphp echo $faq['faq_id']; ?>'></a><b><?phpphp echo $faq['questions']; ?></b><BR /><BR /><?phpphp echo $faq['answers']; ?><BR /><BR />[<a href='#top' class='accountlabPlanLink'><?phpphp echo $BL->props->lang['top']; ?></a>]
     </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 </table>
 </div>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

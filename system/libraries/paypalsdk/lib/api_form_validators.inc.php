@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * Form element validation callbacks for the API Profile manager
  *

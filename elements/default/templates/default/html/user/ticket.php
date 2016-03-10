@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,97 +47,97 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1","tab2"];
 var t    = ["t1","t2"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['ticket_no']." ".$REQUEST['ticket_id']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['ticket_no']." ".$REQUEST['ticket_id']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['reply']; ?></div>
+<div class="tabs" name='t2' id='t2' onclick="javascript:showTab('tab2', tabs, 't2', t);" onmouseover="javascript:overTab('t2', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['reply']; ?></div>
 <div class="tab_separator">&nbsp;</div>
 
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
 <tr> 
-    <td width='10%'><?php echo $BL->props->lang['department']; ?>:</td>
-    <td><?php echo $topic['topic_name']; ?></td>
+    <td width='10%'><?phpphp echo $BL->props->lang['department']; ?>:</td>
+    <td><?phpphp echo $topic['topic_name']; ?></td>
 </tr>
 <tr> 
-    <td><?php echo $BL->props->lang['Date']; ?>:</td>
-    <td><?php echo $BL->fDate($ticket['ticket_date'],' H:i:s'); ?></td>
+    <td><?phpphp echo $BL->props->lang['Date']; ?>:</td>
+    <td><?phpphp echo $BL->fDate($ticket['ticket_date'],' H:i:s'); ?></td>
 </tr>
 <tr> 
-    <td><?php echo $BL->props->lang['Status']; ?>:</td>
-    <td><?php echo $BL->props->ticket_status[$ticket['ticket_status']]; ?></td>
+    <td><?phpphp echo $BL->props->lang['Status']; ?>:</td>
+    <td><?phpphp echo $BL->props->ticket_status[$ticket['ticket_status']]; ?></td>
 </tr>
 <tr> 
-    <td><?php echo $BL->props->lang['ticket_subject']; ?>:</td>
-    <td><?php echo $ticket['ticket_subject']; ?></td>
+    <td><?phpphp echo $BL->props->lang['ticket_subject']; ?>:</td>
+    <td><?phpphp echo $ticket['ticket_subject']; ?></td>
 </tr>
 <tr> 
     <td colspan='2'><hr></td>
 </tr>
 <tr> 
-    <td colspan='2'><?php echo $ticket['ticket_text']; ?></td>
+    <td colspan='2'><?phpphp echo $ticket['ticket_text']; ?></td>
 </tr>
 <tr> 
     <td colspan='2'><hr></td>
 </tr>
 <tr>
     <td colspan='2'>
-    <?php if ($ticket['ticket_status'] != 3){ ?>
-    <a class='accountlabPlanLink' href='<?php echo $PHP_SELF; ?>?cmd=closeTicket&ticket_id=<?php echo $REQUEST['ticket_id']; ?>'><?php echo $BL->props->lang['close_this_ticket']; ?></a>
-    <?php }else{ ?>
-    <a class='accountlabPlanLink' href='<?php echo $PHP_SELF; ?>?cmd=openTicket&ticket_id=<?php echo $REQUEST['ticket_id']; ?>'><?php echo $BL->props->lang['re-open']; ?></a>
-    <?php } ?>
+    <?phpphp if ($ticket['ticket_status'] != 3){ ?>
+    <a class='accountlabPlanLink' href='<?phpphp echo $PHP_SELF; ?>?cmd=closeTicket&ticket_id=<?phpphp echo $REQUEST['ticket_id']; ?>'><?phpphp echo $BL->props->lang['close_this_ticket']; ?></a>
+    <?phpphp }else{ ?>
+    <a class='accountlabPlanLink' href='<?phpphp echo $PHP_SELF; ?>?cmd=openTicket&ticket_id=<?phpphp echo $REQUEST['ticket_id']; ?>'><?phpphp echo $BL->props->lang['re-open']; ?></a>
+    <?phpphp } ?>
     </td>
 </tr>
 <tr> 
-    <td height='22' colspan='2' class='accountlabPlanDataHTD'><?php echo $BL->props->lang['replies']; ?></td>
+    <td height='22' colspan='2' class='accountlabPlanDataHTD'><?phpphp echo $BL->props->lang['replies']; ?></td>
 </tr>
-<?php
+<?phpphp
 $bgcolor= "accountlabDataTD";
 foreach ($replies as $reply)
 {
 ?>
 <tr> 
-    <td><?php echo $BL->props->lang['reply_by']; ?>:</td><td><?php echo $reply['reply_by']; ?></td>
+    <td><?phpphp echo $BL->props->lang['reply_by']; ?>:</td><td><?phpphp echo $reply['reply_by']; ?></td>
 </tr>
 <tr> 
-    <td><?php echo $BL->props->lang['Date']; ?>:</td><td><?php echo $BL->fDate($reply['reply_date'],' H:i:s'); ?></td>
+    <td><?phpphp echo $BL->props->lang['Date']; ?>:</td><td><?phpphp echo $BL->fDate($reply['reply_date'],' H:i:s'); ?></td>
 </tr>
 <tr> 
     <td colspan='2'>&nbsp;</td>
 </tr>
 <tr> 
-    <td colspan='2'><?php echo $reply['reply_text']; ?></td>
+    <td colspan='2'><?phpphp echo $reply['reply_text']; ?></td>
 </tr>
 <tr> 
     <td colspan='2'><hr></td>
 </tr>
-<?php
+<?phpphp
 }
 ?>
 </table>
 </div>
 <div id="tab2" name="tab2" class="tabContent" style="display:none">
-<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-<?php if ($ticket['ticket_status'] != 3){ ?>
+<?phpphp if ($ticket['ticket_status'] != 3){ ?>
 <tr>
     <td width='100%'><textarea name='reply_text' cols='75' rows='10'></textarea></td>
 </tr>
 <tr> 
     <td>
-    <input name='ticket_id' type='hidden' value='<?php echo $REQUEST['ticket_id']; ?>' />
-    <input name='cmd' type='hidden' value='<?php echo $cmd; ?>' />
-    <input name='submit' type='submit' class='accountlabButton' value='<?php echo $BL->props->lang['submit']; ?>' />
+    <input name='ticket_id' type='hidden' value='<?phpphp echo $REQUEST['ticket_id']; ?>' />
+    <input name='cmd' type='hidden' value='<?phpphp echo $cmd; ?>' />
+    <input name='submit' type='submit' class='accountlabButton' value='<?phpphp echo $BL->props->lang['submit']; ?>' />
     </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 </table>
 </form>
 </div>
@@ -145,4 +145,4 @@ foreach ($replies as $reply)
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

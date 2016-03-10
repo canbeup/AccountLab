@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,77 +50,77 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
     <tr> 
         <form name='form_orderby' id='form_orderby' action="admin.php" method="post">
-        <input type='hidden' name='search_term' id='search_term' value='<?php echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
-        <input type='hidden' name='cmd' id='cmd' value='<?php echo $cmd; ?>' />
+        <input type='hidden' name='search_term' id='search_term' value='<?phpphp echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
+        <input type='hidden' name='cmd' id='cmd' value='<?phpphp echo $cmd; ?>' />
         <td colspan="8" class="tdheading" align='right'>
-            <?php if($cmd=="viewcustomers"){ ?>
-            <?php echo $BL->props->lang['ORDER_BY']; ?>
+            <?phpphp if($cmd=="viewcustomers"){ ?>
+            <?phpphp echo $BL->props->lang['ORDER_BY']; ?>
             <select name="orderby2" id="orderby2" class="search" onchange="javascript:this.form.submit();">
-            <option value='DESC' <?php if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?php echo $BL->props->lang['DESC']; ?></option>
-            <option value='ASC' <?php if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?php echo $BL->props->lang['ASC']; ?></option>
+            <option value='DESC' <?phpphp if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['DESC']; ?></option>
+            <option value='ASC' <?phpphp if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['ASC']; ?></option>
             </select>
-            <?php } ?>
-            &nbsp;<?php echo isset($pagination)?$pagination:""; ?>
+            <?phpphp } ?>
+            &nbsp;<?phpphp echo isset($pagination)?$pagination:""; ?>
         </td>
         </form>
     </tr>
     <tr> 
         <td colspan="8" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>
     <tr> 
-        <td class="text_grey" width="1%"><b>&nbsp;<?php echo $BL->props->lang['Nu']; ?></b></td>
-        <td class="text_grey" colspan="3"><b><?php echo $BL->props->lang['Name']; ?></b></td>
-        <td class="text_grey"><b><?php echo $BL->props->lang['Country']; ?></b></td>
-        <td class="text_grey"><div align='right'><b><?php echo $BL->props->lang['total_paid']; ?></b></div></td>
-        <td class="text_grey"><div align='right'><b><?php echo $BL->props->lang['total_pending']; ?></b></div></td>
+        <td class="text_grey" width="1%"><b>&nbsp;<?phpphp echo $BL->props->lang['Nu']; ?></b></td>
+        <td class="text_grey" colspan="3"><b><?phpphp echo $BL->props->lang['Name']; ?></b></td>
+        <td class="text_grey"><b><?phpphp echo $BL->props->lang['Country']; ?></b></td>
+        <td class="text_grey"><div align='right'><b><?phpphp echo $BL->props->lang['total_paid']; ?></b></div></td>
+        <td class="text_grey"><div align='right'><b><?phpphp echo $BL->props->lang['total_pending']; ?></b></div></td>
         <td class="text_grey" width="15%"><div align="left"><b></b></div></td>
     </tr>
-    <?php foreach ($Customers as $temp) { ?>
-    <?php $accounts = $BL->getAccounts($temp['id']); ?>
+    <?phpphp foreach ($Customers as $temp) { ?>
+    <?phpphp $accounts = $BL->getAccounts($temp['id']); ?>
     <tr>
         <td colspan='8' class='text_grey'>
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
         </td>
     </tr>       
     <tr>
-        <td class='text_grey'><div align='left'>&nbsp;<?php echo $temp['id']; ?></div></td>
-        <td class='text_grey'><div align='left'><a href="<?php echo $PHP_SELF; ?>?cmd=editcustomers&id=<?php echo $temp['id']; ?>"><?php echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></div></td>
-        <td class='text_grey'><div align='left'>[<a href="<?php echo $PHP_SELF; ?>?cmd=vieworders&id=<?php echo $temp['id']; ?>"><?php echo $BL->props->lang['^orders']; ?></a>]</div></td>
-        <td class='text_grey'><div align='left'>[<a href="<?php echo $PHP_SELF; ?>?cmd=viewinvoice&id=<?php echo $temp['id']; ?>"><?php echo $BL->props->lang['^invoices']; ?></a>]</div></td>
-        <td class='text_grey'><div align='left'><?php echo $BL->props->country[$BL->getCustomerFieldValue("country",$temp['id'])]; ?></div></td>
-        <td class='text_grey'><div align='right'><b><?php echo $BL->toCurrency($accounts[$BL->props->invoice_status[1]],null,1); ?></b></div></td>
-        <td class='text_grey'><div align='right'><b><?php echo $BL->toCurrency($accounts[$BL->props->invoice_status[0]],null,1); ?></b></div></td>
+        <td class='text_grey'><div align='left'>&nbsp;<?phpphp echo $temp['id']; ?></div></td>
+        <td class='text_grey'><div align='left'><a href="<?phpphp echo $PHP_SELF; ?>?cmd=editcustomers&id=<?phpphp echo $temp['id']; ?>"><?phpphp echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></div></td>
+        <td class='text_grey'><div align='left'>[<a href="<?phpphp echo $PHP_SELF; ?>?cmd=vieworders&id=<?phpphp echo $temp['id']; ?>"><?phpphp echo $BL->props->lang['^orders']; ?></a>]</div></td>
+        <td class='text_grey'><div align='left'>[<a href="<?phpphp echo $PHP_SELF; ?>?cmd=viewinvoice&id=<?phpphp echo $temp['id']; ?>"><?phpphp echo $BL->props->lang['^invoices']; ?></a>]</div></td>
+        <td class='text_grey'><div align='left'><?phpphp echo $BL->props->country[$BL->getCustomerFieldValue("country",$temp['id'])]; ?></div></td>
+        <td class='text_grey'><div align='right'><b><?phpphp echo $BL->toCurrency($accounts[$BL->props->invoice_status[1]],null,1); ?></b></div></td>
+        <td class='text_grey'><div align='right'><b><?phpphp echo $BL->toCurrency($accounts[$BL->props->invoice_status[0]],null,1); ?></b></div></td>
         <td class='text_grey'>
             <div align='right'>
-            <?php if($BL->getCmd("editcustomers")){ ?>
-            <a href="<?php echo $PHP_SELF; ?>?cmd=editcustomers&id=<?php echo $temp['id']; ?>">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>'  border='0' />
+            <?phpphp if($BL->getCmd("editcustomers")){ ?>
+            <a href="<?phpphp echo $PHP_SELF; ?>?cmd=editcustomers&id=<?phpphp echo $temp['id']; ?>">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>'  border='0' />
             </a>
             &nbsp;
-            <?php } ?>
-            <?php if($cmd=="viewcustomers"){ ?>
-            <?php if($BL->getCmd("addorder")){ ?>
-            <a href="<?php echo $PHP_SELF; ?>?cmd=addorder&id=<?php echo $temp['id']; ?>">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>add_order.gif' alt='<?php echo $BL->props->lang['Add_New_Order']; ?>' border='0' />
+            <?phpphp } ?>
+            <?phpphp if($cmd=="viewcustomers"){ ?>
+            <?phpphp if($BL->getCmd("addorder")){ ?>
+            <a href="<?phpphp echo $PHP_SELF; ?>?cmd=addorder&id=<?phpphp echo $temp['id']; ?>">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>add_order.gif' alt='<?phpphp echo $BL->props->lang['Add_New_Order']; ?>' border='0' />
             </a>
             &nbsp;
-            <?php } ?>
-            <?php if($BL->getCmd("delcustomers")){ ?>
-            <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_customer']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delcustomers&id=<?php echo $temp['id']; ?>'">
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' border='0' />
+            <?phpphp } ?>
+            <?phpphp if($BL->getCmd("delcustomers")){ ?>
+            <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_customer']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delcustomers&id=<?phpphp echo $temp['id']; ?>'">
+            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' border='0' />
             </a>
             &nbsp;
-            <?php } ?>
-            <?php } ?>
+            <?phpphp } ?>
+            <?phpphp } ?>
             </div>
         </td>
     </tr>
-    <?php } ?>
+    <?phpphp } ?>
     <tr> 
         <td colspan="8" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>   
       </table>

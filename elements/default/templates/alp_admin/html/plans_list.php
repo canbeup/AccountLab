@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~plans']; ?></div>
+      <div class="tabs2" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~plans']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addplan" class="add_link"><?php echo $BL->props->lang['+addplan']; ?></a></div>
+      <div class="tabs" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addplan" class="add_link"><?phpphp echo $BL->props->lang['+addplan']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,100 +63,100 @@
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="10" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="10" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-		          <?php if (!count($plans)) { ?>
+		          <?phpphp if (!count($plans)) { ?>
 				<tr>
 					<td class="text_grey" colspan="10">
                     	<div align='center'>
-                    	<?php echo $BL->props->lang['No_Plans']; ?>
+                    	<?phpphp echo $BL->props->lang['No_Plans']; ?>
                     	</div>
 					</td>
 				</tr>
-		          <?php } else { ?>														
+		          <?phpphp } else { ?>														
                     <tr> 
                       <td class='text_grey'>&nbsp;&nbsp;</td>
-                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['Nu']; ?></b></div></td>
-                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['Plan']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['Setup']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['monthly']; ?></b> </div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['quarterly']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['half_yearly']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['yearly']; ?></b></div></td>
+                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['Nu']; ?></b></div></td>
+                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['Plan']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['Setup']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['monthly']; ?></b> </div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['quarterly']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['half_yearly']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['yearly']; ?></b></div></td>
                       <td class='text_grey'></td>
                       <td class='text_grey' width='25%'></td>
                     </tr>
-                    <?php foreach($plans as $temp){ ?>
+                    <?phpphp foreach($plans as $temp){ ?>
 					<tr>
                       <td colspan='10' class='text_grey'>
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
                     </tr>					
 					<tr> 
                     <td class='text_grey'>
-                    <?php if($temp['plan_index'] > 1){ ?>
-                    &nbsp;<a href='<?php echo $PHP_SELF; ?>?cmd=plans&plan_price_id=<?php echo $temp['plan_price_id']; ?>&plan_index=<?php echo $temp['plan_index']; ?>&action=up'>
-                    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>up.gif' border='0' /></a>
-                    <?php }if($temp['plan_index'] > 1 && $temp['plan_index'] < count($plans)){ ?>
+                    <?phpphp if($temp['plan_index'] > 1){ ?>
+                    &nbsp;<a href='<?phpphp echo $PHP_SELF; ?>?cmd=plans&plan_price_id=<?phpphp echo $temp['plan_price_id']; ?>&plan_index=<?phpphp echo $temp['plan_index']; ?>&action=up'>
+                    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>up.gif' border='0' /></a>
+                    <?phpphp }if($temp['plan_index'] > 1 && $temp['plan_index'] < count($plans)){ ?>
                     <br />
-                    <?php }if($temp['plan_index'] < count($plans)){ ?>
-                    &nbsp;<a href='<?php echo $PHP_SELF; ?>?cmd=plans&plan_price_id=<?php echo $temp['plan_price_id']; ?>&plan_index=<?php echo $temp['plan_index']; ?>&action=down'>
-                    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>down.gif' border='0' /></a>
-                    <?php } ?>
-                    <?php $cycle_data = $BL->products->getCycles($temp['plan_price_id']); ?>
+                    <?phpphp }if($temp['plan_index'] < count($plans)){ ?>
+                    &nbsp;<a href='<?phpphp echo $PHP_SELF; ?>?cmd=plans&plan_price_id=<?phpphp echo $temp['plan_price_id']; ?>&plan_index=<?phpphp echo $temp['plan_index']; ?>&action=down'>
+                    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>down.gif' border='0' /></a>
+                    <?phpphp } ?>
+                    <?phpphp $cycle_data = $BL->products->getCycles($temp['plan_price_id']); ?>
                     </td>
-                      <td class='text_grey'><div align='left'>&nbsp;&nbsp;<?php echo $temp['plan_price_id']; ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='left'><?php echo $BL->getFriendlyName($temp['plan_price_id']); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='right'><?php echo $BL->toCurrency($temp['host_setup_fee'],null,1); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='right'><?php echo $BL->toCurrency($cycle_data['monthly'],null,1); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='right'><?php echo $BL->toCurrency($cycle_data['quarterly'],null,1); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='right'><?php echo $BL->toCurrency($cycle_data['half_yearly'],null,1); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='right'><?php echo $BL->toCurrency($cycle_data['yearly'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='left'>&nbsp;&nbsp;<?phpphp echo $temp['plan_price_id']; ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='left'><?phpphp echo $BL->getFriendlyName($temp['plan_price_id']); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $BL->toCurrency($temp['host_setup_fee'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $BL->toCurrency($cycle_data['monthly'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $BL->toCurrency($cycle_data['quarterly'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $BL->toCurrency($cycle_data['half_yearly'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='right'><?phpphp echo $BL->toCurrency($cycle_data['yearly'],null,1); ?>&nbsp;</div></td>
                       <td class='text_grey'></td>
                       <td class='text_grey'>
                       <div align='right'>                      
-                      <?php 
+                      <?phpphp 
                       $server = $BL->servers->getByKey($temp['server_id']);                      
                       if($BL->getCmd("editplan")){ 
                         if($temp['acc_method']>0 && !empty($server['server_type'])){	
                             if($server['server_type']=="cpanel"){
                       ?>
-                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_sync_plan']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=plans&action=sync&plan_price_id=<?php echo $temp['plan_price_id']; ?>'">
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>sync.png' alt='<?php echo $BL->props->lang['sync']."?"; ?>' border='0' /></a>                       
+                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_sync_plan']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=plans&action=sync&plan_price_id=<?phpphp echo $temp['plan_price_id']; ?>'">
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>sync.png' alt='<?phpphp echo $BL->props->lang['sync']."?"; ?>' border='0' /></a>                       
                       &nbsp;
-                      <?php } ?>
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?><?php echo $server['server_type']."-icon-small"; ?>.gif' alt='' border='0' />
+                      <?phpphp } ?>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?><?phpphp echo $server['server_type']."-icon-small"; ?>.gif' alt='' border='0' />
                       &nbsp;
-                      <?php } ?>
-                      <a href='<?php echo $PHP_SELF; ?>?cmd=editplan&plan_price_id=<?php echo $temp['plan_price_id']; ?>'>
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0' /></a>
-                      <?php } ?>
+                      <?phpphp } ?>
+                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editplan&plan_price_id=<?phpphp echo $temp['plan_price_id']; ?>'>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0' /></a>
+                      <?phpphp } ?>
                       &nbsp;
-                      <?php if($BL->getCmd("delplan")){ ?>
-                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_plan']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delplan&plan_price_id=<?php echo $temp['plan_price_id']; ?>'">
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
-                      <?php } ?>
+                      <?phpphp if($BL->getCmd("delplan")){ ?>
+                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_plan']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delplan&plan_price_id=<?phpphp echo $temp['plan_price_id']; ?>'">
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
+                      <?phpphp } ?>
 					  &nbsp;
                       </div>
                       </td>
                     </tr>
-                   <?php } } ?>
+                   <?phpphp } } ?>
 					<tr> 
                       <td colspan="10" class="text_grey">&nbsp;</td>
                     </tr>			
                   </table>
                   <br />
                     <table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">              
-                    <form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
+                    <form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
                     <tr> 
                       <td class="text_grey" width='1%'>&nbsp;</td>
                       <td class="text_grey">
-                      <b><?php echo $BL->props->lang['en_domain_only'] ?></b>
+                      <b><?phpphp echo $BL->props->lang['en_domain_only'] ?></b>
                       &nbsp;
-                      <input type='checkbox' name='en_domain_only' value='1' <?php if($conf['en_domain_only']==1)echo "checked=\"checked\""; ?> class='search' />
+                      <input type='checkbox' name='en_domain_only' value='1' <?phpphp if($conf['en_domain_only']==1)echo "checked=\"checked\""; ?> class='search' />
                       &nbsp;
                       <input type='hidden' name='cmd' value='plans' />
                       <input type='hidden' name='action' value='en_domain_only' />
-                      <input type='submit' name='submit' class='search1' value='<?php echo $BL->props->lang['submit']; ?>'>
+                      <input type='submit' name='submit' class='search1' value='<?phpphp echo $BL->props->lang['submit']; ?>'>
                       </td>
                     </tr>
                     </form>
@@ -166,11 +166,11 @@
 					<tr> 
                       <td class="text_grey" align="center">
 					  <div style="vertical-align:middle">
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>sync.png'  border='0' /> <?php echo $BL->props->lang['sync']; ?>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>sync.png'  border='0' /> <?phpphp echo $BL->props->lang['sync']; ?>
 					  &nbsp;
-                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border="0" /> <?php echo $BL->props->lang['Edit']; ?>
+                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border="0" /> <?phpphp echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' border="0" /> <?php echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' border="0" /> <?phpphp echo $BL->props->lang['Delete']; ?>
 					  </div>
 					  </td>
                     </tr>
@@ -179,7 +179,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

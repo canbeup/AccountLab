@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -61,10 +61,10 @@
 			      </td>
                 </tr>
                 <tr>
-                  <td height="36" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/foot_fill.gif"); ?>">
+                  <td height="36" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/foot_fill.gif"); ?>">
                     <table width="100%" border="0" class="footer">
                       <tr valign="middle">
-                        <td align="left"><?php echo $conf['cp_note']; ?></td>
+                        <td align="left"><?phpphp echo $conf['cp_note']; ?></td>
                         <td align="right">|   <a href="#">Privacy Policy</a>   |   <a href="#">Terms of Service</a>   |&nbsp;&nbsp;</td>
                       </tr>
                     </table>
@@ -76,10 +76,10 @@
                 </tr>
               </table>
             </td>
-            <td width="3" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/right_fill.gif"); ?>"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/right_top.gif"); ?>" width="3" height="2" alt=""></td>
+            <td width="3" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/right_fill.gif"); ?>"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/right_top.gif"); ?>" width="3" height="2" alt=""></td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>

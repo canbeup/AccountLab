@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,34 +52,34 @@
     <td><table width='100%' border='0' cellspacing='0' cellpadding='0'>
         <tr> 
           <td height='22' colspan='2' class='accountlabPlanDataHTD'>
-          &nbsp;&nbsp;<?php echo $BL->props->lang['personal_details']; ?></td>
+          &nbsp;&nbsp;<?phpphp echo $BL->props->lang['personal_details']; ?></td>
         </tr>
         <tr> 
-          <td height='18' class='accountlabAltDataTD'><?php echo $BL->props->lang['Email']; ?></td>
-          <td class='accountlabAltDataTD'><?php echo $customer['email']; ?></td>
+          <td height='18' class='accountlabAltDataTD'><?phpphp echo $BL->props->lang['Email']; ?></td>
+          <td class='accountlabAltDataTD'><?phpphp echo $customer['email']; ?></td>
         </tr>
-        <?php
+        <?phpphp
         foreach($custom_fields as $cf){ 
             if($cf['field_name']!="country" && $cf['field_name']!="vat_no"){
         ?>
         <tr> 
-          <td width='25%' height='18' class='accountlabDataTD'><?php echo $BL->props->parseLang($cf['field_name']); ?></td>
-          <td class='accountlabDataTD'><?php echo $BL->getCustomerFieldValue($cf['field_name'],$customer['id']); ?></td>
+          <td width='25%' height='18' class='accountlabDataTD'><?phpphp echo $BL->props->parseLang($cf['field_name']); ?></td>
+          <td class='accountlabDataTD'><?phpphp echo $BL->getCustomerFieldValue($cf['field_name'],$customer['id']); ?></td>
         </tr>
-        <?php }elseif($cf['field_name']=="country"){ ?>
+        <?phpphp }elseif($cf['field_name']=="country"){ ?>
         <tr> 
-          <td width='25%' height='18' class='accountlabDataTD'><?php echo $BL->props->parseLang($cf['field_name']); ?></td>
-          <td class='accountlabDataTD'><?php echo $BL->props->country[$BL->getCustomerFieldValue($cf['field_name'],$customer['id'])]; ?></td>
+          <td width='25%' height='18' class='accountlabDataTD'><?phpphp echo $BL->props->parseLang($cf['field_name']); ?></td>
+          <td class='accountlabDataTD'><?phpphp echo $BL->props->country[$BL->getCustomerFieldValue($cf['field_name'],$customer['id'])]; ?></td>
         </tr>
-        <?php }elseif($cf['field_name']=="vat_no"){ ?>        
-        <?php if ($BL->conf['en_vat']) { ?>
+        <?phpphp }elseif($cf['field_name']=="vat_no"){ ?>        
+        <?phpphp if ($BL->conf['en_vat']) { ?>
         <tr> 
-          <td width='25%' height='18' class='accountlabDataTD'><?php echo $BL->props->parseLang($cf['field_name']); ?></td>
-          <td class='accountlabDataTD'><?php echo $BL->getCustomerFieldValue($cf['field_name'],$customer['id']); ?></td>
+          <td width='25%' height='18' class='accountlabDataTD'><?phpphp echo $BL->props->parseLang($cf['field_name']); ?></td>
+          <td class='accountlabDataTD'><?phpphp echo $BL->getCustomerFieldValue($cf['field_name'],$customer['id']); ?></td>
         </tr>
-        <?php } ?>
-        <?php } ?>
-        <?php } ?>
+        <?phpphp } ?>
+        <?phpphp } ?>
+        <?phpphp } ?>
       </table>
       </td>
      </tr>

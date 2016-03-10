@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * xajaxCompress.php :: function to compress Javascript
  *

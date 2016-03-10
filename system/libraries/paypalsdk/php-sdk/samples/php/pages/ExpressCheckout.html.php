@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 	$paymentType = $_GET['paymentType'];
 ?>
 
@@ -12,7 +12,7 @@
 <body>
     <center>
 	<form action="ReviewOrder.php" method="post" name="ExpressCheckoutForm">
-	<input type=hidden name=paymentType value=<?=$paymentType?>>
+	<input type=hidden name=paymentType value=<?php=$paymentType?>>
 	<span id=apiheader>SetExpressCheckout</span>
     <table class="api">
          <tr>

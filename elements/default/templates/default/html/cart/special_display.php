@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -53,14 +53,14 @@
     	<tr> 
     		<td height='22' class='accountlabColumnTDred'>
     		<div style="padding: 4px;">
-    			<b><?php echo $BL->props->lang['special_offers']; ?></b>
+    			<b><?phpphp echo $BL->props->lang['special_offers']; ?></b>
     		</div>
     		</td>
     	</tr>
     	<tr> 
     		<td>
     			<div style="padding: 4px;">
-    				<?php 
+    				<?phpphp 
     				foreach($special_display as $k=>$display)
     				echo "<b>".($k+1).")</b> ".$display."<br>";
     				?>

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -70,7 +70,7 @@ class BJCBarChart
 	function generateXML()
 	{
 		$xmlData  = "";
-		$xmlData  = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+		$xmlData  = "<?phpxml version=\"1.0\" encoding=\"utf-8\"?>\n";
 		$xmlData .= "<chart max='".$this->max."' min='".$this->min."' ";
 		$xmlData .= "bar_width='".$this->barWidth."' ";
 		$xmlData .= "padding='".$this->barPadding."' ";

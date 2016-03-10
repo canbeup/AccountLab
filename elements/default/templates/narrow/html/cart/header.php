@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
 <!--Main table. Contains two rows:
 1. top picture, logo and menu
 2. page body with texts etc.
@@ -59,10 +59,10 @@
 			<table class="maintable1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td rowspan="4" class="shadowleft">
-						<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_01.jpg"); ?>" width="25" alt=""></td>
+						<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_01.jpg"); ?>" width="25" alt=""></td>
 					<td class="headercontents">Hosting Company</td>
 				    <td rowspan="2">&nbsp;</td>
-				    <td rowspan="4" class="shadowright"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_08.jpg"); ?>" width="24" alt=""></td>
+				    <td rowspan="4" class="shadowright"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_08.jpg"); ?>" width="24" alt=""></td>
 				</tr>
 				<tr>
 					<td>

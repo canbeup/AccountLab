@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?php
+<?phpphp
 error_reporting(0);
 if (isset ($_GET['host']))
 	$host= $_GET['host'];

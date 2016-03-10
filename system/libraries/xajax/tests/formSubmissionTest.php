@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 require_once("../xajax.inc.php");
 
 function testForm($formData)
@@ -27,7 +27,7 @@ fieldset > div
 	background-color: white;
 }
 </style>
-<?php $xajax->printJavascript("../") ?>
+<?phpphp $xajax->printJavascript("../") ?>
 </head>
 <body>
 <h2><a href="index.php">xajax Tests</a></h2>

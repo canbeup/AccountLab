@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 //
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -977,7 +977,7 @@ class SOAP_Base extends SOAP_Base_Object
            XXX use can be defined at a more granular level than we are dealing with
            here, so this does not work for all services.
         */
-        $xml = "<?xml version=\"1.0\" encoding=\"$encoding\"?>\r\n\r\n".
+        $xml = "<?phpxml version=\"1.0\" encoding=\"$encoding\"?>\r\n\r\n".
             "<SOAP-ENV:Envelope $ns_string".
             ($this->_section5 ? ' SOAP-ENV:encodingStyle="' . SOAP_SCHEMA_ENCODING . '"' : '').
             ">\r\n".

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -53,14 +53,14 @@
 	<tr> 
 		<td height='22' class='accountlabColumnTD'>
 		<div style="padding: 4px;">
-			<b><?php echo $conf['order_para_title']; ?></b>
+			<b><?phpphp echo $conf['order_para_title']; ?></b>
 		</div>
 		</td>
 	</tr>
 	<tr> 
 		<td>
 			<div style="padding: 4px;">
-				<?php echo $conf['order_para']; ?>
+				<?phpphp echo $conf['order_para']; ?>
 			</div>
 		</td>
 	</tr>

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 // signup.php, signup.common.php, signup.server.php
 // demonstrate a a simple implementation of a multipage signup form
 // using xajax version 0.2

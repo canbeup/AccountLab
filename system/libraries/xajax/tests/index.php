@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /*
  * Created on Oct 31, 2005
  *

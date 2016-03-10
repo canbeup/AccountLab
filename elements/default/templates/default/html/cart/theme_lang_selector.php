@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,22 +52,22 @@
     <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
     	<tr> 
     		<td align="right">
-            <?php if(!empty($conf['theme_selector'])){ ?>
-              <?php echo $BL->props->lang['change_theme']; ?>
+            <?phpphp if(!empty($conf['theme_selector'])){ ?>
+              <?phpphp echo $BL->props->lang['change_theme']; ?>
               <select name="theme" id="theme" size="1" class='accountlabInput' onchange="javascript:xajax_reload('step1','step1',xajax.$('theme').value,'');">
-                <?php foreach ($BL->theme_list as $theme){ ?>
-                <option value='<?php echo $theme; ?>' <?php echo (THEMEDIR == $theme)?"selected":""; ?>><?php echo ucfirst(str_replace("_", " ",$theme)); ?></option>
-                <?php } ?>
+                <?phpphp foreach ($BL->theme_list as $theme){ ?>
+                <option value='<?phpphp echo $theme; ?>' <?phpphp echo (THEMEDIR == $theme)?"selected":""; ?>><?phpphp echo ucfirst(str_replace("_", " ",$theme)); ?></option>
+                <?phpphp } ?>
               </select>
-            <?php } ?>
-            <?php if(!empty($conf['lang_selector'])){ ?>
-              <?php echo $BL->props->lang['change_lang']; ?>
+            <?phpphp } ?>
+            <?phpphp if(!empty($conf['lang_selector'])){ ?>
+              <?phpphp echo $BL->props->lang['change_lang']; ?>
               <select name="lang" id="lang" size="1" class='accountlabInput' onchange="javascript:xajax_reload('step1','step1','',xajax.$('lang').value);">
-                <?php foreach ($BL->lang_array as $language) { ?>
-                <option value='<?php echo $language; ?>' <?php echo ($language == LANGUAGE)?"selected":""; ?>><?php echo ucfirst($language); ?></option>
-                <?php } ?>
+                <?phpphp foreach ($BL->lang_array as $language) { ?>
+                <option value='<?phpphp echo $language; ?>' <?phpphp echo ($language == LANGUAGE)?"selected":""; ?>><?phpphp echo ucfirst($language); ?></option>
+                <?phpphp } ?>
               </select> 
-            <?php } ?> 
+            <?phpphp } ?> 
     		</td>
     	</tr>
     </table>

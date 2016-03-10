@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 include 'ppsdk_include_path.inc';
 
@@ -108,11 +108,11 @@ $display_amt = $currency_cd.' '.$amt;
 <table width=400>
 	<tr>
 		<td>Transaction ID:</td>
-		<td><?=$tran_ID?></td>
+		<td><?php=$tran_ID?></td>
 	</tr>
 	<tr>
 		<td>Amount:</td>
-		<td><?=$display_amt?></td>
+		<td><?php=$display_amt?></td>
 	</tr>
 </table>
 

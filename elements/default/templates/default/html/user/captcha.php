@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
-<form name='form2' id='form2' method='post' action='<?php echo $PHP_SELF; ?>' class='form'>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<form name='form2' id='form2' method='post' action='<?phpphp echo $PHP_SELF; ?>' class='form'>
  <table width='100%' border='0' cellspacing='0' cellpadding='0'>
  <tr> 
    <td width='40%'>
-   <span class='alplabel'><?php echo $BL->props->lang['login_verify']; ?></span>
+   <span class='alplabel'><?phpphp echo $BL->props->lang['login_verify']; ?></span>
    </td>
    <td>
    <img src="info.php?cmd=IV" alt="" border="0" />
@@ -65,7 +65,7 @@
  </tr>
  <tr> 
   <td width='40%'>
-  <span class='alplabel'><?php echo $BL->props->lang['Enter_the_code']; ?></span>
+  <span class='alplabel'><?phpphp echo $BL->props->lang['Enter_the_code']; ?></span>
   </td>
   <td>
   <input name='captcha_value' type='text' class='alpinput' id='captcha_value' size='15' />
@@ -74,13 +74,13 @@
  <tr> 
   <td>&nbsp;</td>
   <td>
-  <?php foreach($REQUEST as $k=>$v) { ?>
-  <input name='<?php echo $k; ?>' type='hidden' value='<?php echo $v; ?>'>
-  <?php } ?>
-  <input name='submit' type='submit' class='alpinput' value='<?php echo $BL->props->lang['continue']; ?>' />
+  <?phpphp foreach($REQUEST as $k=>$v) { ?>
+  <input name='<?phpphp echo $k; ?>' type='hidden' value='<?phpphp echo $v; ?>'>
+  <?phpphp } ?>
+  <input name='submit' type='submit' class='alpinput' value='<?phpphp echo $BL->props->lang['continue']; ?>' />
   </td>
  </tr>
 </table>
 </form>
 <br />
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

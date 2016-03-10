@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -52,11 +52,11 @@ require_once "init.php";
 <!-- DW6 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title><?php echo $BL->props->lang['accountlabplus']; ?></title>
+<title><?phpphp echo $BL->props->lang['accountlabplus']; ?></title>
 </head>
 <body>
 <font face='sans-serif' color='black' size='2'>
-<?php
+<?phpphp
 if($BL->conf['en_ticket_by_email']){
     $connection = $BL->conf['ticket_email_proto']."://".urlencode($BL->conf['ticket_email_user']).":".$BL->conf['ticket_email_pass']."@".$BL->conf['ticket_email_host'].":".$BL->conf['ticket_email_port']."/".$BL->conf['ticket_email_mbox'];
     $msg        = & new Mail_IMAPv2();

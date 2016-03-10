@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,6 +48,6 @@
 ?>
 
 <br> 
-<?php if(!empty($msg))$BL->utils->alert($msg,true); ?>
+<?phpphp if(!empty($msg))$BL->utils->alert($msg,true); ?>
 </body>
 </html>

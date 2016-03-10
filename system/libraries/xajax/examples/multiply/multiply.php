@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 // multiply.php, multiply.common.php, multiply.server.php
 // demonstrate a very basic xajax implementation
 // using xajax version 0.2
@@ -11,7 +11,7 @@ require("multiply.common.php");
 <html> 
 	<head>
 		<title>xajax Multiplier</title> 
-		<?php $xajax->printJavascript('../../'); ?> 
+		<?phpphp $xajax->printJavascript('../../'); ?> 
 	</head> 
 	<body> 
 		<input type="text" name="x" id="x" value="2" size="3" /> * 

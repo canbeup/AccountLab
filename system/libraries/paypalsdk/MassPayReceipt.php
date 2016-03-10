@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 include 'ppsdk_include_path.inc';
 
 require_once 'Multi.php';

@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * Base PayPal SDK file.
  *

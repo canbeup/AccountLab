@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 /**
  * File containing the API calling code. Partially generated from the
  * WSDL - CallerServices.php.in contains the base file with a

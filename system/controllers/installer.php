@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -119,7 +119,7 @@ class installer_controller extends controller
                 if (is_writable($db_file))
                 {
                     $fp      = fopen($db_file, "w+");
-                    $data    = "<?php \n" . "$" . "db_host = \"" . $this->REQUEST['hostname'] . "\";\n" . "$" . "db_user = \"" . $this->REQUEST['user'] . "\";\n" . "$" . "db_pass = \"" . $this->REQUEST['pass'] . "\";\n" . "$" . "db_name = \"" . $this->REQUEST['dbname'] . "\";\n" . "?>";
+                    $data    = "<?phpphp \n" . "$" . "db_host = \"" . $this->REQUEST['hostname'] . "\";\n" . "$" . "db_user = \"" . $this->REQUEST['user'] . "\";\n" . "$" . "db_pass = \"" . $this->REQUEST['pass'] . "\";\n" . "$" . "db_name = \"" . $this->REQUEST['dbname'] . "\";\n" . "?>";
                     fwrite($fp, $data);
                     fclose($fp);
                 }
@@ -127,7 +127,7 @@ class installer_controller extends controller
                 if (is_writable($db_file))
                 {
                     $fp= fopen($db_file, "w+");
-                    $data= "<?php \n" . "$" . "db_host = \"" . $this->REQUEST['hostname'] . "\";\n" . "$" . "db_user = \"" . $this->REQUEST['user'] . "\";\n" . "$" . "db_pass = \"" . $this->REQUEST['pass'] . "\";\n" . "$" . "db_name = \"" . $this->REQUEST['dbname'] . "\";\n" . "?>";
+                    $data= "<?phpphp \n" . "$" . "db_host = \"" . $this->REQUEST['hostname'] . "\";\n" . "$" . "db_user = \"" . $this->REQUEST['user'] . "\";\n" . "$" . "db_pass = \"" . $this->REQUEST['pass'] . "\";\n" . "$" . "db_name = \"" . $this->REQUEST['dbname'] . "\";\n" . "?>";
                     fwrite($fp, $data);
                     fclose($fp);
                 }

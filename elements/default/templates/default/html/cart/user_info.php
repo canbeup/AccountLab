@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -59,7 +59,7 @@
                         <input type='radio' class='accountlabInput' id='member' name='member' value="1" onclick="javascript:xajax_step3_memberType(1);xajax_toggleButtons(new Array('back2','continue_verify'));" />                   
                     </td>
                     <td valign='top' colspan='3'>
-                        <?php echo $BL->props->lang['customers_sign_in']; ?> 
+                        <?phpphp echo $BL->props->lang['customers_sign_in']; ?> 
                     </td>
                 </tr> 
                 <tr> 
@@ -67,7 +67,7 @@
                         <input type='radio' class='accountlabInput' id='member' name='member' value="0" onclick="javascript:xajax_step3_memberType(0);xajax_toggleButtons(new Array('back2','continue_verify'));" />                      
                     </td>
                     <td valign='top' colspan='3'>
-                        <?php echo $BL->props->lang['new_customers_sign_up']; ?>
+                        <?phpphp echo $BL->props->lang['new_customers_sign_up']; ?>
                     </td>
                 </tr> 
                 <tr> 

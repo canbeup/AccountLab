@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 // multiply.php, multiply.common.php, multiply.server.php
 // demonstrate a very basic xajax implementation
 // using xajax version 0.2

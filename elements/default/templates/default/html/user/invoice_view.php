@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,29 +47,29 @@
 
 ?>
 
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1"];
 var t    = ["t1"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Invoice']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Invoice']; ?></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t2' id='t2'><a href='info.php?cmd=PDF&invoice_no=<?php echo $invoice['invoice_no']; ?>' target='_blank'><?php echo $BL->props->lang['PDF']; ?></a></div>
+<div class="tabs" name='t2' id='t2'><a href='info.php?cmd=PDF&invoice_no=<?phpphp echo $invoice['invoice_no']; ?>' target='_blank'><?phpphp echo $BL->props->lang['PDF']; ?></a></div>
 <div class="tab_separator">&nbsp;</div>
-<div class="tabs" name='t3' id='t3'><a href='info.php?cmd=PRINT&invoice_no=<?php echo $invoice['invoice_no']; ?>' target='_blank'><?php echo $BL->props->lang['Print']; ?></a></div>
+<div class="tabs" name='t3' id='t3'><a href='info.php?cmd=PRINT&invoice_no=<?phpphp echo $invoice['invoice_no']; ?>' target='_blank'><?phpphp echo $BL->props->lang['Print']; ?></a></div>
 <div class="tab_separator">&nbsp;</div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
 <tr> 
  <td colspan='2'>
- <?php echo $html_buffer; ?>
+ <?phpphp echo $html_buffer; ?>
  </td>
 </tr>
 <tr>
    <td colspan='2' >
-   <?php echo $BL->props->lang['the_invoice_is']." ".($invoice['status']); ?>. <?php echo $BL->props->lang['If_u_have']; ?><a href='mailto:<?php echo $conf['comp_email']; ?>' class='accountlabPlanLink'><?php echo $BL->props->lang['contactus']; ?>.</a>
+   <?phpphp echo $BL->props->lang['the_invoice_is']." ".($invoice['status']); ?>. <?phpphp echo $BL->props->lang['If_u_have']; ?><a href='mailto:<?phpphp echo $conf['comp_email']; ?>' class='accountlabPlanLink'><?phpphp echo $BL->props->lang['contactus']; ?>.</a>
    </td>
 </tr>             
 <tr>
@@ -77,12 +77,12 @@ var t    = ["t1"];
 </tr>
 </table>
 <!--pay invoice section //-->
-<?php if($invoice['status']==$BL->props->invoice_status[0]){ ?>
+<?phpphp if($invoice['status']==$BL->props->invoice_status[0]){ ?>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-<form action="<?php echo $PHP_SELF; ?>" method="post" name='pay_form1' id='pay_form1'>
+<form action="<?phpphp echo $PHP_SELF; ?>" method="post" name='pay_form1' id='pay_form1'>
 <tr> 
     <td colspan='2' >
-    <b><?php echo $BL->props->lang['payment_options']; ?></b>
+    <b><?phpphp echo $BL->props->lang['payment_options']; ?></b>
     </td>
 </tr>
 <tr>
@@ -91,45 +91,45 @@ var t    = ["t1"];
 <tr> 
     <td colspan='2' >
     <select name='pp' id='pp' class='accountlabInput' onchange="javascript:this.form.submit();">
-    <?php foreach($BL->pg as $k=>$v){ ?>
-    <?php if($BL->pp_active[$v]=="Yes"){ ?>
-    <option value='<?php echo $v; ?>' <?php if($v==$invoice['payment_method'])echo "selected=\"selected\""; ?>><?php echo $BL->pg_name[$v]; ?></option>
-    <?php } ?>
-    <?php } ?>
+    <?phpphp foreach($BL->pg as $k=>$v){ ?>
+    <?phpphp if($BL->pp_active[$v]=="Yes"){ ?>
+    <option value='<?phpphp echo $v; ?>' <?phpphp if($v==$invoice['payment_method'])echo "selected=\"selected\""; ?>><?phpphp echo $BL->pg_name[$v]; ?></option>
+    <?phpphp } ?>
+    <?phpphp } ?>
     </select>
     </td>
 </tr>
 <input type="hidden" name="cmd" id="cmd" value="pay" />
-<input type="hidden" name="invoice_no" id="invoice_no" value="<?php echo $REQUEST['invoice_no']; ?>" />
+<input type="hidden" name="invoice_no" id="invoice_no" value="<?phpphp echo $REQUEST['invoice_no']; ?>" />
 </form>              
-<form action="<?php echo $post_url; ?>" method="<?php echo ($send_method=="DIRECT")?"POST":$send_method; ?>" name='pay_form2' id='pay_form2'>
+<form action="<?phpphp echo $post_url; ?>" method="<?phpphp echo ($send_method=="DIRECT")?"POST":$send_method; ?>" name='pay_form2' id='pay_form2'>
 <tr>
 <tr>
     <td height='18' colspan='2' >&nbsp;</td>
 </tr>
-<?php if($show_add_curr=="Yes"){ ?>
+<?phpphp if($show_add_curr=="Yes"){ ?>
 <tr> 
     <td  colspan='2'>           
         <table width='100%' border='0' cellspacing='0' cellpadding='0'>
         <tr>
             <td colspan='4'>
-            <b><?php echo $BL->props->lang['you_can_pay_by_add_cur']; ?></b>
+            <b><?phpphp echo $BL->props->lang['you_can_pay_by_add_cur']; ?></b>
             </td>
         </tr> 
         <tr><td colspan='4'>&nbsp;</td></tr>            
         <tr>
             <td width="2%">
-            <input type='radio' name='pay_curr_id' id='pay_curr_id' value='0' <?php if(empty($invoice['pay_curr_name']) || $conf['curr_name']==$invoice['pay_curr_name'])echo "checked=\"checked\""; ?> class='accountlabinput' />       
+            <input type='radio' name='pay_curr_id' id='pay_curr_id' value='0' <?phpphp if(empty($invoice['pay_curr_name']) || $conf['curr_name']==$invoice['pay_curr_name'])echo "checked=\"checked\""; ?> class='accountlabinput' />       
             </td>
             <td>
-            <?php echo $BL->props->lang['Total_amount_in'].$conf['curr_name']; ?>
+            <?phpphp echo $BL->props->lang['Total_amount_in'].$conf['curr_name']; ?>
             </td>
             <td align='right'>
-            <?php echo $BL->toCurrency($REQUEST['gross_amount'],null,1); ?>
+            <?phpphp echo $BL->toCurrency($REQUEST['gross_amount'],null,1); ?>
             </td>
             <td>&nbsp;</td>
          </tr>                         
-         <?php 
+         <?phpphp 
          if(count($add_cur)){ foreach($add_cur as $ac){ 
                 $curr_conf                    = array();
                 $curr_conf['symbol_prefixed'] = $ac['curr_symbol_prefixed'];
@@ -140,76 +140,76 @@ var t    = ["t1"];
          ?>                        
          <tr>
             <td width="2%">
-            <input type='radio' name='pay_curr_id' id='pay_curr_id' value='<?php echo $ac['curr_id'] ?>' <?php if($ac['curr_name']==$invoice['pay_curr_name'])echo "checked=\"checked\""; ?> class='accountlabinput' /> 
+            <input type='radio' name='pay_curr_id' id='pay_curr_id' value='<?phpphp echo $ac['curr_id'] ?>' <?phpphp if($ac['curr_name']==$invoice['pay_curr_name'])echo "checked=\"checked\""; ?> class='accountlabinput' /> 
             </td>
             <td>
-            <?php echo $BL->props->lang['Total_amount_in'].$ac['curr_name']; ?>
+            <?phpphp echo $BL->props->lang['Total_amount_in'].$ac['curr_name']; ?>
             </td>
             <td align='right'>
-            <?php echo $BL->toCurrency($REQUEST['gross_amount']*$ac['curr_factor'],$curr_conf,1); ?>
+            <?phpphp echo $BL->toCurrency($REQUEST['gross_amount']*$ac['curr_factor'],$curr_conf,1); ?>
             </td>
             <td>&nbsp;</td>
           </tr>
-          <?php } } ?>    
+          <?phpphp } } ?>    
           <tr><td colspan='4'>&nbsp;</td></tr>
           </table>
     </td>
 </tr>
-<?php } ?>
+<?phpphp } ?>
 <tr>
     <td colspan='2' >
           <table width='100%' border='0' cellspacing='0' cellpadding='0'>
           <tr>
-             <td colspan='4'><?php echo $disp_msg; ?></td>
+             <td colspan='4'><?phpphp echo $disp_msg; ?></td>
           </tr> 
-          <?php if(count($add_fields)>0){ ?>
+          <?phpphp if(count($add_fields)>0){ ?>
           <tr><td colspan='4'>&nbsp;</td></tr>    
-          <?php foreach($add_fields as $field){ ?>      
+          <?phpphp foreach($add_fields as $field){ ?>      
           <tr>
               <td>
-                 <?php echo $BL->props->lang[$field[0]]; ?><?php if($field[6]==1){?><font color="red">*</font><?php } ?>
+                 <?phpphp echo $BL->props->lang[$field[0]]; ?><?phpphp if($field[6]==1){?><font color="red">*</font><?phpphp } ?>
               </td>
               <td>
-                 <?php if($field[4]=="text"){ ?>
-                 <input name="<?php echo $field[1]; ?>" type="text" id="<?php echo $field[1]; ?>" value="<?php echo $ext_fields[$field[1]]; ?>" size="<?php echo $field[5]; ?>" class='accountlabInput' />
-                 <?php }elseif($field[4]=="select"){ ?>
-                 <select name="<?php echo $field[1]; ?>" id="<?php echo $field[1]; ?>" class='accountlabInput' size="<?php echo $field[5]; ?>">
-                 <?php for($i=8;$i<count($field);$i++){ ?>
-                    <option value='<?php echo $field[$i]; ?>' <?php if($ext_fields[$field[1]]==$field[$i])echo "selected=\"selected\""; ?>><?php echo $field[$i]; ?></option>
-                 <?php } ?>
-                 <?php $_SESSION[$field[1]]=$field[8];?>
+                 <?phpphp if($field[4]=="text"){ ?>
+                 <input name="<?phpphp echo $field[1]; ?>" type="text" id="<?phpphp echo $field[1]; ?>" value="<?phpphp echo $ext_fields[$field[1]]; ?>" size="<?phpphp echo $field[5]; ?>" class='accountlabInput' />
+                 <?phpphp }elseif($field[4]=="select"){ ?>
+                 <select name="<?phpphp echo $field[1]; ?>" id="<?phpphp echo $field[1]; ?>" class='accountlabInput' size="<?phpphp echo $field[5]; ?>">
+                 <?phpphp for($i=8;$i<count($field);$i++){ ?>
+                    <option value='<?phpphp echo $field[$i]; ?>' <?phpphp if($ext_fields[$field[1]]==$field[$i])echo "selected=\"selected\""; ?>><?phpphp echo $field[$i]; ?></option>
+                 <?phpphp } ?>
+                 <?phpphp $_SESSION[$field[1]]=$field[8];?>
                  </select>
-                 <?php } ?>
+                 <?phpphp } ?>
               </td>
            </tr>
-           <?php } ?>
+           <?phpphp } ?>
            <tr><td colspan='4'>&nbsp;</td></tr>
-           <?php } ?>           
+           <?phpphp } ?>           
            </table>
     </td>
 </tr>
 <tr> 
     <td colspan='2' >
-    <?php if($post_url==INSTALL_URL."customer.php"){ ?>
+    <?phpphp if($post_url==INSTALL_URL."customer.php"){ ?>
     <input type="hidden" name="cmd" id="cmd" value="pay" />
-    <input type="hidden" name="invoice_no" id="invoice_no" value="<?php echo $REQUEST['invoice_no']; ?>" />
-    <input type="hidden" name="payment_method" id="payment_method" value="<?php echo $payment_method; ?>" />  
-    <?php } ?>                  
-    <?php echo $post_vars; ?>
-    <?php if(!empty($BL->pg_name[$payment_method])){ ?>
-    <input type="submit" class='accountlabInput' name="alp_pay_now" id='alp_pay_now' value="<?php echo $BL->pg_name[$payment_method]; ?>" />
-    <?php } ?>
+    <input type="hidden" name="invoice_no" id="invoice_no" value="<?phpphp echo $REQUEST['invoice_no']; ?>" />
+    <input type="hidden" name="payment_method" id="payment_method" value="<?phpphp echo $payment_method; ?>" />  
+    <?phpphp } ?>                  
+    <?phpphp echo $post_vars; ?>
+    <?phpphp if(!empty($BL->pg_name[$payment_method])){ ?>
+    <input type="submit" class='accountlabInput' name="alp_pay_now" id='alp_pay_now' value="<?phpphp echo $BL->pg_name[$payment_method]; ?>" />
+    <?phpphp } ?>
     </td>
 </tr>  
 <tr>
     <td height='18' colspan='2' >&nbsp;</td>
 </tr>       
 </form>
-<?php } ?>
+<?phpphp } ?>
 </table>
 </div>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

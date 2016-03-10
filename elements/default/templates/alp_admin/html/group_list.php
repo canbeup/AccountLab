@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?php include $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?phpphp include $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~groups']; ?></div>
+      <div class="tabs2" name='t1' id='t1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~groups']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=add_group" class="add_link"><?php echo $BL->props->lang['+add_group']; ?></a></div>
+      <div class="tabs" name='t2' id='t2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=add_group" class="add_link"><?phpphp echo $BL->props->lang['+add_group']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -64,54 +64,54 @@
                     </tr>
 					<tr> 
                       <td colspan="5" class="text_grey">
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
 					  </td>
                     </tr>
-		        <?php if (!count($groups)) { ?>
+		        <?phpphp if (!count($groups)) { ?>
 				<tr>
 					<td class="text_grey" colspan="5">
                     	<div align='center'>
-                    	<?php echo $BL->props->lang['No_topics']; ?>
+                    	<?phpphp echo $BL->props->lang['No_topics']; ?>
                     	</div>
 					</td>
 				</tr>
-		       <?php } else { ?>														
+		       <?phpphp } else { ?>														
                     <tr> 
-					  <td class="text_grey" width="10%"><b>&nbsp;<b><?php echo $BL->props->lang['Nu']; ?></b></b></td>
-                      <td class="text_grey"><b><?php echo $BL->props->lang['group_name']; ?></b></td>
-                      <td class="text_grey"><b><?php echo $BL->props->lang['group_url']; ?></b></td>
+					  <td class="text_grey" width="10%"><b>&nbsp;<b><?phpphp echo $BL->props->lang['Nu']; ?></b></b></td>
+                      <td class="text_grey"><b><?phpphp echo $BL->props->lang['group_name']; ?></b></td>
+                      <td class="text_grey"><b><?phpphp echo $BL->props->lang['group_url']; ?></b></td>
                       <td class="text_grey" width="10%" colspan="2"></td>
                     </tr>
-                    <?php foreach($groups as $g) { ?>
+                    <?phpphp foreach($groups as $g) { ?>
 					<tr>
                       <td colspan='5' class='text_grey'>
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
                     </tr>					
 					<tr>
-					  <td class='text_grey'><div align='left'>&nbsp;<?php echo $g['group_id']; ?></div></td>
-		  			  <td class='text_grey'><div align='left'><?php echo $g['group_name']; ?></div></td>
-                      <td class='text_grey'><div align='left'>./index.php?category=<?php echo $g['group_url']; ?></div></td>
+					  <td class='text_grey'><div align='left'>&nbsp;<?phpphp echo $g['group_id']; ?></div></td>
+		  			  <td class='text_grey'><div align='left'><?phpphp echo $g['group_name']; ?></div></td>
+                      <td class='text_grey'><div align='left'>./index.php?category=<?phpphp echo $g['group_url']; ?></div></td>
                       <td class='text_grey' colspan="2">
 					  <div align='right'>
-                      <?php if($BL->getCmd("edit_group")){ ?>
-                      <a href='<?php echo $PHP_SELF; ?>?cmd=edit_group&group_id=<?php echo $g['group_id']; ?> '>
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0' />
+                      <?phpphp if($BL->getCmd("edit_group")){ ?>
+                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=edit_group&group_id=<?phpphp echo $g['group_id']; ?> '>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0' />
 					  </a>
                       &nbsp;
-					  <?php } ?>					  
-					  <?php if($BL->getCmd("del_group")){ ?>
-					  <a href="javascript:if(confirm('<?php echo $BL->props->lang['group_del']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=del_group&group_id=<?php echo $g['group_id']; ?>'">
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']; ?>' border='0' />
+					  <?phpphp } ?>					  
+					  <?phpphp if($BL->getCmd("del_group")){ ?>
+					  <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['group_del']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=del_group&group_id=<?phpphp echo $g['group_id']; ?>'">
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']; ?>' border='0' />
 					  </a>
                       &nbsp;
-					  <?php } ?>
+					  <?phpphp } ?>
 					  </div>					  
                       </td>
                     </tr>
-                    <?php } } ?>
+                    <?phpphp } } ?>
 					<tr> 
                       <td colspan="5" class="text_grey">
-					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
 					  </td>
                     </tr>			
                   </table>
@@ -120,9 +120,9 @@
 					<tr> 
                       <td class="text_grey" align="center">
 					  <div style="vertical-align:middle">
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border="0" /> <?php echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border="0" /> <?phpphp echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' border="0" /> <?php echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' border="0" /> <?phpphp echo $BL->props->lang['Delete']; ?>
 					  </div>
 					  </td>
                     </tr>
@@ -131,7 +131,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
