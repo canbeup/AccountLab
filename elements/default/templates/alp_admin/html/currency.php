@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=currency" class="add_link"><?phpphp echo $BL->props->lang['~currency']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=currency" class="add_link"><?php echo $BL->props->lang['~currency']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,112 +63,112 @@
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
 					<table width='100%' border='0' cellspacing='0' cellpadding='0'>
 		    			<tr> 
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['currency']; ?>
+						<?php echo $BL->props->lang['currency']; ?>
 						</div>
 						<div id="form1_field">
-                            <input name='curr_name' type='text' class='search' id='curr_name' size='20' value='<?phpphp if($cmd=="editcurrency")echo $currency['curr_name']; ?>' />
+                            <input name='curr_name' type='text' class='search' id='curr_name' size='20' value='<?php if($cmd=="editcurrency")echo $currency['curr_name']; ?>' />
 						</div>
 						</td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 						</td>
                       </tr>
 
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['symbol']; ?>
+						<?php echo $BL->props->lang['symbol']; ?>
 							</div>
 							<div id="form1_field">
-                            <input name='curr_symbol' type='text' class='search' size='3' value='<?phpphp if($cmd=="editcurrency")echo $currency['curr_symbol']; ?>' />
+                            <input name='curr_symbol' type='text' class='search' size='3' value='<?php if($cmd=="editcurrency")echo $currency['curr_symbol']; ?>' />
                           </div>
                          </td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['currency_rate']; ?>
+						<?php echo $BL->props->lang['currency_rate']; ?>
 						</div>
 						<div id="form1_field">
-                         <?phpphp echo $conf['symbol']."1 ".$conf['curr_name']; ?> = <input name='curr_factor' type='text' class='search' size='5' value='<?phpphp if($cmd=="editcurrency")echo $currency['curr_factor']; ?>' />
+                         <?php echo $conf['symbol']."1 ".$conf['curr_name']; ?> = <input name='curr_factor' type='text' class='search' size='5' value='<?php if($cmd=="editcurrency")echo $currency['curr_factor']; ?>' />
                           </div>
                           </td>
                       </tr>
                       <tr> 
-                        <td colspan='2' class='text_grey'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
+                        <td colspan='2' class='text_grey'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
                       </tr>   
 
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
                         <div id="form1_label">
-                        <?phpphp echo $BL->props->lang['curr_symbol_position']; ?>
+                        <?php echo $BL->props->lang['curr_symbol_position']; ?>
                         </div>
                         <div id="form1_field">
                             <select name='curr_symbol_prefixed' name='curr_symbol_prefixed' class="search">
-                            <option value="1" <?phpphp  if($cmd=="editcurrency" && $currency['curr_symbol_prefixed']==1)echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['Prefixed']; ?></option>
-                            <option value="0" <?phpphp  if($cmd=="editcurrency" && $currency['curr_symbol_prefixed']==0)echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['Suffixed']; ?></option>
+                            <option value="1" <?php  if($cmd=="editcurrency" && $currency['curr_symbol_prefixed']==1)echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['Prefixed']; ?></option>
+                            <option value="0" <?php  if($cmd=="editcurrency" && $currency['curr_symbol_prefixed']==0)echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['Suffixed']; ?></option>
                             </select>
                           </div>
                           </td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
                         <div id="form1_label">
-                        <?phpphp echo $BL->props->lang['decimal_number']; ?>
+                        <?php echo $BL->props->lang['decimal_number']; ?>
                             </div>
                             <div id="form1_field">
                             
                           <select name="curr_decimal_number" id="curr_decimal_number" size="1">
-                          <?phpphp for($i=0;$i<=6;$i++){ ?>
-                            <option value="<?phpphp echo $i; ?>" <?phpphp if($cmd=="editcurrency" && $i==$currency['curr_decimal_number'])echo "selected=\"selected\""; ?>><?phpphp echo $i; ?></option>
-                          <?phpphp } ?>
+                          <?php for($i=0;$i<=6;$i++){ ?>
+                            <option value="<?php echo $i; ?>" <?php if($cmd=="editcurrency" && $i==$currency['curr_decimal_number'])echo "selected=\"selected\""; ?>><?php echo $i; ?></option>
+                          <?php } ?>
                           </select>
                             
                           </div>
@@ -176,29 +176,29 @@
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
                         <div id="form1_label">
-                        <?phpphp echo $BL->props->lang['decimal_str']; ?>
+                        <?php echo $BL->props->lang['decimal_str']; ?>
                             </div>
                             <div id="form1_field">
                             
                           <select name="curr_decimal_str" id="curr_decimal_str" size="1">
-                            <option value="," <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']==',')echo "selected=\"selected\""; ?>>,</option>
-                            <option value="." <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']=='.')echo "selected=\"selected\""; ?>>.</option>
-                            <option value="'" <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']=='\'')echo "selected=\"selected\""; ?>>'</option>
-                            <option value="&#8217;" <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']=='&#8217;')echo "selected=\"selected\""; ?>>&#8217;</option>
-                            <option value=" " <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']==' ')echo "selected=\"selected\""; ?>>[<?phpphp echo $BL->props->lang['blank']; ?>]</option>
-                            <option value="" <?phpphp if($cmd=="editcurrency" && $currency['curr_decimal_str']=='')echo "selected=\"selected\""; ?>>[<?phpphp echo $BL->props->lang['none']; ?>]</option>
+                            <option value="," <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']==',')echo "selected=\"selected\""; ?>>,</option>
+                            <option value="." <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']=='.')echo "selected=\"selected\""; ?>>.</option>
+                            <option value="'" <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']=='\'')echo "selected=\"selected\""; ?>>'</option>
+                            <option value="&#8217;" <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']=='&#8217;')echo "selected=\"selected\""; ?>>&#8217;</option>
+                            <option value=" " <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']==' ')echo "selected=\"selected\""; ?>>[<?php echo $BL->props->lang['blank']; ?>]</option>
+                            <option value="" <?php if($cmd=="editcurrency" && $currency['curr_decimal_str']=='')echo "selected=\"selected\""; ?>>[<?php echo $BL->props->lang['none']; ?>]</option>
                           </select>
                             
                           </div>
@@ -206,7 +206,7 @@
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                                   
@@ -214,22 +214,22 @@
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
                         <div id="form1_label">
-                        <?phpphp echo $BL->props->lang['thousand_str']; ?>
+                        <?php echo $BL->props->lang['thousand_str']; ?>
                             </div>
                             <div id="form1_field">
                             
                           <select name="curr_thousand_str" id="curr_thousand_str" size="1">
-                            <option value="," <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']==',')echo "selected=\"selected\""; ?>>,</option>
-                            <option value="." <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']=='.')echo "selected=\"selected\""; ?>>.</option>
-                            <option value="'" <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']=='\'')echo "selected=\"selected\""; ?>>'</option>
-                            <option value="&#8217;" <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']=='&#8217;')echo "selected=\"selected\""; ?>>&#8217;</option>
-                            <option value=" " <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']==' ')echo "selected=\"selected\""; ?>>[<?phpphp echo $BL->props->lang['blank']; ?>]</option>
-                            <option value="" <?phpphp if($cmd=="editcurrency" && $currency['curr_thousand_str']=='')echo "selected=\"selected\""; ?>>[<?phpphp echo $BL->props->lang['none']; ?>]</option>
+                            <option value="," <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']==',')echo "selected=\"selected\""; ?>>,</option>
+                            <option value="." <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']=='.')echo "selected=\"selected\""; ?>>.</option>
+                            <option value="'" <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']=='\'')echo "selected=\"selected\""; ?>>'</option>
+                            <option value="&#8217;" <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']=='&#8217;')echo "selected=\"selected\""; ?>>&#8217;</option>
+                            <option value=" " <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']==' ')echo "selected=\"selected\""; ?>>[<?php echo $BL->props->lang['blank']; ?>]</option>
+                            <option value="" <?php if($cmd=="editcurrency" && $currency['curr_thousand_str']=='')echo "selected=\"selected\""; ?>>[<?php echo $BL->props->lang['none']; ?>]</option>
                           </select>
                             
                           </div>
@@ -237,7 +237,7 @@
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                                   
@@ -249,11 +249,11 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                            <?phpphp if($cmd=="editcurrency"){ ?>
-                        	<input type='hidden' name='curr_id' value='<?phpphp echo $currency['curr_id']; ?>' />
-                            <?phpphp } ?>
-                            <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                            <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="editcurrency")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+                            <?php if($cmd=="editcurrency"){ ?>
+                        	<input type='hidden' name='curr_id' value='<?php echo $currency['curr_id']; ?>' />
+                            <?php } ?>
+                            <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                            <input name='submit' type='submit' class='search1' value='<?php if($cmd=="editcurrency")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -265,7 +265,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

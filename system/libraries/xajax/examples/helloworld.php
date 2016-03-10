@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 // helloworld.php demonstrates a very basic xajax implementation
 // using xajax version 0.1 beta4
 // http://xajax.sourceforge.net
@@ -43,7 +43,7 @@ $xajax->processRequests();
 <html>
 <head>
 	<title>xajax example</title>
-	<?phpphp $xajax->printJavascript('../'); // output the xajax javascript. This must be called between the head tags ?>
+	<?php $xajax->printJavascript('../'); // output the xajax javascript. This must be called between the head tags ?>
 </head>
 <body style="text-align:center;">
 	<div id="div1" name="div1">&#160;</div>

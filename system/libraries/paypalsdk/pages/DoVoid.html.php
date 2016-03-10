@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 $authorization_id = $_REQUEST['authorization_id'];
 if(!isset($authorization_id))
    $authorization_id = '';

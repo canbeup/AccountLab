@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 require_once("../xajax.inc.php");
 
 function addHandler($sId,$sHandler)
@@ -26,7 +26,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Event Handler Test | xajax Tests</title>
-<?phpphp $xajax->printJavascript("../") ?>
+<?php $xajax->printJavascript("../") ?>
 <script type="text/javascript">
 function clickHandler1()
 {

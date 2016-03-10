@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /**
  * PHP SDK Credentials page

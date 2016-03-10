@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,16 +47,16 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~faq']; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~faq']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt4' id='tt4' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addfaq" class="add_link"><?phpphp echo $BL->props->lang['+addfaq']; ?></a></div>
+      <div class="tabs" name='tt4' id='tt4' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addfaq" class="add_link"><?php echo $BL->props->lang['+addfaq']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=faqgroup" class="add_link"><?phpphp echo $BL->props->lang['+faqgroup']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=faqgroup" class="add_link"><?php echo $BL->props->lang['+faqgroup']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt3' id='tt3' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addfaqgroup" class="add_link"><?phpphp echo $BL->props->lang['+addfaqgroup']; ?></a></div>
+      <div class="tabs" name='tt3' id='tt3' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addfaqgroup" class="add_link"><?php echo $BL->props->lang['+addfaqgroup']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -67,62 +67,62 @@
 					  </td>
                     </tr>					
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-		          <?phpphp if (!count($faqs)) { ?>
+		          <?php if (!count($faqs)) { ?>
     				<tr>
     					<td class="text_grey" colspan="4">
                         	<div align='center'>
-                        	<?phpphp echo $BL->props->lang['No_faq']; ?>
+                        	<?php echo $BL->props->lang['No_faq']; ?>
                         	</div>
     					</td>
     				</tr>
-		          <?phpphp } else { ?>
+		          <?php } else { ?>
 					<td class='text_grey' width="1%"></td>
                       <td class='text_grey'>
-                      <b><?phpphp echo $BL->props->lang['faqgroup_name']; ?></b></td>
+                      <b><?php echo $BL->props->lang['faqgroup_name']; ?></b></td>
                       <td class='text_grey'>
-					  <b><?phpphp echo $BL->props->lang['~faq']; ?></b></td>
+					  <b><?php echo $BL->props->lang['~faq']; ?></b></td>
                       <td class='text_grey' width='10%'></td>
                     </tr>		
-					<?phpphp foreach ($faqs as $key => $val) { ?>
+					<?php foreach ($faqs as $key => $val) { ?>
                     <tr> 
                       <td colspan='4' class='text_grey'>
-                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                       </td>
                     </tr>							
 					<tr>
 					<td class='text_grey' width="1%"></td>
                     <td class='text_grey'>
-                      <?phpphp $temp = $BL->faqgroups->getByKey($val['faqgroup_id']); echo isset($temp['faqgroup_name'])?$temp['faqgroup_name']:""; ?>
+                      <?php $temp = $BL->faqgroups->getByKey($val['faqgroup_id']); echo isset($temp['faqgroup_name'])?$temp['faqgroup_name']:""; ?>
                       </td>
                       <td class='text_grey'>
-					  <?phpphp echo $val['questions']; ?>
+					  <?php echo $val['questions']; ?>
                       </td>
                       <td class='text_grey' width='10%'><div align='right'>
-                      <?phpphp if($BL->getCmd("editfaq")){ ?>
-                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editfaq&faq_id=<?phpphp echo $val['faq_id']; ?>'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0'></a>
+                      <?php if($BL->getCmd("editfaq")){ ?>
+                      <a href='<?php echo $PHP_SELF; ?>?cmd=editfaq&faq_id=<?php echo $val['faq_id']; ?>'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0'></a>
                       &nbsp;
-                      <?phpphp } ?>                      
-                      <?phpphp if($BL->getCmd("delfaq")){ ?>
-                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_faq']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delfaq&faq_id=<?phpphp echo $val['faq_id']; ?>'"><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
+                      <?php } ?>                      
+                      <?php if($BL->getCmd("delfaq")){ ?>
+                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_faq']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delfaq&faq_id=<?php echo $val['faq_id']; ?>'"><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
                       &nbsp;
-                      <?phpphp } ?>
+                      <?php } ?>
                       </div></td>
                     </tr>
-                    <?phpphp } ?>
-		            <?phpphp } ?>
+                    <?php } ?>
+		            <?php } ?>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
                   </table>
 				  <br />
 					<table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">				
 					<tr> 
                       <td class="text_grey" align="center">
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif'> <?phpphp echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif'> <?php echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif'> <?phpphp echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif'> <?php echo $BL->props->lang['Delete']; ?>
 					  </td>
                     </tr>
 					</table>										
@@ -130,7 +130,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

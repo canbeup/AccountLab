@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * PHPMailer language file.  
  * Polish Version, encoding: windows-1250

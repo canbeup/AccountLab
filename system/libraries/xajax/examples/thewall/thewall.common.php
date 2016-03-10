@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 // thewall.php, thewall.common.php, thewall.server.php
 // demonstrate a demonstrates a xajax implementation of a graffiti wall
 // using xajax version 0.2

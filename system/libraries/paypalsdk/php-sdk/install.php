@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * Program: install.php
  *
@@ -127,7 +127,7 @@ function generate_ini_set($sdk_dir, $phpfile, $libdir = 'lib')
         }
 
         $stamp = date('m/d/Y H:i:s');
-        $code = "<?phpphp\n" .
+        $code = "<?php\n" .
             "//*******************************************\n" .
             "// AUTO-GENERATED include for PayPal PHP SDK\n" .
             "// Created by install.php on $stamp\n" .

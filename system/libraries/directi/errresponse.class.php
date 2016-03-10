@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /**
 * This class is basically used to get formatted o/p.

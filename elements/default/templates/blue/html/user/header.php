@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
 <!--Main table. Contains two rows:
 1. top picture, logo and menu
 2. page body with texts etc.
@@ -67,7 +67,7 @@
 								  <center>
 								  <table width="710">
 										<tr>
-											<td width="50"><img alt="logo" src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/logo.png"); ?>" width="73" height="71" /></td>
+											<td width="50"><img alt="logo" src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/logo.png"); ?>" width="73" height="71" /></td>
 											<td align="left"><p class="slogan">Company Slogan</p><p class="company">HOSTING COMPANY</p></td>
 											<td align="right"><p class="support">Live Sales and Support</p>
 											<p class="support-number">1-800-123-4567</p></td>
@@ -83,12 +83,12 @@
 									<center>
 									<table class="hmains">
 										<tr>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Welcome</a></td>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Hosting</a></td>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Domainnames</a></td>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Products</a></td>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Support</a></td>
-											<td class="hmains"><a href="" class="hmains"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />About us</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Welcome</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Hosting</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Domainnames</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Products</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />Support</a></td>
+											<td class="hmains"><a href="" class="hmains"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/arrow.gif"); ?>" alt="" width="8" height="9" />About us</a></td>
 										</tr>
 									</table>
 									</center>
@@ -121,7 +121,7 @@
 										  <!--Your content here-->
 <div id="masthead"> 
   <h1 id="siteName">
-    <?phpphp 
+    <?php 
     if(!empty($conf['company_name']))echo $conf['company_name'];
     else echo $BL->props->lang['accountlabplus']; 
     ?>
@@ -129,4 +129,4 @@
   <!-- end globalNav --> 
 </div> 
 <!-- end masthead --> 
-<?phpphp include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
+<?php include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>

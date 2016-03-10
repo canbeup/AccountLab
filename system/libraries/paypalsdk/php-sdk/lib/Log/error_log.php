@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * $Header: /home/ppcvs/paypal_php_sdk/Log/error_log.php,v 1.1 2006/02/19 08:22:29 dennis Exp $
  *

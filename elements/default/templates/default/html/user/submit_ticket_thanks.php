@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?phpphp
+<?php
 include $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php");
 if (!method_exists($BL, 'busLogic')) die("");
 ?>
@@ -56,15 +56,15 @@ var tabs = ["tab1"];
 var t    = ["t1"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['add_ticket']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['add_ticket']; ?></div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
-<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
 <tr> 
     <td class='accountlabDataTD' style="padding:12px;">
     <br /><br /><br />
-    <?phpphp echo $BL->props->lang['thanks_for_ticket']; ?>
+    <?php echo $BL->props->lang['thanks_for_ticket']; ?>
     <br /><br /><br />
     </td>
 </tr>
@@ -80,4 +80,4 @@ var t    = ["t1"];
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?phpphp include $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?php include $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

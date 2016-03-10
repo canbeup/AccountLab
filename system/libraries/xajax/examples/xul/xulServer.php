@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 // xulServer.php demonstrates a XUL application with xajax
 // XUL will only work in Mozilla based browsers like Firefox
 // using xajax version 0.2

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,7 +50,7 @@
 <!--content of the page ends here //-->
     </div> 
   </div> 
-    <div id="siteInfo"><?phpphp echo $conf['cp_note']; ?></div>
+    <div id="siteInfo"><?php echo $conf['cp_note']; ?></div>
 </div> 
 <!--end pagecell1--> 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>

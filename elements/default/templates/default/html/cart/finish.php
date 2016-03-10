@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,7 +48,7 @@
 ?>
 
 <div align=center>
-<?phpphp 
+<?php 
 if(isset($BL->REQUEST['skip_auto_creation']) && $BL->REQUEST['skip_auto_creation'])
 {
     echo $BL->props->lang['pp_manual_valid'];

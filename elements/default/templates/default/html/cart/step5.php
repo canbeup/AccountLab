@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,10 +47,10 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/header.php"); ?>
-<form name='order_form' id='order_form' method='POST' action="<?phpphp echo INSTALL_URL.$GET_STR; ?>">
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/header.php"); ?>
+<form name='order_form' id='order_form' method='POST' action="<?php echo INSTALL_URL.$GET_STR; ?>">
 <table width='100%' border="0" align="center" cellpadding="2" cellspacing="2">
-<?phpphp 
+<?php 
 include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/basket.php"); 
 include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/special_form.php"); 
 ?>
@@ -62,5 +62,5 @@ include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/special_form
 </tr>
 </table>
 </form>
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/footer.php"); ?>
 <script language="JavaScript" type="text/JavaScript">xajax_step5();</script>

@@ -57,7 +57,7 @@ That's it.  You should now be ready to use PHPMailer!
 
 A Simple Example:
 
-<?phpphp
+<?php
 require("class.phpmailer.php");
 
 $mail = new PHPMailer();

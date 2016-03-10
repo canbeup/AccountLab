@@ -1,4 +1,4 @@
-<?phpphp
+<?php
    
    $authorization_id = $response->getAuthorizationID();
    

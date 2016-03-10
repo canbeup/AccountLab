@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,41 +47,41 @@
 
 ?>
 
-<?phpphp
+<?php
 if (!method_exists($BL, 'busLogic')) die("");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- DW6 -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo $BL->props->lang['charset']; ?>" />
-<title><?phpphp echo $BL->props->lang['accountlabplus']; ?></title>
-<link rel="stylesheet" href="<?phpphp echo $BL->props->get_page("templates/alp_admin/css/default_horizontal_menu.css"); ?>" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $BL->props->lang['charset']; ?>" />
+<title><?php echo $BL->props->lang['accountlabplus']; ?></title>
+<link rel="stylesheet" href="<?php echo $BL->props->get_page("templates/alp_admin/css/default_horizontal_menu.css"); ?>" type="text/css" />
 </head>
 
 <body>
-<?phpphp include $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
+<?php include $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
 <br />
 <br />
 <br />
 <br />
 <br />
 <div align="center">
-<form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
-<?phpphp foreach($_POST as $k=>$v) {?>
-<input name='<?phpphp echo $k; ?>' type='hidden' value='<?phpphp echo $v; ?>'>
-<?phpphp } ?>
+<form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
+<?php foreach($_POST as $k=>$v) {?>
+<input name='<?php echo $k; ?>' type='hidden' value='<?php echo $v; ?>'>
+<?php } ?>
 	<table width='35%' border='0' align='center' cellpadding='0' cellspacing='0' class="search">
         <tr> 
         <td class="tdheading1" height="20">
-		<div align="right"><b><?phpphp echo $BL->props->lang['version']." ".$BL->props->ALPversion; ?></b></div>
+		<div align="right"><b><?php echo $BL->props->lang['version']." ".$BL->props->ALPversion; ?></b></div>
 		</td>
         </tr>
         <tr> 
           <td class='text_grey'>
 		  <div id="login_label">
 		  <div style="padding-left:5px;" align="left">
-		  <?phpphp echo $BL->props->lang['login_verify']; ?>
+		  <?php echo $BL->props->lang['login_verify']; ?>
 		  </div>
           </div>
           <div id="login_field">
@@ -94,7 +94,7 @@ if (!method_exists($BL, 'busLogic')) die("");
           <td class='text_grey' valign='top'>
 		    <div id="login_label" >
 			<div style="padding-left:5px;" align="left">
-		    <?phpphp echo $BL->props->lang['Enter_the_code']; ?>
+		    <?php echo $BL->props->lang['Enter_the_code']; ?>
 			</div>
 			</div>
 		  <div id="login_field" align="left">
@@ -106,7 +106,7 @@ if (!method_exists($BL, 'busLogic')) die("");
           <td class='text_grey' valign='top'>
 		  <div id="login_field">
           <div align="left">
-		   <input name='submit_login' type='submit' class='search1' value='<?phpphp echo $BL->props->lang['continue']; ?>' />
+		   <input name='submit_login' type='submit' class='search1' value='<?php echo $BL->props->lang['continue']; ?>' />
            </div>
 		   </div>
 		  </td>

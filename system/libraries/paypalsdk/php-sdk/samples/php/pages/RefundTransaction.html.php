@@ -1,4 +1,4 @@
-<?phpphp
+<?php
    
    $transaction_id = $_REQUEST['transaction_id'];
    if(!isset($transaction_id))
@@ -45,12 +45,12 @@
 			<p>
 				<!-- <input type="text" name="amount" value=0.00> -->
 				<input type="text" name="amount" value=<?php=$amount?>>
-				<?phpphp
+				<?php
 				// Add currency hidden field 
 				if(isset($currency) && strlen($currency > 0)) {
 				?>
 				<input type=hidden name=currency value="<?php=$currency?>">
-				<?phpphp } ?>
+				<?php } ?>
 				
 				<select name="currency">
 					<option value=USD>USD</option>

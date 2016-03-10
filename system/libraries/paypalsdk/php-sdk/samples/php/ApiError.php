@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 include 'ppsdk_include_path.inc';
 
@@ -70,7 +70,7 @@ unset($_SESSION['response']);
 		<td>Version:</td>
 		<td><?php= $version ?></td>
 	</tr>
-<?phpphp
+<?php
    if(! is_array($errorList)) {
       $errorCode    = $errorList->getErrorCode();
       $shortMessage = $errorList->getShortMessage();
@@ -89,7 +89,7 @@ unset($_SESSION['response']);
 		<td><?php= $longMessage ?></td>
 	</tr>
 
-<?phpphp
+<?php
    } else {
       for($n = 0; $n < sizeof($errorList); $n++) {
          $oneError = $errorList[$n];
@@ -111,7 +111,7 @@ unset($_SESSION['response']);
 		<td><?php= $longMessage ?></td>
 	</tr>
 
-<?phpphp
+<?php
       } // for
    }  // if
 ?>

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -54,36 +54,36 @@
                 <tr> 
                    <td colspan='2' height='1%'>&#160;</td>
                 </tr>    
-            <?phpphp if($show_tlds) { ?>
+            <?php if($show_tlds) { ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top'>  
                         <input type='radio' name='domain_type' id='domain_type1' class='accountlabInput' value='1' onclick="javascript:xajax_step2_selectType(1);" />                   
                     </td>
                     <td valign='top' colspan='3'>
-                        <?phpphp echo $BL->props->lang['search_for_domain']; ?>
+                        <?php echo $BL->props->lang['search_for_domain']; ?>
                     </td>
                 </tr>
-             <?phpphp } ?>
-             <?phpphp if($show_subdomains) { ?>
+             <?php } ?>
+             <?php if($show_subdomains) { ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top' >  
                         <input type='radio' name='domain_type' id='domain_type2' class='accountlabInput' value='2' onclick="javascript:xajax_step2_selectType(2);" />                      
                     </td>
                     <td valign='top' colspan='3'>
-                        <?phpphp echo $BL->props->lang['search_for_subdomain']; ?>
+                        <?php echo $BL->props->lang['search_for_subdomain']; ?>
                     </td>
                 </tr>                 
-             <?phpphp } ?>
-             <?phpphp if($show_owndomain) { ?>
+             <?php } ?>
+             <?php if($show_owndomain) { ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top'> 
                         <input type='radio' name='domain_type' id='domain_type3' class='accountlabInput' value='3' onclick="javascript:xajax_step2_selectType(3);" />                       
                     </td>
                     <td valign='top' colspan='3'>
-                        <?phpphp echo $BL->props->lang['use_own_domain']; ?>           
+                        <?php echo $BL->props->lang['use_own_domain']; ?>           
                     </td>
                 </tr> 
-              <?phpphp } ?>
+              <?php } ?>
                 <tr> 
                    <td colspan='2' height='1%'>&#160;</td>
                 </tr>  
@@ -95,7 +95,7 @@
     <tr>
         <td>
             <fieldset class='accountlabFormTABLE'>
-            <legend id='domain_sec_legend' name='domain_sec_legend'><b><?phpphp echo $BL->props->lang['use_own_domain']; ?></b></legend>
+            <legend id='domain_sec_legend' name='domain_sec_legend'><b><?php echo $BL->props->lang['use_own_domain']; ?></b></legend>
             <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
                 <tr> 
                     <td width='3%' height='1%' valign='top'>                        

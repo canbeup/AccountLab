@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * $Id: tiny_mce_gzip.php,v 1.1 2007-03-10 04:14:03 siddhartha Exp $
  *

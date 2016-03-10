@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * Example PayPal SDK configuration file.
  */

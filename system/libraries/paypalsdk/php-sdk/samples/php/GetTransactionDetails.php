@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 include 'ppsdk_include_path.inc';
 

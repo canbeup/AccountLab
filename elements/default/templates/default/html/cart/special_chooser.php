@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,15 +50,15 @@
     <tr> 
         <td>    
             <fieldset class='accountlabFormTABLE'>
-            <legend><b><?phpphp echo $BL->props->lang['choose_special_to_use']; ?></b></legend>
+            <legend><b><?php echo $BL->props->lang['choose_special_to_use']; ?></b></legend>
             <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
-                <?phpphp foreach($specials as $special){ ?>
+                <?php foreach($specials as $special){ ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top'>
-                        <input type="radio" id="special_id" name="special_id" class='accountlabInput' value="<?phpphp echo $special['special_id']; ?>" onclick="javascript:xajax_step4_selectSpecial(<?phpphp echo $special['special_id']; ?>,<?phpphp echo $special['new_order']; ?>);" />
+                        <input type="radio" id="special_id" name="special_id" class='accountlabInput' value="<?php echo $special['special_id']; ?>" onclick="javascript:xajax_step4_selectSpecial(<?php echo $special['special_id']; ?>,<?php echo $special['new_order']; ?>);" />
                     </td>
                     <td valign='top'>
-                        <b><?phpphp echo $special['special_name']; ?></b>
+                        <b><?php echo $special['special_name']; ?></b>
                     </td>
                 </tr> 
                 <tr> 
@@ -66,10 +66,10 @@
                     &#160;                
                     </td>
                     <td valign='top'>
-                        <?phpphp echo $special['special_desc']; ?>
+                        <?php echo $special['special_desc']; ?>
                     </td>
                 </tr>
-                <?phpphp } ?>
+                <?php } ?>
              </table>
          </td>
      </tr>

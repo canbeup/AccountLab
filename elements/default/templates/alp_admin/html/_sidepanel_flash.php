@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,18 +47,18 @@
 
 ?>
 
-<?phpphp $BL->REQUEST['chart'] = isset($BL->REQUEST['chart'])?$BL->REQUEST['chart']:"uptime2"; ?>
-<div id="form_title"><?phpphp echo $BL->props->lang[$BL->REQUEST['chart']]; ?></div>
+<?php $BL->REQUEST['chart'] = isset($BL->REQUEST['chart'])?$BL->REQUEST['chart']:"uptime2"; ?>
+<div id="form_title"><?php echo $BL->props->lang[$BL->REQUEST['chart']]; ?></div>
 <br />
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="225">
-  <param name="movie" value="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>swf<?phpphp echo PATH_SEP; ?><?phpphp echo $BL->REQUEST['chart']; ?>.swf" />
+  <param name="movie" value="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>swf<?php echo PATH_SEP; ?><?php echo $BL->REQUEST['chart']; ?>.swf" />
   <param name="quality" value="high" />
   <param name="wmode" value="transparent" />
-  <embed src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>swf<?phpphp echo PATH_SEP; ?><?phpphp echo $BL->REQUEST['chart']; ?>.swf" width="100%" height="225" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+  <embed src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>swf<?php echo PATH_SEP; ?><?php echo $BL->REQUEST['chart']; ?>.swf" width="100%" height="225" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
 </object>
 <br />
-<a href="admin.php?chart=invoices"><b><?phpphp echo $BL->props->lang['invoices']; ?></b></a><br />
-<a href="admin.php?chart=sbm"><b><?phpphp echo $BL->props->lang['sbm']; ?></b></a><br />
-<a href="admin.php?chart=sby"><b><?phpphp echo $BL->props->lang['sby']; ?></b></a><br />
-<a href="admin.php?chart=cbm"><b><?phpphp echo $BL->props->lang['cbm']; ?></b></a><br />
-<a href="admin.php?chart=uptime2"><b><?phpphp echo $BL->props->lang['uptime2']; ?></b></a><br />
+<a href="admin.php?chart=invoices"><b><?php echo $BL->props->lang['invoices']; ?></b></a><br />
+<a href="admin.php?chart=sbm"><b><?php echo $BL->props->lang['sbm']; ?></b></a><br />
+<a href="admin.php?chart=sby"><b><?php echo $BL->props->lang['sby']; ?></b></a><br />
+<a href="admin.php?chart=cbm"><b><?php echo $BL->props->lang['cbm']; ?></b></a><br />
+<a href="admin.php?chart=uptime2"><b><?php echo $BL->props->lang['uptime2']; ?></b></a><br />

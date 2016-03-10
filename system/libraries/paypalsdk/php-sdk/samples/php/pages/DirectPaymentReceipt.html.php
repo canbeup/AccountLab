@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 require_once 'PayPal.php';
 require_once 'PayPal/Profile/Handler/Array.php';

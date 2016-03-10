@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * PHPMailer language file.  
  * Hungarian Version

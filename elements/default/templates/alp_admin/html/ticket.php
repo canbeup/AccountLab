@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,55 +47,55 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td class="tdheading" colspan="4">
-					  <b>&nbsp;<?phpphp echo $BL->props->lang['ticket_no'].$ticket['ticket_id']; ?></b>
+					  <b>&nbsp;<?php echo $BL->props->lang['ticket_no'].$ticket['ticket_id']; ?></b>
 					  </td>
                     </tr>
 					<tr> 
-                      <td class="text_grey" colspan="4"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey" colspan="4"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 					<tr>
 					  <td class='text_grey' width="20%">
 					  &nbsp;&nbsp;
-					  <?phpphp echo $BL->props->lang['Name']; ?> </td>
+					  <?php echo $BL->props->lang['Name']; ?> </td>
 					  <td class="text_grey" width="5%">&nbsp;:&nbsp;</td>
 					  <td class='text_grey' width="35%">
-					  <?phpphp echo "<b><a href=\"".$PHP_SELF."?cmd=editcustomers&id=".$ticket['cust_id']."\">".$BL->getCustomerFieldValue("name",$ticket['cust_id'])."</a></b>"; ?>
+					  <?php echo "<b><a href=\"".$PHP_SELF."?cmd=editcustomers&id=".$ticket['cust_id']."\">".$BL->getCustomerFieldValue("name",$ticket['cust_id'])."</a></b>"; ?>
 					  </td>
 					  <td class="text_grey">&nbsp;</td>
 					</tr>
 					<tr>
 					  <td class='text_grey' width="20%">
 					  &nbsp;&nbsp;
-					  <?phpphp echo $BL->props->lang['department']; ?> </td>
+					  <?php echo $BL->props->lang['department']; ?> </td>
 					  <td class="text_grey" width="5%">&nbsp;:&nbsp;</td>
 					  <td class='text_grey' width="35%">
-					  <?phpphp echo "<b>".$topic['topic_name']."</b>"; ?>
+					  <?php echo "<b>".$topic['topic_name']."</b>"; ?>
 					  </td>
 					  <td class="text_grey">&nbsp;</td>
 					</tr>					
 					<tr>
 					  <td class='text_grey' width="20%">
 					  &nbsp;&nbsp;
-					  <?phpphp echo $BL->props->lang['Date']; ?> </td>
+					  <?php echo $BL->props->lang['Date']; ?> </td>
 					  <td class="text_grey" width="5%">&nbsp;:&nbsp;</td>
 					  <td class='text_grey' width="35%">
-					  <?phpphp echo "<b>".$BL->fDate($ticket['ticket_date'],' H:i:s')."</b>"; ?>
+					  <?php echo "<b>".$BL->fDate($ticket['ticket_date'],' H:i:s')."</b>"; ?>
 					  </td>
 					  <td class="text_grey">&nbsp;</td>
 					</tr>	
 					<tr>
 					  <td class='text_grey' width="20%">
 					  &nbsp;&nbsp;
-					  <?phpphp echo $BL->props->lang['Status']; ?> </td>
+					  <?php echo $BL->props->lang['Status']; ?> </td>
 					  <td class="text_grey" width="5%">&nbsp;:&nbsp;</td>
 					  <td class='text_grey' width="35%">
-					  <?phpphp echo "<b>".$BL->props->ticket_status[$ticket['ticket_status']]."</b>"; ?>
+					  <?php echo "<b>".$BL->props->ticket_status[$ticket['ticket_status']]."</b>"; ?>
 					  </td>
 					  <td class="text_grey">
 					  </td>
@@ -103,35 +103,35 @@
                     <tr>
                       <td class='text_grey' width="20%">
                       &nbsp;&nbsp;
-                      <?phpphp echo $BL->props->lang['ticket_subject']; ?> </td>
+                      <?php echo $BL->props->lang['ticket_subject']; ?> </td>
                       <td class="text_grey" width="5%">&nbsp;:&nbsp;</td>
                       <td class='text_grey' width="35%">
-                      <?phpphp echo "<b>".$ticket['ticket_subject']."</b>"; ?>
+                      <?php echo "<b>".$ticket['ticket_subject']."</b>"; ?>
                       </td>
                       <td class="text_grey">
                       </td>
                     </tr>
 					<tr> 
                       <td class="text_grey" colspan="4">
-					  	<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+					  	<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 					  </td>
                     </tr>
 					<tr> 
                       <td class="text_grey" colspan="4">
 					  	<p style="padding:0;padding-left:25px;">
-					  	<?phpphp echo $ticket['ticket_text']; ?>
+					  	<?php echo $ticket['ticket_text']; ?>
 						</p>
 					  </td>
                     </tr>	
 					<tr> 
                       <td class="text_grey" colspan="4">
-					  	<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+					  	<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 					  </td>
                     </tr>
 					<tr> 
                       <td class="text_grey" colspan="4">
 					  &nbsp;&nbsp;
-						  <?phpphp
+						  <?php
 							if ($ticket['ticket_status'] == 3 && $BL->getCmd("openTicket"))
                             {
 								echo "<a href=\"".$PHP_SELF."?cmd=openTicket&ticket_id=".$ticket['ticket_id']."\"><b>".$BL->props->lang['re-open']."</b></a>";
@@ -144,20 +144,20 @@
 					  </td>
                     </tr>										
 					<tr> 
-                      <td class="text_grey" colspan="4"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey" colspan="4"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>									
                   </table>
 				  <br />
-		         <?phpphp if ($ticket['ticket_status'] != 3) { ?>
-				<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+		         <?php if ($ticket['ticket_status'] != 3) { ?>
+				<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
 				    <table width='100%' border='0' cellspacing='0' cellpadding='0' class="list_table">
 					<tr> 
                       <td class="tdheading">
-					  <b>&nbsp;<?phpphp echo $BL->props->lang['reply']; ?></b>
+					  <b>&nbsp;<?php echo $BL->props->lang['reply']; ?></b>
 					  </td>
                     </tr>  
 					<tr> 
-                      <td class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>					                    
 					<tr>
                      <td class='text_grey'>
@@ -166,76 +166,76 @@
                      </td>
                      </tr>
 					<tr> 
-                      <td class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>						 
                      <tr>
                      <td class='text_grey'>
 					 &nbsp;&nbsp;
                         	<input type='hidden' name='ticket_status' value='0' />
-                        	<input type='hidden' name='reply_by' value='<?phpphp echo $_SESSION['username']; ?>' />
-                            <input type='hidden' name='reply_date' value='<?phpphp echo date('Y-m-d H:i:s'); ?>' />
-                        	<input type='hidden' name='ticket_id' value='<?phpphp echo $ticket['ticket_id']; ?>' />
-                            <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                            <input name='submit' type='submit' class='search1' value='<?phpphp echo $BL->props->lang['submit']; ?>' />
+                        	<input type='hidden' name='reply_by' value='<?php echo $_SESSION['username']; ?>' />
+                            <input type='hidden' name='reply_date' value='<?php echo date('Y-m-d H:i:s'); ?>' />
+                        	<input type='hidden' name='ticket_id' value='<?php echo $ticket['ticket_id']; ?>' />
+                            <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                            <input name='submit' type='submit' class='search1' value='<?php echo $BL->props->lang['submit']; ?>' />
                      </td>
                      </tr>
 					<tr> 
-                      <td class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>						 
                     </table>
 				  </form>
 				  <br />
-            <?phpphp } ?>
+            <?php } ?>
 			<table width='100%' border='0' cellspacing='0' cellpadding='0' class="list_table">
 					<tr> 
                       <td class="tdheading">
-					  <b>&nbsp;<?phpphp echo $BL->props->lang['replies']; ?></b>
+					  <b>&nbsp;<?php echo $BL->props->lang['replies']; ?></b>
 					  </td>
                     </tr>  
-                    <?phpphp foreach ($replies as $reply) { ?>					
+                    <?php foreach ($replies as $reply) { ?>					
 					<tr> 
                       <td class="text_grey">
 					  <p style="padding-left:5px;">
-					  <?phpphp echo "<b>".$BL->props->lang['reply_by']." :</b> ".$reply['reply_by']."<br />"; ?>
-					  <?phpphp echo "<b>".$BL->props->lang['Date']." : </b>".$BL->fDate($reply['reply_date'], ' H:i:s')."<br />"; ?>
-					  <?phpphp echo $reply['reply_text']; ?>
+					  <?php echo "<b>".$BL->props->lang['reply_by']." :</b> ".$reply['reply_by']."<br />"; ?>
+					  <?php echo "<b>".$BL->props->lang['Date']." : </b>".$BL->fDate($reply['reply_date'], ' H:i:s')."<br />"; ?>
+					  <?php echo $reply['reply_text']; ?>
 					  </p>					
 					  </td>
                     </tr>
 				      <tr>
 		              	<td class='text_grey'>
-		                   <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+		                   <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 		                 </td>
 		              </tr> 					
-					<?phpphp } ?>				
+					<?php } ?>				
             </table>		
 	</div>
 </div>
 <!--end content -->
 <div id="navBar">
 <table width="80%" cellpadding="0" cellspacing="0" border="0">
-		<?phpphp if($BL->getCmd("viewTicket")){ ?>
-		<form name='form2' id='form2' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+		<?php if($BL->getCmd("viewTicket")){ ?>
+		<form name='form2' id='form2' method='POST' action='<?php echo $PHP_SELF; ?>'>
 		<tr> 
 		  <td class='text_grey' width="20%">&nbsp;
           
           </td>
           <td class='text_grey'>
-            <b><?phpphp echo $BL->props->lang['View_ticket_by_ticket_id']; ?></b><br>
-            <?phpphp echo $BL->props->lang['ticket_no']; ?><input type='text' name='ticket_id' value='' size='4' class='search'>
+            <b><?php echo $BL->props->lang['View_ticket_by_ticket_id']; ?></b><br>
+            <?php echo $BL->props->lang['ticket_no']; ?><input type='text' name='ticket_id' value='' size='4' class='search'>
             <input type='hidden' name='cmd' value='viewTicket'>
-            <input type='submit' name='submit1' class='search1' value='<?phpphp echo $BL->props->lang['View']; ?>'>
+            <input type='submit' name='submit1' class='search1' value='<?php echo $BL->props->lang['View']; ?>'>
           </td>
         </tr> 
 		</form>    
         <tr> 
           <td colspan='2'>
-          <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='180' height='2'>
+          <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='180' height='2'>
           </td>
         </tr>        
-        <?phpphp } ?>	
+        <?php } ?>	
 </table>
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>	
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>	
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

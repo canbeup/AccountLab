@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,10 +47,10 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/header.php"); ?>
-<form name='order_form' id='order_form' method='<?phpphp echo ($send_method=="DIRECT")?"POST":$send_method; ?>' action="<?phpphp echo $post_url; ?>">
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/header.php"); ?>
+<form name='order_form' id='order_form' method='<?php echo ($send_method=="DIRECT")?"POST":$send_method; ?>' action="<?php echo $post_url; ?>">
 <table width='100%' border="0" align="center" cellpadding="2" cellspacing="2">
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/finish.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/finish.php"); ?>
 <tr>
     <td>
         <div name='foot' id='foot' align='center'>&#160;</div>
@@ -58,5 +58,5 @@
 </tr>
 </table>
 </form>
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/footer.php"); ?>
 <script language="JavaScript" type="text/JavaScript">xajax_step8();</script>

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /*
 $Id: nusoap.php,v 1.1 2007-03-10 04:13:45 siddhartha Exp $
 
@@ -571,7 +571,7 @@ function usleepWindows($usec)
 }
 
 ?>
-<?phpphp
+<?php
 /**
 * soap_fault class, allows for creation of faults
 * mainly used for returning faults from deployed functions
@@ -628,7 +628,7 @@ class soap_fault extends nusoap_base {
 	}
 }
 ?>
-<?phpphp
+<?php
 /**
 * parses an XML Schema, allows access to it's data, other utility methods
 * no validation... yet.
@@ -1298,7 +1298,7 @@ class XMLSchema extends nusoap_base  {
 	}
 }
 ?>
-<?phpphp
+<?php
 /**
 * for creating serializable abstractions of native PHP types
 * NOTE: this is only really used when WSDL is not available.
@@ -1350,7 +1350,7 @@ class soapval extends nusoap_base {
 	}
 }
 ?>
-<?phpphp
+<?php
 /**
 * transport class for sending/receiving data via HTTP and HTTPS
 * NOTE: PHP must be compiled with the CURL extension for HTTPS support
@@ -1877,7 +1877,7 @@ class soap_transport_http extends nusoap_base {
 	}
 }
 ?>
-<?phpphp
+<?php
 /**
 *
 * soap_server allows the user to create a SOAP server
@@ -2524,7 +2524,7 @@ class soap_server extends nusoap_base {
     }
 }
 ?>
-<?phpphp
+<?php
 //Manish Change starts here.
 //include_once($LIB_DIR."config.php");
 //$serviceurl = $SERVICE_URL;
@@ -3529,7 +3529,7 @@ class wsdl extends XMLSchema {
 	} 
 }
 ?>
-<?phpphp
+<?php
 /**
 *
 * soap_parser class parses SOAP XML messages into native PHP values
@@ -4030,7 +4030,7 @@ class soap_parser extends nusoap_base {
 	}
 }
 ?>
-<?phpphp
+<?php
 /**
 *
 * soapclient_new higher level class for easy usage.

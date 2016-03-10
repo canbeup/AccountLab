@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * File containing the encryption services code.
  *

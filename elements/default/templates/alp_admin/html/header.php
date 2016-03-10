@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,37 +48,37 @@
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html dir="<?phpphp echo PAGEDIR; ?>">
+<html dir="<?php echo PAGEDIR; ?>">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo CHARSET; ?>">
-<title><?phpphp echo $BL->props->lang['accountlabplus']; ?></title>
-<link rel="stylesheet" href="<?phpphp $horizonal = 1; echo $BL->props->get_page("templates/alp_admin/css/".ADMINCSS.".css"); ?>" type="text/css" />
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_javascripts.php"); ?>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
+<title><?php echo $BL->props->lang['accountlabplus']; ?></title>
+<link rel="stylesheet" href="<?php $horizonal = 1; echo $BL->props->get_page("templates/alp_admin/css/".ADMINCSS.".css"); ?>" type="text/css" />
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_javascripts.php"); ?>
 </head>
 <body>
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
 <div id="masthead">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr><td align="left" valign="top">
-  <img src="<?phpphp echo $BL->props->get_page("templates/alp_admin/images/alp-logo.gif"); ?>" alt="" width="190" height="24" border="0" />
+  <img src="<?php echo $BL->props->get_page("templates/alp_admin/images/alp-logo.gif"); ?>" alt="" width="190" height="24" border="0" />
 	</td>
 	<td align="right" valign="bottom">
   <b>
-  <?phpphp echo $BL->props->lang['version']." ".$BL->props->ALPversion; ?>
-  <?phpphp if($BL->props->alp_demo_mode==1) echo $BL->props->lang['demomode']; ?>
-  <?phpphp if($BL->props->payment_method_demo_mode==1) echo $BL->props->lang['testmode']; ?>
+  <?php echo $BL->props->lang['version']." ".$BL->props->ALPversion; ?>
+  <?php if($BL->props->alp_demo_mode==1) echo $BL->props->lang['demomode']; ?>
+  <?php if($BL->props->payment_method_demo_mode==1) echo $BL->props->lang['testmode']; ?>
   </b>
   </td></tr>
   </table>
 </div>
-<?phpphp if(ADMINCSS != "default_vertical_menu") $return_cmds = $BL->buildMenu(); else echo "&nbsp;"; ?>
+<?php if(ADMINCSS != "default_vertical_menu") $return_cmds = $BL->buildMenu(); else echo "&nbsp;"; ?>
 <div id="masthead1">&nbsp;</div>
 <br />
-<?phpphp if(ADMINCSS == "default_vertical_menu"){ ?>
+<?php if(ADMINCSS == "default_vertical_menu"){ ?>
 <div id="sidemenu">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-<?phpphp $return_cmds = $BL->buildMenu(0); ?>
+<?php $return_cmds = $BL->buildMenu(0); ?>
 </table>
 </div>
-<?phpphp } ?>
+<?php } ?>
 <!-- end masthead -->

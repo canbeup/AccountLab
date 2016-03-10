@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,6 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
-<table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
+

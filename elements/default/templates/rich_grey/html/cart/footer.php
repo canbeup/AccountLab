@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -60,7 +60,7 @@
 
 									<table width="720" style="margin-left: 20px;">
 										<tr>
-											<td><?phpphp echo $conf['cp_note']; ?></td>
+											<td><?php echo $conf['cp_note']; ?></td>
 											<td align="right">
 
 												<table class="hsubs">
@@ -87,10 +87,10 @@
 					<td id="shadowBottom" colspan="3" class="transparent"></td>
 				</tr>
 				<tr>
-					<td><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="5" height="0" alt="" /></td>
-					<td><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="760" height="0" alt="" /></td>
-					<td><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="5" height="0" alt="" /></td>
+					<td><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="5" height="0" alt="" /></td>
+					<td><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="760" height="0" alt="" /></td>
+					<td><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="5" height="0" alt="" /></td>
 				</tr>
 			</table>
 		</td></tr></table>
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>

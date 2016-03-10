@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -51,7 +51,7 @@
 &nbsp;
 </div>
 <div id="siteInfo">
-<?phpphp echo $BL->props->c; ?>
+<?php echo $BL->props->c; ?>
 </div>
 </body>
 </html>

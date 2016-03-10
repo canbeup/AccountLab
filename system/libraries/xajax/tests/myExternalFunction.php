@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 function myExternalFunction()
 {
 	$objResponse = new xajaxResponse();

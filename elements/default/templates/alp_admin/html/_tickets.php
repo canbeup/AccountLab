@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,52 +47,52 @@
 
 ?>
 
-<?phpphp foreach($topics as $topic) { ?>                                               
+<?php foreach($topics as $topic) { ?>                                               
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
                     <tr> 
-                      <td class="tdheading" colspan="5">&nbsp;<b><?phpphp echo $topic['topic_name']; ?></b></td>
+                      <td class="tdheading" colspan="5">&nbsp;<b><?php echo $topic['topic_name']; ?></b></td>
                       <td class="tdheading" width="10%">&nbsp;</td>
                     </tr>           
                     <tr> 
-                      <td colspan="6" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="6" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>               
                     <tr>
-                        <td class='text_grey'>&nbsp;<b><?phpphp echo $BL->props->lang['Nu']; ?></b></td>
-                        <td class='text_grey'><b><?phpphp echo $BL->props->lang['Date']; ?></b></td>
-                        <td class='text_grey'><b><?phpphp echo $BL->props->lang['Name']; ?></b></td>
-                        <td class='text_grey'><b><?phpphp echo $BL->props->lang['ticket_subject']; ?></b></td>
-                        <td class='text_grey'><b><?phpphp echo $BL->props->lang['Status']; ?></b></td>
+                        <td class='text_grey'>&nbsp;<b><?php echo $BL->props->lang['Nu']; ?></b></td>
+                        <td class='text_grey'><b><?php echo $BL->props->lang['Date']; ?></b></td>
+                        <td class='text_grey'><b><?php echo $BL->props->lang['Name']; ?></b></td>
+                        <td class='text_grey'><b><?php echo $BL->props->lang['ticket_subject']; ?></b></td>
+                        <td class='text_grey'><b><?php echo $BL->props->lang['Status']; ?></b></td>
                         <td width='10%' class='text_grey'>&nbsp;</td>
                     </tr>
-                    <?phpphp foreach ($tickets[$topic['topic_id']][(($REQUEST['ticket_status']==3)?'closed':'open')] as $ticket) { ?>
+                    <?php foreach ($tickets[$topic['topic_id']][(($REQUEST['ticket_status']==3)?'closed':'open')] as $ticket) { ?>
                     <tr> 
                         <td colspan='6' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                     </tr>
                               <tr> 
-                                <td class='text_grey'>&nbsp;<?phpphp echo $ticket['ticket_id']; ?></td>
-                                <td class='text_grey'><?phpphp echo $BL->fDate($ticket['ticket_date'], ' H:i:s'); ?></td>
-                                <td class='text_grey'><a href="<?phpphp echo $PHP_SELF; ?>?cmd=editcustomers&id=<?phpphp echo $ticket['cust_id']; ?>"><?phpphp echo $BL->getCustomerFieldValue("name",$ticket['cust_id']); ?></a></td>
-                                <td class='text_grey'><?phpphp echo empty($ticket['ticket_subject'])?substr(strip_tags($ticket['ticket_text']), 0, 15):substr(strip_tags($ticket['ticket_subject']), 0, 15); ?>...</td>
-                                <td class='text_grey'><?phpphp echo $BL->props->ticket_status[$ticket['ticket_status']]; ?></td>
+                                <td class='text_grey'>&nbsp;<?php echo $ticket['ticket_id']; ?></td>
+                                <td class='text_grey'><?php echo $BL->fDate($ticket['ticket_date'], ' H:i:s'); ?></td>
+                                <td class='text_grey'><a href="<?php echo $PHP_SELF; ?>?cmd=editcustomers&id=<?php echo $ticket['cust_id']; ?>"><?php echo $BL->getCustomerFieldValue("name",$ticket['cust_id']); ?></a></td>
+                                <td class='text_grey'><?php echo empty($ticket['ticket_subject'])?substr(strip_tags($ticket['ticket_text']), 0, 15):substr(strip_tags($ticket['ticket_subject']), 0, 15); ?>...</td>
+                                <td class='text_grey'><?php echo $BL->props->ticket_status[$ticket['ticket_status']]; ?></td>
                                 <td class='text_grey'>
                                       <div align='right'>
-                                      <?phpphp if($BL->getCmd("viewTicket")){ ?>
-                                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=viewTicket&ticket_id=<?phpphp echo $ticket['ticket_id']; ?>'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0'></a>
+                                      <?php if($BL->getCmd("viewTicket")){ ?>
+                                      <a href='<?php echo $PHP_SELF; ?>?cmd=viewTicket&ticket_id=<?php echo $ticket['ticket_id']; ?>'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0'></a>
                                       &nbsp;
-                                      <?phpphp } ?>                                      
-                                      <?phpphp if($BL->getCmd("closeTicket")){ ?>
-                                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=closeTicket&ticket_id=<?phpphp echo $ticket['ticket_id']; ?>'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
+                                      <?php } ?>                                      
+                                      <?php if($BL->getCmd("closeTicket")){ ?>
+                                      <a href='<?php echo $PHP_SELF; ?>?cmd=closeTicket&ticket_id=<?php echo $ticket['ticket_id']; ?>'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
                                       &nbsp;
-                                      <?phpphp } ?>
+                                      <?php } ?>
                                       </div>
                                 </td>
                               </tr>
-                    <?phpphp } ?>
+                    <?php } ?>
                     <tr> 
                       <td colspan="6" class="text_grey">&nbsp;</td>
                     </tr>
                   </table>  
                   <br />
-            <?phpphp } ?>
+            <?php } ?>

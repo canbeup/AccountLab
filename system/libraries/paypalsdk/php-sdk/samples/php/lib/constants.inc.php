@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 // Ack related constants
 define('ACK_SUCCESS', 'Success');

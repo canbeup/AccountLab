@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,20 +47,20 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
 <script language="JavaScript" type="text/javascript">
 var tabs = ["tab1"];
 var t    = ["t1"];
 </script>  
 <!--tabs//-->
-<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Orders']; ?></div>
+<div class="tabs" name='t1' id='t1' onclick="javascript:showTab('tab1', tabs, 't1', t);" onmouseover="javascript:overTab('t1', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Orders']; ?></div>
 <div class="tab_separator">&nbsp;</div>
 <div>
 <div id="tab1" name="tab1" class="tabContent" style="display:none">
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/orders.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/orders.php"); ?>
 </div>
 </div>
 <script language="JavaScript" type="text/javascript">
   showTab('tab1', tabs, 't1', t);
 </script>
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

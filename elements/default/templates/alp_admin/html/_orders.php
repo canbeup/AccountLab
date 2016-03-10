@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,106 +50,106 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
     <tr> 
         <form name='form_orderby' id='form_orderby' action="admin.php" method="post">
-        <input type='hidden' name='search_term' id='search_term' value='<?phpphp echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
-        <input type='hidden' name='cmd' id='cmd' value='<?phpphp echo $cmd; ?>' />
-        <input type='hidden' name='id' id='id' value='<?phpphp echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
+        <input type='hidden' name='search_term' id='search_term' value='<?php echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
+        <input type='hidden' name='cmd' id='cmd' value='<?php echo $cmd; ?>' />
+        <input type='hidden' name='id' id='id' value='<?php echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
         <td colspan="9" class="tdheading" align='right'>
-            <?phpphp if($cmd=="vieworders"){ ?>
-            <?phpphp echo $BL->props->lang['ORDER_BY']; ?>
+            <?php if($cmd=="vieworders"){ ?>
+            <?php echo $BL->props->lang['ORDER_BY']; ?>
             <select name="orderby1" id="orderby1" class="search" onchange="javascript:this.form.submit();">
-            <option value='sub_id' <?phpphp if($BL->REQUEST['orderby1']=='sub_id')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Nu']; ?></option>
-            <option value='sign_date' <?phpphp if($BL->REQUEST['orderby1']=='sign_date')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Date']; ?></option>
-            <option value='cust_status' <?phpphp if($BL->REQUEST['orderby1']=='cust_status')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Status']; ?></option>
+            <option value='sub_id' <?php if($BL->REQUEST['orderby1']=='sub_id')echo "selected"; ?> ><?php echo $BL->props->lang['Nu']; ?></option>
+            <option value='sign_date' <?php if($BL->REQUEST['orderby1']=='sign_date')echo "selected"; ?> ><?php echo $BL->props->lang['Date']; ?></option>
+            <option value='cust_status' <?php if($BL->REQUEST['orderby1']=='cust_status')echo "selected"; ?> ><?php echo $BL->props->lang['Status']; ?></option>
             </select>
             <select name="orderby2" id="orderby2" class="search" onchange="javascript:this.form.submit();">
-            <option value='DESC' <?phpphp if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['DESC']; ?></option>
-            <option value='ASC' <?phpphp if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['ASC']; ?></option>
+            <option value='DESC' <?php if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?php echo $BL->props->lang['DESC']; ?></option>
+            <option value='ASC' <?php if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?php echo $BL->props->lang['ASC']; ?></option>
             </select>
-            <?phpphp } ?>
-            &nbsp;<?phpphp echo isset($pagination)?$pagination:""; ?>
+            <?php } ?>
+            &nbsp;<?php echo isset($pagination)?$pagination:""; ?>
         </td>
         </form>
     </tr>
     <tr> 
         <td colspan="9" class="text_grey">
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr> 
     <tr> 
-        <td class="text_grey" width="1%"><div align="left"><b>&nbsp;<?phpphp echo $BL->props->lang['Nu']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Plan']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Domain']; ?></b></div></td>
-        <td class="text_grey" colspan="2"><div align="left"><b><?phpphp echo $BL->props->lang['Name']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Date']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Status']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['next_bill_date']; ?></b></div></td>
+        <td class="text_grey" width="1%"><div align="left"><b>&nbsp;<?php echo $BL->props->lang['Nu']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Plan']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Domain']; ?></b></div></td>
+        <td class="text_grey" colspan="2"><div align="left"><b><?php echo $BL->props->lang['Name']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Date']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Status']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['next_bill_date']; ?></b></div></td>
         <td class="text_grey"><div align="left"><b></b></div></td>
     </tr>
-    <?phpphp foreach($Orders as $temp){ ?>
-    <?phpphp
+    <?php foreach($Orders as $temp){ ?>
+    <?php
         $rec_date_array           = $BL->utils->getDateArray(date('Y-m-d',strtotime($temp['rec_next_date'])));                    
         $upcoming_bill_date_array = $BL->utils->getXmonthsAfter((empty ($temp['bill_cycle'])?12:$temp['bill_cycle']), $rec_date_array);        
     ?>
     <tr>
         <td colspan='9' class='text_grey'>
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
         </td>
     </tr>       
     <tr>
-        <td class='text_grey'><div align='left'>&nbsp;<?phpphp echo $conf['order_prefix'].$temp['sub_id'].$conf['order_suffix']; ?>&nbsp;</div></td>
+        <td class='text_grey'><div align='left'>&nbsp;<?php echo $conf['order_prefix'].$temp['sub_id'].$conf['order_suffix']; ?>&nbsp;</div></td>
         <td class='text_grey'>
         <div align='left'>
-        <?phpphp echo $BL->getFriendlyName($temp['product_id']); ?>
-        <?phpphp if($temp['acct_status']!=0) { ?>
-        <?phpphp $server = $BL->servers->getByKey($temp['server_id']); ?>
-        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?><?phpphp echo $server['server_type']."-icon-small"; ?>.gif' alt='' border='0' />
-        <?phpphp } ?>
+        <?php echo $BL->getFriendlyName($temp['product_id']); ?>
+        <?php if($temp['acct_status']!=0) { ?>
+        <?php $server = $BL->servers->getByKey($temp['server_id']); ?>
+        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?><?php echo $server['server_type']."-icon-small"; ?>.gif' alt='' border='0' />
+        <?php } ?>
         </div>
         </td>
-        <td class='text_grey'><div align='left'><?phpphp echo $temp['domain_name']; if($temp['dom_reg_comp']=='1')echo "<font size='3' color='red'><b>&reg;</b></font>"; ?></div></td>
-        <td class='text_grey'><div align='left'><a href="<?phpphp echo $PHP_SELF; ?>?cmd=editcustomers&id=<?phpphp echo $temp['customer_id']; ?>"><?phpphp echo $BL->getCustomerFieldValue("name",$temp['customer_id']); ?></a></div></td>
-        <td class='text_grey'><div align='left'>[<a href="<?phpphp echo $PHP_SELF; ?>?cmd=vieworders&id=<?phpphp echo $temp['customer_id']; ?>"><?phpphp echo $BL->props->lang['^orders']; ?></a>]</div></td>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->fDate($temp['sign_date']); ?></div></td>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->props->lang[$temp['cust_status']]; ?></div></td>
-        <?phpphp if($BL->utils->compareDates(date('d'),date('m'),date('Y'),$rec_date_array['mday'],$rec_date_array['mon'],$rec_date_array['year'])!=-1){ ?>
+        <td class='text_grey'><div align='left'><?php echo $temp['domain_name']; if($temp['dom_reg_comp']=='1')echo "<font size='3' color='red'><b>&reg;</b></font>"; ?></div></td>
+        <td class='text_grey'><div align='left'><a href="<?php echo $PHP_SELF; ?>?cmd=editcustomers&id=<?php echo $temp['customer_id']; ?>"><?php echo $BL->getCustomerFieldValue("name",$temp['customer_id']); ?></a></div></td>
+        <td class='text_grey'><div align='left'>[<a href="<?php echo $PHP_SELF; ?>?cmd=vieworders&id=<?php echo $temp['customer_id']; ?>"><?php echo $BL->props->lang['^orders']; ?></a>]</div></td>
+        <td class='text_grey'><div align='left'><?php echo $BL->fDate($temp['sign_date']); ?></div></td>
+        <td class='text_grey'><div align='left'><?php echo $BL->props->lang[$temp['cust_status']]; ?></div></td>
+        <?php if($BL->utils->compareDates(date('d'),date('m'),date('Y'),$rec_date_array['mday'],$rec_date_array['mon'],$rec_date_array['year'])!=-1){ ?>
         <td class='text_grey'>
         <div align='left'>
-        <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Are_you_sure_you_want_to_send_the'].$BL->fDate($temp['rec_next_date'])." ".$BL->props->lang['invoice_and_set_the_next_billing_date_to'].$BL->fDate($upcoming_bill_date_array['year'] . "-" . $upcoming_bill_date_array['mon'] . "-" . $upcoming_bill_date_array['mday']); ?>'))document.location='<?phpphp echo $PHP_SELF."?cmd=".$cmd."&gen_invoice=1&date=".date('Y-m-d',strtotime($temp['rec_next_date']))."&sub_id=".$temp['sub_id']; ?>';">
-        <?phpphp echo $BL->fDate($temp['rec_next_date']); ?>
+        <a href="javascript:if(confirm('<?php echo $BL->props->lang['Are_you_sure_you_want_to_send_the'].$BL->fDate($temp['rec_next_date'])." ".$BL->props->lang['invoice_and_set_the_next_billing_date_to'].$BL->fDate($upcoming_bill_date_array['year'] . "-" . $upcoming_bill_date_array['mon'] . "-" . $upcoming_bill_date_array['mday']); ?>'))document.location='<?php echo $PHP_SELF."?cmd=".$cmd."&gen_invoice=1&date=".date('Y-m-d',strtotime($temp['rec_next_date']))."&sub_id=".$temp['sub_id']; ?>';">
+        <?php echo $BL->fDate($temp['rec_next_date']); ?>
         </a>
         </div>
         </td>
-        <?phpphp }else{ ?>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->fDate($temp['rec_next_date']); ?></div></td>
-        <?phpphp } ?>
+        <?php }else{ ?>
+        <td class='text_grey'><div align='left'><?php echo $BL->fDate($temp['rec_next_date']); ?></div></td>
+        <?php } ?>
         <td class='text_grey'><div align='left'>
-            <?phpphp if($BL->getCmd("editorder")){ ?>
-            <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editorder&sub_id=<?phpphp echo $temp['sub_id']; ?>'>
-            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border='0'>
+            <?php if($BL->getCmd("editorder")){ ?>
+            <a href='<?php echo $PHP_SELF; ?>?cmd=editorder&sub_id=<?php echo $temp['sub_id']; ?>'>
+            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border='0'>
             </a>
             &nbsp;
-            <?phpphp } ?>
-            <?phpphp if($cmd=="vieworders"){ ?>
-            <?phpphp if($BL->getCmd("addinvoice")){ ?>
-            <a href="<?phpphp echo $PHP_SELF; ?>?cmd=addinvoice&sub_id=<?phpphp echo $temp['sub_id']; ?>">
-            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>add_invoice.gif' border='0' />
+            <?php } ?>
+            <?php if($cmd=="vieworders"){ ?>
+            <?php if($BL->getCmd("addinvoice")){ ?>
+            <a href="<?php echo $PHP_SELF; ?>?cmd=addinvoice&sub_id=<?php echo $temp['sub_id']; ?>">
+            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>add_invoice.gif' border='0' />
             </a>
             &nbsp;
-            <?phpphp } ?>
-            <?phpphp if($BL->getCmd("delorder")){ ?>
-            <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_order']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delorder&sub_id=<?phpphp echo $temp['sub_id']; ?>'">
-            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']; ?>' border='0'>
+            <?php } ?>
+            <?php if($BL->getCmd("delorder")){ ?>
+            <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_order']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delorder&sub_id=<?php echo $temp['sub_id']; ?>'">
+            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']; ?>' border='0'>
             </a>
             &nbsp;
-            <?phpphp } ?>
-            <?phpphp } ?>
+            <?php } ?>
+            <?php } ?>
             </div>
         </td>
     </tr>
-    <?phpphp } ?>
+    <?php } ?>
     <tr> 
       <td colspan="9" class="text_grey">
-        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
       </td>
     </tr>       
 </table>

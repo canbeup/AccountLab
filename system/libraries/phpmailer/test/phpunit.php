@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 //
 // PHP framework for testing, based on the design of "JUnit".
 //

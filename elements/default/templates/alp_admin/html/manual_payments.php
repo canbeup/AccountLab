@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,25 +47,25 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=viewinvoice" class="add_link"><?phpphp echo $BL->props->lang['^invoices']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=viewinvoice" class="add_link"><?php echo $BL->props->lang['^invoices']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~manual_payments']; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~manual_payments']; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
     <div id="display_list">
-    <?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_invoices.php"); ?>
+    <?php include_once $BL->props->get_page("templates/alp_admin/html/_invoices.php"); ?>
     <table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">				
     <tr> 
     <td class="text_grey" align="center">
     <div style="vertical-align:middle">
-    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>pdf.gif' alt='<?phpphp echo $BL->props->lang['PDF']; ?>' border='0' /> <?phpphp echo $BL->props->lang['PDF']; ?>
+    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>pdf.gif' alt='<?php echo $BL->props->lang['PDF']; ?>' border='0' /> <?php echo $BL->props->lang['PDF']; ?>
     &nbsp;
-    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif'> <?phpphp echo $BL->props->lang['Edit']; ?>
+    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif'> <?php echo $BL->props->lang['Edit']; ?>
     &nbsp;
-    <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif'> <?phpphp echo $BL->props->lang['Delete']; ?>
+    <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif'> <?php echo $BL->props->lang['Delete']; ?>
     </div>
     </td>
     </tr>
@@ -74,7 +74,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

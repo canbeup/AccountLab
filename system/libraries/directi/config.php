@@ -1,3 +1,3 @@
-<?phpphp
+<?php
 $DEBUG = false;
 ?>

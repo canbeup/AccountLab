@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,33 +47,33 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
 <!--Main table. Contains two rows:
 1. top picture, logo and menu
 2. page body with texts etc.
 -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0" height="100%">
     <tr>
-      <td background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/bg1.gif"); ?>" height="258" width="100%" valign="top">
+      <td background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/bg1.gif"); ?>" height="258" width="100%" valign="top">
         <table width="790" cellpadding="0" cellspacing="0" border="0">
           <tr>
 <!--Top picture with logo-->
-            <td colspan="2" width="786" height="227" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/top.jpg"); ?>" valign="top">
+            <td colspan="2" width="786" height="227" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/top.jpg"); ?>" valign="top">
               <div style="position: relative; top: 43px; left: 57px">
                 <table border="0" cellpadding="5">
                   <tr valign="top">
-                    <td><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/logo.gif"); ?>" width="54" height="93"></td>
+                    <td><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/logo.gif"); ?>" width="54" height="93"></td>
                     <td><div class="logo" style="padding-top:10px">Company LOGO</div><div class="slogan">Company slogan</div></td>
                   </tr>
                 </table>
               </div>
             </td>
-            <td rowspan="2" width="4" height="258" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/right_shadow1.gif"); ?>"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="4"></td>
+            <td rowspan="2" width="4" height="258" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/right_shadow1.gif"); ?>"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="4"></td>
           </tr>
           <tr>
 <!--Hor. menu-->
-            <td width="21" height="31" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/menu_left.gif"); ?>"></td>
-            <td width="765" class="hmenu" height="31" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/menu_fill.gif"); ?>" valign="center"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a></td>
+            <td width="21" height="31" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/menu_left.gif"); ?>"></td>
+            <td width="765" class="hmenu" height="31" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/menu_fill.gif"); ?>" valign="center"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/bullet.gif"); ?>" alt="" width="4" height="6" hspace="12"><a href="#">Lorem ipsum</a></td>
           </tr>
         </table>
       </td>
@@ -82,7 +82,7 @@
       <td valign="top">
         <table width="790" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4F0E0" height="100%">
           <tr valign="top">
-            <td width="21" height="200" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/left_fill.gif"); ?>" rowspan="2"><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="21"></td>
+            <td width="21" height="200" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/left_fill.gif"); ?>" rowspan="2"><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="21"></td>
 <!--Cell with site content-->
             <td style="padding-left: 21px; padding-right: 10px; padding-top: 21px; padding-bottom: 21px">
 

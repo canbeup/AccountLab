@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * Form element validation callbacks for the EWP manager
  *

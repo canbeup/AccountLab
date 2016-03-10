@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 // error_reporting(E_ALL);
 header('Content-Type: text/plain');

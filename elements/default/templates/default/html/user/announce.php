@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,27 +47,27 @@
 
 ?>
 
-<?phpphp if(count($announcements)){ ?>
+<?php if(count($announcements)){ ?>
 <table width='100%' border='0' cellpadding='0' cellspacing='0'>    
      <tr>
           <td>
           <table width='100%' border='0' cellspacing='0' cellpadding='0'>
               <tr>
                 <td height='22' colspan='2' class='accountlabPlanDataHTD'>
-                &nbsp;&nbsp;<?phpphp echo $BL->props->lang['~announce']; ?>
+                &nbsp;&nbsp;<?php echo $BL->props->lang['~announce']; ?>
                 </td>
               </tr>
               <tr>
                 <td height='10' colspan='2'>
                 <table width="100%" align="center" class="accountlabFormTABLE">
                   <tr>
-                <?phpphp  foreach($announcements as $announcement){?>
+                <?php  foreach($announcements as $announcement){?>
                     <tr>
                     <td class='accountlabDataTD'>
-                    <a name='<?phpphp echo $announcement['ann_id']; ?>'></a><b><?phpphp echo $announcement['an_title']; ?></b><br><?phpphp echo $announcement['an_body']; ?><br><br>
+                    <a name='<?php echo $announcement['ann_id']; ?>'></a><b><?php echo $announcement['an_title']; ?></b><br><?php echo $announcement['an_body']; ?><br><br>
                     </td>
                     </tr>
-                <?phpphp } ?>
+                <?php } ?>
                 </table>
                 </td>
               </tr>
@@ -75,4 +75,4 @@
         </td>
     </tr>
 </table>
-<?phpphp } ?>
+<?php } ?>

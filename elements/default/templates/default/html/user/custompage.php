@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,9 +47,9 @@
 
 ?>
 
-<?phpphp
+<?php
 include $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php");
 if (!method_exists($BL, 'busLogic')) die("");
 ?>
-<?phpphp echo $Custompage_Data['content']; ?>
-<?phpphp include $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?php echo $Custompage_Data['content']; ?>
+<?php include $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

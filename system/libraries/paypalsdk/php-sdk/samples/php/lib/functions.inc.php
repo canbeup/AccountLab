@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * Support functions for the Profile Admin tool
  *

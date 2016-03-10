@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=tld" class="add_link"><?phpphp echo $BL->props->lang['~tld']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=tld" class="add_link"><?php echo $BL->props->lang['~tld']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,49 +63,49 @@
 					  </td>
                     </tr>
 					<tr>
-                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
 					<table width='100%' border='0' cellspacing='0' cellpadding='0'>
 		    			<tr>
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['TLD']; ?>
+						<?php echo $BL->props->lang['TLD']; ?>
 						</div>
 						<div id="form1_field">
 						<script language="JavaScript" type="text/JavaScript">
 						<!--
 						function MM_jumpMenu(targ,selObj){
-							eval(targ+".location='<?phpphp echo $PHP_SELF."?cmd=".$cmd.(isset($REQUEST['price_id'])?("&price_id=".$REQUEST['price_id']):"")."&dom_ext="; ?>"+selObj.options[selObj.selectedIndex].value+"'");
+							eval(targ+".location='<?php echo $PHP_SELF."?cmd=".$cmd.(isset($REQUEST['price_id'])?("&price_id=".$REQUEST['price_id']):"")."&dom_ext="; ?>"+selObj.options[selObj.selectedIndex].value+"'");
 						}
 						//-->
 						</script>
 							<select name='dom_ext' class='search' id='dom_ext' onchange="javascript:MM_jumpMenu('parent',this);">
-							<option><?phpphp echo $BL->props->lang['select']; ?></option>
-							<?phpphp
+							<option><?php echo $BL->props->lang['select']; ?></option>
+							<?php
 							$i=0;
 							foreach($BL->props->tld_array as $key=>$val){
 							?>
-							<option value='<?phpphp echo  $key; ?>' <?phpphp if(isset($REQUEST['dom_ext']) && $REQUEST['dom_ext']==$key){echo "selected=\"selected\"";$i=1;} ?>><?phpphp echo  $key; ?></option>
-							<?phpphp
+							<option value='<?php echo  $key; ?>' <?php if(isset($REQUEST['dom_ext']) && $REQUEST['dom_ext']==$key){echo "selected=\"selected\"";$i=1;} ?>><?php echo  $key; ?></option>
+							<?php
 							}
 							?>
 							</select>
-							<?phpphp echo $BL->props->lang['OR']; ?>
-							<input name='dom_ext1' type='text' class='search' id='dom_ext1' size='10' value='<?phpphp if($cmd=="edittld" && $i==0)echo $tld['dom_ext']; ?>' />
+							<?php echo $BL->props->lang['OR']; ?>
+							<input name='dom_ext1' type='text' class='search' id='dom_ext1' size='10' value='<?php if($cmd=="edittld" && $i==0)echo $tld['dom_ext']; ?>' />
 						</div>
 						</td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 						</td>
                       </tr>
 
@@ -114,68 +114,68 @@
                       <tr>
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
                         <div id="form1_label">
-                        <?phpphp echo $BL->props->lang['Period']; ?>
+                        <?php echo $BL->props->lang['Period']; ?>
                             </div>
                             <div id="form1_field">
                             <select name='dom_period' class='search'>
-                                <?phpphp for($i=1;$i<11;$i++){ ?>
-                                    <option value='<?phpphp echo $i; ?>' <?phpphp if($cmd=="edittld" && $tld['dom_period']==$i) echo "selected"; ?>><?phpphp echo $i." ".$BL->props->lang['year']; ?></option>
-                                <?phpphp } ?>
-                                <option value='99' <?phpphp if($cmd=="edittld" && $tld['dom_period']==99) echo "selected"; ?>><?phpphp echo $BL->props->lang['one_time']; ?></option>
+                                <?php for($i=1;$i<11;$i++){ ?>
+                                    <option value='<?php echo $i; ?>' <?php if($cmd=="edittld" && $tld['dom_period']==$i) echo "selected"; ?>><?php echo $i." ".$BL->props->lang['year']; ?></option>
+                                <?php } ?>
+                                <option value='99' <?php if($cmd=="edittld" && $tld['dom_period']==99) echo "selected"; ?>><?php echo $BL->props->lang['one_time']; ?></option>
                             </select>
                           </div>
                          </td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
 
                       <tr>
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['Price']; ?> (<?phpphp echo $BL->conf['symbol']; ?>)
+						<?php echo $BL->props->lang['Price']; ?> (<?php echo $BL->conf['symbol']; ?>)
 							</div>
 							<div id="form1_field">
-	                        <input name='dom_price' type='text' class='search' id='dom_price' size='10' value='<?phpphp if($cmd=="edittld")echo $tld['dom_price']; ?>' />
+	                        <input name='dom_price' type='text' class='search' id='dom_price' size='10' value='<?php if($cmd=="edittld")echo $tld['dom_price']; ?>' />
                           </div>
                          </td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr>
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['Registrar']; ?>
+						<?php echo $BL->props->lang['Registrar']; ?>
 						</div>
 						<div id="form1_field">
                         <select name='tld_registrar' class='search'>
-                        <option><?phpphp echo $BL->props->lang['manual']; ?></option>
-                            <?phpphp
+                        <option><?php echo $BL->props->lang['manual']; ?></option>
+                            <?php
                             foreach($BL->dr as $k=>$v){
                                 if($BL->dr_vals[$v]['active']=="yes"){
                                 ?>
-                            	<option value='<?phpphp echo $v; ?>' <?phpphp if($cmd=="edittld" && $tld['tld_registrar']==$v) echo "selected=\"selected\""; ?>><?phpphp echo ucfirst($v); ?></option>
-                            <?phpphp
+                            	<option value='<?php echo $v; ?>' <?php if($cmd=="edittld" && $tld['tld_registrar']==$v) echo "selected=\"selected\""; ?>><?php echo ucfirst($v); ?></option>
+                            <?php
                             }
                             }
                             ?>
@@ -185,81 +185,81 @@
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr>
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['active']; ?>
+						<?php echo $BL->props->lang['active']; ?>
 						</div>
 						<div id="form1_field">
 						  <select name='tld_active' class='search'>
-						  <option value="yes" <?phpphp if($cmd=="edittld" && $tld['tld_active']=="yes")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['Yes']; ?></option>
-						  <option value="no" <?phpphp if($cmd=="edittld" && $tld['tld_active']=="no")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['No']; ?></option>
+						  <option value="yes" <?php if($cmd=="edittld" && $tld['tld_active']=="yes")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['Yes']; ?></option>
+						  <option value="no" <?php if($cmd=="edittld" && $tld['tld_active']=="no")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['No']; ?></option>
 						  </select>
                           </div></td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
 
                       <tr>
                         <td class='text_grey'><div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['Name']; ?>
+						<?php echo $BL->props->lang['Name']; ?>
 						</div>
 						<div id="form1_field">
-                            <input name='tld_name' type='text' class='search' id='tld_name' size='20' value='<?phpphp if($cmd=="edittld")echo $tld['tld_name']; ?>' />
+                            <input name='tld_name' type='text' class='search' id='tld_name' size='20' value='<?php if($cmd=="edittld")echo $tld['tld_name']; ?>' />
                           </div></td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
                       <tr>
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['Whois_Server']; ?>
+						<?php echo $BL->props->lang['Whois_Server']; ?>
 						</div>
 						<div id="form1_field">
-                        <input name='tld_server' type='text' class='search' id='tld_server' size='20' value='<?phpphp if(isset($new_server_array['server']))echo $new_server_array['server']; elseif($cmd=="edittld")echo $tld['tld_server']; ?>' />
+                        <input name='tld_server' type='text' class='search' id='tld_server' size='20' value='<?php if(isset($new_server_array['server']))echo $new_server_array['server']; elseif($cmd=="edittld")echo $tld['tld_server']; ?>' />
 						</div>
 						</td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
 
                       <tr>
                         <td class='text_grey'><div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['no_match_text']; ?>
+						<?php echo $BL->props->lang['no_match_text']; ?>
 						</div>
 						<div id="form1_field">
-                        <input name='tld_match' type='text' class='search' id='tld_match' size='20' value='<?phpphp if(isset($new_server_array['server']))echo $new_server_array['nomatch']; elseif($cmd=="edittld")echo $tld['tld_match']; ?>' />
+                        <input name='tld_match' type='text' class='search' id='tld_match' size='20' value='<?php if(isset($new_server_array['server']))echo $new_server_array['nomatch']; elseif($cmd=="edittld")echo $tld['tld_match']; ?>' />
                         </div></td>
                       </tr>
                       <tr>
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
 
@@ -270,11 +270,11 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                        <?phpphp if($cmd=="edittld"){ ?>
-                        	<input type='hidden' name='price_id' value='<?phpphp echo $tld['price_id']; ?>' />
-                        <?phpphp } ?>
-                            <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                            <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edittld")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+                        <?php if($cmd=="edittld"){ ?>
+                        	<input type='hidden' name='price_id' value='<?php echo $tld['price_id']; ?>' />
+                        <?php } ?>
+                            <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                            <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edittld")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -286,7 +286,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

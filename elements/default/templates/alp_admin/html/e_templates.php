@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,10 +47,10 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>  
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>  
 <div id="content">  
 	<div id="display_list">			
-            <?phpphp
+            <?php
             $str1 = "\"tab0\"";
             $str2 = "\"t0\"";
             $d1   ="";
@@ -62,76 +62,76 @@
             }
             ?>	
             <script language="JavaScript" type="text/javascript">
-            var tabs = [<?phpphp echo $str1; ?>];
-            var t    = [<?phpphp echo $str2; ?>];
+            var tabs = [<?php echo $str1; ?>];
+            var t    = [<?php echo $str2; ?>];
             </script>	
             <div id="display_list">            
-            <?phpphp
+            <?php
             foreach ($e_templates as $key => $value)
             {
             ?>
-              <div class="tabs" name='t<?phpphp echo $value['email_id']; ?>' id='t<?phpphp echo $value['email_id']; ?>' onclick="javascript:showTab('tab<?phpphp echo $value['email_id']; ?>', tabs, 't<?phpphp echo $value['email_id']; ?>', t);" onmouseover="javascript:overTab('t<?phpphp echo $value['email_id']; ?>', t);" onmouseout="javascript:outTab(t);" ><?phpphp $et="email_template_".$value['email_id']; echo $BL->props->lang[$et]; ?></div>
+              <div class="tabs" name='t<?php echo $value['email_id']; ?>' id='t<?php echo $value['email_id']; ?>' onclick="javascript:showTab('tab<?php echo $value['email_id']; ?>', tabs, 't<?php echo $value['email_id']; ?>', t);" onmouseover="javascript:overTab('t<?php echo $value['email_id']; ?>', t);" onmouseout="javascript:outTab(t);" ><?php $et="email_template_".$value['email_id']; echo $BL->props->lang[$et]; ?></div>
               <div class="tab_separator">&nbsp;</div>
-            <?phpphp
+            <?php
             }
             ?>
-              <div class="tabs" name='t0' id='t0' onclick="javascript:showTab('tab0', tabs, 't0', t);" onmouseover="javascript:overTab('t0', t);" onmouseout="javascript:outTab(t);" ><?phpphp echo $BL->props->lang['Instructions']; ?></div>
+              <div class="tabs" name='t0' id='t0' onclick="javascript:showTab('tab0', tabs, 't0', t);" onmouseover="javascript:overTab('t0', t);" onmouseout="javascript:outTab(t);" ><?php echo $BL->props->lang['Instructions']; ?></div>
               <div class="tab_separator">&nbsp;</div>
             </div> 
-			<?phpphp
+			<?php
 			foreach ($e_templates as $key => $value)
 			{
 			?>
-            <div id="tab<?phpphp echo $value['email_id']; ?>" name="tab<?phpphp echo $value['email_id']; ?>" class="tabContent" style="display:block;float:left;">
+            <div id="tab<?php echo $value['email_id']; ?>" name="tab<?php echo $value['email_id']; ?>" class="tabContent" style="display:block;float:left;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
                 <tr><td class="tdheading">&nbsp;</td></tr>  
                 <tr>
                     <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <form name='form<?phpphp echo $value['email_id']; ?>' id='form<?phpphp echo $value['email_id']; ?>' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+                    <form name='form<?php echo $value['email_id']; ?>' id='form<?php echo $value['email_id']; ?>' method='post' action='<?php echo $PHP_SELF; ?>'>
                         <tr>
                       <td class="text_grey" width="2%">
-                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                       </td>
                         <td class='text_grey'>
                         <div id="form2_label">  
-                           <b><?phpphp echo $BL->props->lang['email_subject']; ?></b></div>
+                           <b><?php echo $BL->props->lang['email_subject']; ?></b></div>
                            <div id="form2_field">  
-                           <input type='text' size='70' name='email_subject' class='search' id='email_subject' value='<?phpphp echo $value['email_subject']; ?>' />
+                           <input type='text' size='70' name='email_subject' class='search' id='email_subject' value='<?php echo $value['email_subject']; ?>' />
                            </div>
                         </td>
                         </tr> 
                     <tr>
                       <td class='text_grey' colspan='2'>
-                      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+                      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>
                         <tr>
                       <td class="text_grey" width="2%" valign='top'>
-                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                       </td>
                         <td class='text_grey'>
                         <div id="form2_label"> 
-                           <b><?phpphp echo $BL->props->lang['email_body']; ?></b></div>
+                           <b><?php echo $BL->props->lang['email_body']; ?></b></div>
                            <div id="form2_field"> 
-                           <textarea name='email_text' id='email_text' cols='70' rows='20' class='search' wrap="on"><?phpphp echo $value['email_text']; ?></textarea>
+                           <textarea name='email_text' id='email_text' cols='70' rows='20' class='search' wrap="on"><?php echo $value['email_text']; ?></textarea>
                            </div>
                         </td>
                         </tr>  
                     <tr>
                       <td class='text_grey' colspan='2'>
-                      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+                      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>
                         <tr>
                       <td class="text_grey" width="2%">
-                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif' width='32' height='18'>
+                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif' width='32' height='18'>
                       </td>
                         <td class='text_grey'>
                         <div id="form2_label"> 
                         </div>
                         <div id="form2_field"> 
-                           <input type='hidden' name='email_id' value='<?phpphp echo $value['email_id']; ?>' />
-                           <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                           <input type='submit' name='submit' value='<?phpphp echo $BL->props->lang['Update']; ?>' class='search1' />
+                           <input type='hidden' name='email_id' value='<?php echo $value['email_id']; ?>' />
+                           <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                           <input type='submit' name='submit' value='<?php echo $BL->props->lang['Update']; ?>' class='search1' />
                         </div>
                         </td>
                         </tr>  
@@ -141,7 +141,7 @@
                 </tr>
 			  </table>
               </div>
-            <?phpphp
+            <?php
             }
             ?>
               <div id="tab0" name="tab0" class="tabContent" style="display:block;float:left;">
@@ -150,17 +150,17 @@
                     <tr>
                     <td class='text_grey'>
                         <table width="100%" border="0" cellspacing="6" cellpadding="6">  
-                        <?phpphp
+                        <?php
                         foreach ($e_templates as $key => $value)
                         {
                         ?>
                             <tr>
                             <td class='text_grey'>
-                               <b><?phpphp $et="email_template_".$value['email_id']; echo $BL->props->lang[$et]; ?></b><br />
-                               <pre><?phpphp $et="template_default_".$value['email_id']; echo HTMLSpecialChars($BL->props->lang[$et]); ?></pre>
+                               <b><?php $et="email_template_".$value['email_id']; echo $BL->props->lang[$et]; ?></b><br />
+                               <pre><?php $et="template_default_".$value['email_id']; echo HTMLSpecialChars($BL->props->lang[$et]); ?></pre>
                             </td>
                             </tr>   
-                        <?phpphp
+                        <?php
                         }
                         ?>      
                         </table>
@@ -172,11 +172,11 @@
 	</div>
 </div>
 <script language="JavaScript" type="text/javascript">
-  showTab('tab<?phpphp echo $d1; ?>', tabs, 't<?phpphp echo $d1; ?>', t);
+  showTab('tab<?php echo $d1; ?>', tabs, 't<?php echo $d1; ?>', t);
 </script>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

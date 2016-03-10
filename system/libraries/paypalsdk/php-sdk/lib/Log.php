@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * $Header: /home/ppcvs/paypal_php_sdk/Log.php,v 1.1 2006/02/19 08:22:40 dennis Exp $
  * $Horde: horde/lib/Log.php,v 1.15 2000/06/29 23:39:45 jon Exp $

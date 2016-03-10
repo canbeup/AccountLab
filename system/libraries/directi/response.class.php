@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /**
 * This class is basically used to get formatted o/p.
@@ -387,86 +387,86 @@ function printData3($dataToPrint)
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 26px">Customer ID</TD>
-					<TD><?php=$dataToPrint['customerid']?></TD>
-					<input name="txtCustomerID" value="<?php=$dataToPrint['customerid']?>"type="hidden"/>
+					<TD><?php $dataToPrint['customerid']?></TD>
+					<input name="txtCustomerID" value="<?php $dataToPrint['customerid']?>"type="hidden"/>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 26px">User Name</TD>
-					<TD><input name="txtUserName" value="<?php=$dataToPrint['username']?>"type="text" id="txtUsername" /></TD>
+					<TD><input name="txtUserName" value="<?php  $dataToPrint['username']?>"type="text" id="txtUsername" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Name</TD>
 					<TD>
-						<P><input name="txtName" value="<?php=$dataToPrint['name']?>" type="text" id="txtName" /></P>
+						<P><input name="txtName" value="<?php $dataToPrint['name']?>" type="text" id="txtName" /></P>
 					</TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 28px">Company</TD>
 					<TD style="HEIGHT: 28px">
-						<P><input name="txtCompany" value="<?php=$dataToPrint['company']?>" type="text" id="txtCompany" /></P>
+						<P><input name="txtCompany" value="<?php $dataToPrint['company']?>" type="text" id="txtCompany" /></P>
 					</TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Language Preference</TD>
 					<TD>
-						<P><input name="txtLangPref" value="<?php=$dataToPrint['langpref']?>" type="text" id="txtLangPref" /></P>
+						<P><input name="txtLangPref" value="<?php $dataToPrint['langpref']?>" type="text" id="txtLangPref" /></P>
 					</TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 29px">Adderss1</TD>
 					<TD style="HEIGHT: 29px">
-						<P><input name="txtAddress1" value="<?php=$dataToPrint['address1']?>" type="text" id="txtAddress1" /></P>
+						<P><input name="txtAddress1" value="<?php $dataToPrint['address1']?>" type="text" id="txtAddress1" /></P>
 					</TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 28px">Address2</TD>
 					<TD style="HEIGHT: 28px">
-						<P><input name="txtAddress2" value="<?php=$dataToPrint['address2']?>" type="text" id="txtAddress2" /></P>
+						<P><input name="txtAddress2" value="<?php $dataToPrint['address2']?>" type="text" id="txtAddress2" /></P>
 					</TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Address3</TD>
-					<TD><input name="txtAddress3" value="<?php=$dataToPrint['address3']?>" type="text" id="txtAddress3" /></TD>
+					<TD><input name="txtAddress3" value="<?php $dataToPrint['address3']?>" type="text" id="txtAddress3" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">City</TD>
-					<TD><input name="txtCity" value="<?php=$dataToPrint['city']?>" type="text" id="txtCity" /></TD>
+					<TD><input name="txtCity" value="<?php $dataToPrint['city']?>" type="text" id="txtCity" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px; HEIGHT: 28px">State</TD>
-					<TD><input name="txtState" value="<?php=$dataToPrint['state']?>" type="text" id="txtState" /></TD>
+					<TD><input name="txtState" value="<?php $dataToPrint['state']?>" type="text" id="txtState" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Country</TD>
-					<TD><input name="txtCountry" value="<?php=$dataToPrint['country']?>" type="text" id="txtCountry" /></TD>
+					<TD><input name="txtCountry" value="<?php $dataToPrint['country']?>" type="text" id="txtCountry" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Zip</TD>
-					<TD><input name="txtZip" value="<?php=$dataToPrint['zip']?>" type="text" id="txtZip" /></TD>
+					<TD><input name="txtZip" value="<?php $dataToPrint['zip']?>" type="text" id="txtZip" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">TelNo. Country code.</TD>
-					<TD><input name="txtTelcc" value="<?php=$dataToPrint['telnocc']?>" type="text" id="txtTelCc" /></TD>
+					<TD><input name="txtTelcc" value="<?php $dataToPrint['telnocc']?>" type="text" id="txtTelCc" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">TelNo.</TD>
-					<TD><input name="txtTelNo" value="<?php=$dataToPrint['telno']?>" type="text" id="txtTel" /></TD>
+					<TD><input name="txtTelNo" value="<?php $dataToPrint['telno']?>" type="text" id="txtTel" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Alternate TelNo.Country code</TD>
-					<TD><input name="txtAltTelCc" value="<?php=$dataToPrint['alttelnocc']?>" type="text" id="txtAltTelCc" /></TD>
+					<TD><input name="txtAltTelCc" value="<?php $dataToPrint['alttelnocc']?>" type="text" id="txtAltTelCc" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Alternate &nbsp;TelNo.</TD>
-					<TD><input name="txtAltTelNo" value="<?php=$dataToPrint['alttelno']?>" type="text" id="txtAltTel" /></TD>
+					<TD><input name="txtAltTelNo" value="<?php $dataToPrint['alttelno']?>" type="text" id="txtAltTel" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">FaxNo. Country code</TD>
-					<TD><input name="txtFaxCc" value="<?php=$dataToPrint['faxnocc']?>" type="text" id="txtFaxCc" /></TD>
+					<TD><input name="txtFaxCc" value="<?php $dataToPrint['faxnocc']?>" type="text" id="txtFaxCc" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">FaxNo.</TD>
-					<TD><input name="txtFaxNo" value="<?php=$dataToPrint['faxno']?>" type="text" id="txtFax" /></TD>
+					<TD><input name="txtFaxNo" value="<?php $dataToPrint['faxno']?>" type="text" id="txtFax" /></TD>
 				</TR>
 				<TR>
 					<TD align="center" colSpan="2"><input type="submit" name="btnModDetails" value="ModDetails" id="btnModDetails" /></TD>
@@ -486,65 +486,65 @@ function printData3($dataToPrint)
 				<TR>
 					<TD colSpan="2">Contact&nbsp;Details</TD>
 				<TR>
-					<TD>Contact ID</TD><TD><?php=$dataToPrint['contactid']?></TD>
-					<input name="txtContactID" value="<?php=$dataToPrint['contactid']?>"type="hidden"/>
+					<TD>Contact ID</TD><TD><?php $dataToPrint['contactid']?></TD>
+					<input name="txtContactID" value="<?php $dataToPrint['contactid']?>"type="hidden"/>
 				</TR>
 				<TR>
 					<TD>Name</TD>
-					<TD><input name="txtName" value="<?php=$dataToPrint['name']?>" type="text"  />
+					<TD><input name="txtName" value="<?php $dataToPrint['name']?>" type="text"  />
 					</TD>
 				</TR>
 				<TR>
 					<TD>Company</TD>
-					<TD><input name="txtCompany" value="<?php=$dataToPrint['company']?>" type="text"  /></TD>
+					<TD><input name="txtCompany" value="<?php $dataToPrint['company']?>" type="text"  /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Email Address</TD>
-					<TD><input name="txtEmailAddr" value="<?php=$dataToPrint['emailaddr']?>" type="text"  /></TD>
+					<TD><input name="txtEmailAddr" value="<?php $dataToPrint['emailaddr']?>" type="text"  /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Adderss1</TD>
-					<TD><input name="txtAddress1" value="<?php=$dataToPrint['address1']?>" type="text"/></TD>
+					<TD><input name="txtAddress1" value="<?php $dataToPrint['address1']?>" type="text"/></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Address2</TD>
-					<TD><input name="txtAddress2" value="<?php=$dataToPrint['address2']?>" type="text"  /></TD>
+					<TD><input name="txtAddress2" value="<?php $dataToPrint['address2']?>" type="text"  /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Address3</TD>
-					<TD><input name="txtAddress3" value="<?php=$dataToPrint['address3']?>" type="text" /></TD>
+					<TD><input name="txtAddress3" value="<?php $dataToPrint['address3']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">City</TD>
-					<TD><input name="txtCity" value="<?php=$dataToPrint['city']?>" type="text" /></TD>
+					<TD><input name="txtCity" value="<?php $dataToPrint['city']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">State</TD>
-					<TD><input name="txtState" value="<?php=$dataToPrint['state']?>" type="text" /></TD>
+					<TD><input name="txtState" value="<?php $dataToPrint['state']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Country</TD>
-					<TD><input name="txtCountry" value="<?php=$dataToPrint['country']?>" type="text" /></TD>
+					<TD><input name="txtCountry" value="<?php $dataToPrint['country']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">Zip</TD>
-					<TD><input name="txtZip" value="<?php=$dataToPrint['zip']?>" type="text" /></TD>
+					<TD><input name="txtZip" value="<?php $dataToPrint['zip']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">TelNo. Country code.</TD>
-					<TD><input name="txtTelcc" value="<?php=$dataToPrint['telnocc']?>" type="text" /></TD>
+					<TD><input name="txtTelcc" value="<?php $dataToPrint['telnocc']?>" type="text" /></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 197px">TelNo.</TD>
-					<TD><input name="txtTelNo" value="<?php=$dataToPrint['telno']?>" type="text" /></TD>
+					<TD><input name="txtTelNo" value="<?php $dataToPrint['telno']?>" type="text" /></TD>
 				</TR>
 				<TR>
 						<TD style="WIDTH: 197px">FaxNo. Country code</TD>
-						<TD><input name="txtFaxCc" value="<?php=$dataToPrint['faxnocc']?>" type="text" id="txtFaxCc" /></TD>
+						<TD><input name="txtFaxCc" value="<?php $dataToPrint['faxnocc']?>" type="text" id="txtFaxCc" /></TD>
 				</TR>
 				<TR>
 						<TD style="WIDTH: 197px">FaxNo.</TD>
-						<TD><input name="txtFaxNo" value="<?php=$dataToPrint['faxno']?>" type="text" id="txtFaxNo" /></TD>
+						<TD><input name="txtFaxNo" value="<?php $dataToPrint['faxno']?>" type="text" id="txtFaxNo" /></TD>
 				</TR>
 				<TR>
 					<TD align="center" colSpan="2">

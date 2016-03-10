@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /*
 http://www.w3.org/TR/xmlschema-2/
 

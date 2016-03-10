@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -60,7 +60,7 @@
 								<td>
 									<table width="90%">
 										<tr>
-											<td class="tablefooter"><?phpphp echo $conf['cp_note']; ?></td>
+											<td class="tablefooter"><?php echo $conf['cp_note']; ?></td>
 									    </tr>
 									</table>
 								</td>
@@ -74,4 +74,4 @@
 				</tr>
 			</table>
 		</div>
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/bottom.php"); ?>

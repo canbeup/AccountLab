@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,15 +47,14 @@
 
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html dir="<?phpphp echo PAGEDIR; ?>">
+<html dir="<?php echo PAGEDIR; ?>">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo CHARSET; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
 <title>
-<?phpphp if(isset($Custompage_Data['title']))echo $Custompage_Data['title']; else echo !empty($BL->conf['company_name'])?$BL->conf['company_name']:$BL->props->lang['accountlabplus']; ?>
+<?php if(isset($Custompage_Data['title']))echo $Custompage_Data['title']; else echo !empty($BL->conf['company_name'])?$BL->conf['company_name']:$BL->props->lang['accountlabplus']; ?>
 </title>
-<?phpphp if(isset($Custompage_Data['metatags']))echo $Custompage_Data['metatags']; else echo $BL->conf['metatags']; ?>
-<link rel="stylesheet" href="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/css/user.css"); ?>" type="text/css">
+<?php if(isset($Custompage_Data['metatags']))echo $Custompage_Data['metatags']; else echo $BL->conf['metatags']; ?>
+<link rel="stylesheet" href="<?php echo $BL->props->get_page("templates/".THEMEDIR."/css/user.css"); ?>" type="text/css">
 <script type="text/javascript">
 <!--
 var time = 3000;
@@ -258,7 +257,7 @@ function ajax(){
                 var state_obj = getObj('state','form1');
                 var count = 0;
                 state_obj.options.length = count;  
-                <?phpphp echo "var key = '".(isset($customer['state'])?$customer['state']:'0')."';"; ?> 
+                <?php echo "var key = '".(isset($customer['state'])?$customer['state']:'0')."';"; ?> 
                 var key_added = 0;
                 for(i=0; i<xmlDoc.getElementsByTagName('count').item(0).firstChild.data; i++)
                 {
@@ -303,24 +302,24 @@ function getObj(obj_name,form_name)
     return null;
 }
 function showFaqGroup(page,faqgroup_id){
-    <?phpphp $url = "page+'?cmd=".$cmd."&faqgroup_id='+faqgroup_id"; ?>
-    var url  = <?phpphp echo $url; ?>;
+    <?php $url = "page+'?cmd=".$cmd."&faqgroup_id='+faqgroup_id"; ?>
+    var url  = <?php echo $url; ?>;
     eval("parent.location='"+url+"'");
 }
 function changeLang(page,language){
-    <?phpphp $url = "page+'?cmd=".$cmd."&force_lang='+language"; ?>
-    var url  = <?phpphp echo $url; ?>;
+    <?php $url = "page+'?cmd=".$cmd."&force_lang='+language"; ?>
+    var url  = <?php echo $url; ?>;
     eval("parent.location='"+url+"'");
 }
 function changeTheme(page,theme){
-    <?phpphp $url = "page+'?cmd=".$cmd."&force_theme='+theme"; ?>
-    var url  = <?phpphp echo $url; ?>;
+    <?php $url = "page+'?cmd=".$cmd."&force_theme='+theme"; ?>
+    var url  = <?php echo $url; ?>;
     eval("parent.location='"+url+"'");
 }
 //-->
 </script>
-<?phpphp if($BL->conf['en_html_editor']){ ?>
-<script language="javascript" type="text/javascript" src="system<?phpphp echo PATH_SEP; ?>libraries<?phpphp echo PATH_SEP; ?>tinymce<?phpphp echo PATH_SEP; ?>jscripts<?phpphp echo PATH_SEP; ?>tiny_mce<?phpphp echo PATH_SEP; ?>tiny_mce_gzip.php"></script>
+<?php if($BL->conf['en_html_editor']){ ?>
+<script language="javascript" type="text/javascript" src="system<?php echo PATH_SEP; ?>libraries<?php echo PATH_SEP; ?>tinymce<?php echo PATH_SEP; ?>jscripts<?php echo PATH_SEP; ?>tiny_mce<?php echo PATH_SEP; ?>tiny_mce_gzip.php"></script>
 <script language="javascript" type="text/javascript">
 tinyMCE.init({
     mode : "textareas",
@@ -328,7 +327,7 @@ tinyMCE.init({
     auto_reset_designmode : true,
     browsers : "msie,gecko,opera",
     dialog_type : "modal",
-    directionality : "<?phpphp echo strtolower(PAGEDIR); ?>",
+    directionality : "<?php echo strtolower(PAGEDIR); ?>",
     object_resizing : false,
     plugins : "table,advhr,advimage,advlink,emotions,iespell,flash,searchreplace,print,contextmenu",
     theme_advanced_buttons1 : "bold,italic,underline,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,separator,forecolor,backcolor,separator,hr,charmap,image,emotions,code",
@@ -343,6 +342,6 @@ tinyMCE.init({
     extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]"
 });
 </script>
-<?phpphp } ?>
+<?php } ?>
 </head>
 <body>

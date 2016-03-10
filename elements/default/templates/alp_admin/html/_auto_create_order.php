@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?phpphp if ($cmd == "editorder"){ ?>
+<?php if ($cmd == "editorder"){ ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 <tr>
   <td class="tdheading">
@@ -59,107 +59,107 @@
 <table width="100%" border="0" cellspacing="2" cellpadding="0">
   <tr>
     <td class='text_grey' width="2%">&nbsp;</td>
-    <td class='text_grey' width="20%"><?phpphp echo $BL->props->lang['Name']; ?></td>
-    <td class='text_grey' colspan='4'><?phpphp echo $BL->getCustomerFieldValue("name",$REQUEST['customer_id'])." {".$REQUEST['email']."}"; ?></td>
+    <td class='text_grey' width="20%"><?php echo $BL->props->lang['Name']; ?></td>
+    <td class='text_grey' colspan='4'><?php echo $BL->getCustomerFieldValue("name",$REQUEST['customer_id'])." {".$REQUEST['email']."}"; ?></td>
   </tr>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['remote_ip']; ?></td>
-    <td class='text_grey' colspan='4'><?phpphp echo $REQUEST['remote_ip']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['remote_ip']; ?></td>
+    <td class='text_grey' colspan='4'><?php echo $REQUEST['remote_ip']; ?></td>
   </tr>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['remote_country']; ?></td>
-    <td class='text_grey' colspan='4'><?phpphp echo isset($BL->props->country[$REQUEST['remote_country_code']])?$BL->props->country[$REQUEST['remote_country_code']]:$BL->props->lang['na']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['remote_country']; ?></td>
+    <td class='text_grey' colspan='4'><?php echo isset($BL->props->country[$REQUEST['remote_country_code']])?$BL->props->country[$REQUEST['remote_country_code']]:$BL->props->lang['na']; ?></td>
   </tr>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['remote_city']; ?></td>
-    <td class='text_grey' colspan='4'><?phpphp echo $REQUEST['remote_city']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['remote_city']; ?></td>
+    <td class='text_grey' colspan='4'><?php echo $REQUEST['remote_city']; ?></td>
   </tr>
-  <form name='form6' id='form6' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+  <form name='form6' id='form6' method='post' action='<?php echo $PHP_SELF; ?>'>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['next_bill_date']; ?></td>
-    <td class='text_grey'><b><?phpphp echo $BL->fDate($REQUEST['rec_next_date']); ?></b></td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['change_next_bill_date']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['next_bill_date']; ?></td>
+    <td class='text_grey'><b><?php echo $BL->fDate($REQUEST['rec_next_date']); ?></b></td>
+    <td class='text_grey'><?php echo $BL->props->lang['change_next_bill_date']; ?></td>
     <td class='text_grey'>
-    <?phpphp $date=$BL->utils->getDateArray($REQUEST['rec_next_date']); ?>
-    <?phpphp echo $BL->utils->datePicker($date['mday'], $date['mon'], $date['year'], "search"); ?>
+    <?php $date=$BL->utils->getDateArray($REQUEST['rec_next_date']); ?>
+    <?php echo $BL->utils->datePicker($date['mday'], $date['mon'], $date['year'], "search"); ?>
     </td>
     <td class='text_grey'>
     <input type="hidden" name='action' value="change_next_bill_date" />
-    <input type="hidden" name="cmd" value="<?phpphp echo $cmd; ?>" />
-    <input type="hidden" name="sub_id" value="<?phpphp echo $REQUEST['sub_id']; ?>" />
-    <input type="submit" name="submit1" value="<?phpphp echo $BL->props->lang['Update']; ?>" class="search1" />
+    <input type="hidden" name="cmd" value="<?php echo $cmd; ?>" />
+    <input type="hidden" name="sub_id" value="<?php echo $REQUEST['sub_id']; ?>" />
+    <input type="submit" name="submit1" value="<?php echo $BL->props->lang['Update']; ?>" class="search1" />
     </td>
   </tr>
   </form>
-  <?phpphp if($REQUEST['dom_reg_comp'] == 1) {  ?>
+  <?php if($REQUEST['dom_reg_comp'] == 1) {  ?>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['Domain_Reg_Id']; ?></td>
-    <td class='text_grey' colspan='4'><?phpphp echo "<font color='skyblue'><b>".$REQUEST['dom_reg_result']."</b></font> (".ucfirst($REQUEST['dom_registrar']).")"; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['Domain_Reg_Id']; ?></td>
+    <td class='text_grey' colspan='4'><?php echo "<font color='skyblue'><b>".$REQUEST['dom_reg_result']."</b></font> (".ucfirst($REQUEST['dom_registrar']).")"; ?></td>
   </tr>
-  <?phpphp }elseif($REQUEST['dom_reg_type'] == 1){ ?>
-  <form name='form3' id='form3' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+  <?php }elseif($REQUEST['dom_reg_type'] == 1){ ?>
+  <form name='form3' id='form3' method='post' action='<?php echo $PHP_SELF; ?>'>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['Domain']." ".$BL->props->lang['Status']; ?></td>
-    <td class='text_grey'><font color='red'><b><?phpphp  echo $BL->props->lang['not_registered']; ?></b></font></td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['register_with']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['Domain']." ".$BL->props->lang['Status']; ?></td>
+    <td class='text_grey'><font color='red'><b><?php  echo $BL->props->lang['not_registered']; ?></b></font></td>
+    <td class='text_grey'><?php echo $BL->props->lang['register_with']; ?></td>
     <td class='text_grey'>
-    <?phpphp $REQUEST['registrar'] = $BL->registerDomain($REQUEST['domain_name'], $REQUEST['sub_id'], "true"); ?>
+    <?php $REQUEST['registrar'] = $BL->registerDomain($REQUEST['domain_name'], $REQUEST['sub_id'], "true"); ?>
     <select name='registrar' class='search'>
-    <option value='manual'><?phpphp echo $BL->props->lang['manual']; ?></option>
-    <?phpphp
+    <option value='manual'><?php echo $BL->props->lang['manual']; ?></option>
+    <?php
     foreach($BL->dr as $registrar){
         if($BL->dr_vals[$registrar]['active']=="yes"){
     ?>
-    <option value='<?phpphp echo $registrar; ?>' <?phpphp if($REQUEST['registrar']==$registrar) echo "selected"; ?>><?phpphp echo ucfirst($registrar); ?></option>
-    <?phpphp } } ?>
+    <option value='<?php echo $registrar; ?>' <?php if($REQUEST['registrar']==$registrar) echo "selected"; ?>><?php echo ucfirst($registrar); ?></option>
+    <?php } } ?>
     </select>
     </td>
     <td class='text_grey'>
     <input type="hidden" name='action' value="register_domain" />
-    <input type="hidden" name="cmd" value="<?phpphp echo $cmd; ?>" />
-    <input type="hidden" name="domain_name" value="<?phpphp echo $REQUEST['domain_name']; ?>" />
-    <input type="hidden" name="sub_id" value="<?phpphp echo $REQUEST['sub_id']; ?>" />
-    <input type="submit" name="submit1" value="<?phpphp echo $BL->props->lang['Update']; ?>" class="search1" />
+    <input type="hidden" name="cmd" value="<?php echo $cmd; ?>" />
+    <input type="hidden" name="domain_name" value="<?php echo $REQUEST['domain_name']; ?>" />
+    <input type="hidden" name="sub_id" value="<?php echo $REQUEST['sub_id']; ?>" />
+    <input type="submit" name="submit1" value="<?php echo $BL->props->lang['Update']; ?>" class="search1" />
     </td>
   </tr>
   </form>
-  <?phpphp } ?>
-  <?phpphp if(!empty($REQUEST['product_id']) && !empty($order_product['acc_method'])){ ?>
-  <form name='form2' id='form2' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+  <?php } ?>
+  <?php if(!empty($REQUEST['product_id']) && !empty($order_product['acc_method'])){ ?>
+  <form name='form2' id='form2' method='post' action='<?php echo $PHP_SELF; ?>'>
   <tr>
     <td class='text_grey'>&nbsp;</td>
-    <td class='text_grey'><?phpphp echo $BL->props->lang['Account_Status']; ?></td>
+    <td class='text_grey'><?php echo $BL->props->lang['Account_Status']; ?></td>
     <td class='text_grey'>
-    <font color='<?phpphp echo $txt_color; ?>'><b><?phpphp  echo $BL->props->lang[$BL->props->order_status[$REQUEST['acct_status']]]; ?></b></font>
+    <font color='<?php echo $txt_color; ?>'><b><?php  echo $BL->props->lang[$BL->props->order_status[$REQUEST['acct_status']]]; ?></b></font>
     </td>
     <td class='text_grey'>
-    <?phpphp echo $BL->props->lang['Change_status_to']; ?>
+    <?php echo $BL->props->lang['Change_status_to']; ?>
     </td>
     <td class='text_grey'>
      <select name='status_action' id='status_action' class='search'>
-     <option value="<?phpphp echo $action; ?>" "selected"><?phpphp echo $action_txt; ?></option>
-     <option value="_<?phpphp echo $action; ?>"><?phpphp echo $BL->props->lang['Mark']." ".$action_txt; ?></option>
-     <option value="kill"><?phpphp echo $BL->props->lang['Kill_Account']; ?></option>
+     <option value="<?php echo $action; ?>" "selected"><?php echo $action_txt; ?></option>
+     <option value="_<?php echo $action; ?>"><?php echo $BL->props->lang['Mark']." ".$action_txt; ?></option>
+     <option value="kill"><?php echo $BL->props->lang['Kill_Account']; ?></option>
      </select>
      </td>
     <td class='text_grey'>
     <input type="hidden" name='action' value="change_status" />
-    <input type="hidden" name="cmd" value="<?phpphp echo $cmd; ?>" />
-    <input type="hidden" name="sub_id" value="<?phpphp echo $REQUEST['sub_id']; ?>" />
-    <input type="submit" name="submit1" value="<?phpphp echo $BL->props->lang['Update']; ?>" class="search1" />
+    <input type="hidden" name="cmd" value="<?php echo $cmd; ?>" />
+    <input type="hidden" name="sub_id" value="<?php echo $REQUEST['sub_id']; ?>" />
+    <input type="submit" name="submit1" value="<?php echo $BL->props->lang['Update']; ?>" class="search1" />
     </td>
   </tr>
   </form>
-  <?phpphp } ?>
+  <?php } ?>
     <tr>
       <td colspan="6" class="text_grey">
-      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
       </td>
     </tr>
 </table>
@@ -167,4 +167,4 @@
 </tr>
 </table>
 <br />
-<?phpphp } ?>
+<?php } ?>

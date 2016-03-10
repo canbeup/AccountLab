@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * xajaxResponse.inc.php :: xajax XML response class
  *

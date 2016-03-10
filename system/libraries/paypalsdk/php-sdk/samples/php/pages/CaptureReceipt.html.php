@@ -1,4 +1,4 @@
-<?phpphp
+<?php
    
    require_once 'PayPal/Type/DoCaptureResponseDetailsType.php';
    require_once 'PayPal/Type/DoCaptureResponseType.php';

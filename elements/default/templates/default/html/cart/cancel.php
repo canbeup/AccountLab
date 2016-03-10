@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,7 +48,7 @@
 ?>
 
 <div align=center>
-<?phpphp 
+<?php 
 echo $BL->props->lang['cancel_payment'];
 if(!empty($_GET['error']))echo "<br />Error:".$_GET['error'];
 ?>

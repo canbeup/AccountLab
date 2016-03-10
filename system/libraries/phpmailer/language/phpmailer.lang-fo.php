@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * PHPMailer language file.  
  * Faroese Version [language of the Faroe Islands, a Danish dominion]

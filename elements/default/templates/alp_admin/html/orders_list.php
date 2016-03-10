@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,27 +47,27 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['^orders']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['^orders']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addorder" class="add_link"><?phpphp echo $BL->props->lang['~addorder']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addorder" class="add_link"><?php echo $BL->props->lang['~addorder']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt3' id='tt3' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=orphan_orders" class="add_link"><?phpphp echo $BL->props->lang['~orphan_orders']; ?></a></div>
+      <div class="tabs" name='tt3' id='tt3' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=orphan_orders" class="add_link"><?php echo $BL->props->lang['~orphan_orders']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
     <div id="display_list">
-    <?phpphp include $BL->props->get_page("templates/alp_admin/html/_orders.php"); ?>
+    <?php include $BL->props->get_page("templates/alp_admin/html/_orders.php"); ?>
     <table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">              
     <tr> 
         <td class="text_grey" align="center">
         <div style="vertical-align:middle">
-        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border="0" /> <?phpphp echo $BL->props->lang['Edit']; ?>
+        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border="0" /> <?php echo $BL->props->lang['Edit']; ?>
         &nbsp;
-        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>add_invoice.gif' border="0" /> <?phpphp echo $BL->props->lang['add_invoice']; ?>
+        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>add_invoice.gif' border="0" /> <?php echo $BL->props->lang['add_invoice']; ?>
         &nbsp;
-        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' border="0" /> <?phpphp echo $BL->props->lang['Delete']; ?>
+        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' border="0" /> <?php echo $BL->props->lang['Delete']; ?>
         </div>
         </td>
     </tr>
@@ -77,19 +77,19 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr> 
     <td class='text_grey'>
-      <input type='text' name='search_term' id='search_term' value='<?phpphp echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' size='20' class='search'>
-      <input type='hidden' name='cmd' id='cmd' value='<?phpphp echo $cmd; ?>'>
-      <input type='submit' name='submit1' class='search1' value='<?phpphp echo $BL->props->lang['search']; ?>'>
+      <input type='text' name='search_term' id='search_term' value='<?php echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' size='20' class='search'>
+      <input type='hidden' name='cmd' id='cmd' value='<?php echo $cmd; ?>'>
+      <input type='submit' name='submit1' class='search1' value='<?php echo $BL->props->lang['search']; ?>'>
     </td>
 </tr>      
 </table>
 </form> 
 <br />
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

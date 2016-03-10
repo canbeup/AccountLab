@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,32 +48,32 @@
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html dir="<?phpphp echo PAGEDIR; ?>">
+<html dir="<?php echo PAGEDIR; ?>">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?phpphp echo CHARSET; ?>">
-<title><?phpphp echo $BL->props->lang['accountlabplus']; ?></title>
-<link rel="stylesheet" href="<?phpphp $horizonal = 1; echo $BL->props->get_page("templates/alp_admin/css/".ADMINCSS.".css"); ?>" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
+<title><?php echo $BL->props->lang['accountlabplus']; ?></title>
+<link rel="stylesheet" href="<?php $horizonal = 1; echo $BL->props->get_page("templates/alp_admin/css/".ADMINCSS.".css"); ?>" type="text/css" />
 </head>
 <body>
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/alert.php"); ?>
 <br />
 <br />
 <br />
 <br />
 <br />
 <div align="center">
-<form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
+<form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
 	<table width='35%' border='0' align='center' cellpadding='0' cellspacing='0' class="search">
         <tr> 
         <td class="tdheading1" height="20">
-		<div align="right"><b><?phpphp echo $BL->props->lang['version']." ".ALP_VERSION; ?></b></div>
+		<div align="right"><b><?php echo $BL->props->lang['version']." ".ALP_VERSION; ?></b></div>
 		</td>
         </tr>
 		<tr> 
           <td class="text_grey">
 		  <div style="padding:5px;" align="left">
           <a href='http://accountlab.com' target='_blank'>
-		  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>alp-logo.gif" alt="" width="190" height="24" border="0" />
+		  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>alp-logo.gif" alt="" width="190" height="24" border="0" />
 		  </a>
 		  </div>
 		  </td>
@@ -82,7 +82,7 @@
           <td class='text_grey'>
 		  <div id="login_label">
 		  <div style="padding-left:5px;" align="left">
-		  <?phpphp echo $BL->props->lang['Username']; ?>
+		  <?php echo $BL->props->lang['Username']; ?>
 		  </div>
 		  </div>
 		  <div id="login_field" align="left">
@@ -94,7 +94,7 @@
           <td class='text_grey'>
 		    <div id="login_label" >
 			<div style="padding-left:5px;" align="left">
-		    <?phpphp echo $BL->props->lang['Password']; ?>
+		    <?php echo $BL->props->lang['Password']; ?>
 			</div>
 			</div>
 		  <div id="login_field" align="left">
@@ -104,11 +104,11 @@
         </tr>
         <tr> 
           <td class='text_grey'>
-          <?phpphp foreach($_GET as $k=>$v){ ?>
-          <input name='<?phpphp echo $k; ?>' type='hidden' value='<?phpphp echo $v; ?>'>
-          <?phpphp } ?>
+          <?php foreach($_GET as $k=>$v){ ?>
+          <input name='<?php echo $k; ?>' type='hidden' value='<?php echo $v; ?>'>
+          <?php } ?>
 		  <div id="login_field" align="left" style="padding-bottom:5px;">
-		   <input name='submit_login' type='submit' class='search1' value='<?phpphp echo $BL->props->lang['login']; ?>' />
+		   <input name='submit_login' type='submit' class='search1' value='<?php echo $BL->props->lang['login']; ?>' />
 		   </div>
 		  </td>
         </tr>

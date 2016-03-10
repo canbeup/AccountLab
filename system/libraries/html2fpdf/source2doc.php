@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /*
  Copyright (C) 2004 Renato Coelho 
  (PHP)Source 2 Doc v0.5.0

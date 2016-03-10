@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
    $ptd = $response->getPaymentTransactionDetails();
    $payer_info = $ptd->getPayerInfo();
@@ -79,7 +79,7 @@
             <td>
                 Gross Amount:
             </td>
-            <?phpphp
+            <?php
             $display_amt = $currency_cd.' '.$gross_amt;
             ?>
             <td><?php=$display_amt?></td>
@@ -94,7 +94,7 @@
     </table>
     </center>
     
-    <?phpphp
+    <?php
       // Build links
       $do_void_link = 'DoVoid.php?authorization_id='.$tran_ID;
       $do_capture_link = 'DoCapture.php?authorization_id='.$tran_ID.'&currency='.$currency_cd.'&amount='.$gross_amt;

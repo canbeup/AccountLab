@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /*
 This script is supposed to be used together with the HTML2FPDF.php class
 Copyright (C) 2004-2005 Renato Coelho

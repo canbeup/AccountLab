@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,81 +47,81 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td colspan="4" class="tdheading">
-					  <b>&nbsp;<?phpphp echo $BL->props->lang['~discounts']; ?></b>
+					  <b>&nbsp;<?php echo $BL->props->lang['~discounts']; ?></b>
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-            		<form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
-            		<?phpphp if (!count($allCustomers)) { ?>
+            		<form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
+            		<?php if (!count($allCustomers)) { ?>
             				<tr>
             					<td class="text_grey" colspan="4">
                                 	<div align='center'>
-                                	<?phpphp echo $BL->props->lang['No_customers']; ?>
+                                	<?php echo $BL->props->lang['No_customers']; ?>
                                 	</div>
             					</td>
             				</tr>
-            		<?phpphp } else { ?>														
+            		<?php } else { ?>														
                     <tr>
 					<td class='text_grey' width='1%'></td>
-					<td class='text_grey'><b><?phpphp echo $BL->props->lang['Name']; ?></b></td>
-					<td class='text_grey'><b><?phpphp echo $BL->props->lang['discount']." (%)"; ?></b></td>
+					<td class='text_grey'><b><?php echo $BL->props->lang['Name']; ?></b></td>
+					<td class='text_grey'><b><?php echo $BL->props->lang['discount']." (%)"; ?></b></td>
 					<td class='text_grey'></td>
 	  				</tr>
-                    <?phpphp foreach($allCustomers as $temp) { ?>
+                    <?php foreach($allCustomers as $temp) { ?>
 					<tr>
                       <td colspan='4' class='text_grey'>
-					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
+					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1"></td>
                     </tr>					
 					<tr>
 					<td class='text_grey'></td>
-					<td class='text_grey'><a href='<?phpphp echo $PHP_SELF."?cmd=editcustomers&id=".$temp['id']; ?>'><?phpphp echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></td>
-					<td class='text_grey'><input type="text" name="discount[<?phpphp echo $temp['id']; ?>]" class='search' value="<?phpphp echo $temp['discount']; ?>" size="8" /></td>
+					<td class='text_grey'><a href='<?php echo $PHP_SELF."?cmd=editcustomers&id=".$temp['id']; ?>'><?php echo $BL->getCustomerFieldValue("name",$temp['id']); ?></a></td>
+					<td class='text_grey'><input type="text" name="discount[<?php echo $temp['id']; ?>]" class='search' value="<?php echo $temp['discount']; ?>" size="8" /></td>
 					<td class='text_grey'>
-							  <select name="disposable[<?phpphp echo $temp['id']; ?>]" size="1" class='search'>
-							    <option value="1" <?phpphp if($temp['disposable'] == 1)echo "selected"; ?>><?phpphp echo $BL->props->lang['next_order_only']; ?></option>
-							    <option value="0" <?phpphp if($temp['disposable'] == 0)echo "selected"; ?>><?phpphp echo $BL->props->lang['until_removed']; ?></option>
+							  <select name="disposable[<?php echo $temp['id']; ?>]" size="1" class='search'>
+							    <option value="1" <?php if($temp['disposable'] == 1)echo "selected"; ?>><?php echo $BL->props->lang['next_order_only']; ?></option>
+							    <option value="0" <?php if($temp['disposable'] == 0)echo "selected"; ?>><?php echo $BL->props->lang['until_removed']; ?></option>
 							  </select>
-							  <select name="cumulative[<?phpphp echo $temp['id']; ?>]" size="1" class='search'>
-							    <option value="1" <?phpphp if($temp['cumulative'] == 1)echo "selected"; ?>><?phpphp echo $BL->props->lang['cumulative']; ?></option>
-							    <option value="0" <?phpphp if($temp['cumulative'] == 0)echo "selected"; ?>><?phpphp echo $BL->props->lang['not_cumulative']; ?></option>
+							  <select name="cumulative[<?php echo $temp['id']; ?>]" size="1" class='search'>
+							    <option value="1" <?php if($temp['cumulative'] == 1)echo "selected"; ?>><?php echo $BL->props->lang['cumulative']; ?></option>
+							    <option value="0" <?php if($temp['cumulative'] == 0)echo "selected"; ?>><?php echo $BL->props->lang['not_cumulative']; ?></option>
 							  </select> 
  					</td>
                     </tr>
 					<tr>
                       <td colspan='4' class='text_grey' height="2">
-					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
 					  </td>
                     </tr>
-                   <?phpphp } } ?>
+                   <?php } } ?>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 					<tr> 
                       <td colspan="4" class="text_grey">
 					  <div align="center">
-							<input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>'>
-					        <input type='submit' class='search1' name='update' value='<?phpphp echo $BL->props->lang['Update']; ?>' />					  
+							<input type='hidden' name='cmd' value='<?php echo $cmd; ?>'>
+					        <input type='submit' class='search1' name='update' value='<?php echo $BL->props->lang['Update']; ?>' />					  
 					  </div>
 					  </td>
                     </tr>				
 			        </form>
 					<tr> 
-                      <td colspan="4" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="4" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>			
                   </table>
 	</div>
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

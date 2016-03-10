@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?phpphp
+<?php
 if (!method_exists($BL, 'busLogic')) die("");
 ?>
 <script language="JavaScript" type="text/javascript">
@@ -71,7 +71,7 @@ function showMe(){
 -->
 </script>
 <!-- BEGIN FLOATING LAYER CODE //-->
-<div id="theLayer" align='center' style="position:absolute;visibility:<?phpphp if($BL->utils->alert_now)echo "visible"; else echo "hidden"; ?>">
+<div id="theLayer" align='center' style="position:absolute;visibility:<?php if($BL->utils->alert_now)echo "visible"; else echo "hidden"; ?>">
 <br>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
@@ -83,18 +83,18 @@ function showMe(){
               <tr>
                   <td class="alert_tdhead">
                   <div align='right'>
-                  <?phpphp if($BL->utils->PDF){ ?>
-                  <a href="info.php?cmd=PDF&html=<?phpphp echo urlencode($BL->utils->alert_text); ?>" target='_blank'"><b>[<?phpphp echo $BL->props->lang['Download_PDF']; ?>]</b></a>
+                  <?php if($BL->utils->PDF){ ?>
+                  <a href="info.php?cmd=PDF&html=<?php echo urlencode($BL->utils->alert_text); ?>" target='_blank'"><b>[<?php echo $BL->props->lang['Download_PDF']; ?>]</b></a>
                   &nbsp;&nbsp;
-                  <?phpphp } ?>
-                  <a href="#" onClick="hideMe();return false"><b>[<?phpphp echo $BL->props->lang['Close']; ?>]</b></a>
+                  <?php } ?>
+                  <a href="#" onClick="hideMe();return false"><b>[<?php echo $BL->props->lang['Close']; ?>]</b></a>
                   </div>
                   </td>
               </tr>
               <tr>
                   <td width="100%" bgcolor="#FFFFFF" class="alert_text" align='center'>
                             <!-- PLACE YOUR CONTENT HERE //-->  
-                            <?phpphp echo $BL->utils->alert_text; ?>
+                            <?php echo $BL->utils->alert_text; ?>
                             <!-- END OF CONTENT AREA //-->
                   </td>
               </tr>

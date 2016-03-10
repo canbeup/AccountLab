@@ -16,7 +16,7 @@
 	}
 </script>
 
-<?phpphp
+<?php
 require_once 'lib/constants.inc.php';
 ?>
 

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,57 +47,57 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
-<form name='form1' id='form1' action='<?phpphp echo $PHP_SELF; ?>' method='POST' class='alpform'>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/header.php"); ?>
+<form name='form1' id='form1' action='<?php echo $PHP_SELF; ?>' method='POST' class='alpform'>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>            
 <tr> 
   <td colspan='2'>
-  <b><?phpphp echo $BL->props->lang['login']; ?></b>
+  <b><?php echo $BL->props->lang['login']; ?></b>
   </td>
 </tr>
 <tr> 
-  <td width='40%'><span class='alplabel'><?phpphp echo $BL->props->lang['Email']; ?></span></td>
+  <td width='40%'><span class='alplabel'><?php echo $BL->props->lang['Email']; ?></span></td>
   <td>
   <input name='email' type='text' class='alpinput' id='email' size='20' />
   </td>
 </tr>
 <tr> 
-  <td><span class='alplabel'><?phpphp echo $BL->props->lang['password']; ?></span></td>
+  <td><span class='alplabel'><?php echo $BL->props->lang['password']; ?></span></td>
   <td>
   <input name='password' type='password' class='alpinput' id='password' size='20' />
-  <?phpphp foreach($_GET as $k=>$v) { ?>
-  <input name='<?phpphp echo $k; ?>' type='hidden' value='<?phpphp echo $v; ?>' />
-  <?phpphp } ?>
+  <?php foreach($_GET as $k=>$v) { ?>
+  <input name='<?php echo $k; ?>' type='hidden' value='<?php echo $v; ?>' />
+  <?php } ?>
   </td>
 </tr>
 <tr> 
   <td>&nbsp;</td>
   <td>
-  <input name='submit_login' type='submit' class='alpinput' value='<?phpphp echo $BL->props->lang['login']; ?>' />
+  <input name='submit_login' type='submit' class='alpinput' value='<?php echo $BL->props->lang['login']; ?>' />
   </td>
 </tr>
 </table>
 </form>
 <br />
-<form name='form2' id='form2' method='post' action='<?phpphp echo $PHP_SELF; ?>' class='form'>
+<form name='form2' id='form2' method='post' action='<?php echo $PHP_SELF; ?>' class='form'>
 <table width='100%' border='0' cellspacing='0' cellpadding='0'>
 <tr> 
   <td colspan='2'>
-  <b><?phpphp echo $BL->props->lang['fp']; ?></b>
+  <b><?php echo $BL->props->lang['fp']; ?></b>
   </td>
 </tr>
 <tr> 
- <td width='40%'><span class='alplabel'><?phpphp echo $BL->props->lang['Email']; ?></span></td>
+ <td width='40%'><span class='alplabel'><?php echo $BL->props->lang['Email']; ?></span></td>
  <td><input name='email' type='text' class='alpinput' id='email' size='20' /></td>
 </tr>
 <tr> 
  <td>&nbsp;</td>
  <td>
  <input name='get_pass' type='hidden' value='1'>
- <input name='submit' type='submit' class='alpinput' value='<?phpphp echo $BL->props->lang['gp']; ?>' />
+ <input name='submit' type='submit' class='alpinput' value='<?php echo $BL->props->lang['gp']; ?>' />
  </td>
 </tr>
 </table>
 </form>
 <br />
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/footer.php"); ?>

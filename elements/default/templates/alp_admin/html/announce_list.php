@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~announce']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~announce']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addannounce" class="add_link"><?phpphp echo $BL->props->lang['+addannounce']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addannounce" class="add_link"><?php echo $BL->props->lang['+addannounce']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
     <div id="display_list">
@@ -63,71 +63,71 @@
 					  </td>
                     </tr>					
 					<tr> 
-                      <td colspan="3" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="3" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-		<?phpphp
+		<?php
 		if (!count($announces))
 		{
 		?>
 				<tr>
 					<td class="text_grey" colspan="3">
                     	<div align='center'>
-                    	<?phpphp echo $BL->props->lang['No_announces']; ?>
+                    	<?php echo $BL->props->lang['No_announces']; ?>
                     	</div>
 					</td>
 				</tr>
-		<?phpphp
+		<?php
 		}
 		else
 		{
 		?>
 					<td class='text_grey' width="1%"></td>
                       <td class='text_grey'>
-					  <b><?phpphp echo $BL->props->lang['title']; ?></b></td>
+					  <b><?php echo $BL->props->lang['title']; ?></b></td>
                       <td class='text_grey' width='10%'></td>
                     </tr>		
-					<?phpphp
+					<?php
 					foreach ($announces as $key => $val)
 					{
 					?>
                     <tr> 
                       <td colspan='3' class='text_grey'>
-                      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                       </td>
                     </tr>							
 					<tr>
 					<td class='text_grey' width="1%"></td>
                       <td class='text_grey'>
-					  <?phpphp echo $val['an_title']; ?></td>
+					  <?php echo $val['an_title']; ?></td>
                       <td class='text_grey' width='10%'><div align='right'>
-                      <?phpphp if($BL->getCmd("editannounce")){ ?>
-                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editannounce&ann_id=<?phpphp echo $val['ann_id']; ?>'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0'></a>
+                      <?php if($BL->getCmd("editannounce")){ ?>
+                      <a href='<?php echo $PHP_SELF; ?>?cmd=editannounce&ann_id=<?php echo $val['ann_id']; ?>'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0'></a>
                       &nbsp;
-                      <?phpphp } ?>
-                      <?phpphp if($BL->getCmd("delannounce")){ ?>
-                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['Do_you_want_to_delete_this_announce']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=delannounce&ann_id=<?phpphp echo $val['ann_id']; ?>'"><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
+                      <?php } ?>
+                      <?php if($BL->getCmd("delannounce")){ ?>
+                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['Do_you_want_to_delete_this_announce']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=delannounce&ann_id=<?php echo $val['ann_id']; ?>'"><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0'></a>
                       &nbsp;
-                      <?phpphp } ?>                      
+                      <?php } ?>                      
                       </div>
                       </td>
                     </tr>
-                    <?phpphp
+                    <?php
 					}
 					?>
-		<?phpphp
+		<?php
 		}
 		?>
 					<tr> 
-                      <td colspan="3" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="3" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
                   </table>
 				  <br />
 					<table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">				
 					<tr> 
                       <td class="text_grey" align="center">
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif'> <?phpphp echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif'> <?php echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif'> <?phpphp echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif'> <?php echo $BL->props->lang['Delete']; ?>
 					  </td>
                     </tr>
 					</table>										
@@ -135,7 +135,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

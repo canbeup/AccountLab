@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,90 +47,90 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 					<tr> 
                       <td colspan="2" class="tdheading">
-					  <b>&nbsp;<?phpphp echo $BL->props->lang['~geoip']; ?></b>
+					  <b>&nbsp;<?php echo $BL->props->lang['~geoip']; ?></b>
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
 					<table width='100%' border='0' cellspacing='0' cellpadding='0'>
 		    			<tr> 
                         <td class='text_grey' width='1%'>
 						<div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
 						</div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo  $BL->props->lang['data_feed']; ?>
+						<?php echo  $BL->props->lang['data_feed']; ?>
 						</div>
 						<div id="form1_field">
 						<script language="JavaScript" type="text/JavaScript">
 						<!--
 						function MM_jumpMenu(targ,selObj,restore){
-							eval(targ+".location='<?phpphp echo $PHP_SELF; ?>?cmd=geoip&feed="+restore.feed.value+"'");
+							eval(targ+".location='<?php echo $PHP_SELF; ?>?cmd=geoip&feed="+restore.feed.value+"'");
 						}
 						//-->
 						</script>
-						<?phpphp
+						<?php
 						$feed=1;
 						if(!empty($geoip['feed']))$feed=$geoip['feed'];
 						if(!empty($REQUEST['feed'])) $feed=$REQUEST['feed'];	
 						?>						
                         <select name='feed' id='feed' class='search' onChange="javascript:MM_jumpMenu('parent',this,this.form);">
-						<option value='1' <?phpphp if($feed=="1")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['use_XML_hostip']; ?></option>
-						<option value='2' <?phpphp if($feed=="2")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['use_CSV_max']; ?></option>
-						<option value='3' <?phpphp if($feed=="3")echo "selected=\"selected\""; ?>><?phpphp echo  $BL->props->lang['use_CSV_directi']; ?></option>
+						<option value='1' <?php if($feed=="1")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['use_XML_hostip']; ?></option>
+						<option value='2' <?php if($feed=="2")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['use_CSV_max']; ?></option>
+						<option value='3' <?php if($feed=="3")echo "selected=\"selected\""; ?>><?php echo  $BL->props->lang['use_CSV_directi']; ?></option>
 						</select>
 						</div>
 						</td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
 						</td>
                       </tr>
-					<?phpphp if(!empty($geoip['updated_on']) && $geoip['updated_on']!="0000-00-00 00:00:00"){ ?>
+					<?php if(!empty($geoip['updated_on']) && $geoip['updated_on']!="0000-00-00 00:00:00"){ ?>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
 							<div id="form1_label">
-							<?phpphp echo  $BL->props->lang['last_update']; ?>
+							<?php echo  $BL->props->lang['last_update']; ?>
 							</div>
 							<div id="form1_field">
-                            <?phpphp echo $geoip['updated_on']; ?>
+                            <?php echo $geoip['updated_on']; ?>
                           </div>
                          </td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                         </td>
                       </tr>
-					<?phpphp
+					<?php
 					}
 					?>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
-						<?phpphp 
+						<?php 
 						if($feed == 1)
 						{
 							echo  $BL->props->lang['exp_XML_hostip'];
@@ -147,30 +147,30 @@
                           </td>
                       </tr>
                       <tr> 
-                        <td colspan='2' class='text_grey'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
+                        <td colspan='2' class='text_grey'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
                       </tr>    					
-					<?phpphp
+					<?php
 					if($feed!="1"){
 					?>
                       <tr> 
                         <td class='text_grey'>
                         <div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
                         </div>
                         </td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo  $BL->props->lang['GeoIP_CSV']; ?>
+						<?php echo  $BL->props->lang['GeoIP_CSV']; ?>
 						</div>
 						<div id="form1_field">
-                         <input type="text" name="csv_file" class="search" size="40"  value="<?phpphp echo isset($csv_file)?$csv_file:""; ?>" />
+                         <input type="text" name="csv_file" class="search" size="40"  value="<?php echo isset($csv_file)?$csv_file:""; ?>" />
                           </div>
                           </td>
                       </tr>
                       <tr> 
-                        <td colspan='2' class='text_grey'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
+                        <td colspan='2' class='text_grey'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
                       </tr>                      
-                      <?phpphp
+                      <?php
 					  }
 					  ?>         
                       <tr> 
@@ -180,8 +180,8 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                        	<input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                            <input type='submit' name='submit' class='search1' value='<?phpphp echo $BL->props->lang['Update']; ?>' />
+                        	<input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                            <input type='submit' name='submit' class='search1' value='<?php echo $BL->props->lang['Update']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -193,7 +193,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

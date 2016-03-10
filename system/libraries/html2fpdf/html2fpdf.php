@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /*
 *** General-use version
 

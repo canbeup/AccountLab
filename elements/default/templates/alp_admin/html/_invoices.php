@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,71 +50,71 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
     <tr>
     <form name='form2' id='form2' action="admin.php" method="post">
-      <input type='hidden' name='search_term' id='search_term' value='<?phpphp echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
-      <input type='hidden' name='cmd' id='cmd' value='<?phpphp echo $cmd; ?>' />
-      <input type='hidden' name='status' id='status' value='<?phpphp echo $status; ?>' />
-      <input type='hidden' name='id' id='id' value='<?phpphp echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
+      <input type='hidden' name='search_term' id='search_term' value='<?php echo isset($BL->REQUEST['search_term'])?$BL->REQUEST['search_term']:""; ?>' >
+      <input type='hidden' name='cmd' id='cmd' value='<?php echo $cmd; ?>' />
+      <input type='hidden' name='status' id='status' value='<?php echo $status; ?>' />
+      <input type='hidden' name='id' id='id' value='<?php echo isset($BL->REQUEST['id'])?$BL->REQUEST['id']:0; ?>' />
         <td colspan="8" class="tdheading" align='right'>
-            <?phpphp if($cmd=="viewinvoice"){ ?>
-            <?phpphp echo $BL->props->lang['ORDER_BY']; ?>
+            <?php if($cmd=="viewinvoice"){ ?>
+            <?php echo $BL->props->lang['ORDER_BY']; ?>
             <select name="orderby1" id="orderby1" class="search" onchange="javascript:this.form.submit();">
-            <option value='invoice_no' <?phpphp if($BL->REQUEST['orderby1']=='invoice_no')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Nu']; ?></option>
-            <option value='gross_amount' <?phpphp if($BL->REQUEST['orderby1']=='gross_amount')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Amount']; ?></option>
-            <option value='due_date' <?phpphp if($BL->REQUEST['orderby1']=='due_date')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Due_Date']; ?></option>
-            <option value='status' <?phpphp if($BL->REQUEST['orderby1']=='status')echo "selected"; ?> ><?phpphp echo $BL->props->lang['Status']; ?></option>
+            <option value='invoice_no' <?php if($BL->REQUEST['orderby1']=='invoice_no')echo "selected"; ?> ><?php echo $BL->props->lang['Nu']; ?></option>
+            <option value='gross_amount' <?php if($BL->REQUEST['orderby1']=='gross_amount')echo "selected"; ?> ><?php echo $BL->props->lang['Amount']; ?></option>
+            <option value='due_date' <?php if($BL->REQUEST['orderby1']=='due_date')echo "selected"; ?> ><?php echo $BL->props->lang['Due_Date']; ?></option>
+            <option value='status' <?php if($BL->REQUEST['orderby1']=='status')echo "selected"; ?> ><?php echo $BL->props->lang['Status']; ?></option>
             </select>
             <select name="orderby2" id="orderby2" class="search" onchange="javascript:this.form.submit();">
-            <option value='DESC' <?phpphp if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['DESC']; ?></option>
-            <option value='ASC' <?phpphp if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?phpphp echo $BL->props->lang['ASC']; ?></option>
+            <option value='DESC' <?php if($BL->REQUEST['orderby2']=='DESC')echo "selected"; ?> ><?php echo $BL->props->lang['DESC']; ?></option>
+            <option value='ASC' <?php if($BL->REQUEST['orderby2']=='ASC')echo "selected"; ?> ><?php echo $BL->props->lang['ASC']; ?></option>
             </select>
-            <?phpphp } ?>
-            &nbsp;<?phpphp echo isset($pagination)?$pagination:""; ?>
+            <?php } ?>
+            &nbsp;<?php echo isset($pagination)?$pagination:""; ?>
         </td>
     </form>
     </tr>
     <tr>
         <td colspan="8" class="text_grey">
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>  
     <tr> 
-        <td class="text_grey" width="5%"><div align="left"><b>&nbsp;<?phpphp echo $BL->props->lang['Nu']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Description']; ?></b></div></td>
-        <td class="text_grey" colspan="2"><div align="left"><b><?phpphp echo $BL->props->lang['Name']; ?></b></div></td>
-        <td class="text_grey"><div align="center"><b><?phpphp echo $BL->props->lang['Amount']; ?>&nbsp;&nbsp;</b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Due_Date']; ?></b></div></td>
-        <td class="text_grey"><div align="left"><b><?phpphp echo $BL->props->lang['Status']; ?></b></div></td>
+        <td class="text_grey" width="5%"><div align="left"><b>&nbsp;<?php echo $BL->props->lang['Nu']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Description']; ?></b></div></td>
+        <td class="text_grey" colspan="2"><div align="left"><b><?php echo $BL->props->lang['Name']; ?></b></div></td>
+        <td class="text_grey"><div align="center"><b><?php echo $BL->props->lang['Amount']; ?>&nbsp;&nbsp;</b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Due_Date']; ?></b></div></td>
+        <td class="text_grey"><div align="left"><b><?php echo $BL->props->lang['Status']; ?></b></div></td>
         <td class="text_grey"><div align="left"><b></b></div></td>
     </tr>
-    <?phpphp foreach ($Invoices as $Invoice) { ?>
+    <?php foreach ($Invoices as $Invoice) { ?>
     <tr>
         <td  colspan='8' class='text_grey'>
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" />
         </td>
     </tr>       
     <tr>
-        <td class='text_grey'><div align='left'>&nbsp;<?phpphp echo $conf['invoice_prefix'].$Invoice['invoice_no'].$conf['invoice_suffix']; ?>&nbsp;</div></td>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->getFriendlyDesc($Invoice['desc'],$Invoice['order_id']); ?></div></td>
-        <td class='text_grey'><div align='left'><a href="<?phpphp echo $PHP_SELF; ?>?cmd=editcustomers&id=<?phpphp echo $Invoice['customer_id']; ?>"><?phpphp echo $BL->getCustomerFieldValue("name",$Invoice['customer_id']); ?></a></div></td>
-        <td class='text_grey'><div align='left'>[<a href="<?phpphp echo $PHP_SELF; ?>?cmd=viewinvoice&id=<?phpphp echo $Invoice['customer_id']; ?>"><?phpphp echo $BL->props->lang['^invoices']; ?></a>]</div></td>
-        <td class='text_grey'><div align='right'><b><?phpphp echo $BL->toCurrency($Invoice['gross_amount'],null,1); ?>&nbsp;&nbsp;</b></div></td>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->fDate($Invoice['due_date']); ?></div></td>
-        <td class='text_grey'><div align='left'><?phpphp echo $BL->props->lang[$Invoice['status']]; ?></div></td>
+        <td class='text_grey'><div align='left'>&nbsp;<?php echo $conf['invoice_prefix'].$Invoice['invoice_no'].$conf['invoice_suffix']; ?>&nbsp;</div></td>
+        <td class='text_grey'><div align='left'><?php echo $BL->getFriendlyDesc($Invoice['desc'],$Invoice['order_id']); ?></div></td>
+        <td class='text_grey'><div align='left'><a href="<?php echo $PHP_SELF; ?>?cmd=editcustomers&id=<?php echo $Invoice['customer_id']; ?>"><?php echo $BL->getCustomerFieldValue("name",$Invoice['customer_id']); ?></a></div></td>
+        <td class='text_grey'><div align='left'>[<a href="<?php echo $PHP_SELF; ?>?cmd=viewinvoice&id=<?php echo $Invoice['customer_id']; ?>"><?php echo $BL->props->lang['^invoices']; ?></a>]</div></td>
+        <td class='text_grey'><div align='right'><b><?php echo $BL->toCurrency($Invoice['gross_amount'],null,1); ?>&nbsp;&nbsp;</b></div></td>
+        <td class='text_grey'><div align='left'><?php echo $BL->fDate($Invoice['due_date']); ?></div></td>
+        <td class='text_grey'><div align='left'><?php echo $BL->props->lang[$Invoice['status']]; ?></div></td>
         <td class='text_grey'>
             <div align='left'>
-            <a href='info.php?cmd=PDF&invoice_no=<?phpphp echo $Invoice['invoice_no']; ?>' target='_blank'>          
-            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>pdf.gif' alt='<?phpphp echo $BL->props->lang['PDF']; ?>' border='0' /></a>
+            <a href='info.php?cmd=PDF&invoice_no=<?php echo $Invoice['invoice_no']; ?>' target='_blank'>          
+            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>pdf.gif' alt='<?php echo $BL->props->lang['PDF']; ?>' border='0' /></a>
             &nbsp;
-            <?phpphp if($BL->getCmd("editinvoice")){ ?>
-            <a href='<?phpphp echo $PHP_SELF; ?>?cmd=editinvoice&invoice_no=<?phpphp echo $Invoice['invoice_no']; ?>'class='text_link'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' border='0'></a>&nbsp;
-            <?phpphp } ?>
+            <?php if($BL->getCmd("editinvoice")){ ?>
+            <a href='<?php echo $PHP_SELF; ?>?cmd=editinvoice&invoice_no=<?php echo $Invoice['invoice_no']; ?>'class='text_link'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' border='0'></a>&nbsp;
+            <?php } ?>
             </div>
         </td>
     </tr>
-    <?phpphp } ?>
+    <?php } ?>
     <tr>
         <td colspan="8" class="text_grey">
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>     
 </table>

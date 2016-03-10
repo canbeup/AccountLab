@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=ips" class="add_link"><?phpphp echo $BL->props->lang['~ips']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=ips" class="add_link"><?php echo $BL->props->lang['~ips']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,54 +63,54 @@
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="2" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="2" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
 				<tr>
 					<td class="text_grey" colspan="2">
-					<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+					<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
 				    <table width='100%' border='0' cellspacing='0' cellpadding='0'>
                       <tr> 
                         <td width='1%' class='text_grey' valign='top'><div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'></div></td>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'></div></td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['ip_address_range']; ?>
+						<?php echo $BL->props->lang['ip_address_range']; ?>
 						</div>
 						<div id="form1_field"> 
-                        <?phpphp  if($cmd=="edit_ip")$access_ip['ip_address_array'] = $BL->utils->splitIParray($access_ip['ip_address']); ?>
-                            <input name='ip_address[0]' type='text' class='search' id='ip_address[0]' size='3' value='<?phpphp if($cmd=="edit_ip")echo $access_ip['ip_address_array'][0]; ?>' />
+                        <?php  if($cmd=="edit_ip")$access_ip['ip_address_array'] = $BL->utils->splitIParray($access_ip['ip_address']); ?>
+                            <input name='ip_address[0]' type='text' class='search' id='ip_address[0]' size='3' value='<?php if($cmd=="edit_ip")echo $access_ip['ip_address_array'][0]; ?>' />
                             .
-                            <input name='ip_address[1]' type='text' class='search' id='ip_address[1]' size='3' value='<?phpphp if($cmd=="edit_ip")echo $access_ip['ip_address_array'][1]; ?>' />
+                            <input name='ip_address[1]' type='text' class='search' id='ip_address[1]' size='3' value='<?php if($cmd=="edit_ip")echo $access_ip['ip_address_array'][1]; ?>' />
                             .
-                            <input name='ip_address[2]' type='text' class='search' id='ip_address[2]' size='3' value='<?phpphp if($cmd=="edit_ip")echo $access_ip['ip_address_array'][2]; ?>' />
+                            <input name='ip_address[2]' type='text' class='search' id='ip_address[2]' size='3' value='<?php if($cmd=="edit_ip")echo $access_ip['ip_address_array'][2]; ?>' />
                             .
-                            <input name='ip_address[3]' type='text' class='search' id='ip_address[3]' size='3' value='<?phpphp if($cmd=="edit_ip")echo $access_ip['ip_address_array'][3]; ?>' />
+                            <input name='ip_address[3]' type='text' class='search' id='ip_address[3]' size='3' value='<?php if($cmd=="edit_ip")echo $access_ip['ip_address_array'][3]; ?>' />
                             -
-                            <input name='ip_address[4]' type='text' class='search' id='ip_address[4]' size='3' value='<?phpphp if($cmd=="edit_ip")echo $access_ip['ip_address_array'][4]; ?>' />
+                            <input name='ip_address[4]' type='text' class='search' id='ip_address[4]' size='3' value='<?php if($cmd=="edit_ip")echo $access_ip['ip_address_array'][4]; ?>' />
                           </div></td>
                       </tr>
                       <tr> 
                         <td colspan='2' class='text_grey'>
-						<img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
+						<img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
                       </tr>
 
                       <tr> 
                         <td class='text_grey'><div align='center'>
-                        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'></div></td>
+                        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'></div></td>
                         <td class='text_grey'>
 						<div id="form1_label">
-						<?phpphp echo $BL->props->lang['admin_user']; ?>
+						<?php echo $BL->props->lang['admin_user']; ?>
 						</div>
 						<div id="form1_field">                            
                           <select name="admin_id" id="admin_id" size="1">
-                          <?phpphp foreach($users as $user) { ?>
-                            <option value="<?phpphp echo $user['id']; ?>" <?phpphp if($cmd=="edit_ip" && $access_ip['admin_id']==$user['id'])echo "SELECTED"; ?> ><?phpphp echo $user['username']." (".$user['email'].")"; ?></option>
-                          <?phpphp } ?>
+                          <?php foreach($users as $user) { ?>
+                            <option value="<?php echo $user['id']; ?>" <?php if($cmd=="edit_ip" && $access_ip['admin_id']==$user['id'])echo "SELECTED"; ?> ><?php echo $user['username']." (".$user['email'].")"; ?></option>
+                          <?php } ?>
                           </select>  
                           </div></td>
                       </tr>
                       <tr> 
-                        <td colspan='2' class='text_grey'><img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
+                        <td colspan='2' class='text_grey'><img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' /></td>
                       </tr>
 
                       <tr> 
@@ -120,11 +120,11 @@
 						&nbsp;
 						</div>
 						<div id="form1_field">
-                        <?phpphp if($cmd=="edit_ip"){ ?>
-                        	<input type='hidden' name='id' value='<?phpphp echo $access_ip['id']; ?>' />
-                        <?phpphp } ?>
-                            <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-                            <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edit_ip")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+                        <?php if($cmd=="edit_ip"){ ?>
+                        	<input type='hidden' name='id' value='<?php echo $access_ip['id']; ?>' />
+                        <?php } ?>
+                            <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+                            <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edit_ip")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
                           </div></td>
                       </tr>
                     </table>
@@ -137,7 +137,7 @@
 
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

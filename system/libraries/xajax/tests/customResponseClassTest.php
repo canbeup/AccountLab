@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 require_once("../xajax.inc.php");
 
 // Custom Response Class extends xajaxResponse
@@ -51,7 +51,7 @@ $xajax->processRequests();
 		}
 		</script>
 
-		<?phpphp $xajax->printJavascript("../") ?>
+		<?php $xajax->printJavascript("../") ?>
 	</head>
 	<body>
 		<h2><a href="index.php">xajax Tests</a></h2>

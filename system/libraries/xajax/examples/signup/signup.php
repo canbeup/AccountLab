@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 // signup.php, signup.common.php, signup.server.php
 // demonstrate a a simple implementation of a multipage signup form
 // using xajax version 0.2
@@ -9,7 +9,7 @@ require_once('signup.common.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<?phpphp $xajax->printJavascript('../../'); ?>
+		<?php $xajax->printJavascript('../../'); ?>
 		<style type="text/css">
 		#formWrapper{
 			color: rgb(255,255,255);

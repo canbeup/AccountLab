@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -51,12 +51,12 @@
 <tr> 
     <td>
     <fieldset class='accountlabFormTABLE'>
-    <legend><b><?phpphp echo $BL->props->lang['new_customers_sign_up']; ?></b></legend>
+    <legend><b><?php echo $BL->props->lang['new_customers_sign_up']; ?></b></legend>
 	<table width='100%' border='0' cellspacing='0' cellpadding='2' align='center'>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD' width='40%'>
-			<?phpphp echo $BL->props->lang['Email']; ?><font color='red'>*</font><br />
-		    <span class="smaller"><?phpphp echo $BL->props->lang['this_billing_login']; ?></span>
+			<?php echo $BL->props->lang['Email']; ?><font color='red'>*</font><br />
+		    <span class="smaller"><?php echo $BL->props->lang['this_billing_login']; ?></span>
 		  </td>
           <td valign='top' class='accountlabPlanDataTD'>
               <input name='email' id='email' type='text' class='accountlabInput' size='45' />
@@ -64,8 +64,8 @@
         </tr>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-		  <?phpphp echo $BL->props->lang['Password']; ?><font color='red'>*</font><br />
-		  <span class="smaller"><?phpphp echo $BL->props->lang['this_billing_pass']; ?></span>
+		  <?php echo $BL->props->lang['Password']; ?><font color='red'>*</font><br />
+		  <span class="smaller"><?php echo $BL->props->lang['this_billing_pass']; ?></span>
 		  </td>
           <td valign='top' class='accountlabPlanDataTD'>
               <input name='password1' id='password1' type='password' class='accountlabInput' size='10' />
@@ -73,7 +73,7 @@
         </tr>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'> 
-			<?phpphp echo $BL->props->lang['password_confirm']; ?><font color='red'>*</font>
+			<?php echo $BL->props->lang['password_confirm']; ?><font color='red'>*</font>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
               <input name='password2' id='password2' type='password' class='accountlabInput' size='10' />
@@ -84,50 +84,50 @@
           <td valign='top' class='accountlabPlanDataTD'></td>
         </tr>
         
-<?phpphp 
+<?php 
 foreach($custom_fields as $cf){ 
     if($cf['field_name']!="country" && $cf['field_name']!="state" && $cf['field_name']!="vat_no"){
 ?>
         <tr> 
           <td height='21' valign='top' class='accountlabPlanDataTD'>
-			<?phpphp echo $BL->props->parseLang($cf['field_name']); ?><?phpphp if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
+			<?php echo $BL->props->parseLang($cf['field_name']); ?><?php if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
-          <?phpphp if($cf['field_type']=="text"){ ?>
-             <input name='<?phpphp echo $cf['field_name']; ?>' id='<?phpphp echo $cf['field_name']; ?>' type='text' class='accountlabInput' size='25'  />
-          <?phpphp }else{ ?>
-            <select name='<?phpphp echo $cf['field_name']; ?>' id='<?phpphp echo $cf['field_name']; ?>' class='accountlabInput'>
-            <?phpphp 
+          <?php if($cf['field_type']=="text"){ ?>
+             <input name='<?php echo $cf['field_name']; ?>' id='<?php echo $cf['field_name']; ?>' type='text' class='accountlabInput' size='25'  />
+          <?php }else{ ?>
+            <select name='<?php echo $cf['field_name']; ?>' id='<?php echo $cf['field_name']; ?>' class='accountlabInput'>
+            <?php 
             $values = $BL->utils->Get_Trimmed_Array(explode(",",$cf['field_value'])); 
             $BL->utils->Remove_Empty_Elements($values);
             foreach($values as $value){
             ?>
-            <option value='<?phpphp echo $value; ?>'><?phpphp echo $BL->props->parseLang($value); ?></option>
-            <?phpphp
+            <option value='<?php echo $value; ?>'><?php echo $BL->props->parseLang($value); ?></option>
+            <?php
             }
             ?>
             </select>
-          <?phpphp } ?>
+          <?php } ?>
 		  </td>
         </tr>
-    <?phpphp }elseif($cf['field_name']=="country"){ ?>
+    <?php }elseif($cf['field_name']=="country"){ ?>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-            <?phpphp echo $BL->props->parseLang($cf['field_name']); ?><?phpphp if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
+            <?php echo $BL->props->parseLang($cf['field_name']); ?><?php if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
               <select name='country' id='country' class='accountlabInput' onblur="javascript:xajax_step3_listStates(xajax.$('country').value,'');">
-                <option><?phpphp echo $BL->props->lang['select_country']; ?></option>
-                <?phpphp foreach ($BL->props->country as $key => $value) { ?>
-                 <option value='<?phpphp echo $key; ?>'><?phpphp echo $value; ?></option>
-                <?phpphp } ?>
+                <option><?php echo $BL->props->lang['select_country']; ?></option>
+                <?php foreach ($BL->props->country as $key => $value) { ?>
+                 <option value='<?php echo $key; ?>'><?php echo $value; ?></option>
+                <?php } ?>
               </select>
            </td>
         </tr>
-    <?phpphp }elseif($cf['field_name']=="state"){ ?>
+    <?php }elseif($cf['field_name']=="state"){ ?>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-            <?phpphp echo $BL->props->parseLang($cf['field_name']); ?><?phpphp if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
+            <?php echo $BL->props->parseLang($cf['field_name']); ?><?php if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
             <div id='state_selection' name='state_selection'> 
@@ -135,18 +135,18 @@ foreach($custom_fields as $cf){
             </div>
           </td>
         </tr> 
-    <?phpphp }elseif($cf['field_name']=="vat_no"){ ?>
-        <?phpphp if ($conf['en_vat'] == 1) { ?>
+    <?php }elseif($cf['field_name']=="vat_no"){ ?>
+        <?php if ($conf['en_vat'] == 1) { ?>
         <tr> 
           <td valign='top' class='accountlabPlanDataTD'>
-           <?phpphp echo $BL->props->parseLang($cf['field_name']); ?><?phpphp if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
+           <?php echo $BL->props->parseLang($cf['field_name']); ?><?php if(!$cf['field_optional'])echo "<font color='red'>*</font>"; ?>
           </td>
           <td valign='top' class='accountlabPlanDataTD'>
            <input name='vat_no' id='vat_no' class='accountlabInput' type='text'  size='25' />
           </td>
         </tr>
-        <?phpphp } ?>
-<?phpphp
+        <?php } ?>
+<?php
     }
 } 
 ?>

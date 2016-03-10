@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,92 +47,92 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
-    <form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
+    <form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">	
-	<?phpphp
+	<?php
 	$int = 0;
 	foreach ($BL->pg as $key => $val) {
 		$int = $int+1;
 	?>
 	<tr> 
         <td class="tdheading">
-            <b>&nbsp;<?phpphp echo $BL->pg_name[$val]; ?> <?phpphp if($BL->pp_active[$val]=="Yes")echo "(*".$BL->props->lang['active'].")"; ?></b>
+            <b>&nbsp;<?php echo $BL->pg_name[$val]; ?> <?php if($BL->pp_active[$val]=="Yes")echo "(*".$BL->props->lang['active'].")"; ?></b>
 	    </td>
         <td class="tdheading" align="right">
-            <a href="#" onClick="expandcontent('section_<?phpphp echo $val; ?>')"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>top_arrow.gif" alt="" border="0" /></a>
+            <a href="#" onClick="expandcontent('section_<?php echo $val; ?>')"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>top_arrow.gif" alt="" border="0" /></a>
         </td>	  
     </tr>
 	<tr> 
         <td class="text_grey" colspan="2">
-            <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>	
 	<tr> 
         <td class="text_grey" colspan="2">
-            <div id='section_<?phpphp echo $val; ?>' class="switchcontent">    
+            <div id='section_<?php echo $val; ?>' class="switchcontent">    
             <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-            <?phpphp foreach ($BL->arrays[$val] as $k => $v) { ?>
+            <?php foreach ($BL->arrays[$val] as $k => $v) { ?>
             <tr> 
             <td valign='top' class='text_grey'>
-                <?phpphp
+                <?php
 	            $pp_val= $pp_vals[$val];
 	            if (count($v) == 2) {
                 ?>
                 <div id="form1_label">
-                &nbsp;<?phpphp echo $v[0]; ?>
+                &nbsp;<?php echo $v[0]; ?>
                 </div>
                 <div id="form1_field">
-                <?phpphp if ($v[1] == "disp_msg") { ?>
-                <textarea name='<?phpphp echo $val."[".$v[1]."]"; ?>' id='<?phpphp echo $val."[".$v[1]."]"; ?>' cols='55' rows='10'><?phpphp echo $pp_val[$v[1]]; ?></textarea>
-                <?phpphp } else { ?>
-                <input class='search' type='text' value='<?phpphp echo $pp_val[$v[1]]; ?>' name='<?phpphp echo $val."[".$v[1]."]"; ?>' id='<?phpphp echo $val."[".$v[1]."]"; ?>' size='30' />
-                <?phpphp } ?>
+                <?php if ($v[1] == "disp_msg") { ?>
+                <textarea name='<?php echo $val."[".$v[1]."]"; ?>' id='<?php echo $val."[".$v[1]."]"; ?>' cols='55' rows='10'><?php echo $pp_val[$v[1]]; ?></textarea>
+                <?php } else { ?>
+                <input class='search' type='text' value='<?php echo $pp_val[$v[1]]; ?>' name='<?php echo $val."[".$v[1]."]"; ?>' id='<?php echo $val."[".$v[1]."]"; ?>' size='30' />
+                <?php } ?>
                 </div>
-                <?phpphp } else { ?>
+                <?php } else { ?>
                 <div id="form1_label">
-                &nbsp;<?phpphp echo $v[0]; ?>
+                &nbsp;<?php echo $v[0]; ?>
                 </div>
                 <div id="form1_field">
-                <select name='<?phpphp echo $val."[".$v[1]."]"; ?>' id='<?phpphp echo $val."[".$v[1]."]"; ?>' class='search'>
-                <?phpphp for ($i= 2; $i < count($v); $i ++) { ?>
-                <option value='<?phpphp echo $v[$i]; ?>' <?phpphp if($v[$i]==$pp_val[$v[1]])echo "selected=\"selected\""; ?>><?phpphp echo $v[$i]; ?></option>
-                <?phpphp } ?>
+                <select name='<?php echo $val."[".$v[1]."]"; ?>' id='<?php echo $val."[".$v[1]."]"; ?>' class='search'>
+                <?php for ($i= 2; $i < count($v); $i ++) { ?>
+                <option value='<?php echo $v[$i]; ?>' <?php if($v[$i]==$pp_val[$v[1]])echo "selected=\"selected\""; ?>><?php echo $v[$i]; ?></option>
+                <?php } ?>
                 </select>
                 </div>
-                <?phpphp } ?>
+                <?php } ?>
             </td>
             </tr>		
             <tr> 
               <td class='text_grey' colspan="2">
-              <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+              <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
               </td>
             </tr>			 		  
-			<?phpphp } ?>
+			<?php } ?>
 	        </table>
 	        </div>
         </td>
     </tr>
-	<?phpphp } ?>
+	<?php } ?>
 	<tr> 
         <td class="text_grey" colspan="2">
-        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>
     <tr>
         <td class='text_grey' colspan="2">
         <div id="form1_label">&nbsp;</div>
         <div id="form1_field">
- 		<input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-        <input type='submit' class='search1' name='update' value='<?phpphp echo $BL->props->lang['Update']; ?>' />
+ 		<input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+        <input type='submit' class='search1' name='update' value='<?php echo $BL->props->lang['Update']; ?>' />
 		</div>
 	    </td>
     </tr>
 	<tr> 
         <td class="text_grey">
-        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>	
 	</form>
@@ -141,7 +141,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

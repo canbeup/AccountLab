@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 require_once("../xajax.inc.php");
 
 function showOutput()
@@ -27,7 +27,7 @@ $xajax->autoCompressJavascript("../xajax_js/xajax.js");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>xajaxResponse Test | xajax Tests</title>
-<?phpphp $xajax->printJavascript("../") ?>
+<?php $xajax->printJavascript("../") ?>
 </head>
 <body>
 

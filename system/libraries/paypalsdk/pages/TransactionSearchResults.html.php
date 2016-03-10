@@ -8,7 +8,7 @@
 
     <span id=apiheader>Transaction Search Results</span>
 
-   <?phpphp
+   <?php
 $ptsr = $response->getPaymentTransactions();
 if (!is_array($ptsr)) {
     $ptsr = array($ptsr);
@@ -17,7 +17,7 @@ $nrecs = sizeof($ptsr);
 ?>
     
     <p>
-    Results 1 - <?phpphp echo $nrecs ?>
+    Results 1 - <?php echo $nrecs ?>
     </p>
     <table width=700>
         <tr>
@@ -55,7 +55,7 @@ $nrecs = sizeof($ptsr);
         </tr>
         -->
         
-        <?phpphp
+        <?php
         for ($n = 0; $n < $nrecs; $n++) {
            $tran_id = $ptsr[$n]->getTransactionID();
            $tran_ts = $ptsr[$n]->getTimestamp();
@@ -68,15 +68,15 @@ $nrecs = sizeof($ptsr);
         <tr>
             <td>&nbsp;</td> 
             <td>
-            <a id="TransactionDetailsLink<?phpphp echo $n ?>" href="TransactionDetails.php?transactionID=<?phpphp echo$tran_id?>"><?phpphp echo$tran_id?></a>
+            <a id="TransactionDetailsLink<?php echo $n ?>" href="TransactionDetails.php?transactionID=<?php echo$tran_id?>"><?php echo$tran_id?></a>
             </td>
-            <td><?phpphp echo $tran_ts ?></td>
-            <td><?phpphp echo $tran_status ?></td>
-            <td><?phpphp echo $tran_payer_name ?></td>
-            <td><?phpphp echo $tran_amount ?></td>
+            <td><?php echo $tran_ts ?></td>
+            <td><?php echo $tran_status ?></td>
+            <td><?php echo $tran_payer_name ?></td>
+            <td><?php echo $tran_amount ?></td>
         </tr>
         
-        <?phpphp } ?>
+        <?php } ?>
  
     </table>
     <br><br>

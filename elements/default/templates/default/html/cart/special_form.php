@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -50,21 +50,21 @@
     <tr> 
         <td>    
             <fieldset class='accountlabFormTABLE'>
-            <legend><b><?phpphp echo $BL->props->lang['special_offer']." : ".$special['special_name']; ?></b></legend>
+            <legend><b><?php echo $BL->props->lang['special_offer']." : ".$special['special_name']; ?></b></legend>
             <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
-            <?phpphp if (count($tld_array) && count($tld_array)){ ?>
+            <?php if (count($tld_array) && count($tld_array)){ ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top'> 
                     &#160;                
                     </td>
                     <td valign='top' width='20%'>
-                        <?phpphp echo $BL->props->lang['domain_name']; ?>
+                        <?php echo $BL->props->lang['domain_name']; ?>
                     </td>
                     <td valign='top'>
                         <input name='sld2' id='sld2' type='text' class='accountlabInput' size='35' />
                         .
                         <select name='tld2' id='tld2' class='accountlabSelect'>
-                        <?phpphp 
+                        <?php 
                         if (array_key_exists('dom_ext',$tld_array[0])){
                             $type = 1;
                             $tld_array1 = array();
@@ -72,21 +72,21 @@
                                 if(array_search($tld_array['dom_ext'],$tld_array1)===false) {
                                     $tld_array1[] = $t['dom_ext'];
                         ?>
-                        <option value='<?phpphp echo $tld['dom_ext']; ?>'><?phpphp echo $tld['dom_ext']; ?></option>
-                        <?phpphp
+                        <option value='<?php echo $tld['dom_ext']; ?>'><?php echo $tld['dom_ext']; ?></option>
+                        <?php
                                 } 
                             }
                         }elseif (array_key_exists('maindomain',$tld_array[0])){
                             $type = 2;
                             foreach ($tld_array as $subdomain){
                         ?>
-                        <option value='<?phpphp echo $subdomain['maindomain']; ?>'><?phpphp echo $subdomain['maindomain']; ?></option>
-                        <?phpphp
+                        <option value='<?php echo $subdomain['maindomain']; ?>'><?php echo $subdomain['maindomain']; ?></option>
+                        <?php
                             }                     
                         }
                         ?>
                        </select>
-                       <input type='button' class='accountlabButton' name='Button1' id='Button1' value='<?phpphp echo $BL->props->lang['check']; ?>' onclick="javascript:xajax_step5_whois(<?phpphp echo $type; ?>,xajax.$('sld2').value,xajax.$('tld2').value);" />
+                       <input type='button' class='accountlabButton' name='Button1' id='Button1' value='<?php echo $BL->props->lang['check']; ?>' onclick="javascript:xajax_step5_whois(<?php echo $type; ?>,xajax.$('sld2').value,xajax.$('tld2').value);" />
                     </td>
                 </tr>
                 <tr>
@@ -100,72 +100,72 @@
                     <div name='special_whois_result' id='special_whois_result'>&#160;</div>
                     </td>
                 </tr>
-             <?phpphp }else{ ?>
+             <?php }else{ ?>
                 <tr> 
                     <td width='3%' height='1%' valign='top'> 
                     &#160;                
                     </td>
                     <td valign='top'>
-                        <?phpphp echo $BL->props->lang['domain_name']; ?>
+                        <?php echo $BL->props->lang['domain_name']; ?>
                     </td>
                     <td valign='top'>
                         <input name='sld2' id='sld2' type='text' class='accountlabInput' size='35' />
                         .
                         <input name='tld2' id='tld2' type='text' size='5' class='accountlabInput'>
-                        <input type='button' class='accountlabButton' name='Button1' id='Button1' value='<?phpphp echo $BL->props->lang['add']; ?>' onclick="javascript:xajax_step5_addDomain(3,xajax.$('sld2').value,xajax.$('tld2').value);" />
+                        <input type='button' class='accountlabButton' name='Button1' id='Button1' value='<?php echo $BL->props->lang['add']; ?>' onclick="javascript:xajax_step5_addDomain(3,xajax.$('sld2').value,xajax.$('tld2').value);" />
                     </td>
                 </tr>
-             <?phpphp } ?>
+             <?php } ?>
                 <tr> 
                     <td colspan='3' valign='top'> 
                     &#160;                
                     </td>
                 </tr>
-             <?phpphp if(count($plan_array)){ ?>
+             <?php if(count($plan_array)){ ?>
                 <tr>
                     <td width='3%' height='1%' valign='top'> 
                     &#160;                
                     </td>
                     <td valign='top'>
-                    <?phpphp echo $BL->props->lang['Plan']; ?>
+                    <?php echo $BL->props->lang['Plan']; ?>
                     </td>
                     <td valign='top'>
                     <select name='plan2' id='plan2' class='accountlabSelect' onchange="javascript:xajax_step5_addProduct(xajax.$('plan2').value);">
-                    <option value='0'><?phpphp echo $BL->props->lang['select']; ?></option>
-                    <?phpphp foreach ($plan_array as $plan){ ?>
-                    <option value='<?phpphp echo $plan['plan_price_id']; ?>'><?phpphp echo $BL->getFriendlyName($plan['plan_price_id']); ?></option>
-                    <?phpphp } ?>
+                    <option value='0'><?php echo $BL->props->lang['select']; ?></option>
+                    <?php foreach ($plan_array as $plan){ ?>
+                    <option value='<?php echo $plan['plan_price_id']; ?>'><?php echo $BL->getFriendlyName($plan['plan_price_id']); ?></option>
+                    <?php } ?>
                     </select>
                     </td>
                 </tr>   
-             <?phpphp }else{ ?>
+             <?php }else{ ?>
                 <input type='hidden' name='plan2' id='plan2' value='0' />
-             <?phpphp } ?>
+             <?php } ?>
                 <tr> 
                     <td colspan='3' valign='top'> 
                     &#160;                
                     </td>
                 </tr>
-             <?phpphp if(count($addon_array)){ ?>
+             <?php if(count($addon_array)){ ?>
                 <tr>
                     <td width='3%' height='1%' valign='top'> 
                     &#160;                
                     </td>
                     <td valign='top'>
-                    <?phpphp echo $BL->props->lang['addons']; ?>
+                    <?php echo $BL->props->lang['addons']; ?>
                     </td>
                     <td valign='top'>
                     <select name='addon2' id='addon2' class='accountlabSelect'  onchange="javascript:xajax_step5_addAddon(xajax.$('addon2').value);">
-                    <option value='0'><?phpphp echo $BL->props->lang['select']; ?></option>
-                    <?phpphp foreach ($addon_array as $addon){ ?>
-                    <option value='<?phpphp echo $addon['addon_id']; ?>'><?phpphp echo $addon['addon_name']; ?></option>
-                    <?phpphp } ?>
+                    <option value='0'><?php echo $BL->props->lang['select']; ?></option>
+                    <?php foreach ($addon_array as $addon){ ?>
+                    <option value='<?php echo $addon['addon_id']; ?>'><?php echo $addon['addon_name']; ?></option>
+                    <?php } ?>
                     </select>
                     </td>
                 </tr>   
-             <?phpphp }else{ ?>
+             <?php }else{ ?>
                 <input type='hidden' name='addons2' id='addons2' value='0' />
-             <?phpphp } ?>
+             <?php } ?>
              </table>
          </td>
      </tr>

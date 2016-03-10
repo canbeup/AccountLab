@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,18 +47,18 @@
 
 ?>
 
-<?phpphp foreach($groups as $group){ ?>
-<tbody name='group_section_<?phpphp echo $group['group_id']; ?>' id='group_section_<?phpphp echo $group['group_id']; ?>' class='on'>
+<?php foreach($groups as $group){ ?>
+<tbody name='group_section_<?php echo $group['group_id']; ?>' id='group_section_<?php echo $group['group_id']; ?>' class='on'>
     <tr> 
         <td>    
             <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center' class='accountlabFormTABLE'>
             
                 <tr> 
                     <td width='3%' height='1%' valign='top'>
-                        <input type="radio" id="group_id<?phpphp echo $group['group_id']; ?>" name="group_id" class='accountlabInput' value="<?phpphp echo $group['group_id']; ?>" onclick="javascript:xajax_step1_selectGroup(<?phpphp echo $group['group_id']; ?>);" />
+                        <input type="radio" id="group_id<?php echo $group['group_id']; ?>" name="group_id" class='accountlabInput' value="<?php echo $group['group_id']; ?>" onclick="javascript:xajax_step1_selectGroup(<?php echo $group['group_id']; ?>);" />
                     </td>
                     <td valign='top' colspan='3'>
-                        <b><?phpphp echo $group['group_name']; ?></b>
+                        <b><?php echo $group['group_name']; ?></b>
                     </td>
                 </tr> 
                 <tr> 
@@ -66,23 +66,23 @@
                     &#160;                
                     </td>
                     <td valign='top' colspan='3'>
-                        <?phpphp echo $group['group_desc']; ?>
+                        <?php echo $group['group_desc']; ?>
                     </td>
                 </tr>
  
-                <tbody name='prod_sec_<?phpphp echo $group['group_id']; ?>' id='prod_sec_<?phpphp echo $group['group_id']; ?>' class='off'>  
+                <tbody name='prod_sec_<?php echo $group['group_id']; ?>' id='prod_sec_<?php echo $group['group_id']; ?>' class='off'>  
                 <tr> 
                     <td width='3%' height='1%' valign='top'> 
                     &#160;                       
                     </td>
                     <td valign='top'>
-                        <div name="prod_div_<?phpphp echo $group['group_id']; ?>" id="prod_div_<?phpphp echo $group['group_id']; ?>">&#160;</div>
+                        <div name="prod_div_<?php echo $group['group_id']; ?>" id="prod_div_<?php echo $group['group_id']; ?>">&#160;</div>
                     </td>
                     <td valign='top'>
-                        <div name="bill_div_<?phpphp echo $group['group_id']; ?>" id="bill_div_<?phpphp echo $group['group_id']; ?>">&#160;</div>
+                        <div name="bill_div_<?php echo $group['group_id']; ?>" id="bill_div_<?php echo $group['group_id']; ?>">&#160;</div>
                     </td>
                     <td valign='top'>
-                        <div name="bill_opt_<?phpphp echo $group['group_id']; ?>" id="bill_opt_<?phpphp echo $group['group_id']; ?>">&#160;</div>
+                        <div name="bill_opt_<?php echo $group['group_id']; ?>" id="bill_opt_<?php echo $group['group_id']; ?>">&#160;</div>
                     </td>                    
                 </tr> 
                 <tr> 
@@ -90,19 +90,19 @@
                     &#160;
                     </td>
                     <td valign='top' colspan='3'>
-                        <div name="prod_desc_<?phpphp echo $group['group_id']; ?>" id="prod_desc_<?phpphp echo $group['group_id']; ?>">&#160;</div>
+                        <div name="prod_desc_<?php echo $group['group_id']; ?>" id="prod_desc_<?php echo $group['group_id']; ?>">&#160;</div>
                     </td>
                 </tr>  
                 </tbody>
                 
                 
-                <tbody name='addon_sec<?phpphp echo $group['group_id']; ?>' id='addon_sec_<?phpphp echo $group['group_id']; ?>' class='off'>             
+                <tbody name='addon_sec<?php echo $group['group_id']; ?>' id='addon_sec_<?php echo $group['group_id']; ?>' class='off'>             
                 <tr> 
                     <td width='3%' height='1%' valign='bottom'>
                     &#160; 
                     </td>
                     <td valign='top' colspan='3' valign='bottom'>
-                        <div name="addon_div_<?phpphp echo $group['group_id']; ?>" id="addon_div_<?phpphp echo $group['group_id']; ?>">&#160;</div>
+                        <div name="addon_div_<?php echo $group['group_id']; ?>" id="addon_div_<?php echo $group['group_id']; ?>">&#160;</div>
                      </td>
                 </tr> 
                  <tr> 
@@ -114,10 +114,10 @@
         </td>
      </tr>
 </tbody>
-<?phpphp 
+<?php 
 }
 ?>
-<?phpphp if($BL->conf['en_domain_only']){ ?>
+<?php if($BL->conf['en_domain_only']){ ?>
 <tbody name='group_section_0' id='group_section_0' class='on'>
     <tr> 
         <td>    
@@ -128,7 +128,7 @@
                         <input type="radio" id="group_id0" name="group_id" class='accountlabInput' value="0" onclick="javascript:xajax_reload('step2');" />
                     </td>
                     <td valign='top' colspan='3'>
-                        <b><?phpphp echo $BL->props->lang['Register_a_domain_only']; ?></b>
+                        <b><?php echo $BL->props->lang['Register_a_domain_only']; ?></b>
                     </td>
                 </tr> 
                 
@@ -136,7 +136,7 @@
                     <td width='3%' height='1%' valign='top'>                        
                     </td>
                     <td valign='top' colspan='3'>
-                        <?phpphp echo $BL->props->lang['Register_a_domain_only_desc']; ?>
+                        <?php echo $BL->props->lang['Register_a_domain_only_desc']; ?>
                     </td>
                 </tr>
                 
@@ -144,4 +144,4 @@
         </td>
      </tr>
 </tbody>
-<?phpphp } ?>
+<?php } ?>

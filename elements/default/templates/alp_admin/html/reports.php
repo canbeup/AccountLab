@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,33 +47,33 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
 	<div id="display_list">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
 		<tr> 
             <td class="tdheading" colspan="4">
-                <b>&nbsp;<?phpphp echo $BL->props->lang["~".$cmd]; ?></b>
+                <b>&nbsp;<?php echo $BL->props->lang["~".$cmd]; ?></b>
             </td>
         </tr>
 		<tr> 
             <td class="text_grey" colspan="4">
-                <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+                <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
 		<tr> 
 	        <td class="text_grey" colspan="4" align="center">
-                <?phpphp if(isset($report_image_data)){ ?><img src='info.php?cmd=REPORT_IMAGE&<?phpphp echo $report_image_data; ?>' border='1'><?phpphp } ?>
+                <?php if(isset($report_image_data)){ ?><img src='info.php?cmd=REPORT_IMAGE&<?php echo $report_image_data; ?>' border='1'><?php } ?>
 	        </td>
         </tr>		
         <tr> 
             <td class="text_grey" colspan="4" align="center">
-                <?phpphp if(isset($report_image_data_2)){ ?><img src='info.php?cmd=REPORT_IMAGE&<?phpphp echo $report_image_data_2; ?>' border='1'><?phpphp } ?>
+                <?php if(isset($report_image_data_2)){ ?><img src='info.php?cmd=REPORT_IMAGE&<?php echo $report_image_data_2; ?>' border='1'><?php } ?>
             </td>
         </tr>
 		<tr> 
             <td class="text_grey" colspan="4">
-		      <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+		      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
     </table>
@@ -82,35 +82,35 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<form name='form1' id='form1' method='post' action='<?phpphp echo $PHP_SELF; ?>'>
+<form name='form1' id='form1' method='post' action='<?php echo $PHP_SELF; ?>'>
 <table width="80%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
           <td class='text_grey' colspan='2'>
 			<select name='r_type' class='search'>
-			    <?phpphp if($cmd=="assets"){ ?>
-		  		<optgroup label="<?phpphp echo $BL->props->lang['select_basic_report']; ?>">
-				<option value='income_all'     <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_all")    echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['income_all']; ?></option>
-				<option value='income_country' <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_country")echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['income_country']; ?></option>
-				<option value='income_yearly'  <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_yearly") echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['income_yearly']; ?></option>
-				<option value='income_monthly' <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_monthly")echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['income_monthly']; ?></option>
-				<option value='sales_product'  <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="sales_product") echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['sales_product']; ?></option>
-				<option value='ord_domain'     <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="ord_domain")    echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['ord_domain']; ?></option>
-	            <?phpphp }else{ ?>
-				<optgroup label="<?phpphp echo $BL->props->lang['Calculate_growth']; ?>">
-				<option value='2_years'   <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="2_years")  echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['Based_on_last_2_years']; ?></option>
-				<option value='12_months' <?phpphp if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="12_months")echo "selected=\"selected\""; ?>><?phpphp echo $BL->props->lang['Based_on_last_12_months']; ?></option>
-	            <?phpphp } ?>
+			    <?php if($cmd=="assets"){ ?>
+		  		<optgroup label="<?php echo $BL->props->lang['select_basic_report']; ?>">
+				<option value='income_all'     <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_all")    echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['income_all']; ?></option>
+				<option value='income_country' <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_country")echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['income_country']; ?></option>
+				<option value='income_yearly'  <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_yearly") echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['income_yearly']; ?></option>
+				<option value='income_monthly' <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="income_monthly")echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['income_monthly']; ?></option>
+				<option value='sales_product'  <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="sales_product") echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['sales_product']; ?></option>
+				<option value='ord_domain'     <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="ord_domain")    echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['ord_domain']; ?></option>
+	            <?php }else{ ?>
+				<optgroup label="<?php echo $BL->props->lang['Calculate_growth']; ?>">
+				<option value='2_years'   <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="2_years")  echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['Based_on_last_2_years']; ?></option>
+				<option value='12_months' <?php if(isset($REQUEST['r_type']) && $REQUEST['r_type']=="12_months")echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['Based_on_last_12_months']; ?></option>
+	            <?php } ?>
 				</select>
 				<br />
 				<br />
-			    <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>'>
+			    <input type='hidden' name='cmd' value='<?php echo $cmd; ?>'>
 		  </td>
         </tr>
-		<?phpphp if(isset($REQUEST['cmd']) && $REQUEST['cmd']!="growth"){ ?>
+		<?php if(isset($REQUEST['cmd']) && $REQUEST['cmd']!="growth"){ ?>
         <tr> 
           <td colspan='2' class='text_grey'>
-		  <b><?phpphp echo $BL->props->lang['all_dates']; ?></b>
-		  <input type='checkbox' name='all_dates' <?phpphp if((isset($REQUEST['all_dates']) && $REQUEST['all_dates']==true) || !isset($REQUEST['year_fieldfromD']) || empty($REQUEST['year_fieldfromD']))echo "checked=\"checked\""; ?> value='true' class='search' onchange="javascript:if(this.checked==true)toggleTbodyOff('date_sec');else toggleTbodyOn('date_sec');">
+		  <b><?php echo $BL->props->lang['all_dates']; ?></b>
+		  <input type='checkbox' name='all_dates' <?php if((isset($REQUEST['all_dates']) && $REQUEST['all_dates']==true) || !isset($REQUEST['year_fieldfromD']) || empty($REQUEST['year_fieldfromD']))echo "checked=\"checked\""; ?> value='true' class='search' onchange="javascript:if(this.checked==true)toggleTbodyOff('date_sec');else toggleTbodyOn('date_sec');">
 		  <br />
 	      <br />
 		  </td>
@@ -118,33 +118,33 @@
 		<tbody id='date_sec'>
         <tr> 
           <td colspan='2' class='text_grey'>
-	      <?phpphp $f = $BL->utils->getDateArray($BL->report->rFromDate); ?>
-		  <?phpphp echo "<b>".$BL->props->lang['From']."</b><br />".$BL->utils->datePicker($f['mday'], $f['mon'], $f['year'], "search", "fromD"); ?>
+	      <?php $f = $BL->utils->getDateArray($BL->report->rFromDate); ?>
+		  <?php echo "<b>".$BL->props->lang['From']."</b><br />".$BL->utils->datePicker($f['mday'], $f['mon'], $f['year'], "search", "fromD"); ?>
           <br />
           <br />
-	      <?phpphp $t=$BL->utils->getDateArray($BL->report->rToDate); ?>		
-		  <?phpphp echo  "<b>".$BL->props->lang['To']."</b><br />".$BL->utils->datePicker($t['mday'], $t['mon'], $t['year'], "search", "toD"); ?>
+	      <?php $t=$BL->utils->getDateArray($BL->report->rToDate); ?>		
+		  <?php echo  "<b>".$BL->props->lang['To']."</b><br />".$BL->utils->datePicker($t['mday'], $t['mon'], $t['year'], "search", "toD"); ?>
           <br />
           <br />
 		  </td>
         </tr>
 		</tbody>
-	    <?phpphp } ?>
+	    <?php } ?>
         <tr> 
           <td colspan='2' class='text_grey'>
-          <input type='submit' name='submit' value='<?phpphp echo $BL->props->lang['View']; ?>' class='search1'> 
+          <input type='submit' name='submit' value='<?php echo $BL->props->lang['View']; ?>' class='search1'> 
 		  </td>
         </tr>
 		<script language="JavaScript" type="text/javascript">
-    	<?phpphp if((isset($REQUEST['all_dates']) && $REQUEST['all_dates']==true) || !isset($REQUEST['year_fieldfromD']) || empty($REQUEST['year_fieldfromD'])){ ?>
+    	<?php if((isset($REQUEST['all_dates']) && $REQUEST['all_dates']==true) || !isset($REQUEST['year_fieldfromD']) || empty($REQUEST['year_fieldfromD'])){ ?>
 		toggleTbodyOff('date_sec');
-		<?phpphp } if(!isset($REQUEST['r_type']) || empty($REQUEST['r_type'])){ ?>
+		<?php } if(!isset($REQUEST['r_type']) || empty($REQUEST['r_type'])){ ?>
 		toggleTbodyOff('btn_sec');
-		<?phpphp } ?>
+		<?php } ?>
 		</script>
 </table>
 </form>
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

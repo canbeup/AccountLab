@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,79 +47,79 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-    <form name='form1' id='form1' action="<?phpphp echo $PHP_SELF; ?>" method="POST">
+    <form name='form1' id='form1' action="<?php echo $PHP_SELF; ?>" method="POST">
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
-        <?phpphp  if(!count($custom_scripts))  { ?>
+        <?php  if(!count($custom_scripts))  { ?>
         <tr> 
             <td align='center'>
-            <p><?phpphp echo $BL->props->lang['no_cs']; ?></p>
+            <p><?php echo $BL->props->lang['no_cs']; ?></p>
             </td>   
         </tr>
-        <?phpphp } else { ?>
-        <?phpphp 
+        <?php } else { ?>
+        <?php 
         foreach ($custom_scripts as $value) {
         $k   = $value['id'];
         $val = $value['file_name'];
         $key = "cs_".$k;
         if(empty($value['run_schedule']))$value['run_schedule']="INACTIVE";
         ?>
-        <input type='hidden' name='file_name[<?phpphp echo $k; ?>]' value='<?phpphp echo $val; ?>' />
+        <input type='hidden' name='file_name[<?php echo $k; ?>]' value='<?php echo $val; ?>' />
         <tr> 
             <td class="tdheading">
-            <b>&nbsp;<?phpphp echo $val; ?></b> [<?phpphp if($value['run_schedule']=="MANUAL"){?><a style='color:#ffffff' href='?cmd=custom_scripts&id=<?phpphp echo $k; ?>&manual=true'><?phpphp echo $BL->props->lang['MANUAL']; ?></a><?phpphp }else { ?><?phpphp echo $BL->props->lang[$value['run_schedule']]; ?><?phpphp } ?>]
+            <b>&nbsp;<?php echo $val; ?></b> [<?php if($value['run_schedule']=="MANUAL"){?><a style='color:#ffffff' href='?cmd=custom_scripts&id=<?php echo $k; ?>&manual=true'><?php echo $BL->props->lang['MANUAL']; ?></a><?php }else { ?><?php echo $BL->props->lang[$value['run_schedule']]; ?><?php } ?>]
             </td>
             <td class="tdheading" align="right">
-            <a href="#" onClick="expandcontent('section_<?phpphp echo $key; ?>')"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>top_arrow.gif" alt="" border="0" /></a>
+            <a href="#" onClick="expandcontent('section_<?php echo $key; ?>')"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>top_arrow.gif" alt="" border="0" /></a>
             </td>   
         </tr>
         <tr> 
           <td class="text_grey" colspan="2">
-          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>   
         <tr> 
             <td class="text_grey" colspan="2">
-            <div id='section_<?phpphp echo $key; ?>' class="switchcontent">
+            <div id='section_<?php echo $key; ?>' class="switchcontent">
             <table width='100%' border='0' cellspacing='0' cellpadding='0'>
             <tr>
                 <td>
                 <div id="form1_label">
-                &nbsp;<b><?phpphp echo $BL->props->lang['run_schedule']; ?></b>
+                &nbsp;<b><?php echo $BL->props->lang['run_schedule']; ?></b>
                 </div>
                 <div id="form1_field">
-                  <select name="run_schedule[<?phpphp echo $k; ?>]" id="run_schedule[<?phpphp echo $k; ?>]" class='search' size="1">
-                    <option value="INACTIVE" <?phpphp if($value['run_schedule']=="INACTIVE") echo "selected"; ?>><?phpphp echo $BL->props->lang['INACTIVE']; ?></option>
-                    <option value="MANUAL" <?phpphp if($value['run_schedule']=="MANUAL") echo "selected"; ?>><?phpphp echo $BL->props->lang['MANUAL']; ?></option>
-                    <option value="A_AC" <?phpphp if($value['run_schedule']=="A_AC") echo "selected"; ?>><?phpphp echo $BL->props->lang['A_AC']; ?></option>
-                    <option value="A_PP" <?phpphp if($value['run_schedule']=="A_PP") echo "selected"; ?>><?phpphp echo $BL->props->lang['A_PP']; ?></option>
-                    <option value="W_B"  <?phpphp if($value['run_schedule']=="W_B") echo "selected"; ?>><?phpphp echo $BL->props->lang['W_B']; ?></option>
-                    <option value="A_B"  <?phpphp if($value['run_schedule']=="A_B") echo "selected"; ?>><?phpphp echo $BL->props->lang['A_B']; ?></option>
-                    <option value="W_L" <?phpphp if($value['run_schedule']=="W_L") echo "selected"; ?>><?phpphp echo $BL->props->lang['W_L']; ?></option>
+                  <select name="run_schedule[<?php echo $k; ?>]" id="run_schedule[<?php echo $k; ?>]" class='search' size="1">
+                    <option value="INACTIVE" <?php if($value['run_schedule']=="INACTIVE") echo "selected"; ?>><?php echo $BL->props->lang['INACTIVE']; ?></option>
+                    <option value="MANUAL" <?php if($value['run_schedule']=="MANUAL") echo "selected"; ?>><?php echo $BL->props->lang['MANUAL']; ?></option>
+                    <option value="A_AC" <?php if($value['run_schedule']=="A_AC") echo "selected"; ?>><?php echo $BL->props->lang['A_AC']; ?></option>
+                    <option value="A_PP" <?php if($value['run_schedule']=="A_PP") echo "selected"; ?>><?php echo $BL->props->lang['A_PP']; ?></option>
+                    <option value="W_B"  <?php if($value['run_schedule']=="W_B") echo "selected"; ?>><?php echo $BL->props->lang['W_B']; ?></option>
+                    <option value="A_B"  <?php if($value['run_schedule']=="A_B") echo "selected"; ?>><?php echo $BL->props->lang['A_B']; ?></option>
+                    <option value="W_L" <?php if($value['run_schedule']=="W_L") echo "selected"; ?>><?php echo $BL->props->lang['W_L']; ?></option>
                   </select>
                 </div>
                 </td>
             </tr>  
             <tr> 
                 <td class='text_grey'>
-                <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>   
             <tr>
                 <td>
                 <div id="form1_label">
-                &nbsp;<b><?phpphp echo $BL->props->lang['available_post_vars']; ?></b>
+                &nbsp;<b><?php echo $BL->props->lang['available_post_vars']; ?></b>
                 </div>
                 <div id="form1_field">
-                <textarea name="post_variables[<?phpphp echo $k; ?>]" id="post_variables[<?phpphp echo $k; ?>]" class='search' rows="10" cols="55" wrap="on"><?phpphp echo $value['post_variables']; ?></textarea>
+                <textarea name="post_variables[<?php echo $k; ?>]" id="post_variables[<?php echo $k; ?>]" class='search' rows="10" cols="55" wrap="on"><?php echo $value['post_variables']; ?></textarea>
                 </div>
                 </td>
             </tr>  
             <tr> 
                 <td class='text_grey'>
-                <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr> 
             </table>
@@ -128,37 +128,37 @@
         </tr>   
         <tr> 
           <td class="text_grey" colspan="2">
-          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="10" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="10" />
           </td>
         </tr>   
-        <?phpphp } ?>
+        <?php } ?>
         <tr> 
           <td class="text_grey">
-          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>
         <tr>
           <td class='text_grey'>
           <div id="form1_label"> &nbsp; </div>
           <div id="form1_field">
-          <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-          <input type='submit' class='search1' name='update' value='<?phpphp echo $BL->props->lang['Update']; ?>' />
+          <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+          <input type='submit' class='search1' name='update' value='<?php echo $BL->props->lang['Update']; ?>' />
           </div>
           </td>
         </tr>
         <tr> 
           <td class="text_grey">
-          <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>   
-        <?phpphp  }  ?>
+        <?php  }  ?>
         </table>
      </form>
     </div>
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

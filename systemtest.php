@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -215,7 +215,7 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;<b>Domain</d>
          </td>
          <td colspan='2' style="border: 1px solid #000000;">
-         <?phpphp echo INSTALL_DOMAIN; ?>
+         <?php echo INSTALL_DOMAIN; ?>
          </td>
         </tr>
 
@@ -224,7 +224,7 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;<b>URL</d>
          </td>
          <td colspan='2' style="border: 1px solid #000000;">
-         <?phpphp echo INSTALL_URL; ?>
+         <?php echo INSTALL_URL; ?>
          </td>
         </tr>
 
@@ -233,7 +233,7 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;<b>PATH</d>
          </td>
          <td colspan='2' style="border: 1px solid #000000;">
-         <?phpphp echo INSTALL_PATH; ?>
+         <?php echo INSTALL_PATH; ?>
          </td>
         </tr>
 
@@ -242,7 +242,7 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;<b>Database Setup</b>
          </td>
          <td colspan='2' style="border: 1px solid #000000;">
-         <font color=<?phpphp echo ($link && $db_selected)?"green":"red";  ?>><b><?phpphp echo $mysqlerr; ?></b></font>
+         <font color=<?php echo ($link && $db_selected)?"green":"red";  ?>><b><?php echo $mysqlerr; ?></b></font>
          </td>
         </tr>
 
@@ -261,7 +261,7 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;PHP Version
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <font color=<?phpphp echo (version_compare(phpversion(), "4.3.0", ">="))?"green":"red";  ?>><b><?phpphp echo phpversion(); ?></b></font>
+         <font color=<?php echo (version_compare(phpversion(), "4.3.0", ">="))?"green":"red";  ?>><b><?php echo phpversion(); ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          Minimum PHP Version is 4.3.0
@@ -273,8 +273,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;allow_url_fopen
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "allow_url_fopen"); ?>
-         <font color=<?phpphp echo (strtolower($status[0])=="on")?"green":"red";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "allow_url_fopen"); ?>
+         <font color=<?php echo (strtolower($status[0])=="on")?"green":"red";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "allow_url_fopen" must be set to On
@@ -286,8 +286,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;allow_call_time_pass_reference
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "allow_call_time_pass_reference"); ?>
-         <font color=<?phpphp echo (strtolower($status[0])=="on")?"green":"red";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "allow_call_time_pass_reference"); ?>
+         <font color=<?php echo (strtolower($status[0])=="on")?"green":"red";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "allow_call_time_pass_reference" must be set to On
@@ -300,8 +300,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;max_execution_time
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "max_execution_time"); ?>
-         <font color=<?phpphp echo ($status[0]>= 60)?"green":"orange";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "max_execution_time"); ?>
+         <font color=<?php echo ($status[0]>= 60)?"green":"orange";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "max_execution_time" must be minimum 60
@@ -313,36 +313,36 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;memory_limit
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "memory_limit"); ?>
-         <font color=<?phpphp echo (str_replace("M","",$status[0])>= 12)?"green":"orange";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "memory_limit"); ?>
+         <font color=<?php echo (str_replace("M","",$status[0])>= 12)?"green":"orange";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "memory_limit" should be minimum 12M, In case of ioncube versions and any out of memory errors, you have to increase the limit to higher values.
          </td>
         </tr>
 
-        <?phpphp if(version_compare(phpversion(), "5.0.0", ">=")){ ?>
+        <?php if(version_compare(phpversion(), "5.0.0", ">=")){ ?>
         <tr bgcolor="#EEEEEE">
          <td align="left" style="border: 1px solid #000000;">
          &nbsp;Zend Engine 1
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "zend.ze1_compatibility_mode"); ?>
-         <font color=<?phpphp echo (strtolower($status[0])== "on")?"green":"red";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "zend.ze1_compatibility_mode"); ?>
+         <font color=<?php echo (strtolower($status[0])== "on")?"green":"red";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "zend.ze1_compatibility_mode" must be set to On.
          </td>
         </tr>
-        <?phpphp } ?>
+        <?php } ?>
 
         <tr bgcolor="#EEEEEE">
          <td align="left" style="border: 1px solid #000000;">
          &nbsp;open_basedir
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("PHP Core", "open_basedir"); ?>
-         <font color=<?phpphp echo ($status[0]== "no value")?"green":"orange";  ?>><b><?phpphp echo $status[0]; ?></b></font>
+         <?php $status = getModuleSetting("PHP Core", "open_basedir"); ?>
+         <font color=<?php echo ($status[0]== "no value")?"green":"orange";  ?>><b><?php echo $status[0]; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          When "open_basedir" is set, it may affect the ioncube version of ALP and may create unresolvable problems.
@@ -354,8 +354,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;MySQL Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("mysql", "MySQL Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("mysql", "MySQL Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "MySQL Support" must be enabled.
@@ -367,8 +367,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;Sockets Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("sockets", "Sockets Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("sockets", "Sockets Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "Sockets Support" must be enabled.
@@ -380,8 +380,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;XML Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("xml", "XML Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "active")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("xml", "XML Support"); ?>
+         <font color=<?php echo (strtolower($status)== "active")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "XML Support" must be enabled.
@@ -393,8 +393,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;ZLib Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("zlib", "ZLib Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("zlib", "ZLib Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "ZLib Support" must be enabled.
@@ -406,8 +406,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;Calendar support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("calendar", "Calendar support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("calendar", "Calendar support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "Calendar support" must be enabled.
@@ -419,8 +419,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;cURL support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("cURL", "cURL support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("cURL", "cURL support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "cURL support" must be enabled.
@@ -432,8 +432,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;cURL with OpenSSL and Zlib
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("cURL", "cURL Information"); ?>
-         <font color=<?phpphp echo (ereg("openssl", strtolower($status)) && ereg("zlib", strtolower($status)))?"green":"red";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("cURL", "cURL Information"); ?>
+         <font color=<?php echo (ereg("openssl", strtolower($status)) && ereg("zlib", strtolower($status)))?"green":"red";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "cURL" must be installed with OpenSSL and Zlib.
@@ -445,8 +445,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;iconv support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("iconv", "iconv support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("iconv", "iconv support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "iconv support" is required for non english languages.
@@ -458,8 +458,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;mbstring
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("mbstring", "Multibyte Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("mbstring", "Multibyte Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "mbstring" is required for non english languages.
@@ -472,8 +472,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;IMAP Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("imap", "IMAP c-Client Version"); ?>
-         <font color=<?phpphp echo (strtolower($status)!= "")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("imap", "IMAP c-Client Version"); ?>
+         <font color=<?php echo (strtolower($status)!= "")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "IMAP Support" is required for the email to support ticket feature.
@@ -486,8 +486,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;IMAP-SSL
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("imap", "SSL Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("imap", "SSL Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          IMAP must be compiled with "SSL Support" for the email to support ticket feature.
@@ -500,8 +500,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;IMAP-Kerberos
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("imap", "Kerberos Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("imap", "Kerberos Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          IMAP must be compiled with "Kerberos Support" for the email to support ticket feature.
@@ -513,8 +513,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;GD Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("gd", "GD Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("gd", "GD Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "GD Support" is required to generate report charts.
@@ -526,8 +526,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;FreeType Support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("gd", "FreeType Support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("gd", "FreeType Support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "FreeType Support" is required to generate report charts.
@@ -539,8 +539,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;OpenSSL support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("openssl", "OpenSSL support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("openssl", "OpenSSL support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "OpenSSL support" is required for OpenSRS registrar.
@@ -552,8 +552,8 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          &nbsp;MHASH support
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <?phpphp $status = getModuleSetting("mhash", "MHASH support"); ?>
-         <font color=<?phpphp echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?phpphp echo $status; ?></b></font>
+         <?php $status = getModuleSetting("mhash", "MHASH support"); ?>
+         <font color=<?php echo (strtolower($status)== "enabled")?"green":"orange";  ?>><b><?php echo $status; ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
          "MHASH support" is required for Authorize.net payment method.
@@ -570,24 +570,24 @@ if (!empty($_SESSION['FTP_USER']) && !empty($_SESSION['FTP_PW']) && ftp_login(ft
          <td style="border: 1px solid #000000;">&nbsp;<b>Description</b>&nbsp;</td>
         </tr>
 
-        <?phpphp foreach($functions as $function=>$string){ ?>
+        <?php foreach($functions as $function=>$string){ ?>
             <tr bgcolor="#EEEEEE">
          <td align="left" style="border: 1px solid #000000;">
-         &nbsp;<?phpphp echo $function; ?>
+         &nbsp;<?php echo $function; ?>
          </td>
          <td align="center" style="border: 1px solid #000000;">
-         <font color=<?phpphp echo ($function_check_results[$function])?"green":"red";  ?>><b><?phpphp echo $function_check_results_string[$function];  ?></b></font>
+         <font color=<?php echo ($function_check_results[$function])?"green":"red";  ?>><b><?php echo $function_check_results_string[$function];  ?></b></font>
          </td>
          <td style="border: 1px solid #000000;">
-         <?phpphp echo $string; ?>
+         <?php echo $string; ?>
          </td>
         </tr>
-        <?phpphp } ?>
+        <?php } ?>
 
         </table>
         </body>
         </html>
-<?phpphp
+<?php
    }
 }
 else
@@ -632,6 +632,6 @@ else
         </table>
         </body>
 </html>
-<?phpphp
+<?php
 }
 ?>

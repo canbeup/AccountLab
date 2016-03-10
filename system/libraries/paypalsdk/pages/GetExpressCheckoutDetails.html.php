@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 require_once 'PayPal/Type/GetExpressCheckoutDetailsResponseDetailsType.php';
 require_once 'PayPal/Type/GetExpressCheckoutDetailsResponseType.php';

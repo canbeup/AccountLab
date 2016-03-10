@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,12 +47,12 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $BL->props->lang['~tld']; ?></div>
+      <div class="tabs2" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $BL->props->lang['~tld']; ?></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addtld" class="add_link"><?phpphp echo $BL->props->lang['+addtld']; ?></a></div>
+      <div class="tabs" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=addtld" class="add_link"><?php echo $BL->props->lang['+addtld']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
@@ -63,71 +63,71 @@
 					  </td>
                     </tr>
 					<tr> 
-                      <td colspan="7" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="7" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>
-            		<?phpphp
+            		<?php
             		if (!count($tlds))
             		{
             		?>
             				<tr>
             					<td class="text_grey" colspan="7">
                                 	<div align='center'>
-                                	<?phpphp echo $BL->props->lang['TLD_No']; ?>
+                                	<?php echo $BL->props->lang['TLD_No']; ?>
                                 	</div>
             					</td>
             				</tr>
-            		<?phpphp
+            		<?php
             		}
             		else
             		{
             		?>														
                     <tr> 
-                      <td class='text_grey'><div align='left'>&nbsp;<b><?phpphp echo $BL->props->lang['Name']; ?></b></div></td>
-                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['Extension']; ?></b></div></td>
-                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['Period']; ?></b></div></td>
-                      <td class='text_grey'><div align='right'><b><?phpphp echo $BL->props->lang['Price']; ?>&nbsp;</b></div></td>
-                      <td class='text_grey'><div align='left'><b><?phpphp echo $BL->props->lang['active']; ?></b></div></td>
-                      <td class='text_grey'> <div align='left'><b><?phpphp echo $BL->props->lang['Registrar']; ?></b></div></td>
+                      <td class='text_grey'><div align='left'>&nbsp;<b><?php echo $BL->props->lang['Name']; ?></b></div></td>
+                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['Extension']; ?></b></div></td>
+                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['Period']; ?></b></div></td>
+                      <td class='text_grey'><div align='right'><b><?php echo $BL->props->lang['Price']; ?>&nbsp;</b></div></td>
+                      <td class='text_grey'><div align='left'><b><?php echo $BL->props->lang['active']; ?></b></div></td>
+                      <td class='text_grey'> <div align='left'><b><?php echo $BL->props->lang['Registrar']; ?></b></div></td>
                       <td width='10%' class='text_grey'><div align='left'><b></b></div></td>
                     </tr>
-                    <?phpphp
+                    <?php
 					foreach($tlds as $temp){ ?>
 					<tr>
                       <td colspan='7' class='text_grey'>
-					  <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
+					  <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg" width="100%" height="1" /></td>
                     </tr>					
 					<tr>
-                      <td class='text_grey'><div align='left'>&nbsp;&nbsp;<?phpphp echo $temp['tld_name']; ?></div></td>
-                      <td class='text_grey'><div align='left'><?phpphp echo $temp['dom_ext']; ?></div></td>
-                      <td class='text_grey'><div align='left'><?phpphp if($temp['dom_period']==99)echo $BL->props->lang['one_time']; else echo $temp['dom_period']." ".$BL->props->lang['year']; ?></div></td>
-                      <td class='text_grey'><div align='right'><?phpphp echo $BL->displayPrice($temp['dom_price'],null,1); ?>&nbsp;</div></td>
-                      <td class='text_grey'><div align='left'><?phpphp if($temp['tld_active']=="yes")echo $BL->props->lang['Yes']; else echo $BL->props->lang['No']; ?></div></td>
-                      <td class='text_grey'><div align='left'><?phpphp echo $temp['tld_registrar']; ?></div></td>
+                      <td class='text_grey'><div align='left'>&nbsp;&nbsp;<?php echo $temp['tld_name']; ?></div></td>
+                      <td class='text_grey'><div align='left'><?php echo $temp['dom_ext']; ?></div></td>
+                      <td class='text_grey'><div align='left'><?php if($temp['dom_period']==99)echo $BL->props->lang['one_time']; else echo $temp['dom_period']." ".$BL->props->lang['year']; ?></div></td>
+                      <td class='text_grey'><div align='right'><?php echo $BL->displayPrice($temp['dom_price'],null,1); ?>&nbsp;</div></td>
+                      <td class='text_grey'><div align='left'><?php if($temp['tld_active']=="yes")echo $BL->props->lang['Yes']; else echo $BL->props->lang['No']; ?></div></td>
+                      <td class='text_grey'><div align='left'><?php echo $temp['tld_registrar']; ?></div></td>
                       <td class='text_grey'><div align='right'>
-                      <?phpphp if($BL->getCmd("edittld")){ ?>
-                      <a href='<?phpphp echo $PHP_SELF; ?>?cmd=edittld&price_id=<?phpphp echo $temp['price_id']; ?>' class='text_link'>
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' alt='<?phpphp echo $BL->props->lang['Edit']; ?>' border='0' /></a>
+                      <?php if($BL->getCmd("edittld")){ ?>
+                      <a href='<?php echo $PHP_SELF; ?>?cmd=edittld&price_id=<?php echo $temp['price_id']; ?>' class='text_link'>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' alt='<?php echo $BL->props->lang['Edit']; ?>' border='0' /></a>
                       &nbsp;
-                      <?phpphp } ?>                      
-                      <?phpphp if($BL->getCmd("deltld")){ ?>
-                      <a href="javascript:if(confirm('<?phpphp echo $BL->props->lang['TLD_DEL']; ?>'))document.location='<?phpphp echo $PHP_SELF; ?>?cmd=deltld&price_id=<?phpphp echo $temp['price_id']; ?>'" class='text_link'>
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' alt='<?phpphp echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
+                      <?php } ?>                      
+                      <?php if($BL->getCmd("deltld")){ ?>
+                      <a href="javascript:if(confirm('<?php echo $BL->props->lang['TLD_DEL']; ?>'))document.location='<?php echo $PHP_SELF; ?>?cmd=deltld&price_id=<?php echo $temp['price_id']; ?>'" class='text_link'>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' alt='<?php echo $BL->props->lang['Delete']."?"; ?>' border='0' /></a>
                       &nbsp;
-                      <?phpphp } ?>					  
+                      <?php } ?>					  
                       </div></td>
                     </tr>
-                    <?phpphp } } ?>
+                    <?php } } ?>
 					<tr> 
-                      <td colspan="7" class="text_grey"><img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
+                      <td colspan="7" class="text_grey"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" /></td>
                     </tr>			
                   </table>
 				  <br />
 					<table width="100%" border="0" cellspacing="2" cellpadding="2" class="list_table">				
 					<tr> 
                       <td class="text_grey" align="center">
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>edit_all.gif' /> <?phpphp echo $BL->props->lang['Edit']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>edit_all.gif' /> <?php echo $BL->props->lang['Edit']; ?>
 					  &nbsp;
-					  <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>delete.gif' /> <?phpphp echo $BL->props->lang['Delete']; ?>
+					  <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>delete.gif' /> <?php echo $BL->props->lang['Delete']; ?>
 					  </td>
                     </tr>
 					</table>				  
@@ -135,7 +135,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>	
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>	
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

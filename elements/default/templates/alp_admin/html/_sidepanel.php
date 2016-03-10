@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -48,26 +48,26 @@
 ?>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
-<?phpphp
+<?php
 foreach($return_cmds as $k=>$v)
 {
     $k1=substr($k, 1,strlen($k));
     if($cmd!=$k1)
     {
     ?>
-    <?phpphp if($BL->getCmd($k1)){ ?>
+    <?php if($BL->getCmd($k1)){ ?>
     <tr>
         <td class='text_grey'>
-            <a href='<?phpphp echo $PHP_SELF; ?>?cmd=<?phpphp echo $k1; ?>'><b><?phpphp echo $BL->props->lang[$k]; ?></b></a>
+            <a href='<?php echo $PHP_SELF; ?>?cmd=<?php echo $k1; ?>'><b><?php echo $BL->props->lang[$k]; ?></b></a>
         </td>
     </tr>
     <tr> 
         <td class='text_grey'>
-            <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
         </td>
     </tr>
-    <?phpphp } ?>  
-    <?phpphp
+    <?php } ?>  
+    <?php
     }
 }
 ?>

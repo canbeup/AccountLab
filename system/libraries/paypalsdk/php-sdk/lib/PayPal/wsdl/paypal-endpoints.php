@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 /**
  * THIS MAPPING IS AUTOMATICALLY GENERATED. DO NOT EDIT.
  * Generated on: 09/28/06 12:33:33

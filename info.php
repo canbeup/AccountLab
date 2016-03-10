@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -209,12 +209,12 @@ if(isset($REQUEST['cmd']) && $REQUEST['cmd']=='PRINT')
         ?>
         <html>
         <body onload="javascript:window.print();window.close();">
-        <?phpphp
+        <?php
         echo $html_buffer;
         ?>
         </body>
         </html>
-        <?phpphp
+        <?php
     }
     else
     {

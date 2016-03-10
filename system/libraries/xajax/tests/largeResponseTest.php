@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 require_once("../xajax.inc.php");
 
 function largeResponse()
@@ -22,7 +22,7 @@ $xajax->processRequests();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Large Response Test | xajax Tests</title>
-<?phpphp $xajax->printJavascript("../") ?>
+<?php $xajax->printJavascript("../") ?>
 </head>
 <body>
 

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,16 +47,16 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
 <div id="content">
     <div id="display_list">
-      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=billing_cycles" class="add_link"><?phpphp echo $BL->props->lang['~billing_cycles']; ?></a></div>
+      <div class="tabs" name='tt1' id='tt1' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs';" ><a href="admin.php?cmd=billing_cycles" class="add_link"><?php echo $BL->props->lang['~billing_cycles']; ?></a></div>
       <div class="tab_separator">&nbsp;</div>
-      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?phpphp echo $title; ?></div>
+      <div class="tabs2" name='tt2' id='tt2' onmouseover="javascript:this.className='tabs1';" onmouseout="javascript:this.className='tabs2';" ><?php echo $title; ?></div>
       <div class="tab_separator">&nbsp;</div>
     </div>
 	<div id="display_list">
-    <form name='form1' id='form1' method='POST' action='<?phpphp echo $PHP_SELF; ?>'>
+    <form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list_table">
     <tr> 
         <td colspan="2" class="tdheading">
@@ -65,51 +65,51 @@
     </tr>
     <tr> 
         <td colspan="2" class="text_grey">
-        <img src="elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+        <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
         </td>
     </tr>
     <tr> 
         <td class='text_grey' width='1%'>
         <div align='center'>
-          <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+          <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
         </div>
         </td>
         <td class='text_grey'>
         <div id="form1_label">
-        <?phpphp echo $BL->props->lang['Nu_Months']; ?>
+        <?php echo $BL->props->lang['Nu_Months']; ?>
         </div>
         <div id="form1_field">
         <select name="cycle_month" id="cycle_month" size="1" class='search'>
-        <?phpphp for($i=1;$i<121;$i++) { if(array_search($i,$cycles)===false){ ?>
-          <option value='<?phpphp echo $i; ?>' <?phpphp if($cmd=="edit_cycle" && $cycle['cycle_month']==$i)echo "selected"; ?>><?phpphp echo $i; ?></option>
-        <?phpphp } } ?>
+        <?php for($i=1;$i<121;$i++) { if(array_search($i,$cycles)===false){ ?>
+          <option value='<?php echo $i; ?>' <?php if($cmd=="edit_cycle" && $cycle['cycle_month']==$i)echo "selected"; ?>><?php echo $i; ?></option>
+        <?php } } ?>
         </select>
         </div>
         </td>
     </tr>
     <tr> 
         <td colspan='2' class='text_grey'>
-        <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+        <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
         </td>
     </tr>
     <tr> 
       <td class='text_grey' width='1%'>
       <div align='center'>
-      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
+      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18'>
       </div>
       </td>
       <td class='text_grey'>
       <div id="form1_label">
-      <?phpphp echo $BL->props->lang['language_key']; ?>
+      <?php echo $BL->props->lang['language_key']; ?>
       </div>
       <div id="form1_field">
-      <input name='cycle_name' type='text' class='search' id='cycle_name' size='20' value="<?phpphp if($cmd=="edit_cycle") echo $cycle['cycle_name']; ?>" />
+      <input name='cycle_name' type='text' class='search' id='cycle_name' size='20' value="<?php if($cmd=="edit_cycle") echo $cycle['cycle_name']; ?>" />
       </div>
       </td>
     </tr>
     <tr> 
       <td colspan='2' class='text_grey'>
-      <img src='elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+      <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
       </td>
     </tr>
     <tr> 
@@ -119,11 +119,11 @@
         &nbsp;
         </div>
         <div id="form1_field">
-        <?phpphp if($cmd=="edit_cycle"){ ?>
-      	<input type='hidden' name='id' value='<?phpphp echo $cycle['id']; ?>' />
-        <?phpphp } ?>
-        <input type='hidden' name='cmd' value='<?phpphp echo $cmd; ?>' />
-        <input name='submit' type='submit' class='search1' value='<?phpphp if($cmd=="edit_cycle")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
+        <?php if($cmd=="edit_cycle"){ ?>
+      	<input type='hidden' name='id' value='<?php echo $cycle['id']; ?>' />
+        <?php } ?>
+        <input type='hidden' name='cmd' value='<?php echo $cmd; ?>' />
+        <input name='submit' type='submit' class='search1' value='<?php if($cmd=="edit_cycle")echo $BL->props->lang['Update'];else echo $BL->props->lang['add']; ?>' />
         </div>
       </td>
     </tr>
@@ -133,7 +133,7 @@
 </div>
 <!--end content -->
 <div id="navBar">
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/_sidepanel.php"); ?>
 </div>
 <!--end navbar -->
-<?phpphp include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>
+<?php include_once $BL->props->get_page("templates/alp_admin/html/footer.php"); ?>

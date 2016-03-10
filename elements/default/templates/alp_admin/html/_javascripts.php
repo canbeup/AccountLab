@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,8 +47,8 @@
 
 ?>
 
-<?phpphp if($BL->conf['en_html_editor']==1){ ?>
-<script language="javascript" type="text/javascript" src="system<?phpphp echo PATH_SEP; ?>libraries<?phpphp echo PATH_SEP; ?>tinymce<?phpphp echo PATH_SEP; ?>jscripts<?phpphp echo PATH_SEP; ?>tiny_mce<?phpphp echo PATH_SEP; ?>tiny_mce_gzip.php"></script>
+<?php if($BL->conf['en_html_editor']==1){ ?>
+<script language="javascript" type="text/javascript" src="system<?php echo PATH_SEP; ?>libraries<?php echo PATH_SEP; ?>tinymce<?php echo PATH_SEP; ?>jscripts<?php echo PATH_SEP; ?>tiny_mce<?php echo PATH_SEP; ?>tiny_mce_gzip.php"></script>
 <script language="javascript" type="text/javascript">
 tinyMCE.init({
     mode : "textareas",
@@ -56,7 +56,7 @@ tinyMCE.init({
     auto_reset_designmode : true,
     browsers : "msie,gecko,opera",
     dialog_type : "modal",
-    directionality : "<?phpphp echo strtolower(PAGEDIR); ?>",
+    directionality : "<?php echo strtolower(PAGEDIR); ?>",
     object_resizing : false,
     editor_deselector : "search",
     plugins : "table,advhr,advimage,advlink,emotions,iespell,flash,searchreplace,print,contextmenu",
@@ -72,7 +72,7 @@ tinyMCE.init({
     extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]"
 });
 </script>
-<?phpphp } ?>
+<?php } ?>
 <script language="JavaScript" type="text/javascript">
 function Trim(TRIM_VALUE){
     if(TRIM_VALUE.length < 1){
@@ -487,7 +487,7 @@ function ajax(){
         else if(http_request.readyState != 0)
         {
             toggleTbodyOn('whoisresult_div');
-            document.getElementById('whoisresult').innerHTML = '<img src=\"elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>quering.gif\" alt=\"<?phpphp echo $BL->props->lang['quering']; ?>\" border=\"0\" />';
+            document.getElementById('whoisresult').innerHTML = '<img src=\"elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>quering.gif\" alt=\"<?php echo $BL->props->lang['quering']; ?>\" border=\"0\" />';
         }
     }
 
@@ -498,17 +498,17 @@ function ajax(){
                 if (http_request.status == 200) {
                     status1 = http_request.responseText;
                     if(status1=='online')
-                        document.getElementById(img_id).innerHTML='<img src=\"elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>online.gif\" alt=\"---\" border=\"0\" />';
+                        document.getElementById(img_id).innerHTML='<img src=\"elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>online.gif\" alt=\"---\" border=\"0\" />';
                     else
-                        document.getElementById(img_id).innerHTML='<img src=\"elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>offline.gif\" alt=\"---\" border=\"0\" />';
+                        document.getElementById(img_id).innerHTML='<img src=\"elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>offline.gif\" alt=\"---\" border=\"0\" />';
                 } else {
-                    document.getElementById(img_id).innerHTML='<img src=\"elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>offline.gif\" alt=\"---\" border=\"0\" />';
+                    document.getElementById(img_id).innerHTML='<img src=\"elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>offline.gif\" alt=\"---\" border=\"0\" />';
                 }
             }
             else
                 if(http_request.readyState != 0)
                 {
-                    document.getElementById(img_id).innerHTML='<img src=\"elements<?phpphp echo PATH_SEP; ?>default<?phpphp echo PATH_SEP; ?>templates<?phpphp echo PATH_SEP; ?>alp_admin<?phpphp echo PATH_SEP; ?>images<?phpphp echo PATH_SEP; ?>quering.gif\" alt=\"<?phpphp echo $BL->props->lang['quering']; ?>\" border=\"0\" />';
+                    document.getElementById(img_id).innerHTML='<img src=\"elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>quering.gif\" alt=\"<?php echo $BL->props->lang['quering']; ?>\" border=\"0\" />';
                 }
         }
     }
@@ -519,7 +519,7 @@ function ajax(){
                 var state_obj = getObj('state','form1');
                 var count = 0;
                 state_obj.options.length = count;
-                <?phpphp echo "var key = '".(isset($REQUEST['state'])?$REQUEST['state']:'0')."';"; ?>
+                <?php echo "var key = '".(isset($REQUEST['state'])?$REQUEST['state']:'0')."';"; ?>
                 var key_added = 0;
                 for(i=0; i<xmlDoc.getElementsByTagName('count').item(0).firstChild.data; i++)
                 {
@@ -552,7 +552,7 @@ function ajax(){
                 var state_obj = getObj('country_3','form1');
                 var count = 1;
                 state_obj.options.length = count;
-                <?phpphp echo "var key = '".(isset($REQUEST['country_3'])?$REQUEST['country_3']:'0')."';"; ?>
+                <?php echo "var key = '".(isset($REQUEST['country_3'])?$REQUEST['country_3']:'0')."';"; ?>
                 var key_added = 0;
                 for(i=0; i<xmlDoc.getElementsByTagName('count').item(0).firstChild.data; i++)
                 {
@@ -585,9 +585,9 @@ function ajax(){
                 var state_obj = getObj('tax_state[]','form1');
                 var count = 0;
                 state_obj.options.length = count;
-                state_obj.options[count++] = new Option('<?phpphp echo $BL->props->lang['all']; ?>', '<?phpphp echo $BL->props->lang['all']; ?>', false);
+                state_obj.options[count++] = new Option('<?php echo $BL->props->lang['all']; ?>', '<?php echo $BL->props->lang['all']; ?>', false);
                 pre_states_array = new Array();
-                <?phpphp if(isset($ts_array) && is_array($ts_array) && count($ts_array)>0) {
+                <?php if(isset($ts_array) && is_array($ts_array) && count($ts_array)>0) {
                     $str = "";
                     foreach($ts_array as $temp) {
                         $str .= empty($str)?"\"".$temp."\"":", \"".$temp."\"";
@@ -668,9 +668,9 @@ function getObj(obj_name,form_name)
     return null;
 }
 function jumpMenu(url_index){
-    <?phpphp $ext = ($cmd=="editorder")?("&sub_id=".$REQUEST['sub_id']):""; ?>
-    <?phpphp $url = "'admin.php?cmd=".$cmd.$ext."&customer_id='+getObj('customer_id','form1').options[getObj('customer_id','form1').selectedIndex].value"; ?>
-    var url  = <?phpphp echo $url; ?>;
+    <?php $ext = ($cmd=="editorder")?("&sub_id=".$REQUEST['sub_id']):""; ?>
+    <?php $url = "'admin.php?cmd=".$cmd.$ext."&customer_id='+getObj('customer_id','form1').options[getObj('customer_id','form1').selectedIndex].value"; ?>
+    var url  = <?php echo $url; ?>;
     if(url_index==1)
     {
         url = url+"&group_id="+getObj('group_id','form1').options[getObj('group_id','form1').selectedIndex].value

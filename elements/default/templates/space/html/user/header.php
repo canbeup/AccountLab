@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
@@ -47,7 +47,7 @@
 
 ?>
 
-<?phpphp include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
+<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/top.php"); ?>
 <!--Main table. Contains two rows:
 1. top picture, logo and menu
 2. page body with texts etc.
@@ -56,18 +56,18 @@
 <table id="Table_01" width="90%" height="600" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td rowspan="7">
-			<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_01.gif"); ?>" width="1" height="600" alt=""></td>
+			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_01.gif"); ?>" width="1" height="600" alt=""></td>
 		<td rowspan="7" class="shadowleft">
-			<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/shadowleft.gif"); ?>" width="21" height="600" alt=""></td>
+			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/shadowleft.gif"); ?>" width="21" height="600" alt=""></td>
 		<td>
-			<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_03.gif"); ?>" width="720" height="32" alt=""></td>
+			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_03.gif"); ?>" width="720" height="32" alt=""></td>
 		<td rowspan="7" class="shadowright">
-			<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/shadowright.gif"); ?>" width="17" height="600" alt=""></td>
+			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/shadowright.gif"); ?>" width="17" height="600" alt=""></td>
 		<td rowspan="7">
-			<img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_05.gif"); ?>" width="1" height="600" alt=""></td>
+			<img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_05.gif"); ?>" width="1" height="600" alt=""></td>
 	</tr>
 	<tr>
-		<td height="166" background="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/logobg.gif"); ?>" class="headerlogo">
+		<td height="166" background="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/logobg.gif"); ?>" class="headerlogo">
 			AQUINAS</td>
 	</tr>
 	<tr>
@@ -85,19 +85,19 @@
 				</tr>
 				<tr>
 					<td class="menu" height="3" bgcolor="#A4D8FB" >
-					<img border="0" src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="1" height="5"></td>
+					<img border="0" src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/spacer.gif"); ?>" width="1" height="5"></td>
 				</tr>
 			</table>		</td>
 	</tr>
 	<tr>
-		<td><img src="<?phpphp echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_12.gif"); ?>" width="720" height="9" alt=""></td>
+		<td><img src="<?php echo $BL->props->get_page("templates/".THEMEDIR."/images/psd_12.gif"); ?>" width="720" height="9" alt=""></td>
 	</tr>
 	
 	<tr>
 		<td class="contenttable">
 <div id="masthead"> 
   <h1 id="siteName">
-    <?phpphp 
+    <?php 
     if(!empty($conf['company_name']))echo $conf['company_name'];
     else echo $BL->props->lang['accountlabplus']; 
     ?>
@@ -105,4 +105,4 @@
   <!-- end globalNav --> 
 </div> 
 <!-- end masthead --> 
-<?phpphp include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
+<?php include $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
