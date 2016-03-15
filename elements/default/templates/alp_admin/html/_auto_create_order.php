@@ -136,7 +136,7 @@
     <td class='text_grey'>&nbsp;</td>
     <td class='text_grey'><?php echo $BL->props->lang['Account_Status']; ?></td>
     <td class='text_grey'>
-    <font color='<?php echo $txt_color; ?>'><b><?php  echo $BL->props->lang[$BL->props->order_status[$REQUEST['acct_status']]]; ?></b></font>
+    <font color='<?php echo $txt_color; ?>'>    <b><?php  echo empty($REQUEST['acct_status'])?'':$BL->props->lang[$BL->props->order_status[$REQUEST['acct_status']]]; ?></b></font>
     </td>
     <td class='text_grey'>
     <?php echo $BL->props->lang['Change_status_to']; ?>
@@ -159,7 +159,7 @@
   <?php } ?>
     <tr>
       <td colspan="6" class="text_grey">
-      <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+      <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
       </td>
     </tr>
 </table>

@@ -48,5 +48,6 @@
 ?>
 
 <?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/top.php"); ?>
-<?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/user/menu.php"); ?>
-
+<table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
