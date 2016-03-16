@@ -43,7 +43,7 @@
  * written prior permission. Title to copyright in this software and any
  * associated documentation will at all times remain with copyright
  * holders.
- */ 
+ */
 
 /*
  * Language: English
@@ -192,7 +192,7 @@ $lang['title']= "Title";
 $lang['answer']= "Answer";
 $lang['you_can_pay_by_add_cur']= "Pay in another currency:";
 $lang['select_country']= "-- Please select your country --";
-$lang['select_state']= "-- Please select your region --";
+$lang['select_state']= "-- Please select your state --";
 $lang['force_tax']= "Apply tax to all locations";
 $lang['group_require_domain']= "Require Domain or Subdomain";
 $lang['show_in_order_page']= "Show In Order Page";
@@ -201,7 +201,7 @@ $lang['inv_start_no']= "Invoice No Start From";
 $lang['order_start_no']= "Order No Start From";
 $lang['err_demo_mode']= "Sorry, In demo mode you are not allowed to change administrator username and password.";
 $lang['Invoice']= "Invoice";
-$lang['pp_manual_valid']= "Payment couldn't be validated and a manual validation will follow.<br><br>";
+$lang['pp_manual_valid']= "Payment requires additional processing and there may be a small delay while we process it.<br><br>";
 $lang['Page_title']= "Title of order page";
 $lang['no_category_present']="Please add at least one category and at least one associated product";
 $lang['no_product_present']= "Please add at least one product";
@@ -396,7 +396,7 @@ $lang['pay_now']= "Invoice amount payable now is ";
 $lang['recurring']= "Recurring amount ";
 $lang['for_cycle']= "for hosting ";
 $lang['for']= "for";
-$lang['finish_text']= "<b>Order completed</b><br><br>Thank you for your order!<br>You will be notified as soon as we will process it.";
+$lang['finish_text']= "<b>Payment completed</b><br><br>Thank you for your payment!<br>You will be notified as soon as processing is complete.";
 $lang['en_iv']= "Enable Robot Verification";
 $lang['enable_cc']= "Enable Coupons";
 $lang['not_robot']= "Robot verification<br><font class='accountlabSmallGrey'>Refresh your browser if the image is not readble.</font>";
@@ -677,7 +677,6 @@ $lang['err_no_licence']= "Your server does not have a license.";
 $lang['err_bad_login']= "Invalid username and password.";
 $lang['err_bad_login_hosting']= "Invalid hosting username and password.";
 $lang['err_db_php']= "<b>Unable to write on db.php</b><br>You must chmod elements/default/sysvar/db.php to 666 otherwise the script cannot continue.";
-$lang['err_licensing_php']= "<b>Unable to write on licensing_server.php</b><br>You must chmod system/config/licensing_servers.php to 666 otherwise the script cannot continue.";
 $lang['err_domain']= "Invalid domain name.";
 $lang['err_subdomain']= "Invalid subdomain name.";
 $lang['err_email']= "Invalid email address.";
@@ -925,7 +924,7 @@ $lang['+add_disc_token']= "Add Discount Tokens";
 $lang['+del_disc_token']= "Delete Discount Tokens";
 $lang['+act_disc_token']= "Activate / Deactivate Discount Tokens";
 $lang['No_disc_tokens']= "No Discount Tokens Defined";
-$lang['if_have_disc_token']= "If you have a coupon code or discount token enter here";
+$lang['if_have_disc_token']= "If you have a coupon code or discount token enter it here";
 $lang['message']= "Message with email";
 $lang['Do_you_want_to_delete_this_disc_token']= "Do you want to delete this discount token?";
 $lang['Add_disc_token']= "Add Discount Token";
@@ -996,7 +995,7 @@ $lang['description']= "Description";
 $lang['confirm_submit']= "NOTE: You can not change the ordered items after this step.\n\rDo you want to proceed?";
 $lang['finish']="Finish";
 $lang['cont_pay']="Continue to Payment Gateway";
-$lang['cancel_payment']="<b>Sorry!</b> We are not able to validate your payment. <br />A manual validation will follow.";
+$lang['cancel_payment']="<b>Sorry!</b> We were not able to validate your payment. <br />Please correct any errors and try again, or contact us to ensure your payment is processed.";
 $lang['Account_holder_name']="Account holder name";
 $lang['Cheque_number']="Cheque number";
 $lang['Cheque_date']="Cheque date";
@@ -1118,7 +1117,7 @@ $lang['clientexec_db']= "ClientExec database name";
 $lang['clientexec_user']= "ClientExec database user";
 $lang['clientexec_pass']= "ClientExec database password";
 $lang['clientexec_data']= "ClientExec data to import";
-$lang['Orders']= "Orders";
+$lang['Orders']= "Orders &amp; Subscriptions";
 $lang['import_started_at'] = "Imported started at";
 $lang['connnecting_mysql_server'] = "Connecting to mysql server ...";
 $lang['Done']= "Done";
@@ -1189,7 +1188,7 @@ $lang['tax_on_total']= "Net price";
 $lang['tax_on_each_product']= "Net price (+ tax if applicable)";
 $lang['product_incl_tax']= "Price including Tax";
 $lang['including'] = "including";
-$lang['email_template_3']= "Payment recieved email template";
+$lang['email_template_3']= "Payment received email template";
 $lang['email_subject']= "Email subject";
 $lang['email_body']= "Email body";
 $lang['template_default_1'] = "
@@ -1510,7 +1509,6 @@ $lang['Calculate_growth']= "Calculate growth";
 $lang['select_basic_report']= "Basic Reports";
 $lang['Display_whois_in_order_script']= "Allow domain search";
 $lang['err_db_php']= "<b>Unable to write on db.php</b><br>You must chmod ".DB_FILE." to 666 otherwise the script cannot continue.";
-$lang['err_licensing_php']= "<b>Unable to write on licensing_servers.php</b><br>You must chmod ".LIC_FILE." to 666 otherwise the script cannot continue.";
 $lang['Register_a_domain_only_desc']= "You can register a domain, without buying any other product.";
 $lang['reset_db']= "This will permanently delete all data and and reset alp.<br>Are you sure to do this?";
 $lang['+addannounce']= "Add announcement";
@@ -1567,4 +1565,16 @@ $lang['opensrs']="OpenSRS";
 $lang['planetdomain']="Planetdomain";
 $lang['resellerone']="ResellerOne";
 $lang['pass_private']= "Password/Private Key";
+//lang below was added Nov 2013
+$lang['en_quickpay']="Enable Quick Pay";
+$lang['quickpay']="Quick Pay";
+$lang['quickpay_note']="Quickpay will only allow access to one invoice.  Please log in for complete access.";
+$lang['invoice_delivery']="Invoice Delivery";
+$lang['del_customfield_country']= "Do you want to delete this field ?\\nAll customer data for this field will be unavailable!\\n\\nIf you remove the Country field, the State/Province/Region field will not work properly, because it is automatically generated based upon the Country selection!";
+$lang['confirm_markas_paid']="Mark this invoice as paid?";
+$lang['Subscriptions']="Subscriptions";
+$lang['Submitted']="Payment Submitted";
+$lang['Submitted_Invoices']="Payment Submitted Invoices";
+//lang below was added Dec 2013
+$lang['-invoices']= "Invoices";
 ?>

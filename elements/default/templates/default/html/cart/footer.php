@@ -46,8 +46,6 @@
  */ 
 
 ?>
-    </div> 
-  </div> 
-    <div id="siteInfo"><?php echo $conf['cp_note']; ?></div>
-</div> 
+
+<?php echo $conf['cp_note']; ?>
 <?php include_once $BL->props->get_page("templates/".THEMEDIR."/html/cart/bottom.php"); ?>
