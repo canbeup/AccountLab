@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?phpxml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions targetNamespace="com.logicboxes.foundation.sfnb.order.DomOrder" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="com.logicboxes.foundation.sfnb.order.DomOrder" xmlns:intf="com.logicboxes.foundation.sfnb.order.DomOrder" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <wsdl:types>
   <schema targetNamespace="com.logicboxes.foundation.sfnb.order.DomOrder" xmlns="http://www.w3.org/2001/XMLSchema">

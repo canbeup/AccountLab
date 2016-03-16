@@ -70,13 +70,10 @@
       <a href="logout.php?&user=customer"><?php echo $BL->props->lang['Logout']; ?></a>
     </div> 
   </div> 
-  <?php }elseif($general_section) { ?>
+  <?php }else { ?>
   <div id="pageNav"> 
     <div id="sectionLinks"> 
       <a href="customer.php"><?php echo $BL->props->lang['login']; ?></a> 
-      <?php if($conf['en_quickpay']){ ?>
-      <a href="customer.php?cmd=quickpay"><?php echo $BL->props->lang['quickpay']; ?></a> 
-      <?php } ?>
       <?php if($conf['en_support']){ ?>
       <a href="support.php"><?php echo $BL->props->lang['add_ticket']; ?></a>
       <?php } ?>
