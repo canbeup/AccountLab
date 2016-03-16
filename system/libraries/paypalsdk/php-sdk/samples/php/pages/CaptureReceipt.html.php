@@ -33,19 +33,19 @@
 <table width=400>
 	<tr>
 		<td>Authorization ID:</td>
-		<td><?=$authorization_id?></td>
+		<td><?php=$authorization_id?></td>
 	</tr>
 	<tr>
 		<td>Transaction ID:</td>
-		<td><?=$tran_ID?></td>
+		<td><?php=$tran_ID?></td>
 	</tr>
 	<tr>
 		<td>Payment Status:</td>
-		<td><?=$payment_status?></td>
+		<td><?php=$payment_status?></td>
 	</tr>
 	<tr>
 		<td>Gross Amount:</td>
-		<td><?=$amt_display?></td>
+		<td><?php=$amt_display?></td>
 	</tr>
 </table>
 

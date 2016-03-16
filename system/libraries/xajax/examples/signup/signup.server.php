@@ -80,7 +80,7 @@ function processPersonalData($aFormValues)
 		$objResponse->addAlert("Please enter your last name.");
 		$bError = true;
 	}
-	if (!preg_match("/^[a-zA-Z0-9]+[_a-zA-Z0-9-]*(\.[_a-z0-9-]+)*@[a-z??????0-9]+(-[a-z??????0-9]+)*(\.[a-z??????0-9-]+)*(\.[a-z]{2,4})$/i", $aFormValues['email']))
+	if (!eregi("^[a-zA-Z0-9]+[_a-zA-Z0-9-]*(\.[_a-z0-9-]+)*@[a-z??????0-9]+(-[a-z??????0-9]+)*(\.[a-z??????0-9-]+)*(\.[a-z]{2,4})$", $aFormValues['email']))
 	{
 		$objResponse->addAlert("Please enter a valid email address.");
 		$bError = true;

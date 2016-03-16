@@ -1580,7 +1580,7 @@ class Date_Calc
         $month = strtolower($month);
         $months = Date_Calc::getMonthNames();
         while(list($id, $name) = each($months)) {
-            if(preg_match("/$month/", strtolower($name))) {
+            if(ereg($month, strtolower($name))) {
                 return($id);
             }
         }

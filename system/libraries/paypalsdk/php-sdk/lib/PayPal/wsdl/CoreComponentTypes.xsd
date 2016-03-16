@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?phpxml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="urn:ebay:apis:CoreComponentTypes" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ebl="urn:ebay:apis:eBLBaseComponents" xmlns:ns="urn:ebay:apis:CoreComponentTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:import namespace="urn:ebay:apis:eBLBaseComponents" schemaLocation="eBLBaseComponents.xsd"/>
 	<!-- Definition of AmountType -->

@@ -485,7 +485,7 @@ class xajaxResponse
 	 */
 	function getXML()
 	{
-		$sXML = "<?xml version=\"1.0\"";
+		$sXML = "<?phpxml version=\"1.0\"";
 		if ($this->sEncoding && strlen(trim($this->sEncoding)) > 0)
 			$sXML .= " encoding=\"".$this->sEncoding."\"";
 		$sXML .= " ?"."><xjx>" . $this->xml . "</xjx>";

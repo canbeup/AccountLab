@@ -72,12 +72,12 @@
             <b>&nbsp;<?php echo $val; ?></b> [<?php if($value['run_schedule']=="MANUAL"){?><a style='color:#ffffff' href='?cmd=custom_scripts&id=<?php echo $k; ?>&manual=true'><?php echo $BL->props->lang['MANUAL']; ?></a><?php }else { ?><?php echo $BL->props->lang[$value['run_schedule']]; ?><?php } ?>]
             </td>
             <td class="tdheading" align="right">
-            <a href="#" onClick="expandcontent('section_<?php echo $key; ?>')"><img src="elements/default/templates/alp_admin/images/top_arrow.gif" alt="" border="0" /></a>
+            <a href="#" onClick="expandcontent('section_<?php echo $key; ?>')"><img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>top_arrow.gif" alt="" border="0" /></a>
             </td>   
         </tr>
         <tr> 
           <td class="text_grey" colspan="2">
-          <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>   
         <tr> 
@@ -104,7 +104,7 @@
             </tr>  
             <tr> 
                 <td class='text_grey'>
-                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>   
             <tr>
@@ -113,13 +113,13 @@
                 &nbsp;<b><?php echo $BL->props->lang['available_post_vars']; ?></b>
                 </div>
                 <div id="form1_field">
-                <textarea name="post_variables[<?php echo $k; ?>]" id="post_variables[<?php echo $k; ?>]" class='search' rows="10" cols="55" wrap="soft"><?php echo $value['post_variables']; ?></textarea>
+                <textarea name="post_variables[<?php echo $k; ?>]" id="post_variables[<?php echo $k; ?>]" class='search' rows="10" cols="55" wrap="on"><?php echo $value['post_variables']; ?></textarea>
                 </div>
                 </td>
             </tr>  
             <tr> 
                 <td class='text_grey'>
-                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr> 
             </table>
@@ -128,13 +128,13 @@
         </tr>   
         <tr> 
           <td class="text_grey" colspan="2">
-          <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="10" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="10" />
           </td>
         </tr>   
         <?php } ?>
         <tr> 
           <td class="text_grey">
-          <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>
         <tr>
@@ -148,7 +148,7 @@
         </tr>
         <tr> 
           <td class="text_grey">
-          <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
+          <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
           </td>
         </tr>   
         <?php  }  ?>

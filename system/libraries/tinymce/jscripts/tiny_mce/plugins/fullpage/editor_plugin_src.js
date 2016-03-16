@@ -88,7 +88,7 @@ var TinyMCE_FullPagePlugin = {
 
 						// Make default chunk
 						if (pi)
-							tmp += '<?xml version="1.0" encoding="' + enc + '"?>\n';
+							tmp += '<?phpxml version="1.0" encoding="' + enc + '"?>\n';
 
 						tmp += docType + '\n';
 						tmp += '<html xmlns="http:/'+'/www.w3.org/1999/xhtml" lang="' + lang + '" xml:lang="' + lang + '">\n';
