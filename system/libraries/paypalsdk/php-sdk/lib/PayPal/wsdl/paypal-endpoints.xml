@@ -1,4 +1,4 @@
-<?phpxml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <endpoints>
 	<wsdl min-version="2.00" max-version="2.4">
 		<environment name="live">

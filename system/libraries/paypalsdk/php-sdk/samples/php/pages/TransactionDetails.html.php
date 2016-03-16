@@ -43,37 +43,37 @@
             <td>
                 Payer:
             </td>
-            <td><?php=$payer?></td>
+            <td><?=$payer?></td>
         </tr>
         <tr>
             <td>
                 Payer ID:
             </td>
-            <td><?php=$payer_id?></td>
+            <td><?=$payer_id?></td>
         </tr>
         <tr>
             <td>
                 First Name:
             </td>
-            <td><?php=$payer_fname?></td>
+            <td><?=$payer_fname?></td>
         </tr>
         <tr>
             <td>
                 Last Name:
             </td>
-            <td><?php=$payer_lname?></td>
+            <td><?=$payer_lname?></td>
         </tr>
         <tr>
             <td>
                 Transaction ID:
             </td>
-            <td><?php=$tran_ID?></td>
+            <td><?=$tran_ID?></td>
         </tr>
         <tr>
             <td>
                 Parent Transaction ID (if any):
             </td>
-            <td><?php=$tran_ID_parent?></td>
+            <td><?=$tran_ID_parent?></td>
         </tr>
         <tr>
             <td>
@@ -82,13 +82,13 @@
             <?php
             $display_amt = $currency_cd.' '.$gross_amt;
             ?>
-            <td><?php=$display_amt?></td>
+            <td><?=$display_amt?></td>
         </tr>
         <tr>
             <td>
                 Payment Status:
             </td>
-            <td><?php=$status?></td>
+            <td><?=$status?></td>
         </tr>
       
     </table>
@@ -102,9 +102,9 @@
     ?>
     
     <br><br>
-    <a id="DoVoidLink" href="<?php=$do_void_link?>">Void</a>
-    <a id="DoCaptureLink" href="<?php=$do_capture_link?>">Capture</a>
-    <a id="RefundTransactionLink" href="<?php=$do_refund_link?>">Refund</a>
+    <a id="DoVoidLink" href="<?=$do_void_link?>">Void</a>
+    <a id="DoCaptureLink" href="<?=$do_capture_link?>">Capture</a>
+    <a id="RefundTransactionLink" href="<?=$do_refund_link?>">Refund</a>
     <a id="BackLink" href="javascript:history.back()">Back</a>
     <br />
     <a id="CallsLink" class="home" href="Calls.html">Home</a>
