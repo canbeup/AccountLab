@@ -1,144 +1,144 @@
 <?php
 
-/*
- * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
- * All Rights Reserved.
- *
- * This Cosmopoly Europe EOOD work (including software, documents, or
- * other related items) is being provided by the copyright holder under
- * the following license. By obtaining, using and/or copying this work,
- * you (the licensee) agree that you have read, understood, and will
- * comply with the following terms and conditions:
- *
- * Permission to use, copy, modify, and distribute this software and its
- * documentation, with or without modification, for any purpose and
- * without fee or royalty is hereby granted, provided that you include
- * the following on ALL copies of the software and documentation or
- * portions thereof, including modifications, that you make:
- *
- * 1. The full text of this NOTICE in a location viewable to users of the
- * redistributed or derivative work.
- *
- * 2. A short notice of the following form (hypertext is preferred, text
- * is permitted) should be used within the body of any redistributed or
- * derivative code: "Copyright © 2005-2009 Cosmopoly Europe EOOD
- * (http://netenberg.com). All Rights Reserved."
- *
- * 3. Notice of any changes or modifications to the W3C files, including
- * the date changes were made. (We recommend you provide URIs to the
- * location from which the code is derived.)
- *
- * THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
- * HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS
- * FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR
- * DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS,
- * TRADEMARKS OR OTHER RIGHTS.
- * COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL
- * OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR
- * DOCUMENTATION.
- *
- * The name and trademarks of copyright holders may NOT be used in
- * advertising or publicity pertaining to the software without specific,
- * written prior permission. Title to copyright in this software and any
- * associated documentation will at all times remain with copyright
- * holders.
- */
+    /*
+    * Copyright © 2005-2009 Cosmopoly Europe EOOD (http://netenberg.com).
+    * All Rights Reserved.
+    *
+    * This Cosmopoly Europe EOOD work (including software, documents, or
+    * other related items) is being provided by the copyright holder under
+    * the following license. By obtaining, using and/or copying this work,
+    * you (the licensee) agree that you have read, understood, and will
+    * comply with the following terms and conditions:
+    *
+    * Permission to use, copy, modify, and distribute this software and its
+    * documentation, with or without modification, for any purpose and
+    * without fee or royalty is hereby granted, provided that you include
+    * the following on ALL copies of the software and documentation or
+    * portions thereof, including modifications, that you make:
+    *
+    * 1. The full text of this NOTICE in a location viewable to users of the
+    * redistributed or derivative work.
+    *
+    * 2. A short notice of the following form (hypertext is preferred, text
+    * is permitted) should be used within the body of any redistributed or
+    * derivative code: "Copyright © 2005-2009 Cosmopoly Europe EOOD
+    * (http://netenberg.com). All Rights Reserved."
+    *
+    * 3. Notice of any changes or modifications to the W3C files, including
+    * the date changes were made. (We recommend you provide URIs to the
+    * location from which the code is derived.)
+    *
+    * THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
+    * HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
+    * INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS
+    * FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR
+    * DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS,
+    * TRADEMARKS OR OTHER RIGHTS.
+    * COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL
+    * OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR
+    * DOCUMENTATION.
+    *
+    * The name and trademarks of copyright holders may NOT be used in
+    * advertising or publicity pertaining to the software without specific,
+    * written prior permission. Title to copyright in this software and any
+    * associated documentation will at all times remain with copyright
+    * holders.
+    */
 
-require_once "init.php";
-$BL->installer->checkandupgrade();
-########################################################AUTHORIZATION START##################################################################
-$just_login = false;
-if (!empty ($BL->REQUEST['username']) && !empty ($BL->REQUEST['password']))
-{
-	foreach ($BL->REQUEST as $k => $v)
+    require_once "init.php";
+    $BL->installer->checkandupgrade();
+    ########################################################AUTHORIZATION START##################################################################
+    $just_login = false;
+    if (!empty ($BL->REQUEST['username']) && !empty ($BL->REQUEST['password']))
     {
-		if ($k != "submit" && $k != "username" && $k != "password" && $k != "passwd" && $k != "captcha_value")
+        foreach ($BL->REQUEST as $k => $v)
         {
-			$_GET[$k]= $v;
+            if ($k != "submit" && $k != "username" && $k != "password" && $k != "passwd" && $k != "captcha_value")
+            {
+                $_GET[$k]= $v;
+            }
         }
-    }
-    if(!$BL->conf['image_verification_admin'])
-    {
-    	if (!$BL->auth->login("admin"))
-    	{
-    		$BL->utils->alert($BL->props->lang['err_bad_login']);
-    		$BL->auth->logout("admin");
-    		include_once $BL->include_page("login.php");
-    		exit;
-    	}
-        else
+        if(!$BL->conf['image_verification_admin'])
         {
-        	$just_login = true;
-            $BL->runCS('W_L');
+            if (!$BL->auth->login("admin"))
+            {
+                $BL->utils->alert($BL->props->lang['err_bad_login']);
+                $BL->auth->logout("admin");
+                include_once $BL->include_page("login.php");
+                exit;
+            }
+            else
+            {
+                $just_login = true;
+                $BL->runCS('W_L');
+            }
         }
-    }
-    elseif(empty($BL->REQUEST['captcha_value']))
-    {
-        include_once $BL->include_page("captcha.php","admin_captcha");
-        exit;
-    }
-    else
-    {
-        if(md5($BL->REQUEST['captcha_value'])==$_SESSION['cpatcha_key'] && $BL->auth->login("admin"))
+        elseif(empty($BL->REQUEST['captcha_value']))
         {
-            $just_login = true;
-            $BL->runCS('W_L');
-        }
-        else
-        {
-            $BL->utils->alert($BL->props->lang['err_bad_login']);
-            $BL->auth->logout("admin");
-            include_once $BL->include_page("login.php");
+            include_once $BL->include_page("captcha.php","admin_captcha");
             exit;
         }
+        else
+        {
+            if(md5($BL->REQUEST['captcha_value'])==$_SESSION['captcha_key'] && $BL->auth->login("admin"))
+            {
+                $just_login = true;
+                $BL->runCS('W_L');
+            }
+            else
+            {
+                $BL->utils->alert($BL->props->lang['err_bad_login']);
+                $BL->auth->logout("admin");
+                include_once $BL->include_page("login.php");
+                exit;
+            }
+        }
     }
-}
-$check_ip           = false;
-$ip_is_licensed_for = 0;
-if(!empty($BL->conf['security_degree']) && count($BL->access_ips->find()))
-{
-    $adm_id     = $BL->accessIPCheck();
-    $check_ip   = true;
-    if(!$adm_id)
+    $check_ip           = false;
+    $ip_is_licensed_for = 0;
+    if(!empty($BL->conf['security_degree']) && count($BL->access_ips->find()))
     {
-        $detected_ip            = $BL->utils->realip();
-        $BL->ALPmail->AddAddress($BL->getAdminEmail(1), $BL->conf['company_name']);
-        $BL->ALPmail->Subject   = $BL->props->lang['unauthorize_login_attempt'];
-        $BL->ALPmail->Body      = $BL->props->lang['attemt_to_login'].$detected_ip."<br />".$BL->props->lang['Dated']." : ".date('H:i:s d-M-Y');
-        $BL->ALPmail->sendMail();
-        echo $BL->props->lang['detected_ip'].$detected_ip."<br />". $BL->props->lang['err_invalid_ip'];
+        $adm_id     = $BL->accessIPCheck();
+        $check_ip   = true;
+        if(!$adm_id)
+        {
+            $detected_ip            = $BL->utils->realip();
+            $BL->ALPmail->AddAddress($BL->getAdminEmail(1), $BL->conf['company_name']);
+            $BL->ALPmail->Subject   = $BL->props->lang['unauthorize_login_attempt'];
+            $BL->ALPmail->Body      = $BL->props->lang['attemt_to_login'].$detected_ip."<br />".$BL->props->lang['Dated']." : ".date('H:i:s d-M-Y');
+            $BL->ALPmail->sendMail();
+            echo $BL->props->lang['detected_ip'].$detected_ip."<br />". $BL->props->lang['err_invalid_ip'];
+            exit;
+        }
+        elseif($BL->conf['security_degree']==1 && !$BL->auth->IsAuth("admin"))
+        {
+            $BL->auth->ipBasedAuth($adm_id);
+        }
+        $ip_is_licensed_for = $adm_id;
+    }
+    if (!$BL->auth->IsAuth("admin", $ip_is_licensed_for, $check_ip))
+    {
+        if($just_login)//incase only IP do not match
+        {
+            $detected_ip = $BL->utils->realip();
+            $msg         = $BL->props->lang['detected_ip'].$detected_ip."<br />". $BL->props->lang['err_invalid_ip'];
+            $BL->utils->alert($msg);
+            $BL->ALPmail->AddAddress($BL->getAdminEmail(1), $BL->conf['company_name']);
+            $BL->ALPmail->Subject = $BL->props->lang['unauthorize_login_attempt'];
+            $BL->ALPmail->Body    = $BL->props->lang['attemt_to_login'].$detected_ip."<br />".$BL->props->lang['Dated']." : ".date('H:i:s d-M-Y');
+            $BL->ALPmail->sendMail();
+        }
+        $BL->auth->logout("admin");
+        include_once $BL->include_page("login.php");
         exit;
     }
-    elseif($BL->conf['security_degree']==1 && !$BL->auth->IsAuth("admin"))
-    {
-        $BL->auth->ipBasedAuth($adm_id);
-    }
-    $ip_is_licensed_for = $adm_id;
-}
-if (!$BL->auth->IsAuth("admin", $ip_is_licensed_for, $check_ip))
-{
-    if($just_login)//incase only IP do not match
-    {
-        $detected_ip = $BL->utils->realip();
-        $msg         = $BL->props->lang['detected_ip'].$detected_ip."<br />". $BL->props->lang['err_invalid_ip'];
-        $BL->utils->alert($msg);
-        $BL->ALPmail->AddAddress($BL->getAdminEmail(1), $BL->conf['company_name']);
-        $BL->ALPmail->Subject = $BL->props->lang['unauthorize_login_attempt'];
-        $BL->ALPmail->Body    = $BL->props->lang['attemt_to_login'].$detected_ip."<br />".$BL->props->lang['Dated']." : ".date('H:i:s d-M-Y');
-        $BL->ALPmail->sendMail();
-    }
-    $BL->auth->logout("admin");
-	include_once $BL->include_page("login.php");
-	exit;
-}
-if (!$BL->getCmd($cmd)){$BL->utils->alert($BL->props->lang['command_not_allowed']);$cmd = "";}
-########################################################AUTHORIZATION END#####################################################################
+    if (!$BL->getCmd($cmd)){$BL->utils->alert($BL->props->lang['command_not_allowed']);$cmd = "";}
+    ########################################################AUTHORIZATION END#####################################################################
 
-switch ($cmd)
-{
-#####################################################INVOICE START#################################################
-    case "addinvoice" :
+    switch ($cmd)
+    {
+        #####################################################INVOICE START#################################################
+        case "addinvoice" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -147,35 +147,35 @@ switch ($cmd)
                 $BL->Redirect("viewinvoice");
                 break;
             }
-            $Order = $BL->orders->get("WHERE orders.`sub_id`='".$BL->REQUEST['sub_id']."'");
+            $Order = $BL->orders->get("WHERE orders.`sub_id`=".intval($BL->REQUEST['sub_id']));
             include_once $BL->include_page("invoice.php");
             break;
         }
-    case "editinvoice" :
+        case "editinvoice" :
         {
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action'] == "sendinvoice")
             {
-                if($BL->mailInvoice($BL->REQUEST['invoice_no']))
+                if($BL->invoices->mailInvoice($BL->REQUEST['invoice_no']))
                 {
                     $BL->utils->alert($BL->props->lang['Invoice_Send']);
                 }
             }
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action'] == "sendpaymentnotice")
             {
-                if($BL->mailPaymentReciept($BL->REQUEST['invoice_no']))
+                if($BL->invoices->mailPaymentReceipt($BL->REQUEST['invoice_no']))
                 {
                     $BL->utils->alert($BL->props->lang['Reciept_Send']);
                 }
             }
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
-            	$BL->REQUEST['due_date'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
-                $BL->REQUEST['inv_addon_fee'] = "";
+                $BL->REQUEST['due_date'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
+                $BL->REQUEST['addon_fee'] = "";
                 if(isset($BL->REQUEST['addon_setups']))
                 {
-                	foreach($BL->REQUEST['addon_setups'] as $Addon_Name=>$Addon_Setup)
+                    foreach($BL->REQUEST['addon_setups'] as $Addon_Name=>$Addon_Setup)
                     {
-                    	$BL->REQUEST['inv_addon_fee'] .= $Addon_Name.">".$BL->utils->toFloat($Addon_Setup).">".$BL->utils->toFloat($BL->REQUEST['addon_cycles'][$Addon_Name])."<&>";
+                        $BL->REQUEST['addon_fee'] .= $Addon_Name.">".$BL->utils->toFloat($Addon_Setup).">".$BL->utils->toFloat($BL->REQUEST['addon_cycles'][$Addon_Name])."<&>";
                     }
                 }
                 $BL->REQUEST['tax_percent'] = "";
@@ -200,7 +200,7 @@ switch ($cmd)
                 break;
             }
 
-            $Invoice            = $BL->invoices->get("WHERE `invoices`.invoice_no = '".$BL->REQUEST['invoice_no']."'");
+            $Invoice            = $BL->invoices->get("WHERE `invoices`.invoice_no = ".intval($BL->REQUEST['invoice_no']));
             $Extra_Fields       = isset($BL->pp_ext_fields[$Invoice[0]['payment_method']])?$BL->pp_ext_fields[$Invoice[0]['payment_method']]:array();
             $Extra_Field_Values = $BL->extraFields($Invoice[0]['id'],$Invoice[0]['sub_id'],$Invoice[0]['invoice_no'],$Extra_Fields,"SELECT");
 
@@ -216,42 +216,46 @@ switch ($cmd)
             include_once $BL->include_page("invoice.php");
             break;
         }
-    case "delinvoice" :
+        case "delinvoice" :
         {
             $BL->invoices->del($BL->REQUEST['invoice_no']);
             $BL->Redirect("viewinvoice");
             break;
         }
-    case "viewinvoice" :
+        case "viewinvoice" :
         {
             $conf      = $BL->conf;
             $status    = isset($BL->REQUEST['status'])?$BL->REQUEST['status']:"";
             $BL->REQUEST['orderby1']  = isset($BL->REQUEST['orderby1'])?$BL->REQUEST['orderby1']:"invoice_no";
             $BL->REQUEST['orderby2']  = isset($BL->REQUEST['orderby2'])?$BL->REQUEST['orderby2']:"DESC";
             $filter    = '';
+            if(isset($BL->REQUEST['markas']) && isset($BL->REQUEST['invoice_no']))
+            {
+                $BL->invoices->update(array("status"=>$BL->REQUEST['markas'], "invoice_no"=>$BL->REQUEST['invoice_no']), 'invoice_no');
+            }
             if(isset($BL->REQUEST['id']) && !empty($BL->REQUEST['id']))
             {
-            	$filter .= " AND `customers`.id='".$BL->REQUEST['id']."' ";
+                $filter .= " AND `customers`.id=".intval($BL->REQUEST['id'])." ";
             }
             if(isset($BL->REQUEST['search_term']) && !empty($BL->REQUEST['search_term']))
             {
-                $filter .= " AND (`invoices`.desc  LIKE '%".$BL->REQUEST['search_term']."%' OR" .
-                           "     `customers`.email LIKE '%".$BL->REQUEST['search_term']."%'   " .
-                           "     )";
+                $filter .= " AND (`invoices`.desc  LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['search_term'])."%' OR" .
+                "     `customers`.email LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['search_term'])."%'   " .
+                "     )";
             }
-            $BL->invoices->setOrder("`invoices`.".$BL->REQUEST['orderby1']." ".$BL->REQUEST['orderby2']);
+            $BL->invoices->setOrder($BL->REQUEST['orderby1'],$BL->REQUEST['orderby2']);
             $BL->invoices->setLimit(false);
             if(!empty($BL->conf['records_per_page']))
             {
-                $pagination = $BL->doPagination(count($BL->invoices->getByStatus($status, $filter)));
+                $pagination = $BL->doPagination(count($BL->invoices->getByStatus($BL->utils->quoteSmart($status), $filter)));
                 $BL->invoices->setLimit(true);
             }
-            $pInvoices  = $BL->invoices->getByStatus($status, $filter);
+            $pInvoices  = $BL->invoices->getByStatus($BL->utils->quoteSmart($status), $filter);
             $Invoices   = $pInvoices;
             include_once $BL->include_page("invoice_list.php");
             break;
         }
-    case "manual_payments" :
+        case "manual_payments" :
         {
             $conf      = $BL->conf;
             $pInvoices = $BL->invoices->getByStatus($BL->props->invoice_status[0]);
@@ -267,9 +271,9 @@ switch ($cmd)
             include_once $BL->include_page("manual_payments.php");
             break;
         }
-#####################################################INVOICE END###################################################
-#####################################################ORDER START###################################################
-    case "orphan_orders" :
+        #####################################################INVOICE END###################################################
+        #####################################################ORDER START###################################################
+        case "orphan_orders" :
         {
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action'] == "del")
             {
@@ -277,7 +281,7 @@ switch ($cmd)
             }
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action'] == "add")
             {
-                $transaction = $BL->processTransaction($BL->REQUEST['item_number'], 0);
+                $transaction = $BL->invoices->processTransaction($BL->REQUEST['item_number'], 0);
                 if(!empty($transaction))
                 {
                     $BL->utils->alert($transaction,false,true,true);
@@ -288,6 +292,7 @@ switch ($cmd)
             {
                 $oOrder = $oOrders[$BL->REQUEST['orphanorder_id']];
                 $str  = "<table border='0' cellpadding='0' cellspacing='0'>";
+                $BL->customfields->setOrder("customfields_index");
                 foreach($BL->customfields->find() as $customfield)
                 {
                     if($customfield['field_name']!="country")
@@ -312,11 +317,11 @@ switch ($cmd)
             break;
         }
 
-    case "editorder" :
+        case "editorder" :
         {
             if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="change_next_bill_date")
             {
-            	$BL->REQUEST['rec_next_date'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
+                $BL->REQUEST['rec_next_date'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
                 $BL->change_next_bill_date($BL->REQUEST['sub_id'],$BL->REQUEST['rec_next_date']);
             }
             if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="register_domain")
@@ -374,18 +379,18 @@ switch ($cmd)
                 break;
             }
 
-            $order = $BL->orders->get("WHERE `orders`.sub_id='".$BL->REQUEST['sub_id']."'");
+            $order = $BL->orders->get("WHERE `orders`.sub_id=".intval($BL->REQUEST['sub_id']));
             $addon_ids = array();
             $addon_activation_dates = array();
             foreach($BL->orders->getAddons($BL->REQUEST['sub_id']) as $temp)
             {
-            	$addon_ids[] = $temp['addon_id'];
+                $addon_ids[] = $temp['addon_id'];
                 $addon_activation_dates[$temp['addon_id']] = $temp['activation_date'];
             }
             $domain_array = explode(".",$order[0]['domain_name'],2);
             foreach($order[0] as $key=>$value)
             {
-            	$BL->REQUEST[$key] = $value;
+                $BL->REQUEST[$key] = $value;
             }
             foreach($_GET as $key=>$value)
             {
@@ -402,7 +407,7 @@ switch ($cmd)
             $show_owndomain  = ($BL->conf['en_owndomain']                      )?true:false;
 
             //Check group configuration
-            $group_data = $BL->groups->find(array("WHERE `group_id`='".(isset($BL->REQUEST['group_id'])?$BL->REQUEST['group_id']:0)."'"));
+            $group_data = $BL->groups->find(array("WHERE `group_id`=".(isset($BL->REQUEST['group_id'])?intval($BL->REQUEST['group_id']):0)));
             if(isset($group_data[0]['group_require_domain']) && empty($group_data[0]['group_require_domain']))
             {
                 $show_tlds       = false;
@@ -411,7 +416,7 @@ switch ($cmd)
             }
 
             //Check product configuration
-            $product_data = $BL->products->find(array("WHERE `plan_price_id`='".(isset($BL->REQUEST['product_id'])?$BL->REQUEST['product_id']:0)."'"));
+            $product_data = $BL->products->find(array("WHERE `plan_price_id`=".(isset($BL->REQUEST['product_id'])?intval($BL->REQUEST['product_id']):0)));
             if(isset($product_data[0]['domain']) && empty($product_data[0]['domain']))
             {
                 $show_tlds       = false;
@@ -426,15 +431,15 @@ switch ($cmd)
             }
             if($REQUEST['dom_reg_type']==0)
             {
-            	$show_owndomain = true;
+                $show_owndomain = true;
             }
             elseif($REQUEST['dom_reg_type']==1)
             {
-            	$show_tlds      = true;
+                $show_tlds      = true;
             }
             elseif($REQUEST['dom_reg_type']==3)
             {
-            	$show_subdomains= true;
+                $show_subdomains= true;
             }
 
             $Products    = $BL->products->getAvailable((isset($BL->REQUEST['group_id'])?$BL->REQUEST['group_id']:0));
@@ -468,7 +473,7 @@ switch ($cmd)
             include_once $BL->include_page("orders.php");
             break;
         }
-    case "addorder" :
+        case "addorder" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -484,7 +489,7 @@ switch ($cmd)
                 $BL->REQUEST['addon_ids']   = isset($BL->REQUEST['addon_ids'])?$BL->REQUEST['addon_ids']:array();
                 foreach($BL->REQUEST['addon_ids'] as $addon_id)
                 {
-                	$BL->REQUEST['addon_dates'][$addon_id] = $BL->REQUEST['year_field_'][$addon_id]."-".$BL->REQUEST['month_field_'][$addon_id]."-".$BL->REQUEST['date_field_'][$addon_id];
+                    $BL->REQUEST['addon_dates'][$addon_id] = $BL->REQUEST['year_field_'][$addon_id]."-".$BL->REQUEST['month_field_'][$addon_id]."-".$BL->REQUEST['date_field_'][$addon_id];
                 }
                 $BL->REQUEST['customer']['member']   = 1;
                 $BL->REQUEST['customer']['id']       = $BL->REQUEST['customer_id'];
@@ -494,7 +499,7 @@ switch ($cmd)
                 $BL->REQUEST['customer']['disc_token_code'] = "";
                 //PREPARE ORDER DATA END
 
-                $INVOICE_DATA = $BL->calcuateAll(false,false, $BL->REQUEST);
+                $INVOICE_DATA = $BL->invoices->calcuateAll(false,false, $BL->REQUEST);
 
                 foreach($INVOICE_DATA as $key=>$value)
                 {
@@ -518,7 +523,7 @@ switch ($cmd)
                 {
                     $BL->REQUEST['invoice_status'] = $BL->REQUEST['mark_as'];
                     $temp = $BL->recurring_data($BL->REQUEST['order_id'],0,"SELECT");
-                    $BL->genInvoices($BL->REQUEST['order_id'],true,$temp['rec_next_date']);
+                    $BL->invoices->genIntermediateInvoices($BL->REQUEST['order_id']);
                 }
                 $BL->Redirect("viewinvoice");
                 break;
@@ -534,7 +539,7 @@ switch ($cmd)
             $show_owndomain  = ($BL->conf['en_owndomain']                      )?true:false;
 
             //Check group configuration
-            $group_data = $BL->groups->find(array("WHERE `group_id`='".(isset($BL->REQUEST['group_id'])?$BL->REQUEST['group_id']:0)."'"));
+            $group_data = $BL->groups->find(array("WHERE `group_id`=".(isset($BL->REQUEST['group_id'])?intval($BL->REQUEST['group_id']):0)));
             if(isset($group_data[0]['group_require_domain']) && empty($group_data[0]['group_require_domain']))
             {
                 $show_tlds       = false;
@@ -543,7 +548,7 @@ switch ($cmd)
             }
 
             //Check product configuration
-            $product_data = $BL->products->find(array("WHERE `plan_price_id`='".(isset($BL->REQUEST['product_id'])?$BL->REQUEST['product_id']:0)."'"));
+            $product_data = $BL->products->find(array("WHERE `plan_price_id`=".(isset($BL->REQUEST['product_id'])?intval($BL->REQUEST['product_id']):0)));
             if(isset($product_data[0]['domain']) && empty($product_data[0]['domain']))
             {
                 $show_tlds       = false;
@@ -569,7 +574,7 @@ switch ($cmd)
             include_once $BL->include_page("orders.php");
             break;
         }
-    case "vieworders" :
+        case "vieworders" :
         {
             $conf   = $BL->conf;
             if(isset($BL->REQUEST['gen_invoice']) && $BL->REQUEST['gen_invoice']==1)
@@ -581,7 +586,7 @@ switch ($cmd)
                     $temp = $BL->utils->getDateArray($date);
                     if($BL->utils->compareDates(date('d'),date('m'),date('Y'),$temp['mday'],$temp['mon'],$temp['year'])!=-1)
                     {
-                        $return = $BL->genInvoices($BL->REQUEST['sub_id'],false,$date,false,true);
+                        $return = $BL->invoices->genInvoicesForDay($BL->REQUEST['sub_id'],$date,true);
                         $BL->utils->alert($BL->getFriendlyDesc($return,$BL->REQUEST['sub_id']));
                     }
                 }
@@ -595,11 +600,11 @@ switch ($cmd)
             }
             if(isset($BL->REQUEST['search_term']) && !empty($BL->REQUEST['search_term']))
             {
-                $filter .= " AND (`orders`.domain_name  LIKE '%".$BL->REQUEST['search_term']."%' OR" .
-                           "     `customers`.email      LIKE '%".$BL->REQUEST['search_term']."%'   " .
-                           "     )";
+                $filter .= " AND (`orders`.domain_name  LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['search_term'])."%' OR" .
+                "     `customers`.email      LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['search_term'])."%'   " .
+                "     )";
             }
-            $BL->orders->setOrder("`orders`.".$BL->REQUEST['orderby1']." ".$BL->REQUEST['orderby2']);
+            $BL->orders->setOrder($BL->REQUEST['orderby1'],$BL->REQUEST['orderby2'],'orders');
 
             $BL->orders->setLimit(false);
             if(!empty($BL->conf['records_per_page']))
@@ -611,23 +616,23 @@ switch ($cmd)
             include_once $BL->include_page("orders_list.php");
             break;
         }
-    case "delorder" :
+        case "delorder" :
         {
             $BL->orders->del($BL->REQUEST['sub_id']);
             $BL->Redirect("vieworders");
             break;
         }
-#####################################################ORDER END###################################################
-################################################Customer START###################################################
-	case "delcustomers" :
-		{
-			$BL->customers->del($BL->REQUEST['id']);
+        #####################################################ORDER END###################################################
+        ################################################Customer START###################################################
+        case "delcustomers" :
+        {
+            $BL->customers->del($BL->REQUEST['id']);
             $BL->Redirect("viewcustomers");
-			break;
-		}
-	case "editcustomers" :
-		{
-            //$custom_fields = $BL->customfields->getAvailable();
+            break;
+        }
+        case "editcustomers" :
+        {
+            $BL->customfields->setOrder("customfields_index");
             $custom_fields = $BL->customfields->find();
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -642,21 +647,21 @@ switch ($cmd)
             $data = $BL->customers->getByKey($BL->REQUEST['id']);
             foreach($data as $key=>$value)
             {
-            	$BL->REQUEST[$key] = $value;
+                $BL->REQUEST[$key] = $value;
             }
             foreach($custom_fields as $field)
             {
-            	$BL->REQUEST[$field['field_name']] = $BL->customers->getFieldValue($field['field_id'],$BL->REQUEST['id']);
+                $BL->REQUEST[$field['field_name']] = $BL->customers->getFieldValue($field['field_id'],$BL->REQUEST['id']);
             }
             $date_array = $BL->utils->getDateArray($BL->REQUEST['creation_date']);
             $date  = $date_array['mday']; $month = $date_array['mon']; $year = $date_array['year'];
             $title = $BL->props->lang['edit_customer'];
-			include_once $BL->include_page("customers.php");
-			break;
-		}
-	case "addcustomer" :
-		{
-            //$custom_fields = $BL->customfields->getAvailable();
+            include_once $BL->include_page("customers.php");
+            break;
+        }
+        case "addcustomer" :
+        {
+            $BL->customfields->setOrder("customfields_index");
             $custom_fields = $BL->customfields->find();
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -669,19 +674,19 @@ switch ($cmd)
             }
             $date  = date('d'); $month = date('m'); $year = date('Y');
             $title = $BL->props->lang['Add_New_Customer'];
-			include_once $BL->include_page("customers.php");
-			break;
-		}
-    case "viewcustomers" :
+            include_once $BL->include_page("customers.php");
+            break;
+        }
+        case "viewcustomers" :
         {
             $BL->REQUEST['orderby1']  = isset($BL->REQUEST['orderby1'])?$BL->REQUEST['orderby1']:"sub_id";
             $BL->REQUEST['orderby2']  = isset($BL->REQUEST['orderby2'])?$BL->REQUEST['orderby2']:"DESC";
             $filter    = '';
             if(isset($BL->REQUEST['search_term']) && !empty($BL->REQUEST['search_term']))
             {
-                $filter .= " AND `customers`.email LIKE '%".$BL->REQUEST['search_term']."%'   ";
+                $filter .= " AND `customers`.email LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['search_term'])."%'   ";
             }
-            $BL->orders->setOrder("`customers`.".$BL->REQUEST['orderby1']." ".$BL->REQUEST['orderby2']);
+            $BL->orders->setOrder($BL->REQUEST['orderby1'], $BL->REQUEST['orderby2']);
 
             $BL->customers->setLimit(false);
             if(!empty($BL->conf['records_per_page']))
@@ -693,9 +698,9 @@ switch ($cmd)
             include_once $BL->include_page("customers_list.php");
             break;
         }
-################################################Customer END###################################################
-#######################################################PRODUCT START#######################################################################
-    case "edit_addon" :
+        ################################################Customer END###################################################
+        #######################################################PRODUCT START#######################################################################
+        case "edit_addon" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -711,10 +716,11 @@ switch ($cmd)
             include_once $BL->include_page("addons.php");
             break;
         }
-    case "add_addon" :
+        case "add_addon" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
+                $BL->REQUEST['addon_index'] = count($BL->addons->find())+1;
                 $insert_id = $BL->addons->insert($BL->REQUEST);
                 if($insert_id)
                 {
@@ -728,19 +734,28 @@ switch ($cmd)
             include_once $BL->include_page("addons.php");
             break;
         }
-    case "addons" :
+        case "addons" :
         {
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="up")
+            {
+                $BL->addons->moveUp($BL->REQUEST['addon_id'],$BL->REQUEST['addon_index']);
+            }
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="down")
+            {
+                $BL->addons->moveDown($BL->REQUEST['addon_id'],$BL->REQUEST['addon_index']);
+            }
+            $BL->addons->setOrder((isset($BL->REQUEST['orderby'])?$BL->REQUEST['orderby']:"addon_index"));
             $addons= $BL->addons->find();
             include_once $BL->include_page("addons_list.php");
             break;
         }
-    case "del_addon" :
+        case "del_addon" :
         {
-            $BL->addons->delete(array("WHERE `addon_id`='".$BL->REQUEST['addon_id']."'"));
+            $BL->addons->delete(array("WHERE `addon_id`=".intval($BL->REQUEST['addon_id'])));
             $BL->Redirect("addons");
             break;
         }
-    case "editmaindomain" :
+        case "editmaindomain" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -756,7 +771,7 @@ switch ($cmd)
             include_once $BL->include_page("maindomain.php");
             break;
         }
-    case "add_maindomain" :
+        case "add_maindomain" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -773,24 +788,24 @@ switch ($cmd)
             include_once $BL->include_page("maindomain.php");
             break;
         }
-    case "subdomains" :
+        case "subdomains" :
         {
             $subdomains= $BL->subdomains->find();
             include_once $BL->include_page("subdomains_list.php");
             break;
         }
-    case "delmaindomain" :
+        case "delmaindomain" :
         {
-            $BL->subdomains->delete(array("WHERE `main_id`='".$BL->REQUEST['main_id']."'"));
+            $BL->subdomains->delete(array("WHERE `main_id`=".intval($BL->REQUEST['main_id'])));
             $BL->Redirect("subdomains");
             break;
         }
-    case "editplan" :
+        case "editplan" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
-                $BL->cpanel_reseller_profiles->delete(array("WHERE `cpr_profile_id`='".$BL->REQUEST['cpr_profile_id']."'"));
-                $BL->plesk_profiles->delete(array("WHERE `plesk_profile_id`='".$BL->REQUEST['plesk_profile_id']."'"));
+                $BL->cpanel_reseller_profiles->delete(array("WHERE `cpr_profile_id`=".intval($BL->REQUEST['cpr_profile_id'])));
+                $BL->plesk_profiles->delete(array("WHERE `plesk_profile_id`=".intval($BL->REQUEST['plesk_profile_id'])));
 
                 $BL->REQUEST['cpr_profile_id']  = (isset($BL->REQUEST['cpanel_plan']) && $BL->REQUEST['cpanel_plan'])?$BL->cpanel_reseller_profiles->insert($BL->REQUEST):0;
                 $BL->REQUEST['plesk_profile_id']= (isset($BL->REQUEST['plesk_plan']) && $BL->REQUEST['plesk_plan'])?$BL->plesk_profiles->insert($BL->REQUEST):0;
@@ -809,7 +824,9 @@ switch ($cmd)
             $conf    = $BL->conf;
             $title   = $BL->props->lang['edit_plan'];
             $servers = $BL->servers->find();
+            $BL->addons->setOrder("addon_index");
             $addons  = $BL->addons->find();
+            $BL->groups->setOrder("group_index");
             $groups  = $BL->groups->find();
             $plan    = $BL->products->getByKey($BL->REQUEST['plan_price_id']);
             $plan_cycles = $BL->products->getCycles($BL->REQUEST['plan_price_id']);
@@ -821,7 +838,7 @@ switch ($cmd)
             include_once $BL->include_page("plans.php");
             break;
         }
-    case "addplan" :
+        case "addplan" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -834,7 +851,7 @@ switch ($cmd)
 
                 if($BL->REQUEST['plan_price_id'])
                 {
-                	$BL->products->updateBillingCycles($BL->REQUEST['plan_price_id'],$BL->REQUEST);
+                    $BL->products->updateBillingCycles($BL->REQUEST['plan_price_id'],$BL->REQUEST);
                     $BL->products->updateAssociatedGroups($BL->REQUEST['plan_price_id'],isset($BL->REQUEST['group_ids'])?$BL->REQUEST['group_ids']:array());
                     $BL->products->updateAssociatedAddons($BL->REQUEST['plan_price_id'],isset($BL->REQUEST['addon_ids'])?$BL->REQUEST['addon_ids']:array());
                     $BL->products->updateAssociatedServers($BL->REQUEST['plan_price_id'],isset($BL->REQUEST['server_ids'])?$BL->REQUEST['server_ids']:array());
@@ -846,12 +863,14 @@ switch ($cmd)
             $conf    = $BL->conf;
             $title   = $BL->props->lang['add_plan'];
             $servers = $BL->servers->find();
+            $BL->addons->setOrder("addon_index");
             $addons  = $BL->addons->find();
+            $BL->groups->setOrder("group_index");
             $groups  = $BL->groups->find();
             include_once $BL->include_page("plans.php");
             break;
         }
-    case "plans" :
+        case "plans" :
         {
             if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="en_domain_only")
             {
@@ -878,7 +897,7 @@ switch ($cmd)
             include_once $BL->include_page("plans_list.php");
             break;
         }
-    case "delplan" :
+        case "delplan" :
         {
             $product = $BL->products->getByKey($BL->REQUEST['plan_price_id']);
             if(count($product))
@@ -886,14 +905,14 @@ switch ($cmd)
                 $BL->products->updateAssociatedGroups($BL->REQUEST['plan_price_id']);
                 $BL->products->updateAssociatedAddons($BL->REQUEST['plan_price_id']);
                 $BL->products->updateAssociatedServers($BL->REQUEST['plan_price_id']);
-                $BL->cpanel_reseller_profiles->delete(array("WHERE `cpr_profile_id`='".$product['cpr_profile_id']."'"));
-                $BL->plesk_profiles->delete(array("WHERE `plesk_profile_id`='".$product['plesk_profile_id']."'"));
-                $BL->products->delete(array("WHERE `plan_price_id`='".$BL->REQUEST['plan_price_id']."'"));
+                $BL->cpanel_reseller_profiles->delete(array("WHERE `cpr_profile_id`=".intval($product['cpr_profile_id'])));
+                $BL->plesk_profiles->delete(array("WHERE `plesk_profile_id`=".intval($product['plesk_profile_id'])));
+                $BL->products->delete(array("WHERE `plan_price_id`=".intval($BL->REQUEST['plan_price_id'])));
             }
             $BL->Redirect("plans");
             break;
         }
-    case "edit_group" :
+        case "edit_group" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -909,15 +928,16 @@ switch ($cmd)
             include_once $BL->include_page("group.php");
             break;
         }
-    case "add_group" :
+        case "add_group" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
-            	$BL->REQUEST['group_url'] = count($BL->groups->find())+1;
+                $BL->REQUEST['group_url'] = count($BL->groups->find())+1;
+                $BL->REQUEST['group_index'] = count($BL->groups->find())+1;
                 $insert_id            = $BL->groups->insert($BL->REQUEST);
                 if($insert_id)
                 {
-                	$BL->groups->updateAvailableProducts($insert_id,$BL->utils->Get_Uniques_Array($BL->utils->Get_Trimmed_Array(isset($BL->REQUEST['products'])?$BL->REQUEST['products']:array())));
+                    $BL->groups->updateAvailableProducts($insert_id,$BL->utils->Get_Uniques_Array($BL->utils->Get_Trimmed_Array(isset($BL->REQUEST['products'])?$BL->REQUEST['products']:array())));
                     $BL->Redirect("groups");
                     break;
                 }
@@ -927,22 +947,31 @@ switch ($cmd)
             include_once $BL->include_page("group.php");
             break;
         }
-    case "del_group" :
+        case "del_group" :
         {
-            $BL->groups->delete(array("WHERE `group_id`='".$BL->REQUEST['group_id']."'"));
+            $BL->groups->delete(array("WHERE `group_id`=".intval($BL->REQUEST['group_id'])));
             $BL->groups->updateAvailableProducts($BL->REQUEST['group_id']);
             $BL->Redirect("groups");
             break;
         }
-    case "groups" :
+        case "groups" :
         {
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="up")
+            {
+                $BL->groups->moveUp($BL->REQUEST['group_id'],$BL->REQUEST['group_index']);
+            }
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="down")
+            {
+                $BL->groups->moveDown($BL->REQUEST['group_id'],$BL->REQUEST['group_index']);
+            }
+            $BL->groups->setOrder((isset($BL->REQUEST['orderby'])?$BL->REQUEST['orderby']:"group_index"));
             $groups = $BL->groups->find();
             include_once $BL->include_page("group_list.php");
             break;
         }
-#######################################################PRODUCT END#######################################################################
-#######################################################EXTRA END#########################################################################
-    case "credits" :
+        #######################################################PRODUCT END#######################################################################
+        #######################################################EXTRA END#########################################################################
+        case "credits" :
         {
             $conf = $BL->conf;
             if (isset($BL->REQUEST['update']) && $BL->REQUEST['update']==$BL->props->lang['Update'])
@@ -964,7 +993,7 @@ switch ($cmd)
             include_once $BL->include_page("credits_list.php");
             break;
         }
-    case "discounts" :
+        case "discounts" :
         {
             if (isset($BL->REQUEST['update']) && $BL->REQUEST['update']==$BL->props->lang['Update'])
             {
@@ -985,7 +1014,7 @@ switch ($cmd)
             include_once $BL->include_page("discounts_list.php");
             break;
         }
-    case "send_disc_token" :
+        case "send_disc_token" :
         {
             $conf = $BL->conf;
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['send_disc_token'])
@@ -1014,7 +1043,7 @@ switch ($cmd)
             include_once $BL->include_page("send_disc_token.php");
             break;
         }
-    case "edit_disc_token" :
+        case "edit_disc_token" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1031,7 +1060,7 @@ switch ($cmd)
             include_once $BL->include_page("disc_tokens.php");
             break;
         }
-    case "add_disc_token" :
+        case "add_disc_token" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -1046,26 +1075,26 @@ switch ($cmd)
             include_once $BL->include_page("disc_tokens.php");
             break;
         }
-    case "del_disc_token" :
+        case "del_disc_token" :
         {
-            $BL->disc_tokens->delete(array("WHERE `disc_token_id`='".$BL->REQUEST['disc_token_id']."'"));
+            $BL->disc_tokens->delete(array("WHERE `disc_token_id`=".intval($BL->REQUEST['disc_token_id'])));
             $BL->Redirect("disc_tokens");
             break;
         }
-    case "act_disc_token" :
+        case "act_disc_token" :
         {
             $BL->configurations->update($BL->REQUEST);
             $BL->Redirect("disc_tokens");
             break;
         }
-    case "disc_tokens" :
+        case "disc_tokens" :
         {
             $conf        = $BL->conf;
             $disc_tokens = $BL->disc_tokens->find();
             include_once $BL->include_page("disc_tokens_list.php");
             break;
         }
-    case "edit_coupon" :
+        case "edit_coupon" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1082,14 +1111,14 @@ switch ($cmd)
             include_once $BL->include_page("coupons.php");
             break;
         }
-    case "add_coupon" :
+        case "add_coupon" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
-            	$BL->REQUEST['coupon_valid'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
+                $BL->REQUEST['coupon_valid'] = $BL->REQUEST['year_field']."-".$BL->REQUEST['month_field']."-".$BL->REQUEST['date_field'];
                 if($BL->coupons->insert($BL->REQUEST))
                 {
-                	$BL->Redirect("coupons");
+                    $BL->Redirect("coupons");
                     break;
                 }
             }
@@ -1097,26 +1126,26 @@ switch ($cmd)
             include_once $BL->include_page("coupons.php");
             break;
         }
-    case "del_coupon" :
+        case "del_coupon" :
         {
-            $coupons = $BL->coupons->delete(array("WHERE `coupon_id`='".$BL->REQUEST['coupon_id']."'"));
+            $coupons = $BL->coupons->delete(array("WHERE `coupon_id`=".intval($BL->REQUEST['coupon_id'])));
             $BL->Redirect("coupons");
             break;
         }
-    case "act_coupon" :
+        case "act_coupon" :
         {
             $BL->configurations->update($BL->REQUEST);
             $BL->Redirect("coupons");
             break;
         }
-    case "coupons" :
+        case "coupons" :
         {
             $conf    = $BL->conf;
             $coupons = $BL->coupons->find();
             include_once $BL->include_page("coupons_list.php");
             break;
         }
-    case "edit_special" :
+        case "edit_special" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1132,14 +1161,16 @@ switch ($cmd)
             $special    = $BL->specials->getByKey($special_id);
             $conf       = $BL->conf;
             $tlds       = $BL->tlds->find();
+            $BL->addons->setOrder("addon_index");
             $addons     = $BL->addons->find();
             $subdomains = $BL->subdomains->find();
+            $BL->products->setOrder("plan_index");
             $plans      = $BL->products->find();
             $title      = $BL->props->lang['Edit_special'];
             include_once $BL->include_page("specials.php");
             break;
         }
-    case "add_special" :
+        case "add_special" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -1153,20 +1184,22 @@ switch ($cmd)
             }
             $conf       = $BL->conf;
             $tlds       = $BL->tlds->find();
+            $BL->addons->setOrder("addon_index");
             $addons     = $BL->addons->find();
             $subdomains = $BL->subdomains->find();
+            $BL->products->setOrder("plan_index");
             $plans      = $BL->products->find();
             $title      = $BL->props->lang['Add_Special'];
             include_once $BL->include_page("specials.php");
             break;
         }
-    case "del_special" :
+        case "del_special" :
         {
-            $BL->specials->delete(array("WHERE `special_id`='".$BL->REQUEST['special_id']."'"));
+            $BL->specials->delete(array("WHERE `special_id`=".intval($BL->REQUEST['special_id'])));
             $BL->Redirect("specials");
             break;
         }
-    case "specials" :
+        case "specials" :
         {
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="changestatus")
             {
@@ -1176,9 +1209,9 @@ switch ($cmd)
             include_once $BL->include_page("specials_list.php");
             break;
         }
-#######################################################EXTRA END#########################################################################
-#######################################################SUPPORT START#####################################################################
-    case "openTicket" :
+        #######################################################EXTRA END#########################################################################
+        #######################################################SUPPORT START#####################################################################
+        case "openTicket" :
         {
             $BL->REQUEST['ticket_status']  = 1;
             $BL->support_tickets->update($BL->REQUEST);
@@ -1186,7 +1219,7 @@ switch ($cmd)
             $BL->Redirect("ticket");
             break;
         }
-    case "closeTicket" :
+        case "closeTicket" :
         {
             $BL->REQUEST['ticket_status']  = 3;
             $BL->support_tickets->update($BL->REQUEST);
@@ -1194,7 +1227,7 @@ switch ($cmd)
             $BL->Redirect("ticket");
             break;
         }
-    case "viewTicket" :
+        case "viewTicket" :
         {
             if($cmd=="viewTicket")
             {
@@ -1207,7 +1240,7 @@ switch ($cmd)
                     $BL->Redirect("ticket");
                 }
                 $ticket     = $BL->support_tickets->getByKey($ticket_id);
-                $replies    = $BL->support_replies->find(array("WHERE `ticket_id`='".$ticket_id."'"));
+                $replies    = $BL->support_replies->find(array("WHERE `ticket_id`=".intval($ticket_id)));
                 $topic      = $BL->support_topics->getByKey($ticket['topic_id']);
                 if (count($ticket))
                 {
@@ -1221,7 +1254,7 @@ switch ($cmd)
                 }
             }
         }
-    case "ticket" :
+        case "ticket" :
         {
             $conf    = $BL->conf;
             $topics  = array();
@@ -1229,7 +1262,7 @@ switch ($cmd)
             $BL->utils->Remove_Empty_Elements($dept_ids);
             if(!count($dept_ids) || array_search('0',$dept_ids)!==false)
             {
-            	$topics = $BL->support_topics->find();
+                $topics = $BL->support_topics->find();
             }
             else
             {
@@ -1241,8 +1274,8 @@ switch ($cmd)
             $tickets = array();
             foreach ($topics as $val)
             {
-                $tickets[$val['topic_id']]['open']   = $BL->support_tickets->find(array("WHERE `topic_id`='".$val['topic_id']."' AND `ticket_status`!='3'"));
-                $tickets[$val['topic_id']]['closed'] = $BL->support_tickets->find(array("WHERE `topic_id`='".$val['topic_id']."' AND `ticket_status`='3'"));
+                $tickets[$val['topic_id']]['open']   = $BL->support_tickets->find(array("WHERE `topic_id`=".intval($val['topic_id'])." AND `ticket_status`!='3'"));
+                $tickets[$val['topic_id']]['closed'] = $BL->support_tickets->find(array("WHERE `topic_id`=".intval($val['topic_id'])." AND `ticket_status`='3'"));
             }
             $ticket_status = "all";
             if (isset($BL->REQUEST['ticket_status']) && is_numeric($BL->REQUEST['ticket_status']))
@@ -1252,7 +1285,7 @@ switch ($cmd)
             include_once $BL->include_page("ticket_list.php");
             break;
         }
-    case "topics" :
+        case "topics" :
         {
             $conf   = $BL->conf;
             $topics = $BL->support_topics->find();
@@ -1264,12 +1297,12 @@ switch ($cmd)
                 $count_close[$val['topic_id']] = 0;;
                 $count_open[$val['topic_id']]  = 0;
                 $ticket[$val['topic_id']]      = array();
-                $temp                          = $BL->support_tickets->find(array("WHERE `topic_id`='".$val['topic_id']."'"));
+                $temp                          = $BL->support_tickets->find(array("WHERE `topic_id`=".intval($val['topic_id'])));
                 foreach ($temp as $v)
                 {
                     $count_open[$val['topic_id']] = ($v['ticket_status'] != 3)?$count_open[$val['topic_id']] + 1:$count_open[$val['topic_id']];
                     $count_close[$val['topic_id']]= ($v['ticket_status'] == 3)?$count_close[$val['topic_id']] + 1:$count_close[$val['topic_id']];
-                 }
+                }
                 $ticket[$val['topic_id']]= $BL->support_topics->getByKey($val['topic_id']);
             }
             $topic_id_array  = array();
@@ -1284,7 +1317,7 @@ switch ($cmd)
             include_once $BL->include_page("topic_list.php");
             break;
         }
-    case "edit_topic" :
+        case "edit_topic" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1299,7 +1332,7 @@ switch ($cmd)
             include_once $BL->include_page("topics.php");
             break;
         }
-    case "add_topic" :
+        case "add_topic" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -1313,13 +1346,13 @@ switch ($cmd)
             include_once $BL->include_page("topics.php");
             break;
         }
-    case "del_topic" :
+        case "del_topic" :
         {
-            $BL->support_topics->delete(array("WHERE `topic_id`='".$BL->REQUEST['topic_id']."'"));
+            $BL->support_topics->delete(array("WHERE `topic_id`=".intval($BL->REQUEST['topic_id'])));
             $BL->Redirect("topics");
             break;
         }
-    case "act_support" :
+        case "act_support" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['submit'])
             {
@@ -1328,9 +1361,9 @@ switch ($cmd)
             $BL->Redirect("topics");
             break;
         }
-#######################################################SUPPORT END#######################################################################
-########################################################NEWSLETTER START#################################################################
-    case "emailannounce" :
+        #######################################################SUPPORT END#######################################################################
+        ########################################################NEWSLETTER START#################################################################
+        case "emailannounce" :
         {
             $conf     = $BL->conf;
             $products = $BL->products->find();
@@ -1371,14 +1404,14 @@ switch ($cmd)
                     {
                         if($BL->REQUEST['tld_2'])
                         {
-                            $condition .= " AND `orders`.domain_name LIKE '%".$BL->REQUEST['tld_2']."' ";
+                            $condition .= " AND `orders`.domain_name LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['tld_2'])."' ";
                         }
                     }
                     else
                     {
                         if($BL->REQUEST['tld_2'])
                         {
-                            $condition .= " AND `orders`.domain_name NOT LIKE '%".$BL->REQUEST['tld_2']."' ";
+                            $condition .= " AND `orders`.domain_name NOT LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['tld_2'])."' ";
                         }
                         else
                         {
@@ -1398,14 +1431,14 @@ switch ($cmd)
                     {
                         if($BL->REQUEST['sd_2'])
                         {
-                            $condition .= " AND `orders`.domain_name LIKE '%".$BL->REQUEST['sd_2']."' ";
+                            $condition .= " AND `orders`.domain_name LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['sd_2'])."' ";
                         }
                     }
                     else
                     {
                         if($BL->REQUEST['sd_2'])
                         {
-                            $condition .= " AND `orders`.domain_name NOT LIKE '%".$BL->REQUEST['sd_2']."' ";
+                            $condition .= " AND `orders`.domain_name NOT LIKE '%".$BL->utils->quoteSmart($BL->REQUEST['sd_2'])."' ";
                         }
                         else
                         {
@@ -1425,14 +1458,14 @@ switch ($cmd)
                     {
                         if($BL->REQUEST['product_2'])
                         {
-                            $condition .= " AND `orders`.product_id = '".$BL->REQUEST['product_2']."' ";
+                            $condition .= " AND `orders`.product_id = ".intval($BL->REQUEST['product_2'])." ";
                         }
                     }
                     else
                     {
                         if($BL->REQUEST['product_2'])
                         {
-                            $condition .= " AND `orders`.product_id != '".$BL->REQUEST['product_2']."' ";
+                            $condition .= " AND `orders`.product_id != ".intval($BL->REQUEST['product_2'])." ";
                         }
                         else
                         {
@@ -1453,7 +1486,7 @@ switch ($cmd)
                         if(
                             ( $BL->REQUEST['total_1'] && ($accounts[$BL->props->invoice_status[0]]+$accounts[$BL->props->invoice_status[1]])>$BL->REQUEST['total_2']) ||
                             (!$BL->REQUEST['total_1'] && ($accounts[$BL->props->invoice_status[0]]+$accounts[$BL->props->invoice_status[1]])<$BL->REQUEST['total_2'])
-                          )
+                        )
                         {
                             $customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
                         }
@@ -1467,7 +1500,7 @@ switch ($cmd)
                         if(
                             ( $BL->REQUEST['paid_1'] && ($accounts[$BL->props->invoice_status[1]])>$BL->REQUEST['paid_2']) ||
                             (!$BL->REQUEST['paid_1'] && ($accounts[$BL->props->invoice_status[1]])<$BL->REQUEST['paid_2'])
-                          )
+                        )
                         {
                             $customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
                         }
@@ -1481,7 +1514,7 @@ switch ($cmd)
                         if(
                             ( $BL->REQUEST['due_1'] && ($accounts[$BL->props->invoice_status[0]])>$BL->REQUEST['due_2']) ||
                             (!$BL->REQUEST['due_1'] && ($accounts[$BL->props->invoice_status[0]])<$BL->REQUEST['due_2'])
-                          )
+                        )
                         {
                             $customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
                         }
@@ -1495,11 +1528,11 @@ switch ($cmd)
                         $state   = $BL->getCustomerFieldValue("state", $customer['id']);
                         if($BL->REQUEST['country_1'])
                         {
-                        	if($BL->REQUEST['country_2'] == $country || !$BL->REQUEST['country_2'])
+                            if($BL->REQUEST['country_2'] == $country || !$BL->REQUEST['country_2'])
                             {
-                            	if($BL->REQUEST['country_3'] == $state || !$BL->REQUEST['country_3'])
+                                if($BL->REQUEST['country_3'] == $state || !$BL->REQUEST['country_3'])
                                 {
-                                	$customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
+                                    $customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
                                 }
                             }
                         }
@@ -1522,9 +1555,9 @@ switch ($cmd)
                     {
                         if($BL->REQUEST['discount_1']==2)
                         {
-                        	if($BL->REQUEST['discount_2']<$customer['discount'])
+                            if($BL->REQUEST['discount_2']<$customer['discount'])
                             {
-                            	$customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
+                                $customers[$customer['id']] = $BL->customers->getByKey($customer['id']);
                             }
                         }
                         elseif($BL->REQUEST['discount_1']==1)
@@ -1585,7 +1618,7 @@ switch ($cmd)
                 }
                 else
                 {
-                	$err= $BL->props->lang['empty_message'];
+                    $err= $BL->props->lang['empty_message'];
                 }
                 if(isset($err))
                 {
@@ -1600,21 +1633,21 @@ switch ($cmd)
             include_once $BL->include_page("emailannouncement.php");
             break;
         }
-    case "savedannounce" :
+        case "savedannounce" :
         {
             $newsletters = $BL->newsletters->find();
             include_once $BL->include_page("savedannouncement.php");
             break;
         }
-    case "delsavedannounce" :
+        case "delsavedannounce" :
         {
-            $BL->newsletters->delete(array("WHERE `newsletter_id`='".$BL->REQUEST['newsletter_id']."'"));
+            $BL->newsletters->delete(array("WHERE `newsletter_id`=".intval($BL->REQUEST['newsletter_id'])));
             $BL->Redirect("savedannounce");
             break;
         }
-########################################################NEWSLETTER END###################################################################
-########################################################REPORT START#####################################################################
-    case "assets" :
+        ########################################################NEWSLETTER END###################################################################
+        ########################################################REPORT START#####################################################################
+        case "assets" :
         {
             $conf = $BL->conf;
             $curr_array = $BL->curr_conf;
@@ -1713,7 +1746,7 @@ switch ($cmd)
                 }
                 foreach($Amounts as $year=>$Amount)
                 {
-                	ksort($Amounts[$year]);
+                    ksort($Amounts[$year]);
                 }
                 ksort($Amounts);
                 $report_image_data = "title=".$BL->props->lang['income_monthly']."&type=vbar&";
@@ -1786,7 +1819,7 @@ switch ($cmd)
             include_once $BL->include_page("reports.php");
             break;
         }
-    case "growth" :
+        case "growth" :
         {
             $conf = $BL->conf;
             $curr_array = $BL->curr_conf;
@@ -1801,6 +1834,7 @@ switch ($cmd)
                 $Amounts              = array();
                 $BL->report->rColumns = array('gross_amount','due_date');
                 $Datas                = $BL->report->invoiceReport($BL->props->invoice_status[1]);
+                $year = date('Y'); // default
                 foreach($Datas as $Data)
                 {
                     $date = $BL->utils->getDateArray($Data['due_date']);
@@ -1812,7 +1846,10 @@ switch ($cmd)
                 $Amounts[date('Y')-1] = isset($Amounts[date('Y')-1])?$Amounts[date('Y')-1]:0;
                 $Amounts[date('Y')-2] = isset($Amounts[date('Y')-2])?$Amounts[date('Y')-2]:0;
                 //growth rate
-                $growth_rate            = 100*(($Amounts[(date('Y')-1)]- $Amounts[(date('Y')-2)])/$Amounts[(date('Y')-2)]);//%
+                if (!empty($Amounts[(date('Y')-2)]))
+                    $growth_rate = 100*(($Amounts[(date('Y')-1)]- $Amounts[(date('Y')-2)])/$Amounts[(date('Y')-2)]);//%
+                else
+                    $growth_rate = 0;
                 //this year projected
                 $Amounts[date('Y')]     = $Amounts[(date('Y')-1)]+($Amounts[(date('Y')-1)]*($growth_rate/100));
                 //next year projected
@@ -1875,7 +1912,10 @@ switch ($cmd)
                 }
                 $month_duration = $BL->report->rFromDate."->".$BL->report->rToDate;
                 //average growth
-                $avg_growth = array_sum($growth)/count($growth);
+                if (count($growth) > 0)
+                    $avg_growth = array_sum($growth)/count($growth);
+                else
+                    $avg_growth = 0;
                 //calculate this year income
                 $currentyearincome = 0;
                 $Amounts[date('Y')] = isset($Amounts[date('Y')])?$Amounts[date('Y')]:array();
@@ -1927,9 +1967,9 @@ switch ($cmd)
             include_once $BL->include_page("reports.php");
             break;
         }
-########################################################REPORT END#####################################################################
-################################################Settings START#################################################
-    case "editfaqgroup" :
+        ########################################################REPORT END#####################################################################
+        ################################################Settings START#################################################
+        case "editfaqgroup" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1944,7 +1984,7 @@ switch ($cmd)
             include_once $BL->include_page("faqgroups.php");
             break;
         }
-    case "editfaq" :
+        case "editfaq" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -1960,7 +2000,7 @@ switch ($cmd)
             include_once $BL->include_page("faqs.php");
             break;
         }
-    case "addfaqgroup" :
+        case "addfaqgroup" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -1974,7 +2014,7 @@ switch ($cmd)
             include_once $BL->include_page("faqgroups.php");
             break;
         }
-    case "addfaq" :
+        case "addfaq" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -1989,32 +2029,32 @@ switch ($cmd)
             include_once $BL->include_page("faqs.php");
             break;
         }
-    case "faqgroup" :
+        case "faqgroup" :
         {
             $faqgroups = $BL->faqgroups->find();
             include_once $BL->include_page("faqgroup_list.php");
             break;
         }
-    case "faq" :
+        case "faq" :
         {
             $BL->faqs->setOrder("faqgroup_id");
             $faqs = $BL->faqs->find();
             include_once $BL->include_page("faq_list.php");
             break;
         }
-    case "delfaqgroup" :
+        case "delfaqgroup" :
         {
-            $BL->faqgroups->delete(array("WHERE `faqgroup_id`='".$BL->REQUEST['faqgroup_id']."'"));
+            $BL->faqgroups->delete(array("WHERE `faqgroup_id`=".intval($BL->REQUEST['faqgroup_id'])));
             $BL->Redirect("faqgroup");
             break;
         }
-    case "delfaq" :
+        case "delfaq" :
         {
-            $BL->faqs->delete(array("WHERE `faq_id`='".$BL->REQUEST['faq_id']."'"));
+            $BL->faqs->delete(array("WHERE `faq_id`=".intval($BL->REQUEST['faq_id'])));
             $BL->Redirect("faq");
             break;
         }
-    case "editannounce" :
+        case "editannounce" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2029,11 +2069,11 @@ switch ($cmd)
             include_once $BL->include_page("announcement.php");
             break;
         }
-    case "addannounce" :
+        case "addannounce" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
-            	if($BL->announcements->insert($BL->REQUEST))
+                if($BL->announcements->insert($BL->REQUEST))
                 {
                     $BL->Redirect("announce");
                     break;
@@ -2043,29 +2083,29 @@ switch ($cmd)
             include_once $BL->include_page("announcement.php");
             break;
         }
-    case "announce" :
+        case "announce" :
         {
             $announces = $BL->announcements->find();
             include_once $BL->include_page("announce_list.php");
             break;
         }
-    case "delannounce" :
+        case "delannounce" :
         {
-            $BL->announcements->delete(array("WHERE `ann_id`='".$BL->REQUEST['ann_id']."'"));
+            $BL->announcements->delete(array("WHERE `ann_id`=".intval($BL->REQUEST['ann_id'])));
             $BL->Redirect("announce");
             break;
         }
-    case "e_templates" :
+        case "e_templates" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
-            	$BL->emails->update($BL->REQUEST);
+                $BL->emails->update($BL->REQUEST);
             }
             $e_templates= $BL->emails->find();
             include_once $BL->include_page("e_templates.php");
             break;
         }
-     case "edittax" :
+        case "edittax" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2133,7 +2173,7 @@ switch ($cmd)
             include_once $BL->include_page("tax.php");
             break;
         }
-    case "addtax" :
+        case "addtax" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2169,7 +2209,7 @@ switch ($cmd)
             include_once $BL->include_page("tax.php");
             break;
         }
-    case "tax" :
+        case "tax" :
         {
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="changestatus")
             {
@@ -2198,12 +2238,12 @@ switch ($cmd)
             include_once $BL->include_page("tax_list.php");
             break;
         }
-    case "deltax" :
+        case "deltax" :
         {
-            $BL->taxes->delete(array("WHERE `tax_id`='".$BL->REQUEST['tax_id']."'"));
+            $BL->taxes->delete(array("WHERE `tax_id`=".intval($BL->REQUEST['tax_id'])));
             $BL->Redirect("tax");
         }
-    case "edittld" :
+        case "edittld" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2224,8 +2264,8 @@ switch ($cmd)
                 {
                     if($BL->tlds->update($BL->REQUEST))
                     {
-                       $BL->Redirect("tld");
-                       break;
+                        $BL->Redirect("tld");
+                        break;
                     }
                 }
             }
@@ -2236,13 +2276,13 @@ switch ($cmd)
             }
             else
             {
-            	$BL->REQUEST['dom_ext'] = $tld['dom_ext'];
+                $BL->REQUEST['dom_ext'] = $tld['dom_ext'];
             }
             $title = $BL->props->lang['edit_tld'];
             include_once $BL->include_page("tld.php");
             break;
         }
-    case "addtld" :
+        case "addtld" :
         {
             if(isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2263,8 +2303,8 @@ switch ($cmd)
                 {
                     if($BL->tlds->insert($BL->REQUEST))
                     {
-                       $BL->Redirect("tld");
-                       break;
+                        $BL->Redirect("tld");
+                        break;
                     }
                 }
             }
@@ -2276,18 +2316,18 @@ switch ($cmd)
             include_once $BL->include_page("tld.php");
             break;
         }
-    case "deltld" :
+        case "deltld" :
         {
-            $BL->tlds->delete(array("WHERE `price_id`='".$BL->REQUEST['price_id']."'"));
+            $BL->tlds->delete(array("WHERE `price_id`=".intval($BL->REQUEST['price_id'])));
             $BL->Redirect("tld");
         }
-    case "tld" :
+        case "tld" :
         {
             $tlds = $BL->tlds->find();
             include_once $BL->include_page("tld_list.php");
             break;
         }
-    case "registrar" :
+        case "registrar" :
         {
             if(isset($BL->REQUEST['update']) && $BL->REQUEST['update']==$BL->props->lang['Update'])
             {
@@ -2310,15 +2350,15 @@ switch ($cmd)
             include_once $BL->include_page("registrar.php");
             break;
         }
-    case "payment" :
+        case "payment" :
         {
             if(isset($BL->REQUEST['update']) && $BL->REQUEST['update']==$BL->props->lang['Update'])
             {
                 foreach($BL->REQUEST as $key=>$item)
                 {
-                	if(is_array($item))
+                    if(is_array($item))
                     {
-                    	$item['pp_name']=$key;
+                        $item['pp_name']=$key;
                         $BL->pp_vals->update($item);
                     }
                 }
@@ -2333,7 +2373,7 @@ switch ($cmd)
             include_once $BL->include_page("payment.php");
             break;
         }
-    case "editserver" :
+        case "editserver" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2345,7 +2385,7 @@ switch ($cmd)
                 $BL->REQUEST['server_pass'] = $BL->utils->alpencrypt->encrypt($BL->REQUEST['server_pass'], $BL->props->encryptionKey);
                 $BL->REQUEST['server_hash'] = $BL->utils->alpencrypt->encrypt($BL->REQUEST['server_hash'], $BL->props->encryptionKey);
                 $BL->servers->update($BL->REQUEST);
-                $BL->ips->delete(array("WHERE `server_id`='".$BL->REQUEST['server_id']."'"));
+                $BL->ips->delete(array("WHERE `server_id`=".intval($BL->REQUEST['server_id'])));
                 foreach ($additional_ips as $ip)
                 {
                     $BL->ips->insert(array("server_id"=>$BL->REQUEST['server_id'],"ip"=>$ip));
@@ -2353,16 +2393,16 @@ switch ($cmd)
                 $BL->Redirect("servers");
             }
             $additional_ips = "";
-            foreach($BL->ips->find(array("WHERE `server_id`='".$BL->REQUEST['server_id']."'")) as $ip_data)
+            foreach($BL->ips->find(array("WHERE `server_id`=".intval($BL->REQUEST['server_id']))) as $ip_data)
             {
-            	$additional_ips .=  $ip_data['ip']." \n";
+                $additional_ips .=  $ip_data['ip']." \n";
             }
             $server= $BL->servers->getByKey($BL->REQUEST['server_id']);
             $title = $BL->props->lang['add_server'];
             include_once $BL->include_page("servers.php");
             break;
         }
-    case "addservers" :
+        case "addservers" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2376,9 +2416,9 @@ switch ($cmd)
                 $insert_id = $BL->servers->insert($BL->REQUEST);
                 if($insert_id)
                 {
-                	foreach ($additional_ips as $ip)
+                    foreach ($additional_ips as $ip)
                     {
-                    	$BL->ips->insert(array("server_id"=>$insert_id,"ip"=>$ip));
+                        $BL->ips->insert(array("server_id"=>$insert_id,"ip"=>$ip));
                     }
                     $BL->Redirect("servers");
                 }
@@ -2387,14 +2427,14 @@ switch ($cmd)
             include_once $BL->include_page("servers.php");
             break;
         }
-    case "delserver" :
+        case "delserver" :
         {
-            $BL->servers->delete(array("WHERE `server_id`='".$BL->REQUEST['server_id']."'"));
-            $BL->ips->delete(array("WHERE `server_id`='".$BL->REQUEST['server_id']."'"));
+            $BL->servers->delete(array("WHERE `server_id`=".intval($BL->REQUEST['server_id'])));
+            $BL->ips->delete(array("WHERE `server_id`=".intval($BL->REQUEST['server_id'])));
             $BL->Redirect("servers");
             break;
         }
-    case "servers" :
+        case "servers" :
         {
             if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="sync" && is_numeric($BL->REQUEST['server_id']))
             {
@@ -2418,7 +2458,7 @@ switch ($cmd)
             include_once $BL->include_page("servers_list.php");
             break;
         }
-    case "edit_user" :
+        case "edit_user" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2453,7 +2493,7 @@ switch ($cmd)
             include_once $BL->include_page("user.php");
             break;
         }
-    case "add_user" :
+        case "add_user" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2479,34 +2519,34 @@ switch ($cmd)
             include_once $BL->include_page("user.php");
             break;
         }
-    case "del_user" :
+        case "del_user" :
         {
-            $BL->admin_users->delete(array("WHERE `id`='".$BL->REQUEST['id']."'"));
+            $BL->admin_users->delete(array("WHERE `id`=".intval($BL->REQUEST['id'])));
             $BL->Redirect("users");
             break;
         }
-    case "users" :
+        case "users" :
         {
             $Users = $BL->admin_users->find();
             include_once $BL->include_page("users_list.php");
             break;
         }
-    case "edit_ip" :
+        case "edit_ip" :
         {
             if (isset ($BL->REQUEST['submit'])  && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
                 $admin_id = $BL->REQUEST['admin_id'];
                 $BL->REQUEST['ip_address'] = $BL->utils->Get_Trimmed_Array($BL->REQUEST['ip_address']);
                 $ip_address  = $BL->REQUEST['ip_address'][0].".".
-                               $BL->REQUEST['ip_address'][1].".".
-                               $BL->REQUEST['ip_address'][2].".".
-                               $BL->REQUEST['ip_address'][3];
+                $BL->REQUEST['ip_address'][1].".".
+                $BL->REQUEST['ip_address'][2].".".
+                $BL->REQUEST['ip_address'][3];
                 if(!empty($BL->REQUEST['ip_address'][4]) && $BL->REQUEST['ip_address'][3]<$BL->REQUEST['ip_address'][4])
-                $ip_address  = $BL->REQUEST['ip_address'][0].".".
-                               $BL->REQUEST['ip_address'][1].".".
-                               $BL->REQUEST['ip_address'][2].".".
-                               $BL->REQUEST['ip_address'][3]."-".
-                               $BL->REQUEST['ip_address'][4];
+                    $ip_address  = $BL->REQUEST['ip_address'][0].".".
+                    $BL->REQUEST['ip_address'][1].".".
+                    $BL->REQUEST['ip_address'][2].".".
+                    $BL->REQUEST['ip_address'][3]."-".
+                    $BL->REQUEST['ip_address'][4];
                 if($BL->access_ips->update(array("admin_id"=>$admin_id,"ip_address"=>$ip_address)))
                 {
                     $BL->Redirect("ips");
@@ -2518,26 +2558,26 @@ switch ($cmd)
             {
                 $users[$user['id']] = $user;
             }
-            $access_ip = $BL->access_ips->hasAnyOne(array("WHERE `id`='".$BL->REQUEST['id']."'"));
+            $access_ip = $BL->access_ips->hasAnyOne(array("WHERE `id`=".intval($BL->REQUEST['id'])));
             include_once $BL->include_page("ip.php");
             break;
         }
-    case "add_ip" :
+        case "add_ip" :
         {
             if (isset ($BL->REQUEST['submit'])  && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
                 $admin_id = $BL->REQUEST['admin_id'];
                 $BL->REQUEST['ip_address'] = $BL->utils->Get_Trimmed_Array($BL->REQUEST['ip_address']);
                 $ip_address  = $BL->REQUEST['ip_address'][0].".".
-                               $BL->REQUEST['ip_address'][1].".".
-                               $BL->REQUEST['ip_address'][2].".".
-                               $BL->REQUEST['ip_address'][3];
+                $BL->REQUEST['ip_address'][1].".".
+                $BL->REQUEST['ip_address'][2].".".
+                $BL->REQUEST['ip_address'][3];
                 if(!empty($BL->REQUEST['ip_address'][4]) && $BL->REQUEST['ip_address'][3]<$BL->REQUEST['ip_address'][4])
-                $ip_address  = $BL->REQUEST['ip_address'][0].".".
-                               $BL->REQUEST['ip_address'][1].".".
-                               $BL->REQUEST['ip_address'][2].".".
-                               $BL->REQUEST['ip_address'][3]."-".
-                               $BL->REQUEST['ip_address'][4];
+                    $ip_address  = $BL->REQUEST['ip_address'][0].".".
+                    $BL->REQUEST['ip_address'][1].".".
+                    $BL->REQUEST['ip_address'][2].".".
+                    $BL->REQUEST['ip_address'][3]."-".
+                    $BL->REQUEST['ip_address'][4];
                 if($BL->access_ips->insert(array("admin_id"=>$admin_id,"ip_address"=>$ip_address)))
                 {
                     $BL->Redirect("ips");
@@ -2552,9 +2592,9 @@ switch ($cmd)
             include_once $BL->include_page("ip.php");
             break;
         }
-    case "del_ip" :
+        case "del_ip" :
         {
-            $BL->access_ips->delete(array("WHERE `id`='".$BL->REQUEST['id']."'"));
+            $BL->access_ips->delete(array("WHERE `id`=".intval($BL->REQUEST['id'])));
             $access_ips = $BL->access_ips->find();
             if(!count($access_ips))
             {
@@ -2564,7 +2604,7 @@ switch ($cmd)
             $BL->Redirect("ips");
             break;
         }
-    case "ips" :
+        case "ips" :
         {
             if(isset($BL->REQUEST['submit']) && isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="change_security_level")
             {
@@ -2596,7 +2636,7 @@ switch ($cmd)
             include_once $BL->include_page("ip_list.php");
             break;
         }
-    case "geoip" :
+        case "geoip" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2687,7 +2727,7 @@ switch ($cmd)
             include_once $BL->include_page("geoip.php");
             break;
         }
-    case "editcurrency" :
+        case "editcurrency" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2702,7 +2742,7 @@ switch ($cmd)
             include_once $BL->include_page("currency.php");
             break;
         }
-    case "addcurrency" :
+        case "addcurrency" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2716,13 +2756,13 @@ switch ($cmd)
             include_once $BL->include_page("currency.php");
             break;
         }
-    case "delcurrency" :
+        case "delcurrency" :
         {
-            $BL->currencies->delete(array("WHERE `curr_id`='".$BL->REQUEST['curr_id']."'"));
+            $BL->currencies->delete(array("WHERE `curr_id`=".intval($BL->REQUEST['curr_id'])));
             $BL->Redirect("currency");
             break;
         }
-    case "currency" :
+        case "currency" :
         {
             if (isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="default_curr")
             {
@@ -2761,7 +2801,7 @@ switch ($cmd)
             break;
         }
 
-    case "edit_cycle" :
+        case "edit_cycle" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2784,7 +2824,7 @@ switch ($cmd)
             include_once $BL->include_page("cycle.php");
             break;
         }
-    case "add_cycle" :
+        case "add_cycle" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2798,24 +2838,24 @@ switch ($cmd)
             $cycles = array();
             foreach($BL->billing_cycles->find() as $temp)
             {
-            	$cycles[] = $temp['cycle_month'];
+                $cycles[] = $temp['cycle_month'];
             }
             include_once $BL->include_page("cycle.php");
             break;
         }
-    case "del_cycle" :
+        case "del_cycle" :
         {
-            $BL->billing_cycles->delete(array("WHERE `id`='".$BL->REQUEST['id']."'"));
+            $BL->billing_cycles->delete(array("WHERE `id`=".intval($BL->REQUEST['id'])));
             $BL->Redirect("billing_cycles");
             break;
         }
-    case "billing_cycles" :
+        case "billing_cycles" :
         {
             $cycles = $BL->billing_cycles->find();
             include_once $BL->include_page("cycle_list.php");
             break;
         }
-    case "edit_customfield" :
+        case "edit_customfield" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2830,11 +2870,12 @@ switch ($cmd)
             include_once $BL->include_page("customfield.php");
             break;
         }
-    case "add_customfield" :
+        case "add_customfield" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
                 $BL->REQUEST['field_name'] = str_replace(" ","_",$BL->REQUEST['field_name']);
+                $BL->REQUEST['customfields_index'] = count($BL->customfields->find())+1;
                 if($BL->customfields->insert($BL->REQUEST))
                 {
                     $BL->Redirect("customfields");
@@ -2844,19 +2885,28 @@ switch ($cmd)
             include_once $BL->include_page("customfield.php");
             break;
         }
-    case "del_customfield" :
+        case "del_customfield" :
         {
-            $BL->customfields->delete(array("WHERE `field_id`='".$BL->REQUEST['field_id']."'"));
+            $BL->customfields->delete(array("WHERE `field_id`=".intval($BL->REQUEST['field_id'])));
             $BL->Redirect("customfields");
             break;
         }
-    case "customfields" :
+        case "customfields" :
         {
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="up")
+            {
+                $BL->customfields->moveUp($BL->REQUEST['field_id'],$BL->REQUEST['field_index']);
+            }
+            if(isset($BL->REQUEST['action']) && $BL->REQUEST['action']=="down")
+            {
+                $BL->customfields->moveDown($BL->REQUEST['field_id'],$BL->REQUEST['field_index']);
+            }
+            $BL->customfields->setOrder("customfields_index");
             $customfields = $BL->customfields->find();
             include_once $BL->include_page("customfield_list.php");
             break;
         }
-    case "custom_scripts" :
+        case "custom_scripts" :
         {
             if (isset($BL->REQUEST['update']) && !empty ($BL->REQUEST['update']))
             {
@@ -2881,9 +2931,9 @@ switch ($cmd)
             $existing_scripts = array();
             foreach($BL->custom_scripts->find() as $custom_script)
             {
-            	if(array_search($custom_script['file_name'], $BL->props->cs_array)===false)
+                if(array_search($custom_script['file_name'], $BL->props->cs_array)===false)
                 {
-                	$BL->custom_scripts->delete(array("WHERE `id`='".$custom_script['id']."'"));
+                    $BL->custom_scripts->delete(array("WHERE `id`=".intval($custom_script['id'])));
                 }
                 else
                 {
@@ -2903,7 +2953,7 @@ switch ($cmd)
             include_once $BL->include_page("custom_scripts.php");
             break;
         }
-    case "edit_custompage" :
+        case "edit_custompage" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
@@ -2917,7 +2967,7 @@ switch ($cmd)
             include_once $BL->include_page("custompage.php");
             break;
         }
-    case "add_custompage" :
+        case "add_custompage" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['add'])
             {
@@ -2930,26 +2980,32 @@ switch ($cmd)
             include_once $BL->include_page("custompage.php");
             break;
         }
-    case "del_custompage" :
+        case "del_custompage" :
         {
-            $BL->custompages->delete(array("WHERE `id`='".$BL->REQUEST['id']."'"));
+            $BL->custompages->delete(array("WHERE `id`=".intval($BL->REQUEST['id'])));
             $BL->Redirect("custompages");
             break;
         }
-    case "custompages" :
+        case "custompages" :
         {
             $custompages = $BL->custompages->find();
             include_once $BL->include_page("custompage_list.php");
             break;
         }
-    case "conf" :
+        case "conf" :
         {
             if (isset($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['Update'])
             {
-                $sql = "ALTER TABLE `invoices` AUTO_INCREMENT =".$BL->REQUEST['inv_start_no'];
-                $BL->dbL->executeALTER($sql);
-                $sql = "ALTER TABLE `orders` AUTO_INCREMENT =".$BL->REQUEST['order_start_no'];
-                $BL->dbL->executeALTER($sql);
+                if ($BL->REQUEST['inv_start_no'] !== '')
+                {
+                    $sql = "ALTER TABLE `invoices` AUTO_INCREMENT =".intval($BL->REQUEST['inv_start_no']);
+                    $BL->dbL->executeALTER($sql);
+                }
+                if ($BL->REQUEST['order_start_no'] !== '')
+                {
+                    $sql = "ALTER TABLE `orders` AUTO_INCREMENT =".intval($BL->REQUEST['order_start_no']);
+                    $BL->dbL->executeALTER($sql);
+                }
 
                 $msg = $BL->props->lang['nothing_changed'];
                 $BL->REQUEST['email_charset']= (isset($BL->REQUEST['email_charset']) && !empty($BL->REQUEST['email_charset']))?$BL->REQUEST['email_charset']:$BL->props->lang['charset'];
@@ -2965,7 +3021,7 @@ switch ($cmd)
             include_once $BL->include_page("conf.php");
             break;
         }
-    case "import_packages" :
+        case "import_packages" :
         {
             $Servers = $BL->servers->find();
             $Packages= array();
@@ -2982,7 +3038,7 @@ switch ($cmd)
                     foreach ($Packages as $Package)
                     {
                         $Products = $BL->products->find();
-                        if (!count($BL->products->find(array("WHERE `plan_name`='".$Package."'"))))
+                        if (!count($BL->products->find(array("WHERE `plan_name`='".$BL->utils->quoteSmart($Package)."'"))))
                         {
                             $data = array();
                             $data['plan_name'] = $Package;
@@ -3005,7 +3061,7 @@ switch ($cmd)
             include_once $BL->include_page("import_packages.php");
             break;
         }
-    case "import_clientexec" :
+        case "import_clientexec" :
         {
             if (isset ($BL->REQUEST['submit']) && $BL->REQUEST['submit']==$BL->props->lang['import'] && isset($BL->REQUEST['clientexec_host']))
             {
@@ -3018,14 +3074,14 @@ switch ($cmd)
             include_once $BL->include_page("import_clientexec.php");
             break;
         }
-    case "reset_alp" :
+        case "reset_alp" :
         {
             $BL->ResetALP();
         }
-################################################Settings END#################################################
-################################################Default START#################################################
-	default :
-		{
+        ################################################Settings END#################################################
+        ################################################Default START#################################################
+        default :
+        {
             if(isset($BL->REQUEST['sec']) && !empty($BL->REQUEST['sec']))
             {
                 $BL->configurations->update(array("whoisonline_sec"=>$BL->REQUEST['sec']));
@@ -3044,19 +3100,20 @@ switch ($cmd)
             }
             $conf      = $BL->conf;
             $Servers   = $BL->servers->find();
+            $sInvoices = $BL->invoices->getByStatus($BL->props->invoice_status[6]);
             $pInvoices = $BL->invoices->getByStatus($BL->props->invoice_status[0]);
             $mInvoices = array();
             foreach($pInvoices as $Invoice)
             {
-            	if(!empty($Invoice['payment_method']) && isset($BL->pp_send_method[$Invoice['payment_method']]) && $BL->pp_send_method[$Invoice['payment_method']]=="DIRECT")
+                if(!empty($Invoice['payment_method']) && isset($BL->pp_send_method[$Invoice['payment_method']]) && $BL->pp_send_method[$Invoice['payment_method']]=="DIRECT")
                 {
-                	$mInvoices[] = $Invoice;
+                    $mInvoices[] = $Invoice;
                 }
             }
             $pOrders = $BL->orders->getByStatus($BL->props->order_status[0]);
             $oOrders = $BL->orphan_orders->get();
             $Sec     = isset($conf['whoisonline_sec'])?$conf['whoisonline_sec']:600;
-			$Whoisonline = $BL->whoisonline($Sec);
+            $Whoisonline = $BL->whoisonline($Sec);
 
             $topics = array();
             $dept_ids= explode("<&&>", $_SESSION['dept_id']);
@@ -3077,8 +3134,8 @@ switch ($cmd)
             $tickets = array();
             foreach ($topics as $val)
             {
-                $open_tickets                        = $BL->support_tickets->find(array("WHERE `topic_id`='".$val['topic_id']."' AND `ticket_status`!='3'"));
-                $close_tickets                       = $BL->support_tickets->find(array("WHERE `topic_id`='".$val['topic_id']."' AND `ticket_status`='3'"));
+                $open_tickets                        = $BL->support_tickets->find(array("WHERE `topic_id`=".intval($val['topic_id'])." AND `ticket_status`!='3'"));
+                $close_tickets                       = $BL->support_tickets->find(array("WHERE `topic_id`=".intval($val['topic_id'])." AND `ticket_status`='3'"));
                 $open_ticket_count                   = $open_ticket_count + count($open_tickets);
                 $close_ticket_count                  = $close_ticket_count + count($close_tickets);
                 $tickets[$val['topic_id']]['open']   = $open_tickets;
@@ -3092,33 +3149,37 @@ switch ($cmd)
 
             $str1 = "\"tab1\"";
             $str2 = "\"t1\"";
+            if($BL->getCmd("viewinvoice") && count($sInvoices)){
+                $str1 .= ", \"tab2\"";
+                $str2 .= ", \"t2\"";
+            }
             if($BL->getCmd("manual_payments") && count($mInvoices)){
-                $str1 .= ",\"tab2\"";
-                $str2 .= ",\"t2\"";
+                $str1 .= ",\"tab3\"";
+                $str2 .= ",\"t3\"";
             }
             if($BL->getCmd("viewinvoice") && count($pInvoices)){
-                $str1 .= ", \"tab3\"";
-                $str2 .= ", \"t3\"";
-            }
-            if($BL->getCmd("orphan_orders") && count($oOrders)){
                 $str1 .= ", \"tab4\"";
                 $str2 .= ", \"t4\"";
             }
-            if($BL->getCmd("vieworders") && count($pOrders)){
+            if($BL->getCmd("orphan_orders") && count($oOrders)){
                 $str1 .= ", \"tab5\"";
                 $str2 .= ", \"t5\"";
             }
-            if($BL->getCmd("viewTicket") && $open_ticket_count){
+            if($BL->getCmd("vieworders") && count($pOrders)){
                 $str1 .= ", \"tab6\"";
                 $str2 .= ", \"t6\"";
             }
-			include_once $BL->include_page("index.php");
-			break;
-		}
-################################################Default START#################################################
-}
-if(ALP_DEBUG)
-{
-    $errorHandler->getErrorLog();
-}
+            if($BL->getCmd("viewTicket") && $open_ticket_count){
+                $str1 .= ", \"tab7\"";
+                $str2 .= ", \"t7\"";
+            }
+            include_once $BL->include_page("index.php");
+            break;
+        }
+        ################################################Default START#################################################
+    }
+    if(ALP_DEBUG)
+    {
+        $errorHandler->getErrorLog();
+    }
 ?>

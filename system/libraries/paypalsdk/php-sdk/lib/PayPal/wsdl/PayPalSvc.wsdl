@@ -1,4 +1,4 @@
-<?phpxml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions ns:version="2.4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns="urn:ebay:api:PayPalAPI" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ebl="urn:ebay:apis:eBLBaseComponents" xmlns:cc="urn:ebay:apis:CoreComponentTypes" targetNamespace="urn:ebay:api:PayPalAPI">
 	<wsdl:types>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ebay:api:PayPalAPI" elementFormDefault="qualified" attributeFormDefault="unqualified">

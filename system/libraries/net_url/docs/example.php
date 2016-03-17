@@ -40,31 +40,31 @@
 //	include('../URL.php');
 	include('Net/URL.php');
 
-	//$url = &new Net_URL('https://www.example.com/foo/bar/index.php?foo=bar');
+	//$url = new Net_URL('https://www.example.com/foo/bar/index.php?foo=bar');
 	$url = new Net_URL('https://example.com/pls/portal30/PORTAL30.wwpob_page.changetabs?p_back_url=http%3A%2F%2Fexample.com%2Fservlet%2Fpage%3F_pageid%3D360%2C366%2C368%2C382%26_dad%3Dportal30%26_schema%3DPORTAL30&foo=bar');
 ?>
 <html>
 <body>
 
 <pre>
-Protocol...: <?php=$url->protocol?>
+Protocol...: <?=$url->protocol?>
 
-Username...: <?php=$url->user?>
+Username...: <?=$url->user?>
 
-Password...: <?php=$url->pass?>
+Password...: <?=$url->pass?>
 
-Server.....: <?php=$url->host?>
+Server.....: <?=$url->host?>
 
-Port.......: <?php=$url->port?>
+Port.......: <?=$url->port?>
 
-File/path..: <?php=$url->path?>
+File/path..: <?=$url->path?>
 
-Querystring: <?phpprint_r($url->querystring)?>
+Querystring: <?php print_r($url->querystring)?>
 
-Anchor.....: <?php=$url->anchor?>
+Anchor.....: <?=$url->anchor?>
 
 
-Full URL...: <?php=$url->getUrl()?>
+Full URL...: <?=$url->getUrl()?>
 </pre>
 
 </body>

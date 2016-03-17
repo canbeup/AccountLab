@@ -46,8 +46,52 @@
  */
 
 ?>
-
 <?php include_once $BL->props->get_page("templates/alp_admin/html/header.php"); ?>
+<?php
+	// Get default currency formatting options, and force a few settings for compatibility
+	$curr_array = $BL->curr_conf;
+	$curr_array['str1'] = '.';//force decimal as period
+	$curr_array['str2'] = '';//remove the thousand separator
+?>
+<script><!--
+function updateTotal() {
+	var total=0;
+	total += parseFloat(document.getElementById('tld_fee').value);
+	total += parseFloat(document.getElementById('setup_fee').value);
+	total += parseFloat(document.getElementById('cycle_fee').value);
+
+	<?php foreach($Addons as $Addon_Name=>$Addon_Fee){ ?>
+	total += parseFloat(document.getElementById('addon_setups[<?php echo $Addon_Name; ?>]').value);
+	total += parseFloat(document.getElementById('addon_cycles[<?php echo $Addon_Name; ?>]').value);
+	<?php } ?>
+
+	if (document.getElementsByName('debit_credit')[0].value == "debit") {
+		total += parseFloat(document.getElementById('debit_credit_amount').value);
+	}
+	if (document.getElementsByName('debit_credit')[0].value == "credit") {
+		total -= parseFloat(document.getElementById('debit_credit_amount').value);
+	}
+	total -= parseFloat(document.getElementById('other_amount').value);
+
+	document.getElementById('net_amount').value=total.toFixed(<?php echo $curr_array['decimals'] ?>);
+
+	var totaltax = 0;
+	for(var i=0; i < document.getElementsByName('tax1[]').length;i++) {
+		// We .toFixed early, because hidden decimals make the math look dishonest
+		var thistax = (total * parseFloat(document.getElementsByName('tax0[]')[i].value)/100).toFixed(<?php echo $curr_array['decimals']; ?>);
+		document.getElementsByName('tax1[]')[i].value = thistax;
+		if (document.getElementsByName('tax3[]')[i].value == '+') {
+			totaltax += parseFloat(thistax);
+		}
+		if (document.getElementsByName('tax3[]')[i].value == '-') {
+			totaltax -= parseFloat(thistax);
+		}
+	}
+	document.getElementById('tax_amount').value=totaltax.toFixed(<?php echo $curr_array['decimals'] ?>);
+	total += totaltax;
+	document.getElementById('gross_amount').value=total.toFixed(<?php echo $curr_array['decimals'] ?>);
+}
+//--></script>
 <div id="content">
     <div id="display_list">
         <form name='form1' id='form1' method='POST' action='<?php echo $PHP_SELF; ?>'>
@@ -59,7 +103,7 @@
         </tr>
         <tr> 
             <td colspan="2" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
         <?php if($cmd=="editinvoice" && isset($Extra_Fields) && count($Extra_Fields)){ ?>
@@ -70,7 +114,7 @@
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -84,7 +128,7 @@
         </tr> 
         <tr> 
             <td colspan="2" class="text_grey">
-            <img src="elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>spacer.gif" alt="" width="100%" height="1" />
+            <img src="elements/default/templates/alp_admin/images/spacer.gif" alt="" width="100%" height="1" />
             </td>
         </tr>
         <?php } ?>
@@ -94,7 +138,7 @@
             <tr> 
                 <td width="1%" class='text_grey'>
 	            <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -109,13 +153,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -130,13 +174,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" valign="top" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey' valign="top">
@@ -150,14 +194,14 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php if($cmd=="editinvoice"){ ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -165,19 +209,19 @@
                 <?php echo $BL->props->lang['Domain']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='inv_tld_fee' type='text' class='search' id='inv_tld_fee' size='20' value='<?php echo $Invoice[0]['tld_fee']; ?>' />
+                <input name='tld_fee' type='text' class='search' id='tld_fee' size='20' value='<?php echo $BL->toCurrency($Invoice[0]['tld_fee'],$BL->curr_conf,1,0); ?>' onblur='updateTotal();'/>
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -185,19 +229,19 @@
                 <?php echo $BL->props->lang['setup_fee']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='inv_setup_fee' type='text' class='search' id='inv_setup_fee' size='20' value='<?php echo $Invoice[0]['setup_fee']; ?>' />
+                <input name='setup_fee' type='text' class='search' id='setup_fee' size='20' value='<?php echo $BL->toCurrency($Invoice[0]['setup_fee'],$curr_array,1,0); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -205,20 +249,20 @@
                 <?php echo $BL->props->lang['cycle_amount']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='inv_cycle_fee' type='text' class='search' id='inv_cycle_fee' size='20' value='<?php echo $Invoice[0]['cycle_fee']; ?>' />
+                <input name='cycle_fee' type='text' class='search' id='cycle_fee' size='20' value='<?php echo $BL->toCurrency($Invoice[0]['cycle_fee'],$curr_array,1,0); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php foreach($Addons as $Addon_Name=>$Addon_Fee){ ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -226,21 +270,21 @@
                 <?php echo $Addon_Name; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <?php echo $BL->props->lang['setup_fee']; ?>&nbsp;<input name='addon_setups[<?php echo $Addon_Name; ?>]' type='text' class='search' id='addon_setups[<?php echo $Addon_Name; ?>]' size='8' value='<?php echo $Addon_Fee['SETUP']; ?>' />
-                <?php echo $BL->props->lang['Recurring']; ?>&nbsp;<input name='addon_cycles[<?php echo $Addon_Name; ?>]' type='text' class='search' id='addon_cycles[<?php echo $Addon_Name; ?>]' size='8' value='<?php echo $Addon_Fee['CYCLE']; ?>' />
+                <?php echo $BL->props->lang['setup_fee']; ?>&nbsp;<input name='addon_setups[<?php echo $Addon_Name; ?>]' type='text' class='search' id='addon_setups[<?php echo $Addon_Name; ?>]' size='8' value='<?php echo $BL->toCurrency($Addon_Fee['SETUP'],$curr_array,1,0); ?>' onblur='updateTotal();' />
+                <?php echo $BL->props->lang['Recurring']; ?>&nbsp;<input name='addon_cycles[<?php echo $Addon_Name; ?>]' type='text' class='search' id='addon_cycles[<?php echo $Addon_Name; ?>]' size='8' value='<?php echo $BL->toCurrency($Addon_Fee['CYCLE'],$curr_array,1,0); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php } ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -254,7 +298,7 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
@@ -266,13 +310,13 @@
                 <?php echo $BL->props->lang['tld_discount']; ?> (%)
                 </div>
                 <div id="form1_field">
-                <input name='inv_tld_disc' type='text' class='search' id='inv_tld_disc' size='20' value='<?php echo $Invoice[0]['inv_tld_disc']; ?>' />
+                <input name='inv_tld_disc' type='text' class='search' id='inv_tld_disc' size='20' value='<?php echo rtrim(rtrim($Invoice[0]['inv_tld_disc'],'0'),'.'); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
@@ -284,13 +328,13 @@
                 <?php echo $BL->props->lang['plan_discount']; ?> (%)
                 </div>
                 <div id="form1_field">
-                <input name='inv_plan_disc' type='text' class='search' id='inv_plan_disc' size='20' value='<?php echo $Invoice[0]['inv_plan_disc']; ?>' />
+                <input name='inv_plan_disc' type='text' class='search' id='inv_plan_disc' size='20' value='<?php echo rtrim(rtrim($Invoice[0]['inv_plan_disc'],'0'),'.'); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
@@ -302,20 +346,20 @@
                 <?php echo $BL->props->lang['addon_discount']; ?> (%)
                 </div>
                 <div id="form1_field">
-                <input name='inv_addon_disc' type='text' class='search' id='inv_addon_disc' size='20' value='<?php echo $Invoice[0]['inv_addon_disc']; ?>' />
+                <input name='inv_addon_disc' type='text' class='search' id='inv_addon_disc' size='20' value='<?php echo rtrim(rtrim($Invoice[0]['inv_addon_disc'],'0'),'.'); ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php } ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -323,8 +367,8 @@
                 <?php echo $BL->props->lang['Credit_Debit']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='debit_credit_amount' type='text' class='search' id='debit_credit_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['debit_credit_amount'];}else echo "0.00"; ?>' />
-                	  <select name="debit_credit" size="1" class='search'>
+                <input name='debit_credit_amount' type='text' class='search' id='debit_credit_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['debit_credit_amount'],$curr_array,1,0);}else echo "0.00"; ?>' onblur='updateTotal();' />
+                	  <select name="debit_credit" size="1" class='search' onblur='updateTotal();' onchange='updateTotal();'>
                 	  <option></option>
                 	    <option value="credit" <?php if($cmd=="editinvoice" && $Invoice[0]['debit_credit'] == "credit")echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['credit']; ?></option>
                 	    <option value="debit" <?php if($cmd=="editinvoice" && $Invoice[0]['debit_credit'] == "debit")echo "selected=\"selected\""; ?>><?php echo $BL->props->lang['debit']; ?></option>
@@ -334,13 +378,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -354,14 +398,14 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php if(($cmd=="editinvoice" && $Invoice[0]['prorate_amount']>0) || ($cmd!="editinvoice" && $BL->conf['en_prorate'])){ ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -375,13 +419,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -389,20 +433,20 @@
                 <?php echo $BL->props->lang['prorate_amount']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='prorate_amount' type='text' class='search' id='prorate_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['prorate_amount'];}else echo "0.00"; ?>' />
+                <input name='prorate_amount' type='text' class='search' id='prorate_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['prorate_amount'],$curr_array,1,0);}else echo "0.00"; ?>' onblur='updateTotal();'/>
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php } ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -410,19 +454,19 @@
                 <?php echo $BL->props->lang['discount']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">                      
-                <input name='other_amount' type='text' class='search' id='other_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['other_amount'];}else echo "0.00"; ?>' />
+                <input name='other_amount' type='text' class='search' id='other_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['other_amount'],$curr_array,1,0);}else echo "0.00"; ?>' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -430,13 +474,13 @@
                 <?php echo $BL->props->lang['Net_Amount']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='net_amount' type='text' class='search' id='net_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['net_amount'];}else echo "0.00"; ?>' />
+                <input name='net_amount' type='text' class='search' id='net_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['net_amount'],$curr_array,1,0);}else echo "0.00"; ?>' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php if($cmd=="editinvoice"){?>
@@ -444,26 +488,26 @@
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' /></div></td>
                 <td class='text_grey'>
                 <div id="form1_label">
                 <input name='tax2[]' type='text' value='<?php echo $Tax[2]; ?>' class='search' id='tax2'>
                 </div>
                 <div id="form1_field">
-                <select name='tax3[]' id='tax3' class='search'>
+                <select name='tax3[]' id='tax3' class='search' onblur='updateTotal();' onchange='updateTotal();'>
                 <option value='+' <?php if($Tax[3]=="+")echo "selected=\"selected\""; ?>>+</option>
                 <option value='-' <?php if($Tax[3]=="-")echo "selected=\"selected\""; ?>>-</option>
                 </select>
-                %<input name='tax0[]' type='text' value='<?php echo number_format($Tax[0],2); ?>' class='search' id='tax0' size='5' />
+                %<input name='tax0[]' type='text' value='<?php echo number_format($Tax[0],2); ?>' class='search' id='tax0' size='5' onblur='updateTotal();' />
                 =
                 <?php echo $BL->conf['symbol']; ?>
-                <input name='tax1[]' type='text' value='<?php echo $BL->toCurrency($Tax[1]); ?>' class='search' id='tax1' size='10' />
+                <input name='tax1[]' type='text' value='<?php echo $BL->toCurrency($Tax[1],$curr_array,1,0); ?>' class='search' id='tax1' size='10' onblur='updateTotal();' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php } ?>
@@ -471,25 +515,25 @@
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' /></div></td>
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' /></div></td>
                 <td class='text_grey'>
                 <div id="form1_label">
                 <?php echo $BL->props->lang['total_tax']." (".$BL->conf['symbol'].")"; ?> 
                 </div>
                 <div id="form1_field">
-                <input name='tax_amount' type='text' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['tax_amount'];}else echo "0"; ?>' class='search' id='tax_amount' size='20' />
+                <input name='tax_amount' type='text' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['tax_amount'],$curr_array,1,0);}else echo "0"; ?>' class='search' id='tax_amount' size='20' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -497,13 +541,13 @@
                 <?php echo $BL->props->lang['Gross_Amount']; ?> (<?php echo $BL->conf['symbol']; ?>)
                 </div>
                 <div id="form1_field">
-                <input name='gross_amount' type='text' class='search' id='gross_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $Invoice[0]['gross_amount'];} ?>' />
+                <input name='gross_amount' type='text' class='search' id='gross_amount' size='20' value='<?php if($cmd=="editinvoice"){echo $BL->toCurrency($Invoice[0]['gross_amount'],$curr_array,1,0);} ?>' />
                 </div>
                 </td>
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <?php 
@@ -518,7 +562,7 @@
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -532,13 +576,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -552,13 +596,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -572,13 +616,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -595,13 +639,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -619,13 +663,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -646,13 +690,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -673,13 +717,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -693,14 +737,14 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>                  
             <?php } ?>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -723,13 +767,13 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
                 <td width="1%" class='text_grey'>
                 <div align='center'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_icon_dot.gif' width='32' height='18' />
+                <img src='elements/default/templates/alp_admin/images/menu_icon_dot.gif' width='32' height='18' />
                 </div>
                 </td>
                 <td class='text_grey'>
@@ -753,7 +797,7 @@
             </tr>
             <tr> 
                 <td colspan='2' class='text_grey'>
-                <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen-long.jpg' width='100%' height='1' />
+                <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen-long.jpg' width='100%' height='1' />
                 </td>
             </tr>
             <tr> 
@@ -792,7 +836,12 @@
     </tr>
     <tr> 
         <td class='text_grey'>
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+            <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen.jpg' width='100%' height='2' />
+        </td>
+    </tr>
+    <tr>
+        <td class='text_grey'>
+            <a href='info.php?cmd=VPDF&invoice_no=<?php echo $REQUEST['invoice_no']; ?>' target='_blank'><b><?php echo $BL->props->lang['PDF']; ?></b></a>
         </td>
     </tr>
     <tr>
@@ -802,7 +851,7 @@
     </tr>
     <tr> 
         <td class='text_grey'>
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+            <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen.jpg' width='100%' height='2' />
         </td>
     </tr>
     <tr>
@@ -812,7 +861,7 @@
     </tr>
     <tr> 
         <td class='text_grey'>
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+            <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen.jpg' width='100%' height='2' />
         </td>
     </tr>
     <tr>
@@ -822,7 +871,7 @@
     </tr>
     <tr> 
         <td class='text_grey'>
-            <img src='elements<?php echo PATH_SEP; ?>default<?php echo PATH_SEP; ?>templates<?php echo PATH_SEP; ?>alp_admin<?php echo PATH_SEP; ?>images<?php echo PATH_SEP; ?>menu_line_lightgreen.jpg' width='100%' height='2' />
+            <img src='elements/default/templates/alp_admin/images/menu_line_lightgreen.jpg' width='100%' height='2' />
         </td>
     </tr>
 </table>

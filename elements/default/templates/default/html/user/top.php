@@ -47,6 +47,7 @@
 
 ?>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html dir="<?php echo PAGEDIR; ?>">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
@@ -261,16 +262,19 @@ function ajax(){
                 var key_added = 0;
                 for(i=0; i<xmlDoc.getElementsByTagName('count').item(0).firstChild.data; i++)
                 {
-                    var state = xmlDoc.getElementsByTagName('state').item(i).firstChild.data;
+					var elem = xmlDoc.getElementsByTagName('state').item(i);
+                    var state = elem.firstChild.data;
+					var abbr = elem.getAttribute('abbr');
+
                     if(escape(Trim(state)).charAt(0)!='%' && Trim(state)!='')
                     {
-                        if(state == key)
+                        if((state == key) || (abbr == key))
                         {
-                            state_obj.options[count++] = new Option(Trim(state), Trim(state), true, true);
+                            state_obj.options[count++] = new Option(Trim(state), Trim(abbr ? abbr : state), true, true);
                             key_added = 1;
                         }
                         else
-                            state_obj.options[count++] = new Option(Trim(state), Trim(state), false);
+                            state_obj.options[count++] = new Option(Trim(state), Trim(abbr ? abbr : state), false);
                     }
                 }
                 if(key_added == 0 && key!='0')
@@ -319,7 +323,7 @@ function changeTheme(page,theme){
 //-->
 </script>
 <?php if($BL->conf['en_html_editor']){ ?>
-<script language="javascript" type="text/javascript" src="system<?php echo PATH_SEP; ?>libraries<?php echo PATH_SEP; ?>tinymce<?php echo PATH_SEP; ?>jscripts<?php echo PATH_SEP; ?>tiny_mce<?php echo PATH_SEP; ?>tiny_mce_gzip.php"></script>
+<script language="javascript" type="text/javascript" src="system/libraries/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php"></script>
 <script language="javascript" type="text/javascript">
 tinyMCE.init({
     mode : "textareas",
